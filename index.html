@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HermesIA — A IA que devolve o seu tempo</title>
+  <meta name="description" content="A HermesIA é uma plataforma de inteligência artificial criada por um advogado sênior para profissionais que querem trabalhar menos e viver mais.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fff; }
+
+    /* HERO */
+    .hm-hero { background: #0d1b3e; padding: 3.5rem 2rem 4rem; text-align: center; }
+    .hm-badge-top { display: inline-block; background: rgba(201,168,76,0.15); color: #e5c06a; border: 1px solid rgba(201,168,76,0.5); font-size: 0.68rem; padding: 5px 16px; border-radius: 20px; letter-spacing: 1.5px; margin-bottom: 1.8rem; }
+    .hm-logo { font-family: 'Playfair Display', serif; font-size: 2.6rem; color: #c9a84c; letter-spacing: 2px; margin-bottom: 0.4rem; }
+    .hm-logo span { color: #ffffff; }
+    .hm-tagline { font-size: 0.78rem; color: #7a8eaa; letter-spacing: 3px; margin-bottom: 2.5rem; font-weight: 300; }
+    .hm-hero-title { font-family: 'Playfair Display', serif; font-size: 2.1rem; color: #ffffff; line-height: 1.45; max-width: 600px; margin: 0 auto 1.2rem; }
+    .hm-hero-title em { color: #e5c06a; font-style: italic; }
+    .hm-hero-sub { font-size: 0.95rem; color: #d0daea; max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.85; font-weight: 300; }
+    .hm-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .hm-cta { background: #c9a84c; color: #fdf6e3; padding: 1.1rem 2.8rem; border-radius: 4px; font-size: 0.95rem; font-weight: 500; border: none; cursor: pointer; letter-spacing: 1.5px; text-transform: uppercase; transition: background 0.2s; }
+    .hm-cta:hover { background: #dfc05e; }
+    .hm-cta-outline { background: #ffffff; color: #8a6b1f; padding: 1.1rem 2.8rem; border-radius: 4px; font-size: 0.95rem; font-weight: 500; border: none; cursor: pointer; letter-spacing: 1.5px; text-transform: uppercase; transition: background 0.2s; }
+    .hm-cta-outline:hover { background: #f5efe0; }
+
+    /* MANIFESTO */
+    .hm-manifesto { background: #060f22; padding: 3rem 2rem; }
+    .hm-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.15rem; color: #e5c06a; text-align: center; max-width: 580px; margin: 0 auto 1rem; line-height: 1.75; }
+    .hm-quote-attr { text-align: center; font-size: 0.75rem; color: #4a6080; letter-spacing: 1px; }
+
+    /* ANTÍDOTO */
+    .hm-anti { background: #0a1428; padding: 2.5rem 2rem; }
+    .hm-anti-title { font-family: 'Playfair Display', serif; color: #e5c06a; font-size: 1.2rem; text-align: center; margin-bottom: 1.5rem; }
+    .hm-anti-grid { display: grid; grid-template-columns: 1fr 1px 1fr; max-width: 500px; margin: 0 auto; }
+    .hm-anti-col { padding: 0 1.5rem; }
+    .hm-anti-sep { background: #1e3060; }
+    .hm-anti-label { font-size: 0.68rem; letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+    .hm-neg { color: #ef9a9a; }
+    .hm-pos { color: #a5d6a7; }
+    .hm-anti-item { font-size: 0.82rem; color: #aabbcc; padding: 6px 0; border-bottom: 0.5px solid #1a2d50; text-align: center; }
+
+    /* SEÇÕES */
+    .hm-section { padding: 3rem 2rem; }
+    .hm-section-alt { padding: 3rem 2rem; background: #f8f7f2; }
+    .hm-section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #0d1b3e; margin-bottom: 0.5rem; text-align: center; }
+    .hm-divider { width: 44px; height: 2px; background: #c9a84c; margin: 0.7rem auto 1.2rem; }
+    .hm-section-sub { font-size: 0.88rem; color: #556; text-align: center; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+
+    /* PILARES */
+    .hm-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; max-width: 800px; margin: 0 auto; }
+    .hm-pillar { border: 0.5px solid #ddd6c4; border-radius: 8px; padding: 1.2rem; background: #fff; }
+    .hm-pillar i { font-size: 22px; color: #c9a84c; margin-bottom: 10px; display: block; }
+    .hm-pillar-title { font-size: 0.9rem; font-weight: 500; color: #0d1b3e; margin-bottom: 6px; }
+    .hm-pillar-text { font-size: 0.8rem; color: #667; line-height: 1.6; }
+
+    /* PROFISSÕES */
+    .hm-profs { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; max-width: 800px; margin: 0 auto; }
+    .hm-prof { background: #fff; border: 0.5px solid #ddd6c4; border-radius: 8px; padding: 1rem; text-align: center; }
+    .hm-prof i { font-size: 22px; color: #c9a84c; margin-bottom: 6px; display: block; }
+    .hm-prof-name { font-size: 0.82rem; font-weight: 500; color: #0d1b3e; }
+
+    /* TUTORIAIS */
+    .hm-tuts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; max-width: 800px; margin: 0 auto; }
+    .hm-tut { background: #fff; border: 0.5px solid #ddd6c4; border-radius: 8px; padding: 1rem 1.2rem; }
+    .hm-tut-cat { font-size: 0.68rem; color: #c9a84c; font-weight: 500; letter-spacing: 1.5px; margin-bottom: 6px; }
+    .hm-tut-title { font-size: 0.85rem; font-weight: 500; color: #0d1b3e; line-height: 1.45; margin-bottom: 8px; }
+    .hm-tut-badge { font-size: 0.68rem; background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 10px; }
+
+    /* FUNDADOR */
+    .hm-founder { background: #0d1b3e; padding: 3rem 2rem; text-align: center; }
+    .hm-founder-label { font-size: 0.7rem; color: #c9a84c; letter-spacing: 2px; margin-bottom: 1rem; }
+    .hm-founder-text { color: #c8d8ec; font-size: 0.95rem; line-height: 1.9; max-width: 540px; margin: 0 auto 1.5rem; font-style: italic; font-family: 'Playfair Display', serif; }
+    .hm-founder-name { color: #ffffff; font-size: 0.92rem; font-weight: 500; }
+    .hm-founder-role { color: #5a7090; font-size: 0.78rem; margin-top: 4px; }
+
+    /* FORMULÁRIO */
+    .hm-form { padding: 3rem 2rem; text-align: center; background: #f8f7f2; }
+    .hm-input-row { display: flex; gap: 8px; max-width: 420px; margin: 1.5rem auto 0; flex-wrap: wrap; justify-content: center; }
+    .hm-input { flex: 1; min-width: 200px; padding: 0.85rem 1rem; border: 1px solid #ccc3ad; border-radius: 4px; font-size: 0.9rem; background: #fff; font-family: 'Inter', sans-serif; }
+
+    /* RODAPÉ */
+    .hm-footer { background: #060d1a; padding: 1.8rem 2rem; text-align: center; }
+    .hm-footer-text { color: #3a5070; font-size: 0.78rem; line-height: 1.9; }
+    .hm-footer-brand { color: #c9a84c; font-family: 'Playfair Display', serif; }
+
+    @media (max-width: 500px) {
+      .hm-hero-title { font-size: 1.6rem; }
+      .hm-btns { flex-direction: column; align-items: center; }
+      .hm-cta, .hm-cta-outline { width: 100%; max-width: 300px; }
+      .hm-anti-grid { grid-template-columns: 1fr; }
+      .hm-anti-sep { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hm-hero">
+    <div class="hm-badge-top">HERMESIA · INTELIGÊNCIA PROFISSIONAL</div>
+    <div class="hm-logo"><span>Hermes</span>IA</div>
+    <div class="hm-tagline">A IA que devolve o seu tempo</div>
+    <h1 class="hm-hero-title">Na era do excesso, nós devolvemos o que é mais precioso: <em>o seu tempo</em></h1>
+    <p class="hm-hero-sub">A HermesIA não foi criada para ocupar mais horas do seu dia. Foi criada para liberá-las — para que você possa pensar, viver e exercer sua profissão com mais presença.</p>
+    <div class="hm-btns">
+      <button class="hm-cta" onclick="document.getElementById('wl').scrollIntoView({behavior:'smooth'})">Quero recuperar meu tempo</button>
+      <button class="hm-cta-outline" onclick="document.getElementById('tuts').scrollIntoView({behavior:'smooth'})">Ver tutoriais gratuitos</button>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="hm-manifesto">
+    <p class="hm-quote">"A sociedade do cansaço é uma sociedade do desempenho. Seus habitantes não são mais sujeitos de obediência, mas sujeitos de desempenho e produção."</p>
+    <p class="hm-quote-attr">— Byung-Chul Han · A Sociedade do Cansaço</p>
+  </section>
+
+  <!-- ANTÍDOTO -->
+  <section class="hm-anti">
+    <div class="hm-anti-title">A HermesIA é o antídoto</div>
+    <div class="hm-anti-grid">
+      <div class="hm-anti-col">
+        <div class="hm-anti-label hm-neg">SEM IA</div>
+        <div class="hm-anti-item">Horas em tarefas repetitivas</div>
+        <div class="hm-anti-item">Documentos do zero</div>
+        <div class="hm-anti-item">Pesquisas demoradas</div>
+        <div class="hm-anti-item">Esgotamento profissional</div>
+      </div>
+      <div class="hm-anti-sep"></div>
+      <div class="hm-anti-col">
+        <div class="hm-anti-label hm-pos">COM HERMESIA</div>
+        <div class="hm-anti-item">Automação inteligente</div>
+        <div class="hm-anti-item">Minutas em segundos</div>
+        <div class="hm-anti-item">Respostas instantâneas</div>
+        <div class="hm-anti-item">Tempo para o que importa</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE É DIFERENTE -->
+  <section class="hm-section">
+    <h2 class="hm-section-title">Por que a HermesIA é diferente</h2>
+    <div class="hm-divider"></div>
+    <p class="hm-section-sub">Não é mais uma ferramenta de produtividade. É uma escolha filosófica: trabalhar melhor para viver mais.</p>
+    <div class="hm-pillars">
+      <div class="hm-pillar"><i class="ti ti-brain" aria-hidden="true"></i><div class="hm-pillar-title">Especializada</div><div class="hm-pillar-text">Treinada com vocabulário e fluxos da sua profissão, não genérica.</div></div>
+      <div class="hm-pillar"><i class="ti ti-clock-off" aria-hidden="true"></i><div class="hm-pillar-title">Liberta tempo</div><div class="hm-pillar-text">O objetivo não é fazer você trabalhar mais — é fazer você trabalhar menos.</div></div>
+      <div class="hm-pillar"><i class="ti ti-shield-check" aria-hidden="true"></i><div class="hm-pillar-title">Criada por quem usa</div><div class="hm-pillar-text">Fundada por um advogado sênior que viveu o esgotamento profissional.</div></div>
+      <div class="hm-pillar"><i class="ti ti-book" aria-hidden="true"></i><div class="hm-pillar-title">Tutoriais gratuitos</div><div class="hm-pillar-text">Conteúdo prático e gratuito para cada profissão aprender no seu ritmo.</div></div>
+    </div>
+  </section>
+
+  <!-- PROFISSÕES -->
+  <section class="hm-section-alt">
+    <h2 class="hm-section-title">Para qual profissão você trabalha?</h2>
+    <div class="hm-divider"></div>
+    <div class="hm-profs">
+      <div class="hm-prof"><i class="ti ti-gavel" aria-hidden="true"></i><div class="hm-prof-name">Direito</div></div>
+      <div class="hm-prof"><i class="ti ti-stethoscope" aria-hidden="true"></i><div class="hm-prof-name">Medicina</div></div>
+      <div class="hm-prof"><i class="ti ti-calculator" aria-hidden="true"></i><div class="hm-prof-name">Contabilidade</div></div>
+      <div class="hm-prof"><i class="ti ti-building-bank" aria-hidden="true"></i><div class="hm-prof-name">Finanças</div></div>
+      <div class="hm-prof"><i class="ti ti-school" aria-hidden="true"></i><div class="hm-prof-name">Educação</div></div>
+      <div class="hm-prof"><i class="ti ti-heart-rate-monitor" aria-hidden="true"></i><div class="hm-prof-name">Psicologia</div></div>
+      <div class="hm-prof"><i class="ti ti-building" aria-hidden="true"></i><div class="hm-prof-name">Engenharia</div></div>
+      <div class="hm-prof"><i class="ti ti-dental" aria-hidden="true"></i><div class="hm-prof-name">Odontologia</div></div>
+      <div class="hm-prof"><i class="ti ti-run" aria-hidden="true"></i><div class="hm-prof-name">Personal Trainer</div></div>
+      <div class="hm-prof"><i class="ti ti-dots" aria-hidden="true"></i><div class="hm-prof-name">E mais</div></div>
+    </div>
+  </section>
+
+  <!-- TUTORIAIS -->
+  <section class="hm-section" id="tuts">
+    <h2 class="hm-section-title">Tutoriais gratuitos por profissão</h2>
+    <div class="hm-divider"></div>
+    <p class="hm-section-sub">Aprenda a usar IA para recuperar horas do seu dia — conteúdo prático, direto ao ponto.</p>
+    <div class="hm-tuts">
+      <div class="hm-tut"><div class="hm-tut-cat">DIREITO</div><div class="hm-tut-title">Como redigir petições com IA em minutos</div><span class="hm-tut-badge">Gratuito</span></div>
+      <div class="hm-tut"><div class="hm-tut-cat">MEDICINA</div><div class="hm-tut-title">IA para otimizar prontuários e anamnese</div><span class="hm-tut-badge">Gratuito</span></div>
+      <div class="hm-tut"><div class="hm-tut-cat">CONTABILIDADE</div><div class="hm-tut-title">Análise de balanços automatizada com IA</div><span class="hm-tut-badge">Gratuito</span></div>
+      <div class="hm-tut"><div class="hm-tut-cat">PSICOLOGIA</div><div class="hm-tut-title">IA para relatórios e laudos psicológicos</div><span class="hm-tut-badge">Gratuito</span></div>
+    </div>
+  </section>
+
+  <!-- FUNDADOR -->
+  <section class="hm-founder">
+    <div class="hm-founder-label">NOTA DO FUNDADOR</div>
+    <p class="hm-founder-text">"Passei décadas como advogado sênior. Vi colegas adoecerem de excesso de trabalho, perdendo família, saúde e propósito. Criei a HermesIA movido pela convicção contrária à sociedade do cansaço: a tecnologia deve nos libertar — não nos aprisionar em mais produtividade. Aqui, a IA trabalha por você. Não o contrário."</p>
+    <div class="hm-founder-name">Fernando Antônio Vale Rodrigues</div>
+    <div class="hm-founder-role">Advogado Sênior · Fundador da HermesIA · Belo Horizonte, MG</div>
+  </section>
+
+  <!-- LISTA DE ESPERA -->
+  <section class="hm-form" id="wl">
+    <h2 class="hm-section-title">Recupere o seu tempo</h2>
+    <div class="hm-divider"></div>
+    <p class="hm-section-sub">Entre na lista de espera e seja um dos primeiros a ter acesso. Gratuito para começar.</p>
+    <div class="hm-input-row">
+      <input class="hm-input" type="email" placeholder="seu@email.com" />
+      <button class="hm-cta">Quero acesso</button>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="hm-footer">
+    <p class="hm-footer-text"><span class="hm-footer-brand">HermesIA</span> · hermesia.ia.br · fernando@hermesia.ia.br</p>
+    <p class="hm-footer-text">© 2026 HermesIA · Tecnologia que devolve o seu tempo</p>
+  </footer>
+
+</body>
+</html>
