@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise de balanços automatizada com IA | HermesIA</title>
+  <meta name="description" content="Guia prático para contadores: como usar inteligência artificial para analisar balanços e demonstrações financeiras com agilidade e segurança — passo a passo, exemplo de prompt e os cuidados do CFC e da LGPD.">
+  <meta name="keywords" content="IA para contadores, inteligência artificial contabilidade, análise de balanço IA, automação contábil, demonstrações financeiras IA">
+  <meta name="author" content="Fernando Antônio Vale Rodrigues">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hermesia.ia.br/tutoriais/balancos-com-ia.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Análise de balanços automatizada com IA">
+  <meta property="og:description" content="Passo a passo para contadores usarem IA na análise de balanços, com segurança.">
+  <meta property="og:url" content="https://hermesia.ia.br/tutoriais/balancos-com-ia.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HermesIA">
+  <meta property="og:image" content="https://hermesia.ia.br/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Análise de balanços automatizada com IA">
+  <meta name="twitter:description" content="Passo a passo para contadores usarem IA com segurança.">
+  <meta name="twitter:image" content="https://hermesia.ia.br/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Análise de balanços automatizada com IA",
+    "description": "Guia prático para contadores usarem inteligência artificial na análise de balanços, com qualidade e segurança.",
+    "author": { "@type": "Person", "name": "Fernando Antônio Vale Rodrigues" },
+    "publisher": { "@type": "Organization", "name": "HermesIA", "url": "https://hermesia.ia.br/" },
+    "datePublished": "2026-06-23",
+    "inLanguage": "pt-BR",
+    "mainEntityOfPage": "https://hermesia.ia.br/tutoriais/balancos-com-ia.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fff; line-height: 1.8; }
+    .ar-top { background: #0d1b3e; padding: 1.4rem 2rem; text-align: center; }
+    .ar-top a { text-decoration: none; }
+    .ar-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #c9a84c; letter-spacing: 1px; }
+    .ar-logo span { color: #fff; }
+    .ar-wrap { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+    .ar-crumb { font-size: 0.78rem; color: #8a6b1f; margin-bottom: 1.5rem; }
+    .ar-crumb a { color: #8a6b1f; text-decoration: none; }
+    .ar-cat { font-size: 0.72rem; color: #c9a84c; font-weight: 500; letter-spacing: 2px; margin-bottom: 0.8rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #0d1b3e; line-height: 1.3; margin-bottom: 1rem; }
+    .ar-lead { font-size: 1.05rem; color: #445; margin-bottom: 2rem; font-weight: 300; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0d1b3e; margin: 2.2rem 0 0.8rem; }
+    h3 { font-size: 1.05rem; color: #0d1b3e; margin: 1.6rem 0 0.5rem; font-weight: 500; }
+    p { font-size: 0.97rem; color: #333; margin-bottom: 1rem; }
+    ul, ol { margin: 0 0 1.2rem 1.3rem; }
+    li { font-size: 0.97rem; color: #333; margin-bottom: 0.5rem; }
+    .ar-prompt { background: #0a1428; color: #d7e2f2; border-left: 3px solid #c9a84c; border-radius: 6px; padding: 1.2rem 1.4rem; font-size: 0.9rem; line-height: 1.7; margin: 1.2rem 0; white-space: pre-wrap; font-family: 'Inter', sans-serif; }
+    .ar-note { background: #fdf6e3; border: 0.5px solid #e8d9a8; border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
+    .ar-note-title { font-size: 0.8rem; font-weight: 500; color: #8a6b1f; letter-spacing: 1px; margin-bottom: 0.5rem; }
+    .ar-note p { font-size: 0.9rem; color: #5a4a1f; margin-bottom: 0.5rem; }
+    .ar-cta-box { background: #0d1b3e; border-radius: 10px; padding: 2rem; text-align: center; margin: 2.5rem 0 1rem; }
+    .ar-cta-box h2 { color: #fff; margin-top: 0; }
+    .ar-cta-box p { color: #c8d8ec; font-size: 0.92rem; }
+    .ar-cta { display: inline-block; background: #c9a84c; color: #fdf6e3; padding: 1rem 2.4rem; border-radius: 4px; font-size: 0.9rem; font-weight: 500; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; margin-top: 0.8rem; }
+    .ar-cta:hover { background: #dfc05e; }
+    .ar-footer { background: #060d1a; padding: 1.8rem 2rem; text-align: center; }
+    .ar-footer p { color: #3a5070; font-size: 0.78rem; margin: 0; }
+    .ar-footer .b { color: #c9a84c; font-family: 'Playfair Display', serif; }
+    @media (max-width: 500px) { h1 { font-size: 1.6rem; } }
+  </style>
+</head>
+<body>
+  <header class="ar-top"><a href="/"><span class="ar-logo"><span>Hermes</span>IA</span></a></header>
+  <article class="ar-wrap">
+    <nav class="ar-crumb"><a href="/">Início</a> › Tutoriais › Contabilidade</nav>
+    <div class="ar-cat">CONTABILIDADE</div>
+    <h1>Análise de balanços automatizada com IA</h1>
+    <p class="ar-lead">Ler um balanço, calcular indicadores e transformar números em um parecer claro leva tempo — tempo que poderia ir para a consultoria de maior valor ao cliente. Veja como usar inteligência artificial para acelerar a análise sem abrir mão do rigor técnico.</p>
+
+    <h2>Por que isso importa</h2>
+    <p>Grande parte do trabalho contábil é repetitivo: extrair dados, calcular índices, comparar períodos, redigir o parecer. A IA não substitui o julgamento do contador, mas elimina esse esforço braçal — liberando você para a análise estratégica.</p>
+
+    <h2>Passo a passo</h2>
+
+    <h3>1. Organize os dados de entrada</h3>
+    <p>Reúna o balanço patrimonial e a DRE em formato estruturado (planilha ou texto). Quanto mais limpos os dados, mais confiável a análise. Confira os totais antes de prosseguir.</p>
+
+    <h3>2. Peça os indicadores e a leitura</h3>
+    <p>A IA pode calcular liquidez, endividamento, rentabilidade e margens, e ainda redigir uma primeira leitura comparativa entre períodos — que você então valida.</p>
+
+    <h3>3. Use um prompt estruturado</h3>
+    <p>Um bom ponto de partida:</p>
+    <div class="ar-prompt">Você é um assistente de análise contábil. Com base nos dados abaixo, calcule os principais indicadores e redija uma análise objetiva.
+
+Dados (Balanço e DRE): [cole os dados].
+Períodos: [ex.: 2024 vs 2025].
+
+Calcule: liquidez corrente, liquidez geral, endividamento, margem líquida e rentabilidade. Apresente em tabela e, em seguida, um parágrafo de interpretação. Mostre as fórmulas usadas e não invente valores que não estejam nos dados.</div>
+    <p>Pedir as fórmulas e proibir valores inventados permite que você confira cada cálculo.</p>
+
+    <h3>4. Confira os cálculos e assine o parecer</h3>
+    <p>Refaça por amostragem os principais indicadores e valide a interpretação à luz do contexto do cliente. O parecer é seu — a IA apenas acelera o caminho até ele.</p>
+
+    <div class="ar-note">
+      <div class="ar-note-title">📊 CUIDADOS ÉTICOS E DE SEGURANÇA</div>
+      <p><strong>Confira todos os cálculos.</strong> A IA pode errar contas ou "alucinar" valores. Nenhum indicador deve ir ao cliente sem verificação.</p>
+      <p><strong>Proteja dados sigilosos.</strong> Informações financeiras de clientes são confidenciais. Anonimize quando possível e use ferramentas que respeitem a LGPD.</p>
+      <p><strong>Responsabilidade técnica.</strong> A análise e a autoria do parecer permanecem do contador, conforme as normas do CFC.</p>
+    </div>
+
+    <h2>O resultado</h2>
+    <p>Com esse fluxo, a análise que tomava horas vira minutos, e você dedica seu tempo ao que o cliente realmente valoriza: a interpretação e o conselho. Esse é o propósito da HermesIA: a tecnologia trabalhando por você, não o contrário.</p>
+
+    <div class="ar-cta-box">
+      <h2>Quer a IA já adaptada à Contabilidade?</h2>
+      <p>A HermesIA está sendo construída para contadores — com os fluxos e o vocabulário da sua área. Entre na lista de espera.</p>
+      <a class="ar-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfs8822dlQtsHrnqwZQZ8MRm2zxog68Mrh0qeFDs0vU2ogMvQ/viewform" target="_blank" rel="noopener">Quero recuperar meu tempo</a>
+    </div>
+  </article>
+  <footer class="ar-footer">
+    <p><span class="b">HermesIA</span> · hermesia.ia.br · fernando@hermesia.ia.br</p>
+    <p>© 2026 HermesIA · Tecnologia que devolve o seu tempo</p>
+  </footer>
+</body>
+</html>
