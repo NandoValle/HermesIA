@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA para montar treinos e acompanhar alunos | HermesIA</title>
+  <meta name="description" content="Guia prático para personal trainers: como usar inteligência artificial para montar treinos e acompanhar alunos com agilidade e segurança — passo a passo, exemplo de prompt e os cuidados do CREF e da LGPD.">
+  <meta name="keywords" content="IA para personal trainer, inteligência artificial educação física, montar treino com IA, acompanhamento de alunos IA, automação personal">
+  <meta name="author" content="Fernando Antônio Vale Rodrigues">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hermesia.ia.br/tutoriais/personal-trainer-com-ia.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="IA para montar treinos e acompanhar alunos">
+  <meta property="og:description" content="Passo a passo para personal trainers usarem IA com segurança.">
+  <meta property="og:url" content="https://hermesia.ia.br/tutoriais/personal-trainer-com-ia.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HermesIA">
+  <meta property="og:image" content="https://hermesia.ia.br/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IA para montar treinos e acompanhar alunos">
+  <meta name="twitter:description" content="Passo a passo para personal trainers usarem IA com segurança.">
+  <meta name="twitter:image" content="https://hermesia.ia.br/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "IA para montar treinos e acompanhar alunos",
+    "description": "Guia prático para personal trainers usarem inteligência artificial para montar treinos e acompanhar alunos, com qualidade e segurança.",
+    "author": { "@type": "Person", "name": "Fernando Antônio Vale Rodrigues" },
+    "publisher": { "@type": "Organization", "name": "HermesIA", "url": "https://hermesia.ia.br/" },
+    "datePublished": "2026-06-23",
+    "inLanguage": "pt-BR",
+    "mainEntityOfPage": "https://hermesia.ia.br/tutoriais/personal-trainer-com-ia.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fff; line-height: 1.8; }
+    .ar-top { background: #0d1b3e; padding: 1.4rem 2rem; text-align: center; }
+    .ar-top a { text-decoration: none; }
+    .ar-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #c9a84c; letter-spacing: 1px; }
+    .ar-logo span { color: #fff; }
+    .ar-wrap { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+    .ar-crumb { font-size: 0.78rem; color: #8a6b1f; margin-bottom: 1.5rem; }
+    .ar-crumb a { color: #8a6b1f; text-decoration: none; }
+    .ar-cat { font-size: 0.72rem; color: #c9a84c; font-weight: 500; letter-spacing: 2px; margin-bottom: 0.8rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #0d1b3e; line-height: 1.3; margin-bottom: 1rem; }
+    .ar-lead { font-size: 1.05rem; color: #445; margin-bottom: 2rem; font-weight: 300; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0d1b3e; margin: 2.2rem 0 0.8rem; }
+    h3 { font-size: 1.05rem; color: #0d1b3e; margin: 1.6rem 0 0.5rem; font-weight: 500; }
+    p { font-size: 0.97rem; color: #333; margin-bottom: 1rem; }
+    ul, ol { margin: 0 0 1.2rem 1.3rem; }
+    li { font-size: 0.97rem; color: #333; margin-bottom: 0.5rem; }
+    .ar-prompt { background: #0a1428; color: #d7e2f2; border-left: 3px solid #c9a84c; border-radius: 6px; padding: 1.2rem 1.4rem; font-size: 0.9rem; line-height: 1.7; margin: 1.2rem 0; white-space: pre-wrap; font-family: 'Inter', sans-serif; }
+    .ar-note { background: #fdf6e3; border: 0.5px solid #e8d9a8; border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
+    .ar-note-title { font-size: 0.8rem; font-weight: 500; color: #8a6b1f; letter-spacing: 1px; margin-bottom: 0.5rem; }
+    .ar-note p { font-size: 0.9rem; color: #5a4a1f; margin-bottom: 0.5rem; }
+    .ar-cta-box { background: #0d1b3e; border-radius: 10px; padding: 2rem; text-align: center; margin: 2.5rem 0 1rem; }
+    .ar-cta-box h2 { color: #fff; margin-top: 0; }
+    .ar-cta-box p { color: #c8d8ec; font-size: 0.92rem; }
+    .ar-cta { display: inline-block; background: #c9a84c; color: #fdf6e3; padding: 1rem 2.4rem; border-radius: 4px; font-size: 0.9rem; font-weight: 500; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; margin-top: 0.8rem; }
+    .ar-cta:hover { background: #dfc05e; }
+    .ar-footer { background: #060d1a; padding: 1.8rem 2rem; text-align: center; }
+    .ar-footer p { color: #3a5070; font-size: 0.78rem; margin: 0; }
+    .ar-footer .b { color: #c9a84c; font-family: 'Playfair Display', serif; }
+    @media (max-width: 500px) { h1 { font-size: 1.6rem; } }
+  </style>
+</head>
+<body>
+  <header class="ar-top"><a href="/"><span class="ar-logo"><span>Hermes</span>IA</span></a></header>
+  <article class="ar-wrap">
+    <nav class="ar-crumb"><a href="/">Início</a> › Tutoriais › Personal Trainer</nav>
+    <div class="ar-cat">PERSONAL TRAINER</div>
+    <h1>IA para montar treinos e acompanhar alunos</h1>
+    <p class="ar-lead">Montar fichas de treino, organizar progressões e acompanhar a evolução de cada aluno toma horas fora da academia. Veja como usar inteligência artificial para acelerar a parte braçal e dedicar mais energia ao acompanhamento de verdade.</p>
+
+    <h2>Por que isso importa</h2>
+    <p>Boa parte do trabalho do personal acontece fora do treino: planejar, montar fichas, ajustar cargas, registrar evolução. A IA não substitui a sua avaliação física nem a prescrição responsável, mas elimina o esforço de organização — devolvendo tempo a você.</p>
+
+    <h2>Passo a passo</h2>
+
+    <h3>1. Reúna a avaliação e os objetivos</h3>
+    <p>Antes de montar qualquer treino, organize: avaliação física, histórico, restrições, objetivos e disponibilidade do aluno. A prescrição responsável parte sempre da sua avaliação profissional.</p>
+
+    <h3>2. Peça a estrutura do treino</h3>
+    <p>Com os parâmetros que você definiu, a IA pode estruturar a divisão de treinos, sugerir progressões e organizar a ficha — que você valida e ajusta tecnicamente.</p>
+
+    <h3>3. Use um prompt estruturado</h3>
+    <p>Um bom ponto de partida:</p>
+    <div class="ar-prompt">Você é um assistente de organização de treinos. Estruture uma ficha com base nos parâmetros que EU defini (não prescreva por conta própria).
+
+Objetivo: [hipertrofia/emagrecimento/condicionamento].
+Frequência: [x dias/semana].
+Restrições do aluno: [liste].
+Exercícios que eu já selecionei: [liste].
+
+Organize em divisão semanal, com séries, repetições e descanso conforme os parâmetros que forneci. Apresente em formato de ficha clara. Não inclua exercícios que possam conflitar com as restrições informadas.</div>
+    <p>Repare: a prescrição parte de você — a IA apenas organiza o que você definiu.</p>
+
+    <h3>4. Valide tecnicamente e acompanhe</h3>
+    <p>Revise a ficha à luz da avaliação do aluno, ajuste cargas e execução, e acompanhe presencialmente. A prescrição e a responsabilidade técnica são suas.</p>
+
+    <div class="ar-note">
+      <div class="ar-note-title">💪 CUIDADOS ÉTICOS E DE SEGURANÇA</div>
+      <p><strong>A prescrição é profissional.</strong> A IA organiza, mas a avaliação física e a prescrição de exercícios são atribuições do profissional habilitado — nunca delegue isso à IA.</p>
+      <p><strong>Atenção a restrições e saúde.</strong> Alunos com condições de saúde podem exigir liberação médica. A IA não avalia riscos clínicos.</p>
+      <p><strong>Proteja dados dos alunos.</strong> Avaliações e dados de saúde são sensíveis. Anonimize quando possível e use ferramentas que respeitem a LGPD. Responsabilidade conforme as normas do CREF.</p>
+    </div>
+
+    <h2>O resultado</h2>
+    <p>Com esse fluxo, a montagem de fichas que tomava horas vira minutos, e você foca onde faz diferença: na avaliação, na correção e no acompanhamento do aluno. Esse é o propósito da HermesIA: a tecnologia trabalhando por você, não o contrário.</p>
+
+    <div class="ar-cta-box">
+      <h2>Quer a IA já adaptada ao seu trabalho?</h2>
+      <p>A HermesIA está sendo construída para profissionais liberais — com os fluxos e o vocabulário da sua área. Entre na lista de espera.</p>
+      <a class="ar-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfs8822dlQtsHrnqwZQZ8MRm2zxog68Mrh0qeFDs0vU2ogMvQ/viewform" target="_blank" rel="noopener">Quero recuperar meu tempo</a>
+    </div>
+  </article>
+  <footer class="ar-footer">
+    <p><span class="b">HermesIA</span> · hermesia.ia.br · fernando@hermesia.ia.br</p>
+    <p>© 2026 HermesIA · Tecnologia que devolve o seu tempo</p>
+  </footer>
+</body>
+</html>

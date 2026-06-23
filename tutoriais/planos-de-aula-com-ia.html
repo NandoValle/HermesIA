@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA para planos de aula e materiais didáticos | HermesIA</title>
+  <meta name="description" content="Guia prático para educadores: como usar inteligência artificial para criar planos de aula e materiais didáticos com agilidade — passo a passo, exemplo de prompt e os cuidados pedagógicos e de segurança.">
+  <meta name="keywords" content="IA para professores, inteligência artificial educação, plano de aula com IA, material didático IA, automação ensino">
+  <meta name="author" content="Fernando Antônio Vale Rodrigues">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hermesia.ia.br/tutoriais/planos-de-aula-com-ia.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="IA para planos de aula e materiais didáticos">
+  <meta property="og:description" content="Passo a passo para educadores criarem planos de aula com IA.">
+  <meta property="og:url" content="https://hermesia.ia.br/tutoriais/planos-de-aula-com-ia.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HermesIA">
+  <meta property="og:image" content="https://hermesia.ia.br/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IA para planos de aula e materiais didáticos">
+  <meta name="twitter:description" content="Passo a passo para educadores criarem planos de aula com IA.">
+  <meta name="twitter:image" content="https://hermesia.ia.br/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "IA para planos de aula e materiais didáticos",
+    "description": "Guia prático para educadores usarem inteligência artificial em planos de aula e materiais, com qualidade.",
+    "author": { "@type": "Person", "name": "Fernando Antônio Vale Rodrigues" },
+    "publisher": { "@type": "Organization", "name": "HermesIA", "url": "https://hermesia.ia.br/" },
+    "datePublished": "2026-06-23",
+    "inLanguage": "pt-BR",
+    "mainEntityOfPage": "https://hermesia.ia.br/tutoriais/planos-de-aula-com-ia.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fff; line-height: 1.8; }
+    .ar-top { background: #0d1b3e; padding: 1.4rem 2rem; text-align: center; }
+    .ar-top a { text-decoration: none; }
+    .ar-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #c9a84c; letter-spacing: 1px; }
+    .ar-logo span { color: #fff; }
+    .ar-wrap { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+    .ar-crumb { font-size: 0.78rem; color: #8a6b1f; margin-bottom: 1.5rem; }
+    .ar-crumb a { color: #8a6b1f; text-decoration: none; }
+    .ar-cat { font-size: 0.72rem; color: #c9a84c; font-weight: 500; letter-spacing: 2px; margin-bottom: 0.8rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #0d1b3e; line-height: 1.3; margin-bottom: 1rem; }
+    .ar-lead { font-size: 1.05rem; color: #445; margin-bottom: 2rem; font-weight: 300; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0d1b3e; margin: 2.2rem 0 0.8rem; }
+    h3 { font-size: 1.05rem; color: #0d1b3e; margin: 1.6rem 0 0.5rem; font-weight: 500; }
+    p { font-size: 0.97rem; color: #333; margin-bottom: 1rem; }
+    ul, ol { margin: 0 0 1.2rem 1.3rem; }
+    li { font-size: 0.97rem; color: #333; margin-bottom: 0.5rem; }
+    .ar-prompt { background: #0a1428; color: #d7e2f2; border-left: 3px solid #c9a84c; border-radius: 6px; padding: 1.2rem 1.4rem; font-size: 0.9rem; line-height: 1.7; margin: 1.2rem 0; white-space: pre-wrap; font-family: 'Inter', sans-serif; }
+    .ar-note { background: #fdf6e3; border: 0.5px solid #e8d9a8; border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
+    .ar-note-title { font-size: 0.8rem; font-weight: 500; color: #8a6b1f; letter-spacing: 1px; margin-bottom: 0.5rem; }
+    .ar-note p { font-size: 0.9rem; color: #5a4a1f; margin-bottom: 0.5rem; }
+    .ar-cta-box { background: #0d1b3e; border-radius: 10px; padding: 2rem; text-align: center; margin: 2.5rem 0 1rem; }
+    .ar-cta-box h2 { color: #fff; margin-top: 0; }
+    .ar-cta-box p { color: #c8d8ec; font-size: 0.92rem; }
+    .ar-cta { display: inline-block; background: #c9a84c; color: #fdf6e3; padding: 1rem 2.4rem; border-radius: 4px; font-size: 0.9rem; font-weight: 500; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; margin-top: 0.8rem; }
+    .ar-cta:hover { background: #dfc05e; }
+    .ar-footer { background: #060d1a; padding: 1.8rem 2rem; text-align: center; }
+    .ar-footer p { color: #3a5070; font-size: 0.78rem; margin: 0; }
+    .ar-footer .b { color: #c9a84c; font-family: 'Playfair Display', serif; }
+    @media (max-width: 500px) { h1 { font-size: 1.6rem; } }
+  </style>
+</head>
+<body>
+  <header class="ar-top"><a href="/"><span class="ar-logo"><span>Hermes</span>IA</span></a></header>
+  <article class="ar-wrap">
+    <nav class="ar-crumb"><a href="/">Início</a> › Tutoriais › Educação</nav>
+    <div class="ar-cat">EDUCAÇÃO</div>
+    <h1>IA para planos de aula e materiais didáticos</h1>
+    <p class="ar-lead">Preparar aulas, criar exercícios e produzir material de apoio toma horas fora da sala — tempo que poderia ir para o que importa: ensinar e descansar. Veja como usar inteligência artificial para acelerar a preparação sem perder a sua intenção pedagógica.</p>
+
+    <h2>Por que isso importa</h2>
+    <p>Muito do trabalho docente acontece fora da aula: planejar, estruturar conteúdo, montar atividades, corrigir. A IA não substitui a sua didática nem o vínculo com os alunos, mas elimina o esforço de produção — devolvendo tempo a você.</p>
+
+    <h2>Passo a passo</h2>
+
+    <h3>1. Defina objetivo, nível e tempo</h3>
+    <p>Antes de tudo, deixe claro: tema, série/nível, objetivos de aprendizagem e duração. Quanto mais específico, mais alinhado vem o material.</p>
+
+    <h3>2. Peça o plano e as variações</h3>
+    <p>A IA pode estruturar o plano de aula, sugerir atividades em diferentes níveis de dificuldade e gerar exercícios — que você adapta à realidade da sua turma.</p>
+
+    <h3>3. Use um prompt estruturado</h3>
+    <p>Um bom ponto de partida:</p>
+    <div class="ar-prompt">Você é um assistente pedagógico. Crie um plano de aula sobre [tema].
+
+Nível: [série/idade].
+Duração: [tempo].
+Objetivos de aprendizagem: [liste].
+
+Estruture em: objetivos, materiais, introdução, desenvolvimento, atividade prática e avaliação. Sugira 3 exercícios em níveis crescentes de dificuldade. Use linguagem adequada ao nível e indique onde devo personalizar para minha turma.</div>
+    <p>Pedir pontos de personalização garante que a aula reflita a sua intenção, não um molde genérico.</p>
+
+    <h3>4. Revise e adapte à sua turma</h3>
+    <p>Ajuste o plano à realidade dos alunos, confira fatos e referências, e some a sua experiência pedagógica. A condução da aula é insubstituivelmente sua.</p>
+
+    <div class="ar-note">
+      <div class="ar-note-title">🎓 CUIDADOS PEDAGÓGICOS E DE SEGURANÇA</div>
+      <p><strong>Confira fatos e fontes.</strong> A IA pode errar datas, conceitos ou referências. Todo conteúdo deve ser revisado antes de ir para a sala.</p>
+      <p><strong>Proteja dados de alunos.</strong> Não insira informações pessoais de estudantes em ferramentas genéricas — atenção especial com menores e com a LGPD.</p>
+      <p><strong>A didática é sua.</strong> A IA gera material de apoio; o vínculo, a mediação e a avaliação dependem do educador.</p>
+    </div>
+
+    <h2>O resultado</h2>
+    <p>Com esse fluxo, a preparação que tomava noites inteiras vira minutos, e você recupera tempo e energia para ensinar com presença. Esse é o propósito da HermesIA: a tecnologia trabalhando por você, não o contrário.</p>
+
+    <div class="ar-cta-box">
+      <h2>Quer a IA já adaptada à Educação?</h2>
+      <p>A HermesIA está sendo construída para educadores — com os fluxos e o vocabulário da sua área. Entre na lista de espera.</p>
+      <a class="ar-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfs8822dlQtsHrnqwZQZ8MRm2zxog68Mrh0qeFDs0vU2ogMvQ/viewform" target="_blank" rel="noopener">Quero recuperar meu tempo</a>
+    </div>
+  </article>
+  <footer class="ar-footer">
+    <p><span class="b">HermesIA</span> · hermesia.ia.br · fernando@hermesia.ia.br</p>
+    <p>© 2026 HermesIA · Tecnologia que devolve o seu tempo</p>
+  </footer>
+</body>
+</html>
