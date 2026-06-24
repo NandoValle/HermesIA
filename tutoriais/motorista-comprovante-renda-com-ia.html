@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprovante de renda para motorista de app com IA | HermesIA</title>
+  <meta name="description" content="Guia prático para motoristas de Uber e 99: como usar inteligência artificial para montar um comprovante/declaração de renda organizado a partir dos seus ganhos nos apps — passo a passo e modelo pronto.">
+  <meta name="keywords" content="comprovante de renda motorista de app, declaração de renda Uber, renda 99 motorista, IA para motorista de aplicativo, comprovar renda autônomo">
+  <meta name="author" content="Fernando Antônio Vale Rodrigues">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hermesia.ia.br/tutoriais/motorista-comprovante-renda-com-ia.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Comprovante de renda para motorista de app com IA">
+  <meta property="og:description" content="Passo a passo para motoristas de app montarem comprovante de renda usando IA.">
+  <meta property="og:url" content="https://hermesia.ia.br/tutoriais/motorista-comprovante-renda-com-ia.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HermesIA">
+  <meta property="og:image" content="https://hermesia.ia.br/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Comprovante de renda para motorista de app com IA">
+  <meta name="twitter:description" content="Passo a passo para motoristas de app comprovarem renda com IA.">
+  <meta name="twitter:image" content="https://hermesia.ia.br/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Comprovante de renda para motorista de app com IA",
+    "description": "Guia prático para motoristas de Uber e 99 montarem comprovante de renda usando inteligência artificial.",
+    "author": { "@type": "Person", "name": "Fernando Antônio Vale Rodrigues" },
+    "publisher": { "@type": "Organization", "name": "HermesIA", "url": "https://hermesia.ia.br/" },
+    "datePublished": "2026-06-24",
+    "inLanguage": "pt-BR",
+    "mainEntityOfPage": "https://hermesia.ia.br/tutoriais/motorista-comprovante-renda-com-ia.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fff; line-height: 1.8; }
+    .ar-top { background: #0d1b3e; padding: 1.4rem 2rem; text-align: center; }
+    .ar-top a { text-decoration: none; }
+    .ar-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #c9a84c; letter-spacing: 1px; }
+    .ar-logo span { color: #fff; }
+    .ar-wrap { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+    .ar-crumb { font-size: 0.78rem; color: #8a6b1f; margin-bottom: 1.5rem; }
+    .ar-crumb a { color: #8a6b1f; text-decoration: none; }
+    .ar-cat { font-size: 0.72rem; color: #c9a84c; font-weight: 500; letter-spacing: 2px; margin-bottom: 0.8rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #0d1b3e; line-height: 1.3; margin-bottom: 1rem; }
+    .ar-lead { font-size: 1.05rem; color: #445; margin-bottom: 2rem; font-weight: 300; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0d1b3e; margin: 2.2rem 0 0.8rem; }
+    h3 { font-size: 1.05rem; color: #0d1b3e; margin: 1.6rem 0 0.5rem; font-weight: 500; }
+    p { font-size: 0.97rem; color: #333; margin-bottom: 1rem; }
+    ul, ol { margin: 0 0 1.2rem 1.3rem; }
+    li { font-size: 0.97rem; color: #333; margin-bottom: 0.5rem; }
+    .ar-prompt { background: #0a1428; color: #d7e2f2; border-left: 3px solid #c9a84c; border-radius: 6px; padding: 1.2rem 1.4rem; font-size: 0.9rem; line-height: 1.7; margin: 1.2rem 0; white-space: pre-wrap; font-family: 'Inter', sans-serif; }
+    .ar-note { background: #fdf6e3; border: 0.5px solid #e8d9a8; border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
+    .ar-note-title { font-size: 0.8rem; font-weight: 500; color: #8a6b1f; letter-spacing: 1px; margin-bottom: 0.5rem; }
+    .ar-note p { font-size: 0.9rem; color: #5a4a1f; margin-bottom: 0.5rem; }
+    .ar-cta-box { background: #0d1b3e; border-radius: 10px; padding: 2rem; text-align: center; margin: 2.5rem 0 1rem; }
+    .ar-cta-box h2 { color: #fff; margin-top: 0; }
+    .ar-cta-box p { color: #c8d8ec; font-size: 0.92rem; }
+    .ar-cta { display: inline-block; background: #c9a84c; color: #fdf6e3; padding: 1rem 2.4rem; border-radius: 4px; font-size: 0.9rem; font-weight: 500; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; margin-top: 0.8rem; }
+    .ar-cta:hover { background: #dfc05e; }
+    .ar-footer { background: #060d1a; padding: 1.8rem 2rem; text-align: center; }
+    .ar-footer p { color: #3a5070; font-size: 0.78rem; margin: 0; }
+    .ar-footer .b { color: #c9a84c; font-family: 'Playfair Display', serif; }
+    @media (max-width: 500px) { h1 { font-size: 1.6rem; } }
+  </style>
+</head>
+<body>
+  <header class="ar-top"><a href="/"><span class="ar-logo"><span>Hermes</span>IA</span></a></header>
+  <article class="ar-wrap">
+    <nav class="ar-crumb"><a href="/">Início</a> › Tutoriais › Motorista de app</nav>
+    <div class="ar-cat">MOTORISTA DE APP</div>
+    <h1>Comprovante de renda para motorista de app</h1>
+    <p class="ar-lead">Alugar uma casa, financiar um carro ou pegar um empréstimo trava sempre na mesma pergunta: "cadê seu comprovante de renda?". Quem dirige por app não tem holerite — mas pode montar uma declaração de renda organizada a partir dos ganhos dos apps, e a IA faz isso por você.</p>
+
+    <h2>Por que isso importa</h2>
+    <p>Os apps mostram seus ganhos, mas em telas soltas, sem um documento que o banco ou a imobiliária aceite com facilidade. Uma declaração de renda bem organizada, com os valores mês a mês e uma média clara, dá muito mais credibilidade — e abre portas que ficavam fechadas.</p>
+
+    <h2>Passo a passo</h2>
+
+    <h3>1. Junte seus ganhos dos apps</h3>
+    <p>Pegue no app (Uber, 99) o relatório de ganhos dos últimos meses (o ideal são 6 a 12 meses). Anote o valor recebido em cada mês. Se tiver extrato bancário dos repasses, melhor ainda.</p>
+
+    <h3>2. Deixe a IA montar a declaração</h3>
+    <p>Você passa os números; a IA organiza numa declaração de renda clara, com tabela mês a mês, total e média mensal — pronta pra imprimir e assinar.</p>
+
+    <h3>3. Use este pedido pronto</h3>
+    <div class="ar-prompt">Monte uma declaração de renda para mim, motorista de aplicativo autônomo, a partir dos meus ganhos abaixo.
+
+Meus ganhos por mês: [ex.: jan R$ 2.800, fev R$ 3.100, ...].
+Apps em que trabalho: [Uber, 99...].
+Meus dados: [nome completo, CPF].
+
+Organize numa declaração com: tabela mês a mês, renda total no período e média mensal. Use linguagem formal de declaração, com espaço para data e assinatura. Some os valores corretamente e não invente números que eu não informei.</div>
+
+    <h3>4. Confira, assine e (se precisar) reconheça firma</h3>
+    <p>Revise os valores, imprima, assine. Para alguns fins (imobiliária, banco), pode ser pedido reconhecimento de firma em cartório ou a declaração junto com extratos. Anexe os comprovantes dos apps pra dar mais força.</p>
+
+    <div class="ar-note">
+      <div class="ar-note-title">⚠️ IMPORTANTE</div>
+      <p><strong>Declare só a verdade.</strong> A declaração de renda tem valor legal — coloque apenas valores reais e comprováveis. Informação falsa pode dar problema sério.</p>
+      <p><strong>Aceitação varia.</strong> Cada banco/imobiliária tem suas regras; alguns pedem documentos extras (extrato, IR). A declaração ajuda, mas a decisão é de quem recebe.</p>
+      <p><strong>Dica:</strong> declarar como MEI ou autônomo e guardar extratos facilita muito comprovar renda no futuro.</p>
+    </div>
+
+    <h2>O resultado</h2>
+    <p>Em minutos você tem um documento organizado que transforma "não tenho como comprovar" em "aqui está minha renda". É a HermesIA resolvendo a burocracia por você, pra você focar no volante e na vida.</p>
+
+    <div class="ar-cta-box">
+      <h2>Quer esse documento pronto na mão?</h2>
+      <p>A HermesIA está sendo construída pra resolver a burocracia de quem trabalha duro — você passa os dados, a gente entrega pronto. Entre na lista de espera.</p>
+      <a class="ar-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfs8822dlQtsHrnqwZQZ8MRm2zxog68Mrh0qeFDs0vU2ogMvQ/viewform" target="_blank" rel="noopener">Quero recuperar meu tempo</a>
+    </div>
+  </article>
+  <footer class="ar-footer">
+    <p><span class="b">HermesIA</span> · hermesia.ia.br · fernando@hermesia.ia.br</p>
+    <p>© 2026 HermesIA · Tecnologia que devolve o seu tempo</p>
+  </footer>
+</body>
+</html>
