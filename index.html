@@ -192,6 +192,14 @@
     </div>
   </section>
 
+  <!-- VÍDEO -->
+  <section class="hm-video-sec">
+    <video class="hm-video" autoplay muted loop playsinline preload="auto" poster="/emblema.png">
+      <source src="/video-hermesia.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+  </section>
+
   <!-- MANIFESTO -->
   <section class="hm-manifesto">
     <p class="hm-quote">"A sociedade do cansaço é uma sociedade do desempenho. Seus habitantes não são mais sujeitos de obediência, mas sujeitos de desempenho e produção."</p>
@@ -377,6 +385,8 @@
   </a>
 
   <style>
+    .hm-video-sec{background:#0d1b3e;padding:0 1.2rem 2.5rem;text-align:center;}
+    .hm-video{width:100%;max-width:900px;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45),0 0 0 1px rgba(201,168,76,.35);display:block;margin:0 auto;}
     .hm-whatsapp{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:9999;transition:transform .2s ease,box-shadow .2s ease;}
     .hm-whatsapp:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(0,0,0,.4);}
     @media(max-width:600px){.hm-whatsapp{width:54px;height:54px;right:16px;bottom:16px;}.hm-whatsapp svg{width:28px;height:28px;}}
