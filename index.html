@@ -160,6 +160,15 @@
     .hm-demo-foot { text-align: center; }
     .hm-price { font-size: 0.92rem; color: #d0daea; text-align: center; margin-top: 1.6rem; }
     .hm-price b { color: #e5c06a; }
+    .hm-demo3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 920px; margin: 0 auto; }
+    .hm-demo3 .card { background: #0d1b3e; border: 0.5px solid #1e3060; border-radius: 10px; padding: 1.2rem 1.3rem; }
+    .hm-demo3 .cat { font-size: 0.68rem; letter-spacing: 1.5px; color: #c9a84c; font-weight: 500; margin-bottom: 0.7rem; }
+    .hm-demo3 .you { font-size: 0.82rem; color: #d0daea; font-style: italic; line-height: 1.55; }
+    .hm-demo3 .sep { display: flex; align-items: center; gap: 6px; color: #c9a84c; font-size: 0.66rem; letter-spacing: 1px; margin: 0.8rem 0; }
+    .hm-demo3 .sep::before, .hm-demo3 .sep::after { content: ''; height: 0.5px; background: #1e3060; flex: 1; }
+    .hm-demo3 .out { font-size: 0.8rem; color: #c8d2e2; line-height: 1.5; }
+    .hm-demo3 .out b { color: #fff; }
+    @media (max-width: 700px) { .hm-demo3 { grid-template-columns: 1fr; } }
     @media (max-width: 640px) { .hm-demo-grid { grid-template-columns: 1fr; } .hm-demo-arrow { transform: rotate(90deg); justify-content: center; } }
   </style>
 </head>
@@ -167,14 +176,14 @@
 
   <!-- HERO -->
   <section class="hm-hero">
-    <div class="hm-badge-top">HERMESIA · IA JURÍDICA · SEU ESCRITÓRIO DE IA</div>
+    <div class="hm-badge-top">HERMESIA · A IA QUE FAZ O TRABALHO PRONTO</div>
     <div class="hm-logo"><span>Hermes</span>IA</div>
     <div class="hm-tagline">A IA que devolve o seu tempo</div>
-    <h1 class="hm-hero-title">Chega de virar a noite fazendo <em>petição</em></h1>
-    <p class="hm-hero-sub">Descreva o caso em português e receba a peça pronta, revisada, em minutos. Você não aprende IA, não escreve prompt — só recebe o trabalho pronto. Criada por um advogado sênior, para advogados.</p>
+    <h1 class="hm-hero-title">Você não aprende IA. <em>Você recebe o trabalho pronto.</em></h1>
+    <p class="hm-hero-sub">Petição, recurso, comprovante, relatório — você explica em português e recebe pronto, sem aprender nada de IA. Pra quem trabalha duro: advogado, médico, contador, motoboy, autônomo.</p>
     <div class="hm-btns">
-      <button class="hm-cta" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Ver uma petição pronta</button>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs8822dlQtsHrnqwZQZ8MRm2zxog68Mrh0qeFDs0vU2ogMvQ/viewform" target="_blank" class="hm-cta-outline" style="text-decoration:none;display:inline-block;">Entrar na lista (acesso prioritário)</a>
+      <button class="hm-cta" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Ver na prática</button>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs8822dlQtsHrnqwZQZ8MRm2zxog68Mrh0qeFDs0vU2ogMvQ/viewform" target="_blank" class="hm-cta-outline" style="text-decoration:none;display:inline-block;">Entrar na lista — acesso prioritário</a>
     </div>
   </section>
 
@@ -210,26 +219,42 @@
   <!-- VEJA NA PRÁTICA (DEMO) -->
   <section class="hm-demo" id="demo">
     <h2 class="hm-demo-title">Veja na prática</h2>
-    <p class="hm-demo-sub">Você escreve como fala. A HermesIA devolve a peça pronta, estruturada e revisável. Exemplo real abaixo.</p>
-    <div class="hm-demo-grid">
-      <div class="hm-demo-card">
-        <div class="lbl">VOCÊ DIGITA (em português)</div>
-        <div class="you">"Cliente não pagou meus honorários de R$ 8.000 de um contrato de prestação de serviço jurídico assinado em março. Já cobrei duas vezes por e-mail. Quero entrar com ação de cobrança."</div>
+    <p class="hm-demo-sub">A mesma ideia serve a qualquer profissão: você explica como fala, recebe o documento pronto. Três exemplos:</p>
+    <div class="hm-demo3">
+      <div class="card">
+        <div class="cat">⚖️ ADVOGADO</div>
+        <div class="you">"Cliente não pagou meus honorários de R$ 8.000. Quero entrar com ação de cobrança."</div>
+        <div class="sep">recebe</div>
+        <div class="out"><b>AÇÃO DE COBRANÇA</b> — fatos, fundamentação (art. 389 CC) e pedidos, estruturada e pronta para revisar e protocolar.</div>
       </div>
-      <div class="hm-demo-arrow"><i class="ti ti-arrow-right" aria-hidden="true"></i></div>
-      <div class="hm-demo-card">
-        <div class="lbl">A HERMESIA ENTREGA</div>
-        <div class="out"><b>EXCELENTÍSSIMO SENHOR DOUTOR JUIZ...</b><br>
-        <b>AÇÃO DE COBRANÇA</b><br>
-        [Autor], advogado, vem propor a presente ação em face de [Réu], pelos fatos e fundamentos a seguir.<br>
-        <b>DOS FATOS</b> — As partes firmaram, em março, contrato de prestação de serviços advocatícios no valor de R$ 8.000,00...<br>
-        <b>DO DIREITO</b> — Aplica-se o art. 389 do Código Civil...<br>
-        <b>DOS PEDIDOS</b> — a) a citação do réu; b) a condenação ao pagamento de R$ 8.000,00 acrescidos de juros e correção... <span style="color:#7a8eaa;">[peça completa, pronta para revisar e protocolar]</span></div>
+      <div class="card">
+        <div class="cat">🏍️ ENTREGADOR</div>
+        <div class="you">"Minha conta no iFood foi bloqueada sem motivo. Preciso recorrer."</div>
+        <div class="sep">recebe</div>
+        <div class="out"><b>RECURSO DE REATIVAÇÃO</b> — pedido educado e organizado, com os fatos em ordem, pronto pra enviar ao app.</div>
+      </div>
+      <div class="card">
+        <div class="cat">🧾 AUTÔNOMO</div>
+        <div class="you">"Preciso comprovar minha renda pra alugar um apê. Ganho por mês variável."</div>
+        <div class="sep">recebe</div>
+        <div class="out"><b>DECLARAÇÃO DE RENDA</b> — mês a mês, com média e total, pronta para imprimir e assinar.</div>
       </div>
     </div>
     <div class="hm-demo-foot">
-      <span class="hm-demo-badge">EXEMPLO ILUSTRATIVO · VOCÊ REVISA E ASSINA — A AUTORIA É SUA (OAB)</span>
-      <p class="hm-price">A partir de <b>R$ 19 por peça</b> — uma fração do tempo (e do custo) de fazer do zero. Primeiro documento <b>grátis</b>.</p>
+      <span class="hm-demo-badge">EXEMPLOS ILUSTRATIVOS · VOCÊ SEMPRE REVISA ANTES DE USAR — A RESPONSABILIDADE É SUA</span>
+      <p class="hm-price">Primeiro documento <b>grátis</b> · depois a partir de <b>R$ 19</b> (conforme a complexidade). E <b>de graça</b> pra quem não pode pagar.</p>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="hm-section" id="como-funciona">
+    <h2 class="hm-section-title">Como funciona</h2>
+    <div class="hm-divider"></div>
+    <p class="hm-section-sub">Três passos. Sem prompt, sem curso, sem complicação.</p>
+    <div class="hm-pillars">
+      <div class="hm-pillar"><div style="font-family:'Playfair Display',serif;font-size:1.9rem;color:#c9a84c;line-height:1;margin-bottom:10px;">1</div><div class="hm-pillar-title">Descreva</div><div class="hm-pillar-text">Conte o que precisa em português, como num áudio pro seu estagiário.</div></div>
+      <div class="hm-pillar"><div style="font-family:'Playfair Display',serif;font-size:1.9rem;color:#c9a84c;line-height:1;margin-bottom:10px;">2</div><div class="hm-pillar-title">A IA faz</div><div class="hm-pillar-text">A HermesIA redige, organiza e formata — e devolve o documento pronto.</div></div>
+      <div class="hm-pillar"><div style="font-family:'Playfair Display',serif;font-size:1.9rem;color:#c9a84c;line-height:1;margin-bottom:10px;">3</div><div class="hm-pillar-title">Revise e use</div><div class="hm-pillar-text">Você confere, ajusta se quiser e usa. A responsabilidade é sempre sua.</div></div>
     </div>
   </section>
 
@@ -290,9 +315,33 @@
   <section class="hm-founder">
     <img class="hm-founder-photo" src="/fundador.png" alt="Fernando Antônio Vale Rodrigues, fundador da HermesIA" onerror="this.style.display='none'">
     <div class="hm-founder-label">NOTA DO FUNDADOR</div>
-    <p class="hm-founder-text">"Passei décadas como advogado sênior. Vi colegas adoecerem de excesso de trabalho, perdendo família, saúde e propósito. Criei a HermesIA movido pela convicção contrária à sociedade do cansaço: a tecnologia deve nos libertar — não nos aprisionar em mais produtividade. Aqui, a IA trabalha por você. Não o contrário."</p>
+    <p class="hm-founder-text">"Passei décadas como advogado sênior e vi colegas adoecerem de excesso de trabalho. Mas eu também programo desde 1984 — escrevi minhas primeiras linhas em BASIC num MSX, com 8 anos. Quarenta anos depois, uni as duas vidas para criar a HermesIA: a IA feita por quem viveu a dor e sabe construir a solução. A tecnologia deve nos libertar — não nos aprisionar em mais produtividade. Aqui, a IA trabalha por você. Não o contrário."</p>
     <div class="hm-founder-name">Fernando Antônio Vale Rodrigues</div>
-    <div class="hm-founder-role">Advogado Sênior · Fundador da HermesIA · Belo Horizonte, MG</div>
+    <div class="hm-founder-role">Advogado Sênior + Programador desde 1984 · Fundador da HermesIA · Belo Horizonte, MG</div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="hm-section-alt" id="faq">
+    <h2 class="hm-section-title">Perguntas frequentes</h2>
+    <div class="hm-divider"></div>
+    <div style="max-width:680px;margin:0 auto;">
+      <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
+        <summary style="cursor:pointer;font-weight:500;color:#0d1b3e;font-size:0.95rem;">Preciso aprender prompt ou entender de IA?</summary>
+        <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">Não. Você descreve o que precisa em português normal e recebe o resultado pronto. Esse é exatamente o diferencial: zero curva de aprendizado.</p>
+      </details>
+      <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
+        <summary style="cursor:pointer;font-weight:500;color:#0d1b3e;font-size:0.95rem;">Quanto custa?</summary>
+        <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">O primeiro documento é grátis. Depois, a partir de R$ 19, conforme a complexidade. E gratuito para quem não pode pagar — sustentado por quem pode.</p>
+      </details>
+      <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
+        <summary style="cursor:pointer;font-weight:500;color:#0d1b3e;font-size:0.95rem;">A IA substitui o profissional?</summary>
+        <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">Não. A HermesIA acelera o trabalho braçal e entrega um rascunho pronto — mas você sempre revisa antes de usar, e a responsabilidade (e a autoria) é sempre sua.</p>
+      </details>
+      <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
+        <summary style="cursor:pointer;font-weight:500;color:#0d1b3e;font-size:0.95rem;">É o mesmo que outros "Hermes IA" que existem por aí?</summary>
+        <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">Não. A HermesIA não é um assistente genérico nem um curso de IA. É a plataforma que entrega o trabalho pronto pra profissionais e autônomos brasileiros — criada por um advogado que programa há 40 anos.</p>
+      </details>
+    </div>
   </section>
 
   <!-- LISTA DE ESPERA -->
@@ -309,7 +358,8 @@
   <!-- RODAPÉ -->
   <footer class="hm-footer">
     <p class="hm-footer-text"><span class="hm-footer-brand">HermesIA</span> · hermesia.ia.br · fernando@hermesia.ia.br</p>
-    <p class="hm-footer-text">© 2026 HermesIA · Tecnologia que devolve o seu tempo</p>
+    <p class="hm-footer-text"><a href="/privacidade.html" style="color:#c9a84c;text-decoration:none;">Política de Privacidade</a> · <a href="/termos.html" style="color:#c9a84c;text-decoration:none;">Termos de Uso</a></p>
+    <p class="hm-footer-text">© 2026 HermesIA · Tecnologia que devolve o seu tempo · Belo Horizonte, MG</p>
   </footer>
 
 </body>
