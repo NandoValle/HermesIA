@@ -4,63 +4,210 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Política de Privacidade | HermesIA</title>
+  <meta name="description" content="Política de Privacidade da HermesIA, em conformidade com a LGPD (Lei nº 13.709/2018). A IA que devolve o seu tempo.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://hermesia.ia.br/privacidade.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root{
+      --navy:#0d1b3e; --navy2:#16264f; --gold:#c9a84c; --gold-soft:#e6d09a;
+      --ink:#1a1a2e; --muted:#6b7385; --line:#e6e9f0; --bg:#ffffff; --soft:#f6f8fc;
+    }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'Inter',sans-serif;color:#1a1a2e;background:#fff;line-height:1.8;}
-    .top{background:#0d1b3e;padding:1.4rem 2rem;text-align:center;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.8;font-size:16px;}
+    a{color:#8a6b1f;text-decoration:none;} a:hover{text-decoration:underline;}
+
+    .top{background:var(--navy);padding:1.4rem 2rem;text-align:center;border-bottom:3px solid var(--gold);}
     .top a{text-decoration:none;}
-    .logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:#c9a84c;letter-spacing:1px;}
+    .logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold);letter-spacing:1px;}
     .logo span{color:#fff;}
-    .wrap{max-width:720px;margin:0 auto;padding:2.5rem 1.5rem 3rem;}
-    h1{font-family:'Playfair Display',serif;font-size:1.9rem;color:#0d1b3e;margin-bottom:0.4rem;}
-    .upd{font-size:0.8rem;color:#889;margin-bottom:1.8rem;}
-    h2{font-family:'Playfair Display',serif;font-size:1.2rem;color:#0d1b3e;margin:1.8rem 0 0.5rem;}
-    p{font-size:0.95rem;color:#333;margin-bottom:0.9rem;}
-    ul{margin:0 0 1rem 1.3rem;} li{font-size:0.95rem;color:#333;margin-bottom:0.4rem;}
-    a{color:#8a6b1f;}
-    .foot{background:#060d1a;padding:1.4rem;text-align:center;}
-    .foot p{color:#3a5070;font-size:0.78rem;margin:0;}
-    .foot .b{color:#c9a84c;font-family:'Playfair Display',serif;}
+    .tagline{display:block;font-size:.72rem;color:var(--gold-soft);letter-spacing:.5px;margin-top:2px;font-weight:300;}
+
+    .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:2.6rem 1.5rem 2.4rem;text-align:center;}
+    .hero h1{font-family:'Playfair Display',serif;font-size:2.1rem;color:#fff;margin-bottom:.5rem;line-height:1.2;}
+    .hero p{color:#c4cde0;font-size:.98rem;max-width:640px;margin:0 auto;}
+    .hero .upd{margin-top:1rem;font-size:.8rem;color:var(--gold-soft);}
+
+    .wrap{max-width:760px;margin:0 auto;padding:2.2rem 1.5rem 1rem;}
+    .toc{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1.8rem;}
+    .toc h2{font-family:'Inter',sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--gold);margin-bottom:.6rem;}
+    .toc ol{margin:0 0 0 1.1rem;padding:0;columns:2;column-gap:1.8rem;}
+    .toc li{font-size:.86rem;margin:.25rem 0;break-inside:avoid;}
+    @media(max-width:600px){.toc ol{columns:1;}}
+
+    h2.sec{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin:1.9rem 0 .5rem;}
+    h2.sec .n{color:var(--gold);font-weight:700;}
+    h3{font-family:'Inter',sans-serif;font-size:1rem;color:var(--navy2);margin:1rem 0 .3rem;font-weight:600;}
+    p{font-size:.95rem;color:#333;margin-bottom:.8rem;}
+    ul{margin:.4rem 0 .9rem 1.3rem;} li{font-size:.95rem;color:#333;margin-bottom:.4rem;}
+
+    .callout{background:#eef2fa;border-left:4px solid var(--navy2);border-radius:6px;padding:.8rem 1rem;margin:1rem 0;font-size:.92rem;}
+    table{width:100%;border-collapse:collapse;margin:.9rem 0;font-size:.88rem;}
+    th,td{border:1px solid var(--line);padding:.55rem .7rem;text-align:left;vertical-align:top;}
+    th{background:var(--navy);color:#fff;font-weight:600;}
+    tr:nth-child(even) td{background:#fafbfe;}
+    .rights td:first-child{font-weight:600;color:var(--navy2);width:36%;}
+    .data{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;font-size:.92rem;}
+    .data b{color:var(--navy2);}
+
+    .foot{background:#060d1a;padding:1.6rem 1.4rem;text-align:center;border-top:3px solid var(--gold);margin-top:2.2rem;}
+    .foot p{color:#5a6f95;font-size:.78rem;margin:.2rem 0;}
+    .foot .b{color:var(--gold);font-family:'Playfair Display',serif;}
+    .foot a{color:var(--gold-soft);}
+    @media print{.hero,.top,.foot{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
   </style>
 </head>
 <body>
-  <header class="top"><a href="/"><span class="logo"><span>Hermes</span>IA</span></a></header>
-  <main class="wrap">
+  <header class="top"><a href="/"><span class="logo"><span>Hermes</span>IA</span><span class="tagline">A IA que devolve o seu tempo</span></a></header>
+
+  <section class="hero">
     <h1>Política de Privacidade</h1>
-    <div class="upd">Atualizada em junho de 2026 · HermesIA está em fase de pré-lançamento</div>
+    <p>Como a HermesIA coleta, usa, compartilha e protege os seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).</p>
+    <div class="upd">Última atualização: 25 de junho de 2026</div>
+  </section>
 
-    <p>Esta política explica, de forma simples e honesta, como tratamos os seus dados ao usar o site da HermesIA (hermesia.ia.br) e ao entrar na nossa lista de espera.</p>
+  <main class="wrap">
 
-    <h2>Quais dados coletamos</h2>
-    <p>Hoje, no pré-lançamento, coletamos apenas o que você nos envia voluntariamente ao entrar na lista de espera:</p>
+    <nav class="toc">
+      <h2>Índice</h2>
+      <ol>
+        <li><a href="#s1">Quem somos (Controlador)</a></li>
+        <li><a href="#s2">A quem se aplica</a></li>
+        <li><a href="#s3">Dados que coletamos</a></li>
+        <li><a href="#s4">Finalidades e bases legais</a></li>
+        <li><a href="#s5">Sigilo e dados sensíveis</a></li>
+        <li><a href="#s6">Compartilhamento e operadores</a></li>
+        <li><a href="#s7">Transferência internacional</a></li>
+        <li><a href="#s8">Cookies</a></li>
+        <li><a href="#s9">Segurança</a></li>
+        <li><a href="#s10">Retenção e eliminação</a></li>
+        <li><a href="#s11">Seus direitos (LGPD)</a></li>
+        <li><a href="#s12">Crianças e adolescentes</a></li>
+        <li><a href="#s13">Inteligência artificial</a></li>
+        <li><a href="#s14">Alterações</a></li>
+        <li><a href="#s15">Encarregado (DPO) e contato</a></li>
+      </ol>
+    </nav>
+
+    <h2 class="sec" id="s1"><span class="n">1.</span> Quem somos (Controlador dos Dados)</h2>
+    <p>A <b>HermesIA</b> é uma plataforma de inteligência artificial que <b>entrega o trabalho pronto</b> para quem trabalha duro — profissionais liberais (advogados, médicos, contadores, psicólogos, dentistas, engenheiros, educadores, profissionais de finanças e outros) e trabalhadores autônomos e de aplicativo (motoboys, entregadores, motoristas de aplicativo e demais autônomos). A partir de uma descrição em linguagem simples, a HermesIA redige documentos e auxilia na rotina, sem exigir conhecimento técnico. Esta Política descreve o tratamento de dados pessoais realizado por meio do site <b>hermesia.ia.br</b> e dos canais de atendimento (WhatsApp e Telegram).</p>
+    <div class="data">
+      <b>Controlador:</b> Fernando Antônio Vale Rodrigues — Microempreendedor Individual (MEI)<br>
+      <b>CNPJ:</b> 35.878.957/0001-10<br>
+      <b>Endereço:</b> Rua Modesto Carvalho Araújo, nº 248, Casa — Belvedere, Belo Horizonte/MG, CEP 30320-410<br>
+      <b>E-mail de contato:</b> <a href="mailto:fernando@hermesia.ia.br">fernando@hermesia.ia.br</a>
+    </div>
+
+    <h2 class="sec" id="s2"><span class="n">2.</span> A quem esta Política se aplica</h2>
+    <p>Aplica-se a todas as pessoas que interagem com a HermesIA:</p>
     <ul>
-      <li>Nome</li>
-      <li>E-mail e/ou WhatsApp</li>
-      <li>Profissão e sua principal dificuldade (quando você informa)</li>
+      <li>Visitantes do site e interessados na lista de espera (pré-lançamento);</li>
+      <li>Usuários que conversam com nossos assistentes no <b>WhatsApp</b> e no <b>Telegram</b>;</li>
+      <li>Assinantes e usuários da plataforma, quando disponível comercialmente.</li>
+    </ul>
+    <div class="callout">Estamos em fase de <b>pré-lançamento</b>. Algumas funcionalidades passam a tratar dados apenas quando ativadas para você.</div>
+
+    <h2 class="sec" id="s3"><span class="n">3.</span> Dados que coletamos</h2>
+    <h3>3.1. Dados que você nos fornece</h3>
+    <ul>
+      <li><b>Cadastro/contato:</b> nome, área de atuação/profissão, e-mail e/ou telefone (WhatsApp);</li>
+      <li><b>Conteúdo das conversas:</b> mensagens trocadas com os assistentes, incluindo necessidades, dúvidas e dores relatadas;</li>
+      <li><b>Documentos e textos enviados</b> à plataforma para processamento (ex.: minutas, descrições de casos), quando você usar esse recurso.</li>
+    </ul>
+    <h3>3.2. Dados coletados automaticamente</h3>
+    <ul>
+      <li>Dados técnicos e de navegação (IP, dispositivo, navegador, páginas acessadas), via cookies;</li>
+      <li>Identificadores das plataformas de mensagem (ID do WhatsApp/Telegram), para responder você.</li>
     </ul>
 
-    <h2>Para que usamos</h2>
-    <p>Usamos esses dados exclusivamente para: avisar você sobre o lançamento, entender melhor as necessidades do público e, eventualmente, enviar conteúdos úteis. Nada além disso.</p>
+    <h2 class="sec" id="s4"><span class="n">4.</span> Finalidades e bases legais</h2>
+    <table>
+      <tr><th>Finalidade</th><th>Base legal (LGPD)</th></tr>
+      <tr><td>Responder mensagens, atender e demonstrar o produto</td><td>Procedimentos preliminares/contrato (art. 7º, V) e legítimo interesse (art. 7º, IX)</td></tr>
+      <tr><td>Gerir a lista de espera e avisar do lançamento</td><td>Consentimento (art. 7º, I)</td></tr>
+      <tr><td>Gerar documentos/respostas a partir do conteúdo enviado</td><td>Execução de contrato (art. 7º, V) / consentimento</td></tr>
+      <tr><td>Pesquisa de mercado e melhoria do produto (agregada)</td><td>Legítimo interesse (art. 7º, IX)</td></tr>
+      <tr><td>Cumprir obrigações legais e regulatórias</td><td>Obrigação legal (art. 7º, II)</td></tr>
+      <tr><td>Segurança, prevenção a fraudes e exercício de direitos</td><td>Legítimo interesse / direitos (art. 7º, VI e IX)</td></tr>
+    </table>
+    <p>Não utilizamos seus dados para finalidades incompatíveis com as informadas, nem vendemos seus dados pessoais.</p>
 
-    <h2>O que NÃO fazemos</h2>
+    <h2 class="sec" id="s5"><span class="n">5.</span> Sigilo profissional e dados sensíveis</h2>
+    <div class="callout">A HermesIA atende profissionais que podem lidar com informações <b>confidenciais e sensíveis</b> (jurídicas, médicas, contábeis etc.). Tratamos esse contexto com rigor.</div>
     <ul>
-      <li>Não vendemos nem alugamos seus dados a terceiros.</li>
-      <li>Não enviamos spam.</li>
+      <li><b>Você é responsável</b> por inserir apenas dados para os quais tenha base legal e autorização, observando o dever de sigilo da sua profissão (OAB, CFM, CFC, CFP etc.);</li>
+      <li>Recomendamos <b>anonimizar ou minimizar</b> dados de terceiros (clientes, pacientes) sempre que possível;</li>
+      <li>Dados pessoais sensíveis (art. 5º, II, da LGPD) são tratados apenas quando estritamente necessário e com base legal adequada (art. 11);</li>
+      <li>Em fase de testes, recomendamos <b>não inserir dados reais de clientes</b>.</li>
     </ul>
 
-    <h2>Seus direitos (LGPD)</h2>
-    <p>Você pode, a qualquer momento, solicitar acesso, correção ou exclusão dos seus dados, bastando enviar um e-mail para <a href="mailto:fernando@hermesia.ia.br">fernando@hermesia.ia.br</a>. Atendemos conforme a Lei Geral de Proteção de Dados (LGPD).</p>
+    <h2 class="sec" id="s6"><span class="n">6.</span> Compartilhamento e operadores</h2>
+    <p>Para operar a plataforma, contamos com prestadores de serviço (operadores) que tratam dados em nosso nome, sob contrato e instruções:</p>
+    <table>
+      <tr><th>Operador</th><th>Finalidade</th></tr>
+      <tr><td>Anthropic (Claude)</td><td>Motor de IA que processa as mensagens para gerar respostas</td></tr>
+      <tr><td>Google (Workspace / Sheets)</td><td>Registro de leads e comunicações operacionais</td></tr>
+      <tr><td>Meta Platforms (WhatsApp Business)</td><td>Canal de mensagens do WhatsApp</td></tr>
+      <tr><td>Telegram</td><td>Canal de mensagens do Telegram</td></tr>
+      <tr><td>Oracle Cloud</td><td>Hospedagem da aplicação (servidor, região Brasil)</td></tr>
+    </table>
+    <p>Também poderemos compartilhar dados com autoridades (obrigação legal/ordem judicial), para exercício regular de direitos e em caso de reorganização societária — sempre preservando esta Política.</p>
 
-    <h2>Documentos que você gera</h2>
-    <p>A HermesIA está em desenvolvimento. Quando a ferramenta estiver disponível, recomendamos cautela ao inserir dados sensíveis de terceiros e que você sempre revise o resultado antes de usar — a responsabilidade pelo uso é sempre sua, conforme as regras da sua profissão.</p>
+    <h2 class="sec" id="s7"><span class="n">7.</span> Transferência internacional de dados</h2>
+    <p>Alguns operadores (como Anthropic, Google e Meta) podem tratar dados em servidores fora do Brasil. Nesses casos, a transferência observa o art. 33 da LGPD, com salvaguardas como cláusulas contratuais e padrões de segurança adequados. Ao utilizar a HermesIA, você está ciente dessa possibilidade.</p>
 
-    <h2>Contato</h2>
-    <p>Dúvidas sobre privacidade: <a href="mailto:fernando@hermesia.ia.br">fernando@hermesia.ia.br</a>.</p>
+    <h2 class="sec" id="s8"><span class="n">8.</span> Cookies e tecnologias similares</h2>
+    <p>Usamos cookies essenciais (para o funcionamento do site) e, quando aplicável, de análise para entender o uso e melhorar a experiência. Você pode gerenciar cookies nas configurações do navegador; a desativação de alguns pode afetar funcionalidades.</p>
+
+    <h2 class="sec" id="s9"><span class="n">9.</span> Armazenamento e segurança</h2>
+    <ul>
+      <li>Adotamos medidas técnicas e organizacionais (conexões criptografadas via HTTPS, controle de acesso, hospedagem em ambiente seguro);</li>
+      <li>Priorizamos hospedagem em <b>região no Brasil</b> para os recursos sob nosso controle direto;</li>
+      <li>Em caso de incidente de segurança relevante, adotaremos as medidas e comunicações exigidas pela LGPD e pela ANPD.</li>
+    </ul>
+
+    <h2 class="sec" id="s10"><span class="n">10.</span> Retenção e eliminação</h2>
+    <p>Mantemos os dados apenas pelo tempo necessário às finalidades desta Política ou ao cumprimento de obrigações legais. Encerrada a necessidade, os dados são eliminados ou anonimizados, ressalvadas as hipóteses do art. 16 da LGPD. Você pode solicitar a exclusão a qualquer momento (ver Seção 11).</p>
+
+    <h2 class="sec" id="s11"><span class="n">11.</span> Seus direitos como titular (LGPD)</h2>
+    <p>Nos termos do art. 18 da LGPD, você pode exercer:</p>
+    <table class="rights">
+      <tr><td>Confirmação e acesso</td><td>Saber se tratamos seus dados e acessá-los</td></tr>
+      <tr><td>Correção</td><td>Corrigir dados incompletos, inexatos ou desatualizados</td></tr>
+      <tr><td>Anonimização / bloqueio / eliminação</td><td>De dados desnecessários, excessivos ou tratados em desconformidade</td></tr>
+      <tr><td>Portabilidade</td><td>A outro fornecedor, conforme regulamentação</td></tr>
+      <tr><td>Eliminação (consentimento)</td><td>De dados tratados com base no seu consentimento</td></tr>
+      <tr><td>Informação sobre compartilhamento</td><td>Saber com quem compartilhamos seus dados</td></tr>
+      <tr><td>Revogação do consentimento</td><td>Retirar o consentimento a qualquer tempo</td></tr>
+      <tr><td>Oposição e revisão</td><td>Opor-se a tratamentos e pedir revisão de decisões automatizadas</td></tr>
+    </table>
+    <p>Para exercer seus direitos, fale com nosso Encarregado (Seção 15). Você também pode peticionar à <b>ANPD</b> (Autoridade Nacional de Proteção de Dados).</p>
+
+    <h2 class="sec" id="s12"><span class="n">12.</span> Crianças e adolescentes</h2>
+    <p>A HermesIA é destinada a maiores de 18 anos. Não coletamos intencionalmente dados de crianças e adolescentes. Caso identifiquemos tal coleta sem base legal adequada, eliminaremos os dados.</p>
+
+    <h2 class="sec" id="s13"><span class="n">13.</span> Inteligência artificial e decisões automatizadas</h2>
+    <p>Nossos assistentes utilizam IA para gerar respostas e documentos. Esses resultados são <b>ferramentas de apoio</b> e não substituem o julgamento, a habilitação e a responsabilidade do profissional. Você tem direito a solicitar informações e revisão sobre tratamentos automatizados que afetem seus interesses (art. 20 da LGPD).</p>
+
+    <h2 class="sec" id="s14"><span class="n">14.</span> Alterações desta Política</h2>
+    <p>Podemos atualizar esta Política para refletir mudanças legais, técnicas ou de negócio. A versão vigente estará sempre nesta página, com a data de atualização. Alterações relevantes poderão ser comunicadas pelos nossos canais.</p>
+
+    <h2 class="sec" id="s15"><span class="n">15.</span> Encarregado (DPO) e contato</h2>
+    <p>Para dúvidas, solicitações ou exercício de direitos relativos aos seus dados pessoais, fale com o nosso Encarregado:</p>
+    <div class="data">
+      <b>Encarregado (DPO):</b> Fernando Antônio Vale Rodrigues<br>
+      <b>E-mail:</b> <a href="mailto:fernando@hermesia.ia.br">fernando@hermesia.ia.br</a>
+    </div>
+    <p style="font-size:.85rem;color:var(--muted);margin-top:.8rem;">Esta Política é regida pela legislação brasileira, em especial a Lei nº 13.709/2018 (LGPD), elegendo-se o foro da comarca de Belo Horizonte/MG para dirimir eventuais controvérsias, salvo competência legal diversa.</p>
+
   </main>
-  <footer class="foot"><p><span class="b">HermesIA</span> · hermesia.ia.br · Belo Horizonte, MG</p></footer>
+
+  <footer class="foot">
+    <p><span class="b">HermesIA</span> · A IA que devolve o seu tempo</p>
+    <p>Conforme a LGPD (Lei nº 13.709/2018) · <a href="https://hermesia.ia.br">hermesia.ia.br</a> · Belo Horizonte, MG</p>
+    <p>© 2026 HermesIA · Última atualização: 25/06/2026</p>
+  </footer>
 </body>
 </html>
