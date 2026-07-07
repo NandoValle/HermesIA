@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HermesIA Áudio — Encaminhe o áudio, receba o trabalho pronto</title>
+  <meta name="description" content="Encaminhe qualquer áudio de trabalho pro WhatsApp da HermesIA e receba em segundos: transcrição, resumo e pontos de ação. Grátis pra testar, sem cadastro.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hermesia.ia.br/audio/">
+  <link rel="icon" type="image/png" href="/emblema.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HermesIA Áudio — Afogado em áudios?">
+  <meta property="og:description" content="Encaminhe qualquer áudio de trabalho e receba em segundos: transcrição, resumo e o que precisa ser feito. Grátis.">
+  <meta property="og:url" content="https://hermesia.ia.br/audio/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HermesIA">
+  <meta property="og:image" content="https://hermesia.ia.br/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fff; }
+    a { text-decoration: none; }
+
+    /* HERO */
+    .hm-hero { background: #0d1b3e; padding: 3rem 2rem 3.5rem; text-align: center; }
+    .hm-badge-top { display: inline-block; background: rgba(201,168,76,0.15); color: #e5c06a; border: 1px solid rgba(201,168,76,0.5); font-size: 0.68rem; padding: 5px 16px; border-radius: 20px; letter-spacing: 1.5px; margin-bottom: 1.6rem; }
+    .hm-logo { font-family: 'Playfair Display', serif; font-size: 2rem; color: #c9a84c; letter-spacing: 2px; margin-bottom: 0.3rem; }
+    .hm-logo span { color: #ffffff; }
+    .hm-logo a { color: inherit; }
+    .hm-tagline { font-size: 0.72rem; color: #7a8eaa; letter-spacing: 3px; margin-bottom: 2.2rem; font-weight: 300; }
+    .hm-hero-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #ffffff; line-height: 1.4; max-width: 640px; margin: 0 auto 1.1rem; }
+    .hm-hero-title em { color: #e5c06a; font-style: italic; }
+    .hm-hero-sub { font-size: 0.95rem; color: #d0daea; max-width: 520px; margin: 0 auto 2.2rem; line-height: 1.85; font-weight: 300; }
+    .hm-cta { display: inline-block; background: #c9a84c; color: #fdf6e3; padding: 1.1rem 2.6rem; border-radius: 4px; font-size: 0.95rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; transition: background 0.2s; }
+    .hm-cta:hover { background: #dfc05e; }
+    .hm-cta-note { display: block; margin-top: 0.9rem; font-size: 0.75rem; color: #7a8eaa; }
+
+    /* DEMO — mockup de conversa */
+    .hm-demo { background: #060f22; padding: 3rem 1.2rem; }
+    .hm-demo-title { font-family: 'Playfair Display', serif; color: #e5c06a; font-size: 1.2rem; text-align: center; margin-bottom: 1.6rem; }
+    .hm-chat { max-width: 420px; margin: 0 auto; background: #0b141a; border-radius: 14px; padding: 1.1rem; border: 1px solid #1e3060; }
+    .hm-bubble { max-width: 88%; border-radius: 10px; padding: 0.7rem 0.85rem; margin-bottom: 0.7rem; font-size: 0.82rem; line-height: 1.6; }
+    .hm-out { background: #005c4b; color: #e7f5ef; margin-left: auto; }
+    .hm-in { background: #1f2c34; color: #e2e8ee; }
+    .hm-audio-fake { display: flex; align-items: center; gap: 10px; color: #a8b8c4; }
+    .hm-audio-fake i { font-size: 20px; color: #53bdeb; }
+    .hm-wave { flex: 1; height: 16px; background: repeating-linear-gradient(90deg, #53bdeb 0 2px, transparent 2px 5px); border-radius: 3px; opacity: 0.55; }
+    .hm-bubble b { color: #ffd27a; font-weight: 600; }
+    .hm-meta { font-size: 0.62rem; color: #6a7d8a; text-align: right; margin-top: 4px; }
+
+    /* PASSOS */
+    .hm-section { padding: 3rem 2rem; }
+    .hm-section-alt { padding: 3rem 2rem; background: #f8f7f2; }
+    .hm-section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #0d1b3e; margin-bottom: 0.5rem; text-align: center; }
+    .hm-divider { width: 44px; height: 2px; background: #c9a84c; margin: 0.7rem auto 1.2rem; }
+    .hm-section-sub { font-size: 0.88rem; color: #556; text-align: center; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+    .hm-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; max-width: 760px; margin: 0 auto; }
+    .hm-step { border: 0.5px solid #ddd6c4; border-radius: 8px; padding: 1.4rem 1.2rem; background: #fff; text-align: center; }
+    .hm-step-n { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #c9a84c; margin-bottom: 8px; }
+    .hm-step-title { font-size: 0.92rem; font-weight: 600; color: #0d1b3e; margin-bottom: 6px; }
+    .hm-step-text { font-size: 0.8rem; color: #667; line-height: 1.65; }
+
+    /* PLANOS */
+    .hm-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 16px; max-width: 980px; margin: 0 auto; }
+    .hm-plan { border: 0.5px solid #ddd6c4; border-radius: 10px; padding: 1.6rem 1.3rem; background: #fff; display: flex; flex-direction: column; }
+    .hm-plan-hot { border: 2px solid #c9a84c; position: relative; }
+    .hm-plan-flag { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: #c9a84c; color: #fff; font-size: 0.62rem; letter-spacing: 1.5px; padding: 3px 12px; border-radius: 12px; }
+    .hm-plan-name { font-size: 0.8rem; letter-spacing: 2px; color: #8a6b1f; text-transform: uppercase; margin-bottom: 8px; }
+    .hm-plan-price { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: #0d1b3e; }
+    .hm-plan-price small { font-size: 0.8rem; color: #667; font-family: 'Inter', sans-serif; }
+    .hm-plan-min { font-size: 0.78rem; color: #8a6b1f; margin: 4px 0 14px; font-weight: 600; }
+    .hm-plan ul { list-style: none; flex: 1; }
+    .hm-plan li { font-size: 0.8rem; color: #445; padding: 5px 0; line-height: 1.5; }
+    .hm-plan li i { color: #c9a84c; margin-right: 6px; font-size: 13px; }
+    .hm-plan-cta { margin-top: 1.1rem; display: block; text-align: center; padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; letter-spacing: 1px; font-weight: 600; }
+    .hm-plan-cta-solid { background: #c9a84c; color: #fff; }
+    .hm-plan-cta-line { border: 1px solid #c9a84c; color: #8a6b1f; }
+    .hm-plans-note { text-align: center; font-size: 0.75rem; color: #778; margin-top: 1.3rem; }
+
+    /* PRIVACIDADE */
+    .hm-priv { background: #0a1428; padding: 3rem 2rem; text-align: center; }
+    .hm-priv-title { font-family: 'Playfair Display', serif; color: #e5c06a; font-size: 1.3rem; margin-bottom: 1.6rem; }
+    .hm-priv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; max-width: 720px; margin: 0 auto; }
+    .hm-priv-item { border: 0.5px solid #1e3060; border-radius: 8px; padding: 1.2rem 1rem; }
+    .hm-priv-item i { font-size: 22px; color: #c9a84c; display: block; margin-bottom: 8px; }
+    .hm-priv-item-t { font-size: 0.85rem; color: #fff; margin-bottom: 5px; font-weight: 500; }
+    .hm-priv-item-x { font-size: 0.75rem; color: #90a4bd; line-height: 1.6; }
+
+    /* FAQ */
+    .hm-faq { max-width: 640px; margin: 0 auto; }
+    .hm-faq details { border-bottom: 0.5px solid #ddd6c4; padding: 0.9rem 0; }
+    .hm-faq summary { font-size: 0.9rem; font-weight: 500; color: #0d1b3e; cursor: pointer; }
+    .hm-faq p { font-size: 0.83rem; color: #556; line-height: 1.75; padding-top: 0.6rem; }
+
+    /* CTA FINAL + FOOTER */
+    .hm-final { background: #0d1b3e; text-align: center; padding: 3.2rem 2rem; }
+    .hm-final-title { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: #fff; margin-bottom: 1.6rem; }
+    .hm-final-title em { color: #e5c06a; }
+    .hm-footer { background: #060f22; text-align: center; padding: 1.6rem; font-size: 0.72rem; color: #4a6080; }
+    .hm-footer a { color: #7a8eaa; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hm-hero">
+    <div class="hm-badge-top">NOVO · HERMESIA ÁUDIO</div>
+    <div class="hm-logo"><a href="/">Hermes<span>IA</span></a></div>
+    <div class="hm-tagline">A IA QUE DEVOLVE O SEU TEMPO</div>
+    <h1 class="hm-hero-title">Afogado em áudios?<br><em>Encaminhe. Em segundos vira texto — e trabalho pronto.</em></h1>
+    <p class="hm-hero-sub">Aquele áudio de 8 minutos do cliente? Encaminhe pro WhatsApp da HermesIA e receba na hora: a transcrição completa, o resumo e a lista do que precisa ser feito. Sem app novo, sem cadastro, sem cartão.</p>
+    <a class="hm-cta" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA."
+       onclick="typeof fbq==='function'&&fbq('track','Lead');">▶&nbsp; Testar grátis agora</a>
+    <span class="hm-cta-note">Grátis: 10 áudios por dia · direto no WhatsApp</span>
+  </section>
+
+  <!-- DEMO -->
+  <section class="hm-demo">
+    <div class="hm-demo-title">Funciona assim — de verdade:</div>
+    <div class="hm-chat">
+      <div class="hm-bubble hm-out">
+        <div class="hm-audio-fake"><i class="ti ti-microphone-filled"></i><div class="hm-wave"></div> 4:37</div>
+        <div class="hm-meta">Você encaminhou um áudio · 14:02 ✓✓</div>
+      </div>
+      <div class="hm-bubble hm-in">
+        📝 <b>Transcrição:</b> "Oi, tudo bem? Então, sobre aquele orçamento, o cliente aprovou, mas pediu pra entregar até sexta e quer a nota separada em duas. Ah, e me liga amanhã depois das dez pra fechar os detalhes da instalação..."
+        <div class="hm-meta">HermesIA · 14:02</div>
+      </div>
+      <div class="hm-bubble hm-in">
+        📌 <b>Resumo:</b> orçamento aprovado com prazo até sexta e nota dividida em duas.<br>
+        ✅ <b>Pontos de ação:</b><br>1. Confirmar entrega até sexta<br>2. Emitir 2 notas separadas<br>3. Ligar pro cliente amanhã após 10h
+        <div class="hm-meta">HermesIA · 14:03</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="hm-section">
+    <h2 class="hm-section-title">Três passos. Nenhum aplicativo novo.</h2>
+    <div class="hm-divider"></div>
+    <div class="hm-steps">
+      <div class="hm-step"><div class="hm-step-n">1</div><div class="hm-step-title">Salve o número</div><div class="hm-step-text">Adicione a HermesIA aos seus contatos do WhatsApp. Só isso de "instalação".</div></div>
+      <div class="hm-step"><div class="hm-step-n">2</div><div class="hm-step-title">Encaminhe o áudio</div><div class="hm-step-text">Qualquer áudio: cliente, fornecedor, reunião, o sócio que só fala por voz.</div></div>
+      <div class="hm-step"><div class="hm-step-n">3</div><div class="hm-step-title">Receba o trabalho pronto</div><div class="hm-step-text">Transcrição + resumo + o que precisa ser feito. Em segundos, no próprio WhatsApp.</div></div>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
+  <section class="hm-section-alt">
+    <h2 class="hm-section-title">Comece grátis</h2>
+    <div class="hm-divider"></div>
+    <p class="hm-section-sub">Transcrição + resumo + pontos de ação, direto no WhatsApp — sem cadastro e sem cartão.</p>
+    <div class="hm-plans" style="max-width:600px;">
+      <div class="hm-plan hm-plan-hot">
+        <div class="hm-plan-flag">DISPONÍVEL AGORA</div>
+        <div class="hm-plan-name">Grátis</div>
+        <div class="hm-plan-price">R$ 0</div>
+        <div class="hm-plan-min">10 áudios/dia</div>
+        <ul>
+          <li><i class="ti ti-check"></i>Transcrição completa</li>
+          <li><i class="ti ti-check"></i>Resumo + pontos de ação</li>
+          <li><i class="ti ti-check"></i>Sem cadastro, sem cartão</li>
+        </ul>
+        <a class="hm-plan-cta hm-plan-cta-solid" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios.">Começar grátis</a>
+      </div>
+      <div class="hm-plan">
+        <div class="hm-plan-name">Planos pagos</div>
+        <div class="hm-plan-price" style="font-size:1.4rem;">Em breve</div>
+        <div class="hm-plan-min">preço de fundador pros primeiros</div>
+        <ul>
+          <li><i class="ti ti-clock"></i>Ilimitado, sem limite diário</li>
+          <li><i class="ti ti-clock"></i>Resposta pronta pra copiar e enviar</li>
+          <li><i class="ti ti-clock"></i>Atas de reunião (áudios longos)</li>
+        </ul>
+        <a class="hm-plan-cta hm-plan-cta-line" href="https://wa.me/553172285422?text=Oi!%20Quero%20ser%20avisado%20quando%20os%20planos%20pagos%20do%20HermesIA%20%C3%81udio%20lan%C3%A7arem.">Avisar-me no lançamento</a>
+      </div>
+    </div>
+    <p class="hm-plans-note">Enquanto isso, o plano grátis já entrega transcrição + resumo + pontos de ação, todo dia.</p>
+  </section>
+
+  <!-- PRIVACIDADE -->
+  <section class="hm-priv">
+    <div class="hm-priv-title">Seu áudio não é mercadoria.</div>
+    <div class="hm-priv-grid">
+      <div class="hm-priv-item"><i class="ti ti-trash"></i><div class="hm-priv-item-t">Áudio não guardado</div><div class="hm-priv-item-x">O áudio é processado para virar texto e descartado — não fica armazenado nos nossos servidores.</div></div>
+      <div class="hm-priv-item"><i class="ti ti-lock"></i><div class="hm-priv-item-t">Só você recebe</div><div class="hm-priv-item-x">A transcrição chega no seu WhatsApp e em mais lugar nenhum. Não vendemos nem publicamos o seu conteúdo.</div></div>
+      <div class="hm-priv-item"><i class="ti ti-user-off"></i><div class="hm-priv-item-t">Sem cadastro</div><div class="hm-priv-item-x">É só um contato no WhatsApp. Não pedimos e-mail, dados nem cartão para começar.</div></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="hm-section">
+    <h2 class="hm-section-title">Perguntas rápidas</h2>
+    <div class="hm-divider"></div>
+    <div class="hm-faq">
+      <details>
+        <summary>O WhatsApp já não transcreve áudio sozinho?</summary>
+        <p>Transcreve — e só. A HermesIA devolve o <strong>trabalho pronto</strong>: além da transcrição, um resumo e a lista do que precisa ser feito. É a diferença entre "texto" e "tempo de volta".</p>
+      </details>
+      <details>
+        <summary>Preciso instalar alguma coisa?</summary>
+        <p>Não. É um contato no seu WhatsApp. Encaminhou, recebeu. Funciona em qualquer celular.</p>
+      </details>
+      <details>
+        <summary>Funciona com áudio de reunião longa?</summary>
+        <p>O grátis já dá conta de áudios longos (transcrição + resumo + pontos de ação). Atas completas de reunião, com decisões e pendências separadas, chegam nos planos pagos — em breve.</p>
+      </details>
+      <details>
+        <summary>E se eu passar dos 10 áudios do dia?</summary>
+        <p>Você recebe um aviso de que os áudios grátis do dia acabaram — e o contador zera à meia-noite. Nada é cobrado sem você pedir, nunca.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="hm-final">
+    <div class="hm-final-title">O próximo áudio que você receber<br><em>pode chegar já transcrito.</em></div>
+    <a class="hm-cta" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA."
+       onclick="typeof fbq==='function'&&fbq('track','Lead');">▶&nbsp; Testar grátis no WhatsApp</a>
+    <span class="hm-cta-note" style="color:#7a8eaa; display:block; margin-top:0.9rem;">10 áudios grátis por dia · sem cadastro · sem cartão</span>
+  </section>
+
+  <footer class="hm-footer">
+    HermesIA · Belo Horizonte/MG · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a> · <a href="/">hermesia.ia.br</a>
+  </footer>
+
+</body>
+</html>
