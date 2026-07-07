@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>HermesIA · Vendas</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="manifest" href="/vendas/manifest.json">
+  <meta name="theme-color" content="#0d1b3e">
+  <link rel="icon" type="image/png" href="/vendas/icon.png">
+  <link rel="apple-touch-icon" href="/vendas/icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Vendas">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#0d1b3e;--navy2:#081128;--gold:#c9a84c;--gold2:#e5c06a;--cream:#fdf6e3}
+    html,body{height:100%}
+    body{font-family:'Inter',sans-serif;background:radial-gradient(120% 100% at 50% 0,#12244f 0,var(--navy) 45%,var(--navy2) 100%);color:#eef3fb;min-height:100dvh;display:flex;flex-direction:column;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+    .top{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.3rem .6rem}
+    .brand{font-family:'Playfair Display',serif;font-size:1.25rem}
+    .brand b{color:var(--gold)}
+    .live{display:flex;align-items:center;gap:7px;font-size:.72rem;color:#8fa6c4;letter-spacing:.5px}
+    .dot{width:9px;height:9px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.7);animation:pulse 1.8s infinite}
+    .dot.off{background:#e5623e;animation:none;box-shadow:none}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.6)}70%{box-shadow:0 0 0 10px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+    .counters{display:flex;gap:12px;padding:.4rem 1.3rem 1rem}
+    .counter{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.22);border-radius:16px;padding:1rem;text-align:center}
+    .counter .n{font-family:'Playfair Display',serif;font-size:2.6rem;line-height:1;color:var(--gold2)}
+    .counter .l{font-size:.68rem;letter-spacing:1.5px;color:#8fa6c4;text-transform:uppercase;margin-top:6px}
+    .feed{flex:1;overflow-y:auto;padding:0 1.1rem 1.2rem;-webkit-overflow-scrolling:touch}
+    .venda{background:linear-gradient(135deg,rgba(201,168,76,.14),rgba(255,255,255,.03));border:1px solid rgba(201,168,76,.3);border-radius:16px;padding:1rem 1.1rem;margin-bottom:11px;display:flex;align-items:center;gap:14px;animation:pop .5s cubic-bezier(.2,.8,.3,1.2)}
+    .venda .emoji{font-size:1.9rem}
+    .venda .info{flex:1;min-width:0}
+    .venda .t{font-weight:800;font-size:1.02rem;color:var(--cream)}
+    .venda .s{font-size:.82rem;color:#c6d3e6;margin-top:3px;line-height:1.4}
+    .venda .h{font-size:.7rem;color:#7d92b0;white-space:nowrap}
+    .venda.novo{border-color:var(--gold2);box-shadow:0 0 0 2px rgba(229,192,106,.35),0 12px 30px rgba(0,0,0,.4)}
+    @keyframes pop{0%{transform:scale(.9) translateY(-8px);opacity:0}100%{transform:none;opacity:1}}
+    .vazio{text-align:center;color:#6f86a6;margin-top:22vh;padding:0 2rem}
+    .vazio .big{font-size:3rem;margin-bottom:.8rem;opacity:.7}
+    .bar{padding:.7rem 1.3rem calc(.9rem + env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:12px;justify-content:space-between}
+    .som-btn{flex:1;background:var(--gold);color:#3a2c07;border:none;border-radius:12px;padding:.9rem;font-family:'Inter',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.5px;cursor:pointer}
+    .som-btn.on{background:rgba(255,255,255,.06);color:#9fb2cd;font-weight:600}
+    .status{font-size:.68rem;color:#7d92b0;white-space:nowrap}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand"><b>Hermes</b>IA · Vendas</div>
+    <div class="live"><span class="dot off" id="dot"></span><span id="liveTxt">conectando…</span></div>
+  </div>
+
+  <div class="counters">
+    <div class="counter"><div class="n" id="cHoje">0</div><div class="l">Hoje</div></div>
+    <div class="counter"><div class="n" id="cTotal">0</div><div class="l">Total</div></div>
+  </div>
+
+  <div class="feed" id="feed">
+    <div class="vazio" id="vazio"><div class="big">🧾</div>Nenhuma venda ainda.<br>Quando alguém pedir o Pro, ela aparece aqui — com o cha-ching. 🔔</div>
+  </div>
+
+  <div class="bar">
+    <button class="som-btn" id="somBtn">🔔 Ativar som</button>
+    <span class="status" id="status">—</span>
+  </div>
+
+  <audio id="som" src="/vendas/chaching.mp3" preload="auto"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    const SUPABASE_URL = 'https://pyksaeswoavjpsgpjyrc.supabase.co';
+    const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB5a3NhZXN3b2F2anBzZ3BqeXJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI4OTIyMjEsImV4cCI6MjA5ODQ2ODIyMX0.WywrTN3E3a37OOagDkSorpbeoYCNxQnkTAeje4cPCsk';
+    const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+    const feed = document.getElementById('feed');
+    const vazio = document.getElementById('vazio');
+    const som = document.getElementById('som');
+    const somBtn = document.getElementById('somBtn');
+    const statusEl = document.getElementById('status');
+    let somLiberado = false;
+    let total = 0, hoje = 0;
+
+    // Browsers bloqueiam áudio até um toque do usuário. O botão libera.
+    somBtn.addEventListener('click', async () => {
+      try { await som.play(); som.pause(); som.currentTime = 0; } catch (e) {}
+      somLiberado = true;
+      somBtn.textContent = '🔔 Som ativado';
+      somBtn.classList.add('on');
+    });
+
+    function ehHoje(iso) {
+      const d = new Date(iso);
+      const fmt = (x) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(x);
+      return fmt(d) === fmt(new Date());
+    }
+    function hora(iso) {
+      return new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }).format(new Date(iso));
+    }
+    function card(v, novo) {
+      const el = document.createElement('div');
+      el.className = 'venda' + (novo ? ' novo' : '');
+      const pago = v.status === 'pago';
+      el.innerHTML = '<div class="emoji">' + (pago ? '💰' : '🤑') + '</div>' +
+        '<div class="info"><div class="t">' + (pago ? 'VENDA' : 'Quer o ' + (v.plano || 'Pro')) + '</div>' +
+        '<div class="s">' + (v.numero_mascarado || '') + (v.detalhe ? ' · ' + v.detalhe : '') + '</div></div>' +
+        '<div class="h">' + hora(v.criado_em) + '</div>';
+      return el;
+    }
+    function render(v, novo) {
+      vazio.style.display = 'none';
+      feed.insertBefore(card(v, novo), feed.firstChild);
+      total++; if (ehHoje(v.criado_em)) hoje++;
+      document.getElementById('cTotal').textContent = total;
+      document.getElementById('cHoje').textContent = hoje;
+      if (novo) {
+        setTimeout(() => feed.firstChild && feed.firstChild.classList && feed.firstChild.classList.remove('novo'), 4000);
+        if (somLiberado) { try { som.currentTime = 0; som.play(); } catch (e) {} }
+        if (navigator.vibrate) navigator.vibrate([120, 60, 120]);
+      }
+    }
+
+    async function inicial() {
+      const { data, error } = await sb.from('vendas').select('*').order('id', { ascending: false }).limit(50);
+      if (!error && data) { data.slice().reverse().forEach((v) => render(v, false)); statusEl.textContent = data.length + ' registro(s)'; }
+      else { statusEl.textContent = 'erro ao carregar'; }
+    }
+
+    function conectar() {
+      sb.channel('vendas-rt')
+        .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'vendas' }, (payload) => {
+          render(payload.new, true);
+        })
+        .subscribe((s) => {
+          const dot = document.getElementById('dot'); const txt = document.getElementById('liveTxt');
+          if (s === 'SUBSCRIBED') { dot.classList.remove('off'); txt.textContent = 'ao vivo'; }
+          else { dot.classList.add('off'); txt.textContent = 'reconectando…'; }
+        });
+    }
+
+    inicial().then(conectar);
+
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/vendas/sw.js').catch(() => {});
+  </script>
+</body>
+</html>
