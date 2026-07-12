@@ -219,6 +219,15 @@
           <button type="button" class="btn-sec" onclick="window.print()">⬇️ Baixar em PDF</button>
           <a class="btn-wa" id="btn-wa" href="https://wa.me/553172285422?text=Oi!%20Acabei%20de%20fazer%20a%20degusta%C3%A7%C3%A3o%20no%20site%20e%20quero%20saber%20mais." onclick="typeof fbq==='function'&&fbq('track','Lead');">Quero mais — falar no WhatsApp</a>
         </div>
+        <div style="margin-top:1.5rem;background:rgba(13,27,62,.55);border:1px solid rgba(201,168,76,.35);border-radius:12px;padding:1.1rem 1.2rem;">
+          <label class="lbl" for="ajuste" style="margin-top:0;">É seu — quer ajustar? <span class="opt">(ex.: "reforça o pedido", "linguagem mais simples", "adiciona a cláusula X")</span></label>
+          <textarea id="ajuste" maxlength="2000" style="min-height:64px;" placeholder="Diga o que mudar, como você falaria com um estagiário…"></textarea>
+          <div class="go-row" style="margin-top:.85rem;">
+            <button type="button" class="btn-go" id="btn-refinar" style="padding:.85rem 2rem;font-size:.85rem;">🔁&nbsp; Ajustar o documento</button>
+            <p class="fine">O documento volta reescrito com o seu ajuste — refine quantas vezes precisar.</p>
+          </div>
+          <div class="app-err" id="refine-err"></div>
+        </div>
         <p class="res-note" id="res-note">Revise e complete as lacunas ( ______ ) antes de usar. Gostou? A plataforma tem <b>1 mês grátis</b> e depois R$ 27/mês (preço de lançamento) — <a href="/#wl">entre na lista de espera</a>.</p>
       </div>
 
@@ -365,7 +374,9 @@
     if (i > -1) html = html.slice(0, i) + '<span class="rodape">' + html.slice(i).replace(/[─_]/g, '').trim() + '</span>';
     $('doc').innerHTML = html;
   }
+  var docAtual = '';
   function mostrarResultado(documento, transcricao) {
+    docAtual = documento;
     renderDoc(documento);
     if (transcricao) {
       $('transcr').innerHTML = '<b>O que eu entendi do seu áudio:</b> ' + esc(transcricao);
@@ -390,6 +401,8 @@
   // --- envio ---
   var ERROS = {
     codigo_esgotado: 'Este convite já usou todos os trabalhos prontos dele 🙂. Gostou? Chame o Fernando no WhatsApp e conte o que achou.',
+    instrucao_curta: 'Me diga com um pouco mais de detalhe o que ajustar (uma frase já resolve).',
+    documento_ausente: 'Não encontrei o documento pra ajustar — gere um trabalho pronto primeiro.',
     teste_fechado: 'O teste está fechado no momento. Chame no WhatsApp pra saber quando abre de novo.',
     ja_degustou: 'Você já usou a sua degustação gratuita (é 1 por pessoa 🙂). Quer mais? Chame no WhatsApp ou entre na lista de espera da plataforma.',
     limite_dia: 'As degustações de hoje se esgotaram 😅 — o motor volta amanhã. Se quiser, chame no WhatsApp que a gente te atende por lá.',
@@ -435,7 +448,10 @@
         return;
       }
       if (out.st === 200 && out.j && out.j.documento) {
-        try { localStorage.setItem('hm_degustacao_doc', out.j.documento); } catch (e) {}
+        try {
+          localStorage.setItem('hm_degustacao_doc', out.j.documento);
+          localStorage.setItem('hm_prof', corpo.profissao || '');
+        } catch (e) {}
         if (typeof fbq === 'function') fbq('track', 'Lead');
         mostrarResultado(out.j.documento, out.j.transcricao || null);
       } else {
@@ -444,6 +460,46 @@
     }).catch(function () {
       clearInterval(fraseTimer);
       mostrarErro('Não consegui falar com o motor agora (pode ser a sua conexão). Tente de novo em instantes.');
+    });
+  });
+
+  // --- refinar o documento (o chat continua) ---
+  function erroRefino(msg) {
+    mostrar('res');
+    var e = $('refine-err');
+    e.textContent = msg; e.style.display = 'block';
+  }
+  $('btn-refinar').addEventListener('click', function () {
+    var instrucao = $('ajuste').value.trim();
+    $('refine-err').style.display = 'none';
+    if (instrucao.length < 5) { erroRefino(ERROS.instrucao_curta); return; }
+    if (!docAtual || docAtual.length < 40) { erroRefino(ERROS.documento_ausente); return; }
+    var prof = '';
+    try { prof = localStorage.getItem('hm_prof') || ''; } catch (e) {}
+    mostrar('load'); loopFrases();
+    $('load-msg').textContent = 'Aplicando o seu ajuste…';
+    fetch(API, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ codigo: convite(), refinar: true, profissao: prof, documento: docAtual, instrucao: instrucao })
+    }).then(function (r) {
+      return r.json().then(function (j) { return { st: r.status, j: j }; });
+    }).then(function (out) {
+      clearInterval(fraseTimer);
+      if (out.st === 401) {
+        try { localStorage.removeItem('hm_convite'); } catch (e) {}
+        mostrarGate('Esse código não é válido. Confira com quem te convidou e digite de novo.');
+        return;
+      }
+      if (out.st === 200 && out.j && out.j.documento) {
+        try { localStorage.setItem('hm_degustacao_doc', out.j.documento); } catch (e) {}
+        $('ajuste').value = '';
+        mostrarResultado(out.j.documento, null);
+      } else {
+        erroRefino(ERROS[(out.j && out.j.erro) || 'erro_tecnico'] || ERROS.erro_tecnico);
+      }
+    }).catch(function () {
+      clearInterval(fraseTimer);
+      erroRefino('Não consegui falar com o motor agora. Tente de novo em instantes.');
     });
   });
 
