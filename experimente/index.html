@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HermesIA — Teste fechado (por convite)</title>
+  <meta name="description" content="Não acredite: prove. Conte um problema real — escrevendo ou falando — e receba o documento pronto aqui na tela, em minutos. Grátis, 1 por pessoa, sem cadastro.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://hermesia.ia.br/experimente/">
+  <link rel="icon" type="image/png" href="/emblema.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Degustação HermesIA — conte o seu caso, receba o documento pronto">
+  <meta property="og:description" content="Escreva ou fale um problema real e receba o documento pronto na tela, em minutos. Grátis, 1 por pessoa, sem cadastro.">
+  <meta property="og:url" content="https://hermesia.ia.br/experimente/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HermesIA">
+  <meta property="og:image" content="https://hermesia.ia.br/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0d1b3e; --navy2:#0a1428; --navy3:#060f22; --gold:#c9a84c; --gold2:#e5c06a; --gold3:#8a6b1f; --ice:#d0daea; --paper:#fdfcf8; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: var(--navy2); }
+    a { text-decoration: none; }
+    button { font-family: 'Inter', sans-serif; cursor: pointer; }
+
+    /* ===== HERO ===== */
+    .hero { background: radial-gradient(ellipse at 50% -20%, #16295c 0%, var(--navy) 45%, var(--navy2) 100%); padding: 2.6rem 1.2rem 1.6rem; text-align: center; }
+    .hero .emblem { width: 92px; height: 92px; display: block; margin: 0 auto 1rem; filter: drop-shadow(0 6px 24px rgba(201,168,76,.35)); }
+    .badge { display: inline-block; background: rgba(201,168,76,.13); color: var(--gold2); border: 1px solid rgba(201,168,76,.5); font-size: .66rem; padding: 5px 16px; border-radius: 20px; letter-spacing: 2px; margin-bottom: 1.3rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.15rem; color: #fff; line-height: 1.35; max-width: 640px; margin: 0 auto .9rem; font-weight: 700; }
+    .hero h1 em { color: var(--gold2); font-style: italic; }
+    .hero p { font-size: .92rem; color: var(--ice); max-width: 500px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
+    .hero-docs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 640px; margin: 1.4rem auto 0; }
+    .hero-docs span { font-size: .72rem; color: var(--gold2); background: rgba(201,168,76,.08); border: 1px solid rgba(201,168,76,.35); border-radius: 16px; padding: 5px 13px; letter-spacing: .3px; }
+
+    /* ===== APP ===== */
+    .app-wrap { padding: 1.8rem 1.2rem 3rem; background: linear-gradient(180deg, var(--navy2) 0%, var(--navy3) 100%); }
+    .app { max-width: 720px; margin: 0 auto; background: linear-gradient(160deg, rgba(255,255,255,.045), rgba(255,255,255,.015)); border: 1px solid rgba(201,168,76,.35); border-radius: 18px; padding: 1.8rem 1.6rem 1.6rem; box-shadow: 0 30px 80px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06); }
+    .app-head { display: flex; align-items: center; gap: 10px; margin-bottom: 1.4rem; }
+    .app-head .dot { width: 9px; height: 9px; border-radius: 50%; background: #37d67a; box-shadow: 0 0 10px rgba(55,214,122,.8); }
+    .app-head .t { font-size: .72rem; letter-spacing: 2px; color: var(--gold2); font-weight: 500; }
+    .lbl { display: block; font-size: .8rem; color: var(--ice); margin: 1.1rem 0 .5rem; font-weight: 500; }
+    .lbl .opt { color: #7a8eaa; font-weight: 300; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { background: rgba(13,27,62,.7); border: 1px solid #24407a; color: var(--ice); font-size: .78rem; padding: 7px 14px; border-radius: 18px; transition: all .15s; }
+    .chip:hover { border-color: var(--gold); color: var(--gold2); }
+    .chip.on { background: rgba(201,168,76,.18); border-color: var(--gold); color: var(--gold2); font-weight: 500; }
+    input[type=text], textarea { width: 100%; background: rgba(6,15,34,.75); border: 1px solid #24407a; border-radius: 10px; color: #eef3fa; font-family: 'Inter', sans-serif; font-size: .92rem; padding: .85rem 1rem; line-height: 1.65; transition: border-color .15s; }
+    input[type=text]:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,.15); }
+    textarea { min-height: 128px; resize: vertical; }
+    ::placeholder { color: #5a7090; }
+    .or-row { display: flex; align-items: center; gap: 12px; margin: .9rem 0; }
+    .or-row::before, .or-row::after { content: ''; height: 1px; background: #1e3060; flex: 1; }
+    .or-row span { font-size: .68rem; letter-spacing: 2px; color: #5a7090; }
+    .mic-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .btn-mic { display: inline-flex; align-items: center; gap: 8px; background: rgba(13,27,62,.7); border: 1px solid #24407a; color: var(--ice); font-size: .85rem; padding: .7rem 1.2rem; border-radius: 24px; transition: all .15s; }
+    .btn-mic:hover { border-color: var(--gold); color: var(--gold2); }
+    .btn-mic.rec { background: rgba(220,60,60,.18); border-color: #e05656; color: #ff9a9a; animation: pulse 1.2s infinite; }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(224,86,86,.45); } 50% { box-shadow: 0 0 0 9px rgba(224,86,86,0); } }
+    .mic-status { font-size: .78rem; color: #7a8eaa; }
+    .mic-status b { color: var(--gold2); font-weight: 500; }
+    .go-row { text-align: center; margin-top: 1.6rem; }
+    .btn-go { background: linear-gradient(160deg, #dfc05e, var(--gold)); color: #241a05; border: none; font-size: .95rem; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; padding: 1.05rem 2.6rem; border-radius: 8px; box-shadow: 0 10px 30px rgba(201,168,76,.35); transition: transform .15s, box-shadow .15s; }
+    .btn-go:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(201,168,76,.45); }
+    .btn-go:disabled { opacity: .55; transform: none; cursor: default; }
+    .fine { font-size: .72rem; color: #5a7090; margin-top: .8rem; text-align: center; line-height: 1.7; }
+    .app-err { display: none; margin-top: 1rem; background: rgba(220,60,60,.12); border: 1px solid rgba(224,86,86,.5); color: #ffb3b3; font-size: .84rem; border-radius: 10px; padding: .8rem 1rem; line-height: 1.65; text-align: center; }
+
+    /* loading */
+    .loading { display: none; text-align: center; padding: 2.4rem 1rem; }
+    .loader { position: relative; width: 78px; height: 78px; margin: 0 auto 1.2rem; }
+    .loader .ring { position: absolute; inset: 0; border: 2px solid rgba(201,168,76,.25); border-top-color: var(--gold2); border-radius: 50%; animation: spin 1.1s linear infinite; }
+    .loader img { position: absolute; inset: 11px; width: 56px; height: 56px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(201,168,76,.4)); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .load-msg { font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold2); font-size: 1.05rem; min-height: 1.6em; transition: opacity .4s; }
+    .load-sub { font-size: .76rem; color: #5a7090; margin-top: .6rem; }
+
+    /* result */
+    .result { display: none; }
+    .sheet { background: var(--paper); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.55); }
+    .sheet-head { background: linear-gradient(90deg, var(--navy), #16295c); padding: .85rem 1.3rem; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .sheet-head .brand { font-family: 'Playfair Display', serif; color: var(--gold2); font-size: .95rem; }
+    .sheet-head .tag { font-size: .6rem; letter-spacing: 1.5px; color: #93a7c4; }
+    .doc { font-family: 'Source Serif 4', Georgia, serif; font-size: .93rem; line-height: 1.85; color: #22293a; padding: 1.8rem 1.9rem 1.4rem; white-space: pre-wrap; word-wrap: break-word; max-height: 66vh; overflow-y: auto; }
+    .doc strong { color: var(--navy); font-weight: 600; }
+    .doc .rodape { display: block; margin-top: .8rem; font-size: .74rem; color: #8a8f9c; font-style: italic; }
+    .res-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 1.3rem; }
+    .btn-sec { background: transparent; border: 1px solid rgba(201,168,76,.6); color: var(--gold2); font-size: .82rem; font-weight: 500; padding: .75rem 1.4rem; border-radius: 8px; transition: background .15s; }
+    .btn-sec:hover { background: rgba(201,168,76,.12); }
+    .btn-wa { display: inline-flex; align-items: center; gap: 8px; background: #1fae54; color: #fff; border: none; font-size: .82rem; font-weight: 600; padding: .78rem 1.5rem; border-radius: 8px; box-shadow: 0 8px 22px rgba(31,174,84,.35); }
+    .btn-wa:hover { background: #25c25f; }
+    .res-note { text-align: center; font-size: .76rem; color: #7a8eaa; margin-top: 1rem; line-height: 1.75; }
+    .res-note a { color: var(--gold2); }
+    .transcr { display: none; margin-bottom: 1rem; background: rgba(13,27,62,.6); border: 1px solid #24407a; border-radius: 10px; padding: .8rem 1rem; font-size: .8rem; color: var(--ice); line-height: 1.65; }
+    .transcr b { color: var(--gold2); font-weight: 500; }
+
+    /* ===== SEÇÕES DE APOIO ===== */
+    .band { padding: 2.6rem 1.2rem; background: var(--navy3); }
+    .band h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; color: var(--gold2); text-align: center; margin-bottom: .4rem; }
+    .divider { width: 44px; height: 2px; background: var(--gold); margin: .7rem auto 1.4rem; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; max-width: 720px; margin: 0 auto; }
+    .step { background: rgba(13,27,62,.55); border: 1px solid #1e3060; border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .step .n { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+    .step .t { font-size: .87rem; font-weight: 500; color: #fff; margin-bottom: 5px; }
+    .step .x { font-size: .78rem; color: #93a7c4; line-height: 1.6; }
+    .rules { max-width: 640px; margin: 0 auto; }
+    .rule { display: flex; gap: 11px; align-items: flex-start; background: rgba(13,27,62,.55); border: 1px solid #1e3060; border-radius: 9px; padding: .8rem 1rem; margin-bottom: 9px; }
+    .rule .ic { color: var(--gold); line-height: 1.55; }
+    .rule .tx { font-size: .81rem; color: #b9c6d9; line-height: 1.65; }
+    .rule .tx b { color: #fff; font-weight: 500; }
+    .rule a { color: var(--gold2); }
+
+    .footer { background: #04091a; padding: 1.7rem 1.2rem; text-align: center; }
+    .footer p { color: #3a5070; font-size: .76rem; line-height: 1.9; }
+    .footer .brand { color: var(--gold); font-family: 'Playfair Display', serif; }
+    .footer a { color: var(--gold); }
+
+    @media (max-width: 560px) {
+      .hero h1 { font-size: 1.55rem; }
+      .app { padding: 1.3rem 1rem 1.2rem; border-radius: 14px; }
+      .doc { padding: 1.3rem 1.1rem 1rem; font-size: .88rem; }
+    }
+    @media print {
+      body * { visibility: hidden; }
+      .sheet, .sheet * { visibility: visible; }
+      .sheet { position: absolute; inset: 0; box-shadow: none; border-radius: 0; }
+      .doc { max-height: none; overflow: visible; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="emblem" src="/emblema.png" alt="HermesIA">
+    <div class="badge">TESTE FECHADO · SÓ POR CONVITE</div>
+    <h1>Conte o seu caso.<br><em>Receba o documento pronto.</em></h1>
+    <p>Escreva ou fale, como você falaria com uma pessoa. Em minutos, o documento aparece pronto aqui na tela. Acesso por código de convite enquanto durar o teste fechado.</p>
+    <div class="hero-docs">
+      <span>Recurso de bloqueio iFood/Uber</span>
+      <span>Notificação extrajudicial</span>
+      <span>Declaração de renda</span>
+      <span>Autorização de venda de imóvel</span>
+      <span>Carta de cobrança</span>
+      <span>Contrato de prestação de serviços</span>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <section class="app-wrap">
+    <div class="app" id="app">
+
+      <!-- CONVITE (gate do teste fechado) -->
+      <div id="gate-state" style="display:none;">
+        <div class="app-head"><span class="dot" style="background:#e0b84c;box-shadow:0 0 10px rgba(224,184,76,.8);"></span><span class="t">HERMESIA · TESTE FECHADO</span></div>
+        <label class="lbl" for="convite">Código de convite</label>
+        <input type="text" id="convite" placeholder="HERMES-XXXXX" autocomplete="off" style="text-transform:uppercase;letter-spacing:2px;">
+        <div class="go-row">
+          <button type="button" class="btn-go" id="btn-entrar">🔑&nbsp; Entrar no teste</button>
+          <p class="fine">Este é um teste fechado da HermesIA — o acesso é por convite pessoal.<br>Ainda não tem um código? <a href="https://wa.me/553172285422?text=Oi!%20Quero%20um%20convite%20pra%20testar%20a%20HermesIA." style="color:var(--gold2);">Peça no WhatsApp</a>.</p>
+        </div>
+        <div class="app-err" id="gate-err"></div>
+      </div>
+
+      <!-- FORM -->
+      <div id="form-state" style="display:none;">
+        <div class="app-head"><span class="dot"></span><span class="t">HERMESIA · MOTOR DE TRABALHO PRONTO</span></div>
+
+        <label class="lbl" for="prof">No que você trabalha? <span class="opt">(opcional — ajuda a acertar a linguagem)</span></label>
+        <div class="chips" id="chips">
+          <button type="button" class="chip">Advogado(a)</button>
+          <button type="button" class="chip">Entregador / Motoboy</button>
+          <button type="button" class="chip">Motorista de app</button>
+          <button type="button" class="chip">Contador(a)</button>
+          <button type="button" class="chip">Psicólogo(a)</button>
+          <button type="button" class="chip">Corretor(a) de imóveis</button>
+          <button type="button" class="chip">Professor(a)</button>
+          <button type="button" class="chip">Autônomo(a)</button>
+        </div>
+        <input type="text" id="prof" placeholder="ou escreva aqui a sua profissão…" style="margin-top:10px;">
+
+        <label class="lbl" for="pedido">Conte o seu caso, como você contaria pra uma pessoa</label>
+        <textarea id="pedido" maxlength="4000" placeholder="Ex.: Bloquearam minha conta no iFood ontem sem explicar. Trabalho lá há 2 anos, nota 4,9, nunca tomei advertência. Preciso de um recurso pra mandar pro app."></textarea>
+
+        <div class="or-row"><span>OU, SE PREFERIR, FALE</span></div>
+        <div class="mic-row">
+          <button type="button" class="btn-mic" id="btn-mic">🎙️ <span id="mic-lbl">Gravar áudio</span></button>
+          <span class="mic-status" id="mic-status">até 90 segundos — como um áudio de WhatsApp</span>
+        </div>
+
+        <div class="go-row">
+          <button type="button" class="btn-go" id="btn-go">✨&nbsp; Gerar meu trabalho pronto</button>
+          <p class="fine">Teste fechado · seu convite dá direito a alguns trabalhos prontos · você revisa antes de usar · não envie dados sensíveis de terceiros</p>
+        </div>
+        <div class="app-err" id="app-err"></div>
+      </div>
+
+      <!-- LOADING -->
+      <div class="loading" id="loading-state">
+        <div class="loader"><span class="ring"></span><img src="/emblema.png" alt=""></div>
+        <div class="load-msg" id="load-msg">Lendo o seu caso…</div>
+        <div class="load-sub">isto leva menos de um minuto — é um documento de verdade sendo redigido</div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="result" id="result-state">
+        <div class="transcr" id="transcr"></div>
+        <div class="sheet">
+          <div class="sheet-head">
+            <span class="brand">HermesIA</span>
+            <span class="tag">TRABALHO PRONTO · DEGUSTAÇÃO</span>
+          </div>
+          <div class="doc" id="doc"></div>
+        </div>
+        <div class="res-actions">
+          <button type="button" class="btn-sec" id="btn-again">↩️ Testar outro caso</button>
+          <button type="button" class="btn-sec" id="btn-copy">📋 Copiar texto</button>
+          <button type="button" class="btn-sec" onclick="window.print()">⬇️ Baixar em PDF</button>
+          <a class="btn-wa" id="btn-wa" href="https://wa.me/553172285422?text=Oi!%20Acabei%20de%20fazer%20a%20degusta%C3%A7%C3%A3o%20no%20site%20e%20quero%20saber%20mais." onclick="typeof fbq==='function'&&fbq('track','Lead');">Quero mais — falar no WhatsApp</a>
+        </div>
+        <p class="res-note" id="res-note">Revise e complete as lacunas ( ______ ) antes de usar. Gostou? A plataforma tem <b>1 mês grátis</b> e depois R$ 27/mês (preço de lançamento) — <a href="/#wl">entre na lista de espera</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="band">
+    <h2>Como funciona</h2>
+    <div class="divider"></div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div class="t">Conte o caso</div><div class="x">Escreva ou grave um áudio, em português normal — sem prompt, sem termos técnicos.</div></div>
+      <div class="step"><div class="n">2</div><div class="t">A HermesIA redige</div><div class="x">Recurso, declaração, carta, requerimento — ela escolhe o formato certo e escreve por você.</div></div>
+      <div class="step"><div class="n">3</div><div class="t">Receba na tela</div><div class="x">Documento formatado, pronto pra copiar ou baixar em PDF. Você só revisa e usa.</div></div>
+    </div>
+  </section>
+
+  <!-- REGRAS -->
+  <section class="band" style="background:var(--navy2);">
+    <h2>O combinado, sem letra miúda</h2>
+    <div class="divider"></div>
+    <div class="rules">
+      <div class="rule"><span class="ic">✦</span><span class="tx"><b>Acesso por convite.</b> Cada código dá direito a alguns trabalhos prontos completos — é um teste de verdade, não um plano grátis disfarçado.</span></div>
+      <div class="rule"><span class="ic">✦</span><span class="tx"><b>Você sempre revisa antes de usar.</b> O documento sai digno, com lacunas ( ______ ) para os dados que você não informou — a responsabilidade pelo uso é sua.</span></div>
+      <div class="rule"><span class="ic">✦</span><span class="tx"><b>Peça judicial sai como minuta estruturada</b>, para revisão de um advogado — a degustação não substitui o profissional habilitado da sua área.</span></div>
+      <div class="rule"><span class="ic">✦</span><span class="tx"><b>Não envie dados sensíveis de terceiros.</b> Use um caso seu. O áudio é processado só para gerar o texto. <a href="/privacidade.html">Privacidade</a></span></div>
+      <div class="rule"><span class="ic">✦</span><span class="tx"><b>Bônus no WhatsApp:</b> encaminhe qualquer áudio de trabalho pro nosso número e receba transcrição + resumo na hora — grátis, 10 por dia (<a href="/audio/">HermesIA Áudio</a>).</span></div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <p><span class="brand">HermesIA</span> · <a href="/">hermesia.ia.br</a> · fernando@hermesia.ia.br</p>
+    <p><a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a></p>
+    <p>© 2026 HermesIA · Tecnologia que devolve o seu tempo · Belo Horizonte, MG</p>
+  </footer>
+
+<script>
+(function () {
+  'use strict';
+  var API = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+    ? 'http://localhost:3111/api/degustacao'
+    : 'https://bot.hermesia.ia.br/api/degustacao';
+
+  var $ = function (id) { return document.getElementById(id); };
+  var formSt = $('form-state'), loadSt = $('loading-state'), resSt = $('result-state'), gateSt = $('gate-state');
+  var erroBox = $('app-err'), gateErr = $('gate-err');
+  function convite() { try { return localStorage.getItem('hm_convite') || ''; } catch (e) { return ''; } }
+
+  // --- profissão: chips ---
+  var profInput = $('prof');
+  Array.prototype.forEach.call(document.querySelectorAll('#chips .chip'), function (ch) {
+    ch.addEventListener('click', function () {
+      var on = ch.classList.contains('on');
+      Array.prototype.forEach.call(document.querySelectorAll('#chips .chip'), function (c) { c.classList.remove('on'); });
+      if (!on) { ch.classList.add('on'); profInput.value = ch.textContent; } else { profInput.value = ''; }
+    });
+  });
+
+  // --- gravação de áudio ---
+  var rec = null, chunks = [], audioBlob = null, recTimer = null, recSecs = 0, MAX_SECS = 90;
+  var btnMic = $('btn-mic'), micLbl = $('mic-lbl'), micStatus = $('mic-status');
+
+  function pararGravacao() { if (rec && rec.state !== 'inactive') rec.stop(); }
+  btnMic.addEventListener('click', function () {
+    if (btnMic.classList.contains('rec')) { pararGravacao(); return; }
+    if (audioBlob) { // regravar
+      audioBlob = null; micLbl.textContent = 'Gravar áudio';
+      micStatus.innerHTML = 'até 90 segundos — como um áudio de WhatsApp'; return;
+    }
+    if (!navigator.mediaDevices || !window.MediaRecorder) {
+      mostrarErro('Seu navegador não permite gravar áudio aqui — sem problema: escreva o caso no campo acima.'); return;
+    }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+      chunks = []; recSecs = 0;
+      var mime = MediaRecorder.isTypeSupported('audio/webm;codecs=opus') ? 'audio/webm;codecs=opus'
+               : (MediaRecorder.isTypeSupported('audio/mp4') ? 'audio/mp4' : '');
+      rec = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
+      rec.ondataavailable = function (e) { if (e.data && e.data.size) chunks.push(e.data); };
+      rec.onstop = function () {
+        stream.getTracks().forEach(function (t) { t.stop(); });
+        clearInterval(recTimer);
+        btnMic.classList.remove('rec');
+        audioBlob = new Blob(chunks, { type: rec.mimeType || 'audio/webm' });
+        micLbl.textContent = 'Regravar';
+        micStatus.innerHTML = '<b>áudio gravado (' + recSecs + 's)</b> — pode gerar o trabalho pronto';
+      };
+      rec.start();
+      btnMic.classList.add('rec'); micLbl.textContent = 'Parar gravação';
+      recTimer = setInterval(function () {
+        recSecs++;
+        micStatus.innerHTML = 'gravando… <b>' + recSecs + 's</b> (toque em parar quando terminar)';
+        if (recSecs >= MAX_SECS) pararGravacao();
+      }, 1000);
+    }).catch(function () {
+      mostrarErro('Não consegui acessar o microfone. Permita o acesso ou escreva o caso no campo acima.');
+    });
+  });
+
+  // --- estados ---
+  function mostrar(st) {
+    gateSt.style.display = st === 'gate' ? 'block' : 'none';
+    formSt.style.display = st === 'form' ? 'block' : 'none';
+    loadSt.style.display = st === 'load' ? 'block' : 'none';
+    resSt.style.display = st === 'res' ? 'block' : 'none';
+    if (st !== 'form') erroBox.style.display = 'none';
+    if (st !== 'gate') gateErr.style.display = 'none';
+  }
+  function mostrarGate(msg) {
+    mostrar('gate');
+    if (msg) { gateErr.textContent = msg; gateErr.style.display = 'block'; }
+    $('app').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  $('btn-entrar').addEventListener('click', function () {
+    var c = $('convite').value.trim().toUpperCase();
+    if (c.length < 4) { mostrarGate('Digite o código do seu convite (ex.: HERMES-AB2CD).'); return; }
+    try { localStorage.setItem('hm_convite', c); } catch (e) {}
+    mostrar('form');
+  });
+  $('convite').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('btn-entrar').click(); });
+  function mostrarErro(msg) {
+    mostrar('form');
+    erroBox.textContent = msg;
+    erroBox.style.display = 'block';
+    erroBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  var FRASES = ['Lendo o seu caso…', 'Escolhendo o formato certo…', 'Organizando os fatos…', 'Redigindo o documento…', 'Cuidando da linguagem…', 'Revisando os detalhes…'];
+  var fraseIdx = 0, fraseTimer = null;
+  function loopFrases() {
+    fraseIdx = 0; $('load-msg').textContent = FRASES[0];
+    fraseTimer = setInterval(function () {
+      fraseIdx = (fraseIdx + 1) % FRASES.length;
+      var el = $('load-msg'); el.style.opacity = 0;
+      setTimeout(function () { el.textContent = FRASES[fraseIdx]; el.style.opacity = 1; }, 350);
+    }, 3200);
+  }
+
+  // --- render do documento (formato WhatsApp -> HTML) ---
+  function esc(t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function renderDoc(txt) {
+    var html = esc(txt).replace(/\*([^*\n]+)\*/g, '<strong>$1</strong>');
+    var i = html.lastIndexOf('────');
+    if (i > -1) html = html.slice(0, i) + '<span class="rodape">' + html.slice(i).replace(/[─_]/g, '').trim() + '</span>';
+    $('doc').innerHTML = html;
+  }
+  function mostrarResultado(documento, transcricao) {
+    renderDoc(documento);
+    if (transcricao) {
+      $('transcr').innerHTML = '<b>O que eu entendi do seu áudio:</b> ' + esc(transcricao);
+      $('transcr').style.display = 'block';
+    } else { $('transcr').style.display = 'none'; }
+    mostrar('res');
+    $('app').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // --- estado inicial: precisa de convite; com convite, restaura o último documento ---
+  (function () {
+    if (!convite()) { mostrar('gate'); return; }
+    try {
+      var salvo = localStorage.getItem('hm_degustacao_doc');
+      if (salvo) {
+        mostrarResultado(salvo, null);
+        $('res-note').innerHTML = 'Seu último trabalho pronto fica guardado aqui. Quer testar outro caso? É só clicar em <b>Testar outro caso</b> — seu convite dá direito a mais alguns.';
+      } else { mostrar('form'); }
+    } catch (e) { mostrar('form'); }
+  })();
+
+  // --- envio ---
+  var ERROS = {
+    codigo_esgotado: 'Este convite já usou todos os trabalhos prontos dele 🙂. Gostou? Chame o Fernando no WhatsApp e conte o que achou.',
+    teste_fechado: 'O teste está fechado no momento. Chame no WhatsApp pra saber quando abre de novo.',
+    ja_degustou: 'Você já usou a sua degustação gratuita (é 1 por pessoa 🙂). Quer mais? Chame no WhatsApp ou entre na lista de espera da plataforma.',
+    limite_dia: 'As degustações de hoje se esgotaram 😅 — o motor volta amanhã. Se quiser, chame no WhatsApp que a gente te atende por lá.',
+    pedido_curto: 'Me conte um pouco mais do caso (pelo menos uma ou duas frases) pra eu conseguir redigir um documento digno.',
+    audio_incompreensivel: 'Não consegui entender o áudio desta vez 😅. Tente gravar de novo num lugar mais silencioso, ou escreva o caso.',
+    audio_grande: 'O áudio ficou grande demais. Grave até 90 segundos, ou escreva o caso.',
+    erro_tecnico: 'Tive um probleminha técnico aqui. Espere alguns segundos e tente de novo, por favor.',
+  };
+
+  function blobParaBase64(blob) {
+    return new Promise(function (resolve, reject) {
+      var fr = new FileReader();
+      fr.onload = function () { resolve(String(fr.result).split(',')[1] || ''); };
+      fr.onerror = reject;
+      fr.readAsDataURL(blob);
+    });
+  }
+
+  $('btn-go').addEventListener('click', function () {
+    var pedido = $('pedido').value.trim();
+    if (!pedido && !audioBlob) { mostrarErro('Conte o seu caso por escrito ou grave um áudio — é isso que vira o documento.'); return; }
+    if (pedido && pedido.length < 20) { mostrarErro(ERROS.pedido_curto); return; }
+    if (btnMic.classList.contains('rec')) pararGravacao();
+
+    mostrar('load'); loopFrases();
+    var corpo = { profissao: profInput.value.trim().slice(0, 120), codigo: convite() };
+    var prep = Promise.resolve();
+    if (pedido) { corpo.pedido = pedido; }
+    else {
+      prep = blobParaBase64(audioBlob).then(function (b64) {
+        corpo.audio = b64; corpo.mimeType = (audioBlob.type || 'audio/webm').split(';')[0];
+      });
+    }
+    prep.then(function () {
+      return fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo) });
+    }).then(function (r) {
+      return r.json().then(function (j) { return { st: r.status, j: j }; });
+    }).then(function (out) {
+      clearInterval(fraseTimer);
+      if (out.st === 401) {
+        try { localStorage.removeItem('hm_convite'); } catch (e) {}
+        mostrarGate('Esse código não é válido. Confira com quem te convidou e digite de novo.');
+        return;
+      }
+      if (out.st === 200 && out.j && out.j.documento) {
+        try { localStorage.setItem('hm_degustacao_doc', out.j.documento); } catch (e) {}
+        if (typeof fbq === 'function') fbq('track', 'Lead');
+        mostrarResultado(out.j.documento, out.j.transcricao || null);
+      } else {
+        mostrarErro(ERROS[(out.j && out.j.erro) || 'erro_tecnico'] || ERROS.erro_tecnico);
+      }
+    }).catch(function () {
+      clearInterval(fraseTimer);
+      mostrarErro('Não consegui falar com o motor agora (pode ser a sua conexão). Tente de novo em instantes.');
+    });
+  });
+
+  // --- testar outro caso ---
+  $('btn-again').addEventListener('click', function () {
+    $('pedido').value = '';
+    audioBlob = null; micLbl.textContent = 'Gravar áudio';
+    micStatus.innerHTML = 'até 90 segundos — como um áudio de WhatsApp';
+    mostrar('form');
+    $('app').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // --- copiar ---
+  $('btn-copy').addEventListener('click', function () {
+    var texto = $('doc').innerText;
+    (navigator.clipboard ? navigator.clipboard.writeText(texto) : Promise.reject()).then(function () {
+      $('btn-copy').textContent = '✅ Copiado!';
+      setTimeout(function () { $('btn-copy').textContent = '📋 Copiar texto'; }, 2200);
+    }).catch(function () {
+      var ta = document.createElement('textarea'); ta.value = texto; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      $('btn-copy').textContent = '✅ Copiado!';
+      setTimeout(function () { $('btn-copy').textContent = '📋 Copiar texto'; }, 2200);
+    });
+  });
+})();
+</script>
+</body>
+</html>
