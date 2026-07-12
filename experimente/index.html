@@ -48,7 +48,8 @@
     .chip.on { background: rgba(201,168,76,.18); border-color: var(--gold); color: var(--gold2); font-weight: 500; }
     input[type=text], textarea { width: 100%; background: rgba(6,15,34,.75); border: 1px solid #24407a; border-radius: 10px; color: #eef3fa; font-family: 'Inter', sans-serif; font-size: .92rem; padding: .85rem 1rem; line-height: 1.65; transition: border-color .15s; }
     input[type=text]:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,.15); }
-    textarea { min-height: 128px; resize: vertical; }
+    textarea { min-height: 200px; resize: vertical; overflow-y: auto; }
+    #ajuste { min-height: 120px; }
     ::placeholder { color: #5a7090; }
     .or-row { display: flex; align-items: center; gap: 12px; margin: .9rem 0; }
     .or-row::before, .or-row::after { content: ''; height: 1px; background: #1e3060; flex: 1; }
@@ -181,7 +182,7 @@
         <input type="text" id="prof" placeholder="ou escreva aqui a sua profissão…" style="margin-top:10px;">
 
         <label class="lbl" for="pedido">Conte o seu caso, como você contaria pra uma pessoa</label>
-        <textarea id="pedido" maxlength="4000" placeholder="Ex.: Bloquearam minha conta no iFood ontem sem explicar. Trabalho lá há 2 anos, nota 4,9, nunca tomei advertência. Preciso de um recurso pra mandar pro app."></textarea>
+        <textarea id="pedido" maxlength="20000" placeholder="Ex.: Bloquearam minha conta no iFood ontem sem explicar. Trabalho lá há 2 anos, nota 4,9, nunca tomei advertência. Preciso de um recurso pra mandar pro app.&#10;&#10;Pode escrever à vontade — sem pressa e sem limite curto; o campo cresce conforme você digita."></textarea>
 
         <div class="or-row"><span>OU, SE PREFERIR, FALE</span></div>
         <div class="mic-row">
@@ -221,7 +222,7 @@
         </div>
         <div style="margin-top:1.5rem;background:rgba(13,27,62,.55);border:1px solid rgba(201,168,76,.35);border-radius:12px;padding:1.1rem 1.2rem;">
           <label class="lbl" for="ajuste" style="margin-top:0;">É seu — quer ajustar? <span class="opt">(ex.: "reforça o pedido", "linguagem mais simples", "adiciona a cláusula X")</span></label>
-          <textarea id="ajuste" maxlength="2000" style="min-height:64px;" placeholder="Diga o que mudar, como você falaria com um estagiário…"></textarea>
+          <textarea id="ajuste" maxlength="4000" placeholder="Diga o que mudar, como você falaria com um estagiário…"></textarea>
           <div class="go-row" style="margin-top:.85rem;">
             <button type="button" class="btn-go" id="btn-refinar" style="padding:.85rem 2rem;font-size:.85rem;">🔁&nbsp; Ajustar o documento</button>
             <p class="fine">O documento volta reescrito com o seu ajuste — refine quantas vezes precisar.</p>
@@ -279,6 +280,21 @@
 
   // --- profissão: chips ---
   var profInput = $('prof');
+
+  // --- campos que crescem sozinhos conforme o texto (espaço pra escrever tudo) ---
+  function autoGrow(el) {
+    if (!el) return;
+    var cap = Math.round(window.innerHeight * 0.65);
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight + 2, cap) + 'px';
+  }
+  ['pedido', 'ajuste'].forEach(function (id) {
+    var el = $(id);
+    if (!el) return;
+    el.addEventListener('input', function () { autoGrow(el); });
+    el.addEventListener('focus', function () { autoGrow(el); });
+  });
+
   Array.prototype.forEach.call(document.querySelectorAll('#chips .chip'), function (ch) {
     ch.addEventListener('click', function () {
       var on = ch.classList.contains('on');
@@ -494,7 +510,7 @@
       }
       if (out.st === 200 && out.j && out.j.documento) {
         try { localStorage.setItem('hm_degustacao_doc', out.j.documento); } catch (e) {}
-        $('ajuste').value = '';
+        $('ajuste').value = ''; $('ajuste').style.height = 'auto';
         mostrarResultado(out.j.documento, null);
       } else {
         erroRefino(ERROS[(out.j && out.j.erro) || 'erro_tecnico'] || ERROS.erro_tecnico);
@@ -507,7 +523,7 @@
 
   // --- testar outro caso ---
   $('btn-again').addEventListener('click', function () {
-    $('pedido').value = '';
+    $('pedido').value = ''; $('pedido').style.height = 'auto';
     audioBlob = null; micLbl.textContent = 'Gravar áudio';
     micStatus.innerHTML = 'até 90 segundos — como um áudio de WhatsApp';
     mostrar('form');
