@@ -132,7 +132,7 @@
 <body>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <img class="emblem" src="/emblema.png" alt="HermesIA">
     <div class="badge">TESTE FECHADO · SÓ POR CONVITE</div>
     <h1>Conte o seu caso.<br><em>Receba o documento pronto.</em></h1>
@@ -333,6 +333,8 @@
     formSt.style.display = st === 'form' ? 'block' : 'none';
     loadSt.style.display = st === 'load' ? 'block' : 'none';
     resSt.style.display = st === 'res' ? 'block' : 'none';
+    var hero = document.getElementById('hero');
+    if (hero) hero.style.display = (st === 'load' || st === 'res') ? 'none' : 'block';
     if (st !== 'form') erroBox.style.display = 'none';
     if (st !== 'gate') gateErr.style.display = 'none';
   }
