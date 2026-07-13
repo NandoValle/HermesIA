@@ -40,6 +40,10 @@
     .app-head { display: flex; align-items: center; gap: 10px; margin-bottom: 1.4rem; }
     .app-head .dot { width: 9px; height: 9px; border-radius: 50%; background: #37d67a; box-shadow: 0 0 10px rgba(55,214,122,.8); }
     .app-head .t { font-size: .72rem; letter-spacing: 2px; color: var(--gold2); font-weight: 500; }
+    .mode-toggle { display: flex; gap: 8px; margin-bottom: 1.3rem; }
+    .mode-btn { flex: 1; background: rgba(13,27,62,.7); border: 1px solid #24407a; color: var(--ice); font-size: .82rem; padding: .62rem .4rem; border-radius: 10px; transition: all .15s; }
+    .mode-btn:hover { border-color: var(--gold); }
+    .mode-btn.on { background: rgba(201,168,76,.18); border-color: var(--gold); color: var(--gold2); font-weight: 600; }
     .lbl { display: block; font-size: .8rem; color: var(--ice); margin: 1.1rem 0 .5rem; font-weight: 500; }
     .lbl .opt { color: #7a8eaa; font-weight: 300; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -166,8 +170,14 @@
 
       <!-- FORM -->
       <div id="form-state" style="display:none;">
-        <div class="app-head"><span class="dot"></span><span class="t">HERMESIA · MOTOR DE TRABALHO PRONTO</span></div>
+        <div class="app-head"><span class="dot"></span><span class="t" id="mode-title">HERMESIA · MOTOR DE TRABALHO PRONTO</span></div>
 
+        <div class="mode-toggle">
+          <button type="button" class="mode-btn on" id="mode-doc">📄 Documento pronto</button>
+          <button type="button" class="mode-btn" id="mode-par">⚖️ Parecer / Consulta</button>
+        </div>
+
+        <div id="grp-prof">
         <label class="lbl" for="prof">No que você trabalha? <span class="opt">(opcional — ajuda a acertar a linguagem)</span></label>
         <div class="chips" id="chips">
           <button type="button" class="chip">Advogado(a)</button>
@@ -180,19 +190,22 @@
           <button type="button" class="chip">Autônomo(a)</button>
         </div>
         <input type="text" id="prof" placeholder="ou escreva aqui a sua profissão…" style="margin-top:10px;">
+        </div>
 
-        <label class="lbl" for="pedido">Conte o seu caso, como você contaria pra uma pessoa</label>
+        <label class="lbl" for="pedido" id="lbl-pedido">Conte o seu caso, como você contaria pra uma pessoa</label>
         <textarea id="pedido" maxlength="20000" placeholder="Ex.: Bloquearam minha conta no iFood ontem sem explicar. Trabalho lá há 2 anos, nota 4,9, nunca tomei advertência. Preciso de um recurso pra mandar pro app.&#10;&#10;Pode escrever à vontade — sem pressa e sem limite curto; o campo cresce conforme você digita."></textarea>
 
+        <div id="grp-mic">
         <div class="or-row"><span>OU, SE PREFERIR, FALE</span></div>
         <div class="mic-row">
           <button type="button" class="btn-mic" id="btn-mic">🎙️ <span id="mic-lbl">Gravar áudio</span></button>
           <span class="mic-status" id="mic-status">até 90 segundos — como um áudio de WhatsApp</span>
         </div>
+        </div>
 
         <div class="go-row">
           <button type="button" class="btn-go" id="btn-go">✨&nbsp; Gerar meu trabalho pronto</button>
-          <p class="fine">Teste fechado · seu convite dá direito a alguns trabalhos prontos · você revisa antes de usar · não envie dados sensíveis de terceiros</p>
+          <p class="fine" id="go-fine">Teste fechado · seu convite dá direito a alguns trabalhos prontos · você revisa antes de usar · não envie dados sensíveis de terceiros</p>
         </div>
         <div class="app-err" id="app-err"></div>
       </div>
@@ -272,6 +285,8 @@
   var API = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
     ? 'http://localhost:3111/api/degustacao'
     : 'https://bot.hermesia.ia.br/api/degustacao';
+  var API_PAR = API.replace('/api/degustacao', '/api/parecer');
+  var modo = 'documento';
 
   var $ = function (id) { return document.getElementById(id); };
   var formSt = $('form-state'), loadSt = $('loading-state'), resSt = $('result-state'), gateSt = $('gate-state');
@@ -430,6 +445,44 @@
     erro_tecnico: 'Tive um probleminha técnico aqui. Espere alguns segundos e tente de novo, por favor.',
   };
 
+  // --- modo: Documento × Parecer ---
+  function setModo(m) {
+    modo = m;
+    var par = (m === 'parecer');
+    $('mode-doc').classList.toggle('on', !par);
+    $('mode-par').classList.toggle('on', par);
+    $('grp-prof').style.display = par ? 'none' : '';
+    $('grp-mic').style.display = par ? 'none' : '';
+    $('mode-title').textContent = par ? 'HERMESIA · PARECER / CONSULTA' : 'HERMESIA · MOTOR DE TRABALHO PRONTO';
+    $('lbl-pedido').textContent = par ? 'Sua pergunta jurídica' : 'Conte o seu caso, como você contaria pra uma pessoa';
+    $('pedido').setAttribute('placeholder', par
+      ? 'Ex.: Cabe dano moral in re ipsa na negativação indevida quando o devedor já possui outra inscrição legítima? Analise a questão.'
+      : 'Ex.: Bloquearam minha conta no iFood ontem sem explicar. Trabalho lá há 2 anos, nota 4,9, nunca tomei advertência. Preciso de um recurso pra mandar pro app.');
+    $('btn-go').innerHTML = par ? '⚖️&nbsp; Gerar parecer' : '✨&nbsp; Gerar meu trabalho pronto';
+    $('go-fine').textContent = par
+      ? 'Teste fechado · parecer de apoio com fontes conferidas · você confere e não substitui o advogado responsável'
+      : 'Teste fechado · seu convite dá direito a alguns trabalhos prontos · você revisa antes de usar · não envie dados sensíveis de terceiros';
+  }
+  $('mode-doc').addEventListener('click', function () { setModo('documento'); });
+  $('mode-par').addEventListener('click', function () { setModo('parecer'); });
+
+  function enviarParecer() {
+    var pergunta = $('pedido').value.trim();
+    if (pergunta.length < 20) { mostrarErro('Faça uma pergunta jurídica com pelo menos uma ou duas frases pra eu poder analisar.'); return; }
+    mostrar('load'); loopFrases();
+    fetch(API_PAR, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ codigo: convite(), pergunta: pergunta }) })
+      .then(function (r) { return r.json().then(function (j) { return { st: r.status, j: j }; }); })
+      .then(function (out) {
+        clearInterval(fraseTimer);
+        if (out.st === 401) { try { localStorage.removeItem('hm_convite'); } catch (e) {} mostrarGate('Esse código não é válido. Confira com quem te convidou e digite de novo.'); return; }
+        if (out.st === 200 && out.j && out.j.documento) {
+          try { localStorage.setItem('hm_degustacao_doc', out.j.documento); } catch (e) {}
+          if (typeof fbq === 'function') fbq('track', 'Lead');
+          mostrarResultado(out.j.documento, null);
+        } else { mostrarErro(ERROS[(out.j && out.j.erro) || 'erro_tecnico'] || ERROS.erro_tecnico); }
+      }).catch(function () { clearInterval(fraseTimer); mostrarErro('Não consegui falar com o motor agora (pode ser a sua conexão). Tente de novo em instantes.'); });
+  }
+
   function blobParaBase64(blob) {
     return new Promise(function (resolve, reject) {
       var fr = new FileReader();
@@ -440,6 +493,7 @@
   }
 
   $('btn-go').addEventListener('click', function () {
+    if (modo === 'parecer') { enviarParecer(); return; }
     var pedido = $('pedido').value.trim();
     if (!pedido && !audioBlob) { mostrarErro('Conte o seu caso por escrito ou grave um áudio — é isso que vira o documento.'); return; }
     if (pedido && pedido.length < 20) { mostrarErro(ERROS.pedido_curto); return; }
