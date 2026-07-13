@@ -427,13 +427,8 @@
       if (pc) { localStorage.setItem('hm_convite', pc.trim().toUpperCase()); history.replaceState(null, '', location.pathname); }
     } catch (e) {}
     if (!convite()) { mostrar('gate'); return; }
-    try {
-      var salvo = localStorage.getItem('hm_degustacao_doc');
-      if (salvo) {
-        mostrarResultado(salvo, null);
-        $('res-note').innerHTML = 'Seu último trabalho pronto fica guardado aqui. Quer testar outro caso? É só clicar em <b>Testar outro caso</b> — seu convite dá direito a mais alguns.';
-      } else { mostrar('form'); }
-    } catch (e) { mostrar('form'); }
+    // sempre abre no formulário limpo (não restaura documento antigo)
+    mostrar('form');
   })();
 
   // --- envio ---
