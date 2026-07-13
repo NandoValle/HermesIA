@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificação de Segurança | HermesIA</title>
+  <meta name="description" content="Página oficial de verificação da HermesIA. Confira aqui os canais oficiais antes de fazer qualquer pagamento. Nunca pedimos dinheiro, senha ou código por WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hermesia.ia.br/verificacao/">
+  <meta property="og:title" content="Verificação de Segurança | HermesIA">
+  <meta property="og:description" content="Confira aqui os canais oficiais antes de pagar qualquer coisa. Golpistas se passam por advogados e escritórios.">
+  <meta property="og:url" content="https://hermesia.ia.br/verificacao/">
+  <meta property="og:image" content="https://hermesia.ia.br/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0d1b3e; --navy2:#16264f; --gold:#c9a84c; --gold-soft:#e6d09a;
+      --ink:#1a1a2e; --muted:#6b7385; --line:#e6e9f0; --bg:#ffffff; --soft:#f6f8fc;
+      --ok:#1f7a4d; --okbg:#e8f6ee; --alert:#b3261e; --alertbg:#fdecea;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.75;font-size:16px;}
+    a{color:#8a6b1f;text-decoration:none;} a:hover{text-decoration:underline;}
+
+    .top{background:var(--navy);padding:1.4rem 2rem;text-align:center;border-bottom:3px solid var(--gold);}
+    .top a{text-decoration:none;}
+    .logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold);letter-spacing:1px;}
+    .logo span{color:#fff;}
+    .tagline{display:block;font-size:.72rem;color:var(--gold-soft);letter-spacing:.5px;margin-top:2px;font-weight:300;}
+
+    .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:2.8rem 1.5rem 2.6rem;text-align:center;}
+    .shield{width:62px;height:62px;margin:0 auto 1rem;display:block;}
+    .hero h1{font-family:'Playfair Display',serif;font-size:2.1rem;color:#fff;margin-bottom:.55rem;line-height:1.2;}
+    .hero p{color:#c4cde0;font-size:1rem;max-width:620px;margin:0 auto;}
+
+    .wrap{max-width:720px;margin:0 auto;padding:2.2rem 1.5rem 1rem;}
+
+    .alert{background:var(--alertbg);border:1px solid #f3c6c2;border-left:5px solid var(--alert);border-radius:12px;padding:1.2rem 1.3rem;margin-bottom:1.8rem;}
+    .alert b{color:var(--alert);}
+    .alert .big{font-size:1.08rem;font-weight:700;color:var(--alert);display:block;margin-bottom:.3rem;}
+
+    h2.sec{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--navy);margin:2rem 0 .8rem;}
+
+    .channels{display:grid;gap:.8rem;}
+    .ch{display:flex;align-items:center;gap:.9rem;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:1rem 1.15rem;}
+    .ch .ic{flex:0 0 42px;height:42px;border-radius:10px;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+    .ch .tx{font-size:.95rem;}
+    .ch .tx b{display:block;color:var(--navy2);font-size:.8rem;text-transform:uppercase;letter-spacing:.6px;margin-bottom:.1rem;}
+    .ch .tx a{color:#8a6b1f;font-weight:600;font-size:1.02rem;}
+    .verified{display:inline-block;background:var(--okbg);color:var(--ok);font-size:.72rem;font-weight:700;padding:.15rem .55rem;border-radius:20px;margin-left:.4rem;vertical-align:middle;}
+
+    .flags{margin:.6rem 0 0;}
+    .flag{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.7rem;}
+    .flag b{color:var(--navy);}
+    .flag .tag{display:inline-block;background:var(--alertbg);color:var(--alert);font-size:.72rem;font-weight:700;padding:.12rem .5rem;border-radius:6px;margin-bottom:.35rem;}
+
+    ol.steps{margin:.4rem 0 0 0;padding:0;list-style:none;counter-reset:s;}
+    ol.steps li{position:relative;padding:.55rem 0 .55rem 2.4rem;border-bottom:1px dashed var(--line);font-size:.98rem;}
+    ol.steps li:last-child{border-bottom:none;}
+    ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:.5rem;width:1.7rem;height:1.7rem;background:var(--gold);color:var(--navy);font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
+
+    .qr{background:var(--soft);border:1px dashed var(--gold);border-radius:12px;padding:1.2rem;text-align:center;margin:1.8rem 0;font-size:.9rem;color:var(--muted);}
+    .qrbox{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;display:inline-block;margin-top:1rem;box-shadow:0 4px 14px rgba(13,27,62,.08);}
+    .qrbox img{display:block;}
+
+    .foot{background:#060d1a;padding:1.8rem 1.4rem;text-align:center;border-top:3px solid var(--gold);margin-top:2.4rem;}
+    .foot p{color:#5a6f95;font-size:.78rem;margin:.2rem 0;}
+    .foot .b{color:var(--gold);font-family:'Playfair Display',serif;}
+    .foot a{color:var(--gold-soft);}
+    @media print{.hero,.top,.foot,.ch .ic,ol.steps li::before{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+  </style>
+</head>
+<body>
+  <header class="top"><a href="/"><span class="logo"><span>Hermes</span>IA</span><span class="tagline">A IA que devolve o seu tempo</span></a></header>
+
+  <section class="hero">
+    <svg class="shield" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5l8-3z" fill="#c9a84c" opacity=".18"/>
+      <path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5l8-3z" stroke="#c9a84c" stroke-width="1.4"/>
+      <path d="M8.5 12l2.3 2.3L15.5 9.6" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <h1>Verificação de Segurança</h1>
+    <p>Golpistas se passam por escritórios e advogados para pedir dinheiro. Antes de pagar qualquer coisa, confirme aqui os nossos <strong>canais oficiais</strong>.</p>
+  </section>
+
+  <main class="wrap">
+
+    <div class="alert">
+      <span class="big">⚠️ A HermesIA NUNCA pede pagamento por WhatsApp, SMS ou telefone.</span>
+      Também <b>nunca</b> pedimos senha, código de verificação, PIX de "taxa" ou dados bancários. Se você recebeu uma mensagem assim em nosso nome, <b>é golpe</b> — não pague e confira os canais abaixo.
+    </div>
+
+    <h2 class="sec">Nossos canais oficiais</h2>
+    <div class="channels">
+      <div class="ch">
+        <div class="ic">🌐</div>
+        <div class="tx"><b>Site oficial</b><a href="https://hermesia.ia.br">hermesia.ia.br</a><span class="verified">✓ verificado</span></div>
+      </div>
+      <div class="ch">
+        <div class="ic">💬</div>
+        <div class="tx"><b>WhatsApp oficial</b><a href="https://wa.me/553172285422">+55 31 97228-5422</a><span class="verified">✓ verificado</span></div>
+      </div>
+      <div class="ch">
+        <div class="ic">✉️</div>
+        <div class="tx"><b>E-mail oficial</b><a href="mailto:fernando@hermesia.ia.br">fernando@hermesia.ia.br</a><span class="verified">✓ verificado</span></div>
+      </div>
+    </div>
+    <p style="font-size:.85rem;color:var(--muted);margin-top:.7rem;">Qualquer contato fora destes canais — mesmo que use nosso nome, logo ou fotos — <b>não é oficial</b>.</p>
+
+    <h2 class="sec">Como reconhecer um golpe</h2>
+    <div class="flags">
+      <div class="flag"><span class="tag">GOLPE</span><br><b>"Seu dinheiro foi liberado, pague a taxa para receber."</b><br>Nenhum advogado ou tribunal cobra taxa antecipada para liberar alvará ou valor de processo. O dinheiro cai direto na conta.</div>
+      <div class="flag"><span class="tag">GOLPE</span><br><b>"Pague para agilizar / dar prioridade ao seu processo."</b><br>Não existe "taxa de prioridade". Juízes não ligam cobrando nada.</div>
+      <div class="flag"><span class="tag">GOLPE</span><br><b>"Sua causa foi ganha, pague a taxa judicial para sacar."</b><br>Se a causa foi ganha, o pagamento sai pela conta judicial — sem nenhuma taxa antes.</div>
+    </div>
+
+    <h2 class="sec">Recebeu algo suspeito? Faça isto</h2>
+    <ol class="steps">
+      <li><b>Não pague nada</b> e não passe senhas ou códigos, mesmo sob pressão ou urgência.</li>
+      <li><b>Confirme aqui:</b> qualquer pedido real virá dos canais oficiais acima. Na dúvida, fale conosco pelo <a href="https://wa.me/553172285422">WhatsApp oficial</a>.</li>
+      <li><b>Guarde as provas:</b> prints da conversa, número usado e comprovante (se já pagou).</li>
+      <li><b>Se já pagou,</b> ligue ao seu banco em até 24h para tentar bloquear o PIX/TED e registre um Boletim de Ocorrência (Delegacia Virtual → "estelionato").</li>
+    </ol>
+
+    <div class="qr">
+      📱 <b>Compartilhe esta página.</b> Aponte a câmera do celular para o QR Code abaixo ou salve o link <b>hermesia.ia.br/verificacao</b> — e confira sempre antes de pagar.
+      <div class="qrbox"><img src="qr-verificacao.svg" alt="QR Code para hermesia.ia.br/verificacao" width="180" height="180"></div>
+    </div>
+
+  </main>
+
+  <footer class="foot">
+    <p><span class="b">HermesIA</span> · A IA que devolve o seu tempo</p>
+    <p><a href="https://hermesia.ia.br">hermesia.ia.br</a> · Belo Horizonte, MG</p>
+    <p>© 2026 HermesIA · Página de verificação de segurança</p>
+  </footer>
+</body>
+</html>
