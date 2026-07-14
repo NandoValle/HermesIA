@@ -74,6 +74,20 @@ a{text-decoration:none;color:inherit;}
 .foot span{color:#c9a84c;}
 .foot a{color:#a8bdd8;}
 
+/* SEMÁFORO */
+.semaforo{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:1.6rem;}
+.lane{border-radius:12px;padding:20px 18px;border:1px solid #e7e2d4;background:#fff;}
+.lane .dot{width:14px;height:14px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:middle;}
+.lane .lbl{font-family:'Playfair Display',serif;font-size:1.12rem;color:#12203f;vertical-align:middle;}
+.lane .role{font-size:.74rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin:.4rem 0 .9rem;}
+.lane ul{margin:0;padding:0;list-style:none;}
+.lane li{font-size:.88rem;line-height:1.5;color:#4a5266;font-weight:300;padding:5px 0 5px 18px;position:relative;}
+.lane li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;}
+.lane.g{border-top:4px solid #3fa96a;} .lane.g .dot{background:#3fa96a;} .lane.g .role{color:#2f8452;} .lane.g li::before{background:#3fa96a;}
+.lane.a{border-top:4px solid #d6a52b;} .lane.a .dot{background:#d6a52b;} .lane.a .role{color:#a8791a;} .lane.a li::before{background:#d6a52b;}
+.lane.r{border-top:4px solid #c65a4a;} .lane.r .dot{background:#c65a4a;} .lane.r .role{color:#a8402f;} .lane.r li::before{background:#c65a4a;}
+@media(max-width:640px){.semaforo{grid-template-columns:1fr;}}
+
 @media(max-width:560px){.h-title{font-size:1.65rem;}.s-title{font-size:1.4rem;}.thesis .quote{font-size:1.22rem;}.cta,.cta-line{width:100%;max-width:320px;}}
 </style>
 </head>
@@ -125,6 +139,51 @@ a{text-decoration:none;color:inherit;}
       <div class="step"><div class="num"></div><div class="body"><h4>Entrega o parecer com o tripé</h4><p>Tese, antítese e crítica doutrinária. Onde o direito é dividido, a resposta é condicional — não uma afirmação categórica que esconde o risco.</p></div></div>
       <div class="step"><div class="num"></div><div class="body"><h4>Você revisa e assina</h4><p>Chega uma minuta de 80%, com a prova organizada e os argumentos testados. A decisão final é, e continua sendo, sua.</p></div></div>
     </div>
+  </div>
+</section>
+
+<!-- SEMÁFORO -->
+<section class="sec thesis">
+  <div class="wrap">
+    <div class="eyebrow">O que a IA faz — e onde ela para</div>
+    <h2 class="s-title">Nem tudo é para automatizar. <em>A régua é o risco.</em></h2>
+    <p class="s-text">A pergunta certa não é "a IA consegue?", e sim "quem responde se der errado?". Por isso cada tarefa tem uma cor — e a linha vermelha é intransponível: ela é sua.</p>
+    <div class="semaforo">
+      <div class="lane g">
+        <div><span class="dot"></span><span class="lbl">Verde</span></div>
+        <div class="role">A IA faz · sem efeito externo</div>
+        <ul>
+          <li>Pesquisa de doutrina e jurisprudência</li>
+          <li>Resumo e cronologia dos autos</li>
+          <li>Minuta inicial e rascunho de peça</li>
+          <li>Organização da prova e checklist</li>
+          <li>Classificação e triagem de casos</li>
+        </ul>
+      </div>
+      <div class="lane a">
+        <div><span class="dot"></span><span class="lbl">Amarelo</span></div>
+        <div class="role">A IA propõe · você revisa</div>
+        <ul>
+          <li>Parecer e tese jurídica</li>
+          <li>Análise de risco processual</li>
+          <li>Peça pronta para protocolar</li>
+          <li>Comunicação com o cliente</li>
+          <li>Cálculo e valor da causa</li>
+        </ul>
+      </div>
+      <div class="lane r">
+        <div><span class="dot"></span><span class="lbl">Vermelho</span></div>
+        <div class="role">Só o advogado · nunca a IA</div>
+        <ul>
+          <li>Protocolo e assinatura da peça</li>
+          <li>Acordo, renúncia ou confissão</li>
+          <li>Decisão estratégica irreversível</li>
+          <li>Envio ao cliente ou ao juízo</li>
+          <li>O que compromete a sua OAB</li>
+        </ul>
+      </div>
+    </div>
+    <p class="s-text" style="margin-top:1.4rem;font-size:.92rem;color:#5a6070;"><b>É por isso que o HermesIA existe:</b> ele empurra o máximo para o verde, prepara o amarelo com prova rastreável, e nunca cruza o vermelho sozinho.</p>
   </div>
 </section>
 
