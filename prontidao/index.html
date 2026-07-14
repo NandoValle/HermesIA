@@ -80,7 +80,7 @@ h1 em{color:var(--gold-l);font-style:normal;}
   <span class="kicker">Diagnóstico gratuito · 2 minutos</span>
   <h1>Sua advocacia está pronta para usar IA <em>com segurança</em>?</h1>
   <p class="lead">O risco da IA jurídica não é a máquina errar — é você não ter como perceber o erro a tempo. Marque abaixo o que <b>já existe de forma verificável</b> no seu escritório. Sem cadastro para ver o resultado.</p>
-  <p class="note">Baseado no tripé que orienta o motor do HermesIA: prova rastreável · sigilo por arquitetura · aprovação humana.</p>
+  <p class="note">Baseado nos três princípios da HermesIA: fonte em cada citação · sigilo do cliente preservado · a palavra final é sua.</p>
 
   <div class="scorebar">
     <div class="row">
@@ -97,8 +97,8 @@ h1 em{color:var(--gold-l);font-style:normal;}
     <h2 id="rtitle"></h2>
     <p id="rtext"></p>
     <div class="edge" id="redge"></div>
-    <a class="cta" id="rcta" href="#" target="_blank" rel="noopener">Fazer um test-drive com um caso real →</a>
-    <p class="cta-sub">Você leva um caso seu, com seus riscos. O motor mostra o fluxo funcionando — antes de qualquer cobrança.</p>
+    <a class="cta" id="rcta" href="#" target="_blank" rel="noopener">Ver com um caso do meu escritório →</a>
+    <p class="cta-sub">Você leva um processo real, com os seus fatos. Vê a HermesIA trabalhando no seu caso — sem custo e sem compromisso.</p>
   </div>
 
   <p class="foot">Hermes<span>IA</span> · hermesia.ia.br · A IA que devolve o seu tempo.<br>Este diagnóstico é orientativo. A responsabilidade profissional é, e continua sendo, sua.</p>
@@ -108,34 +108,34 @@ h1 em{color:var(--gold-l);font-style:normal;}
 const ITEMS = [
   {t:"Os processos repetitivos do escritório têm <b>dono e resultado esperado</b> definidos.", tag:"Processo"},
   {t:"Existe regra clara sobre <b>quais dados de cliente podem ou não</b> entrar numa IA (sigilo — art. 34 EAOAB).", tag:"Sigilo"},
-  {t:"Suas peças-modelo (petições, pareceres) estão <b>organizadas e versionadas</b> para reuso.", tag:"Modelos"},
+  {t:"Suas peças-modelo (petições, pareceres) estão <b>organizadas e sempre à mão</b> para reaproveitar.", tag:"Modelos"},
   {t:"Seus textos separam <b>fato provado, tese e lacuna</b> — não misturam tudo num bloco só.", tag:"Prova"},
   {t:"Toda entrega de impacto (protocolo, assinatura) passa por <b>revisão e aprovação sua</b>.", tag:"Portão"},
-  {t:"Seus melhores prompts e modelos estão <b>salvos e reutilizáveis</b> — você não recomeça do zero.", tag:"Reuso"},
+  {t:"Seus melhores modelos de peça e instruções estão <b>salvos e prontos</b> — você não recomeça do zero.", tag:"Reuso"},
   {t:"Você tem <b>casos reais</b> para testar a qualidade de uma ferramenta antes de confiar nela.", tag:"Teste"},
   {t:"Os erros são percebidos <b>por tipo</b> (jurisprudência inventada, generalização, tom errado).", tag:"Erro"},
-  {t:"Você escolhe a ferramenta <b>pela tarefa e pelo risco</b> — não por moda ou hábito.", tag:"Rota"},
+  {t:"Você escolhe a ferramenta <b>pela tarefa e pelo risco</b> — não por moda ou hábito.", tag:"Critério"},
   {t:"A equipe sabe quando usar IA para <b>pesquisar, para minutar</b> e quando <b>não</b> usar.", tag:"Uso"},
   {t:"Você <b>mede</b> quanto tempo cada peça leva e quanto custa produzir.", tag:"Métrica"},
-  {t:"Existe um <b>plano B</b> quando a ferramenta falha ou entrega errado.", tag:"Fallback"},
+  {t:"Existe um <b>plano B</b> quando a ferramenta falha ou entrega errado.", tag:"Plano B"},
 ];
 
 const WA = "https://api.whatsapp.com/send/?phone=553172285422&text=" +
-  encodeURIComponent("Olá! Fiz o Diagnóstico de Prontidão Jurídica no site e quero fazer um test-drive do motor do HermesIA com um caso real.");
+  encodeURIComponent("Olá! Fiz o Diagnóstico de Prontidão Jurídica no site e quero ver a HermesIA funcionando com um caso real do meu escritório.");
 
 const BANDS = [
   { max:4, color:"var(--red)", band:"Base frágil — o risco está invisível",
     title:"Você está produzindo no escuro.",
     text:"Não é falta de competência jurídica — é falta de sistema. Sem separar fato de tese, sem regra de sigilo e sem portão de revisão, uma IA genérica multiplica o erro em vez do trabalho. É exatamente aqui que a maioria dos escritórios se queima com “jurisprudência inventada”.",
-    edge:"O motor do HermesIA nasce resolvendo os três pontos que mais pesam contra você: <b>sigilo por arquitetura</b> (o dado do cliente não sai), <b>jurisprudência rastreável</b> (cada citação com fonte) e <b>separação fato/tese</b>. Você não precisa montar o sistema — ele já vem montado." },
+    edge:"A HermesIA já nasce resolvendo os três pontos que mais pesam contra você: <b>sigilo preservado</b> (o dado do cliente não sai da sua mão), <b>fonte em cada citação</b> (nada de jurisprudência inventada) e a <b>separação entre fato e tese</b>. Você não precisa montar o sistema — ele já vem pronto." },
   { max:8, color:"var(--amber)", band:"Em construção — instinto certo, falta sistema",
     title:"Você já faz o certo. Só não está sistematizado.",
-    text:"Seu cuidado com revisão e sigilo mostra que o instinto está calibrado. O que falta é transformar esse cuidado artesanal em fluxo repetível: modelos versionados, erros medidos por tipo, e a ferramenta certa para cada risco. Esse é o salto que separa “usar IA às vezes” de “produzir com IA todo dia sem susto”.",
-    edge:"O HermesIA encaixa na parte que te falta: entrega o <b>trabalho jurídico pronto</b> com prova rastreável e a controvérsia surfada — enquanto o <b>portão humano</b> (que você já respeita) continua sendo seu. Ele acelera o que você já faz bem, sem tirar a decisão da sua mão." },
+    text:"Seu cuidado com revisão e sigilo mostra que o instinto está calibrado. O que falta é transformar esse cuidado artesanal em rotina repetível: modelos sempre à mão, erros percebidos por tipo, e a ferramenta certa para cada risco. Esse é o salto que separa “usar IA às vezes” de “produzir com IA todo dia sem susto”.",
+    edge:"A HermesIA encaixa na parte que te falta: entrega o <b>trabalho pronto</b>, com a fonte em cada citação e a divergência à mostra — enquanto a <b>palavra final</b> (que você já respeita) continua sua. Ela acelera o que você já faz bem, sem tirar a decisão da sua mão." },
   { max:12, color:"var(--green)", band:"Pronto para escalar com segurança",
     title:"Sua operação está madura. Falta só a ferramenta à altura.",
-    text:"Você tem processo, sigilo, prova e portão. Nesse nível, uma IA genérica não te serve — ela te atrasa, generaliza e cria retrabalho de revisão. O que você precisa é de um motor calibrado para o rigor que você já pratica: que cite fonte, formule condicional e nunca exponha o segredo do cliente.",
-    edge:"É para escritórios como o seu que o HermesIA foi calibrado: <b>doutrina + jurisprudência</b> fundidas num parecer com o tripé, custo por resposta na casa de centavos, e o sigilo tratado como requisito, não como aviso. <b>Traga seu caso mais difícil</b> — é onde a diferença aparece." },
+    text:"Você tem processo, sigilo, prova e revisão. Nesse nível, uma IA genérica não te serve — ela te atrasa, generaliza e cria retrabalho. O que você precisa é de uma ferramenta afinada para o rigor que você já pratica: que cite a fonte, aponte o risco quando o direito é dividido, e nunca exponha o segredo do cliente.",
+    edge:"É para escritórios como o seu que a HermesIA foi feita: <b>doutrina e jurisprudência</b> reunidas num parecer fundamentado, a um custo de centavos por consulta, e o sigilo tratado como parte do desenho — não como aviso. <b>Traga o seu caso mais difícil</b> — é onde a diferença aparece." },
 ];
 
 const list = document.getElementById('list');
