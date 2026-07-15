@@ -17,6 +17,8 @@
 <meta name="twitter:image" content="https://hermesia.ia.br/og-grifo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<!-- HermesIA Analytics (PostHog) -->
+<script src="/assets/analytics.js"></script>
 <style>
 :root{
   --navy:#16243f; --navy2:#1d2f52; --gold:#c9a227; --gold-l:#e6d3a3;
@@ -152,12 +154,19 @@ ITEMS.forEach((it,i)=>{
   list.appendChild(el);
 });
 
+let settleTimer=null, startedTracked=false;
+function bandName(s){ return s<5?'vermelho':s<9?'amarelo':'verde'; }
 function update(){
   const score=state.filter(Boolean).length;
   nEl.textContent=score;
   fill.style.width=(score/12*100)+'%';
   tag.textContent = score<5?'Base frágil':score<9?'Em construção':'Pronto para escalar';
-  if(interacted) showResult(score);
+  if(interacted){
+    showResult(score);
+    if(!startedTracked){ startedTracked=true; window.hmTrack&&hmTrack('quiz_started',{funnel:'prontidao'}); }
+    if(settleTimer) clearTimeout(settleTimer);
+    settleTimer=setTimeout(function(){ window.hmTrack&&hmTrack('quiz_settled',{funnel:'prontidao',score:score,band:bandName(score)}); },1500);
+  }
 }
 
 function showResult(score){
@@ -170,6 +179,11 @@ function showResult(score){
   document.getElementById('rcta').href=WA;
   res.classList.add('show');
 }
+
+document.getElementById('rcta').addEventListener('click',function(){
+  const score=state.filter(Boolean).length;
+  window.hmTrack&&hmTrack('prontidao_cta_whatsapp',{funnel:'prontidao',score:score,band:bandName(score)});
+});
 </script>
 </body>
 </html>

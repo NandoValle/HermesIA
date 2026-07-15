@@ -17,6 +17,9 @@
   <meta property="og:image" content="https://hermesia.ia.br/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <!-- HermesIA Analytics (PostHog) — SUPERFÍCIE DE PRODUTO: session replay DESLIGADO (não grava o caso nem o documento do cliente) -->
+  <script>window.HM_ANALYTICS={record:false};</script>
+  <script src="/assets/analytics.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --navy:#0d1b3e; --navy2:#0a1428; --navy3:#060f22; --gold:#c9a84c; --gold2:#e5c06a; --gold3:#8a6b1f; --ice:#d0daea; --paper:#fdfcf8; }
@@ -231,7 +234,7 @@
           <button type="button" class="btn-sec" id="btn-again">↩️ Testar outro caso</button>
           <button type="button" class="btn-sec" id="btn-copy">📋 Copiar texto</button>
           <button type="button" class="btn-sec" onclick="window.print()">⬇️ Baixar em PDF</button>
-          <a class="btn-wa" id="btn-wa" href="https://wa.me/553172285422?text=Oi!%20Acabei%20de%20fazer%20a%20degusta%C3%A7%C3%A3o%20no%20site%20e%20quero%20saber%20mais." onclick="typeof fbq==='function'&&fbq('track','Lead');">Quero mais — falar no WhatsApp</a>
+          <a class="btn-wa" id="btn-wa" href="https://wa.me/553172285422?text=Oi!%20Acabei%20de%20fazer%20a%20degusta%C3%A7%C3%A3o%20no%20site%20e%20quero%20saber%20mais." onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'experimente',placement:'resultado'});">Quero mais — falar no WhatsApp</a>
         </div>
         <div style="margin-top:1.5rem;background:rgba(13,27,62,.55);border:1px solid rgba(201,168,76,.35);border-radius:12px;padding:1.1rem 1.2rem;">
           <label class="lbl" for="ajuste" style="margin-top:0;">É seu — quer ajustar? <span class="opt">(ex.: "reforça o pedido", "linguagem mais simples", "adiciona a cláusula X")</span></label>
@@ -379,6 +382,7 @@
     if (c.length < 4) { mostrarGate('Digite o código do seu convite (ex.: HERMES-AB2CD).'); return; }
     try { localStorage.setItem('hm_convite', c); } catch (e) {}
     mostrar('form');
+    window.hmTrack&&hmTrack('experimente_gate_passed',{funnel:'experimente'});
   });
   $('convite').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('btn-entrar').click(); });
   function mostrarErro(msg) {
@@ -469,6 +473,7 @@
   function enviarParecer() {
     var pergunta = $('pedido').value.trim();
     if (pergunta.length < 20) { mostrarErro('Faça uma pergunta jurídica com pelo menos uma ou duas frases pra eu poder analisar.'); return; }
+    window.hmTrack&&hmTrack('experimente_generate_start',{funnel:'experimente',modo:'parecer'});
     mostrar('load'); loopFrases();
     fetch(API_PAR, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ codigo: convite(), pergunta: pergunta }) })
       .then(function (r) { return r.json().then(function (j) { return { st: r.status, j: j }; }); })
@@ -478,6 +483,7 @@
         if (out.st === 200 && out.j && out.j.documento) {
           try { localStorage.setItem('hm_degustacao_doc', out.j.documento); } catch (e) {}
           if (typeof fbq === 'function') fbq('track', 'Lead');
+          window.hmTrack&&hmTrack('experimente_result',{funnel:'experimente',modo:'parecer'});
           mostrarResultado(out.j.documento, null);
         } else { mostrarErro(ERROS[(out.j && out.j.erro) || 'erro_tecnico'] || ERROS.erro_tecnico); }
       }).catch(function () { clearInterval(fraseTimer); mostrarErro('Não consegui falar com o motor agora (pode ser a sua conexão). Tente de novo em instantes.'); });
@@ -499,6 +505,7 @@
     if (pedido && pedido.length < 20) { mostrarErro(ERROS.pedido_curto); return; }
     if (btnMic.classList.contains('rec')) pararGravacao();
 
+    window.hmTrack&&hmTrack('experimente_generate_start',{funnel:'experimente',modo:'documento',via:(pedido?'texto':'audio')});
     mostrar('load'); loopFrases();
     var corpo = { profissao: profInput.value.trim().slice(0, 120), codigo: convite() };
     var prep = Promise.resolve();
@@ -525,6 +532,7 @@
           localStorage.setItem('hm_prof', corpo.profissao || '');
         } catch (e) {}
         if (typeof fbq === 'function') fbq('track', 'Lead');
+        window.hmTrack&&hmTrack('experimente_result',{funnel:'experimente',modo:'documento',via:(corpo.pedido?'texto':'audio')});
         mostrarResultado(out.j.documento, out.j.transcricao || null);
       } else {
         mostrarErro(ERROS[(out.j && out.j.erro) || 'erro_tecnico'] || ERROS.erro_tecnico);
@@ -565,6 +573,7 @@
       if (out.st === 200 && out.j && out.j.documento) {
         try { localStorage.setItem('hm_degustacao_doc', out.j.documento); } catch (e) {}
         $('ajuste').value = ''; $('ajuste').style.height = 'auto';
+        window.hmTrack&&hmTrack('experimente_refined',{funnel:'experimente',modo:modo});
         mostrarResultado(out.j.documento, null);
       } else {
         erroRefino(ERROS[(out.j && out.j.erro) || 'erro_tecnico'] || ERROS.erro_tecnico);

@@ -29,6 +29,9 @@
   src="https://www.facebook.com/tr?id=867504105954739&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel Code -->
 
+  <!-- HermesIA Analytics (PostHog) — vê o funil independente do Meta -->
+  <script src="/assets/analytics.js"></script>
+
   <link rel="canonical" href="https://hermesia.ia.br/">
   <link rel="icon" type="image/png" href="/emblema.png">
   <link rel="apple-touch-icon" href="/emblema.png">
@@ -138,6 +141,7 @@
     .hm-hero-title { font-family: 'Playfair Display', serif; font-size: 2.1rem; color: #ffffff; line-height: 1.45; max-width: 600px; margin: 0 auto 1.2rem; }
     .hm-hero-title em { color: #e5c06a; font-style: italic; }
     .hm-hero-sub { font-size: 0.95rem; color: #d0daea; max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.85; font-weight: 300; }
+    .hm-hero-micro { font-size: 0.78rem; color: #8ea3c0; max-width: 440px; margin: 1.1rem auto 0; line-height: 1.6; font-weight: 300; }
     .hm-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
     .hm-cta { background: #c9a84c; color: #fdf6e3; padding: 1.1rem 2.8rem; border-radius: 4px; font-size: 0.95rem; font-weight: 500; border: none; cursor: pointer; letter-spacing: 1.5px; text-transform: uppercase; transition: background 0.2s; }
     .hm-cta:hover { background: #dfc05e; }
@@ -249,16 +253,17 @@
     <div class="hm-logo"><span>Hermes</span>IA</div>
     <div class="hm-tagline">A IA que devolve o seu tempo</div>
     <h1 class="hm-hero-title">Você descreve. <em>A HermesIA entrega pronto.</em></h1>
-    <p class="hm-hero-sub">Petição, recurso, comprovante, relatório — você explica em português e recebe pronto, sem aprender nada de IA. Pra quem trabalha duro: advogado, médico, contador, motoboy, autônomo.<br><strong>Já no ar:</strong> o HermesIA Áudio — encaminhe um áudio no WhatsApp e receba transcrição + resumo na hora. Grátis, 10 áudios/dia, sem cadastro.</p>
+    <p class="hm-hero-sub">Petição, recurso, comprovante, relatório — você explica em português e recebe pronto, sem aprender nada de IA. Pra quem trabalha duro: advogado, médico, contador, motoboy, autônomo.<br><strong>Já no ar:</strong> o HermesIA Áudio — encaminhe um áudio no WhatsApp e receba transcrição + resumo na hora.</p>
     <div class="hm-btns">
-      <a href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." class="hm-cta" style="text-decoration:none;display:inline-block;" onclick="typeof fbq==='function'&&fbq('track','Lead');">Testar grátis agora</a>
+      <a href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." class="hm-cta" style="text-decoration:none;display:inline-block;" onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'hero'});">Testar grátis agora</a>
       <button class="hm-cta-outline" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Ver na prática</button>
     </div>
+    <p class="hm-hero-micro">Grátis, 10 áudios/dia · sem cadastro · o áudio é apagado depois de transcrever, sem expor o sigilo do cliente.</p>
   </section>
 
   <!-- VÍDEO -->
   <section class="hm-video-sec">
-    <video class="hm-video" autoplay muted loop playsinline preload="auto" poster="/emblema.png">
+    <video class="hm-video" autoplay muted loop playsinline preload="metadata" poster="/emblema.png">
       <source src="/video-hermesia.mp4" type="video/mp4">
       Seu navegador não suporta vídeo.
     </video>
@@ -353,7 +358,7 @@
     </div>
     <div class="hm-audio-btns">
       <a class="hm-audio-cta" href="/audio/">Conhecer o HermesIA Áudio</a>
-      <a class="hm-audio-cta-line" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." onclick="typeof fbq==='function'&&fbq('track','Lead');">Testar grátis no WhatsApp</a>
+      <a class="hm-audio-cta-line" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'audio_band'});">Testar grátis no WhatsApp</a>
     </div>
     <span class="hm-audio-note">Grátis: 10 áudios por dia · sem cartão</span>
   </section>
@@ -509,7 +514,7 @@
     </form>
     <p style="font-size:0.82rem;color:#556;margin-top:1.6rem;">Ou teste agora mesmo, sem cadastro:</p>
     <div class="hm-btns" style="margin-top:0.6rem;">
-      <a href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." class="hm-cta-outline" style="text-decoration:none;display:inline-block;" onclick="typeof fbq==='function'&&fbq('track','Lead');">Testar o Áudio grátis no WhatsApp</a>
+      <a href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." class="hm-cta-outline" style="text-decoration:none;display:inline-block;" onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'waitlist_section'});">Testar o Áudio grátis no WhatsApp</a>
     </div>
     <script>
     (function(){
@@ -523,7 +528,7 @@
         var d={ nome:f.nome.value.trim(), email:f.email.value.trim(), profissao:(f.profissao.value.trim()||null), whatsapp:(f.whatsapp.value.trim()||null), origem:'site' };
         try{
           var r=await fetch(SB_URL+'/rest/v1/lista_espera',{method:'POST',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(d)});
-          if(r.ok){ f.reset(); msg.style.color='#2e7d32'; msg.textContent='Pronto! Você está na lista. Avisamos assim que o acesso abrir. ✅'; if(typeof fbq==='function')fbq('track','Lead'); }
+          if(r.ok){ f.reset(); msg.style.color='#2e7d32'; msg.textContent='Pronto! Você está na lista. Avisamos assim que o acesso abrir. ✅'; if(typeof fbq==='function')fbq('track','Lead'); if(window.hmTrack)hmTrack('lead_captured',{funnel:'home',profissao:(d.profissao||null)}); }
           else { var t=await r.text(); msg.style.color='#c62828'; msg.textContent='Não consegui salvar agora — tente de novo ou fale no WhatsApp abaixo.'; console.error('waitlist', r.status, t); }
         }catch(err){ msg.style.color='#c62828'; msg.textContent='Erro de conexão — tente de novo ou fale no WhatsApp abaixo.'; console.error(err); }
         finally{ btn.disabled=false; }
@@ -549,7 +554,15 @@
     <p class="hm-footer-text">© 2026 HermesIA · <img src="/cnpj.png" alt="CNPJ da HermesIA (exibido como imagem)" style="height:13px;vertical-align:-2px;"> · Tecnologia que devolve o seu tempo · Belo Horizonte, MG</p>
   </footer>
 
-  <!-- Botões flutuantes de bot removidos enquanto a HermesIA está em lista de espera -->
+  <!-- Botão flutuante: leva ao HermesIA Áudio (grátis, já no ar). Persistente pra quem chega no meio/fim da página. -->
+  <a class="hm-whatsapp"
+     href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA."
+     aria-label="Testar o HermesIA Áudio grátis no WhatsApp"
+     title="Testar o Áudio grátis no WhatsApp"
+     target="_blank" rel="noopener"
+     onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'floating_button'});">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
 
   <style>

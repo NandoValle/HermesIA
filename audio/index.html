@@ -17,6 +17,9 @@
   <meta property="og:site_name" content="HermesIA">
   <meta property="og:image" content="https://hermesia.ia.br/og-image.png">
 
+  <!-- HermesIA Analytics (PostHog) -->
+  <script src="/assets/analytics.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -114,7 +117,7 @@
     <h1 class="hm-hero-title">Afogado em áudios?<br><em>Encaminhe. Em segundos vira texto — e trabalho pronto.</em></h1>
     <p class="hm-hero-sub">Aquele áudio de 8 minutos do cliente? Encaminhe pro WhatsApp da HermesIA e receba na hora: a transcrição completa, o resumo e a lista do que precisa ser feito. Sem app novo, sem cadastro, sem cartão.</p>
     <a class="hm-cta" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA."
-       onclick="typeof fbq==='function'&&fbq('track','Lead');">▶&nbsp; Testar grátis agora</a>
+       onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'audio',placement:'hero'});">▶&nbsp; Testar grátis agora</a>
     <span class="hm-cta-note">Grátis: 10 áudios por dia · direto no WhatsApp</span>
   </section>
 
@@ -165,7 +168,7 @@
           <li><i class="ti ti-check"></i>Resumo + pontos de ação</li>
           <li><i class="ti ti-check"></i>Sem cadastro, sem cartão</li>
         </ul>
-        <a class="hm-plan-cta hm-plan-cta-solid" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios.">Começar grátis</a>
+        <a class="hm-plan-cta hm-plan-cta-solid" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios." onclick="window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'audio',placement:'plan_free'});">Começar grátis</a>
       </div>
       <div class="hm-plan">
         <div class="hm-plan-name">Planos pagos</div>
@@ -176,7 +179,7 @@
           <li><i class="ti ti-clock"></i>Resposta pronta pra copiar e enviar</li>
           <li><i class="ti ti-clock"></i>Atas de reunião (áudios longos)</li>
         </ul>
-        <a class="hm-plan-cta hm-plan-cta-line" href="https://wa.me/553172285422?text=Oi!%20Quero%20ser%20avisado%20quando%20os%20planos%20pagos%20do%20HermesIA%20%C3%81udio%20lan%C3%A7arem.">Avisar-me no lançamento</a>
+        <a class="hm-plan-cta hm-plan-cta-line" href="https://wa.me/553172285422?text=Oi!%20Quero%20ser%20avisado%20quando%20os%20planos%20pagos%20do%20HermesIA%20%C3%81udio%20lan%C3%A7arem." onclick="window.hmTrack&&hmTrack('audio_pro_interest',{funnel:'audio',placement:'plan_paid'});">Avisar-me no lançamento</a>
       </div>
     </div>
     <p class="hm-plans-note">Enquanto isso, o plano grátis já entrega transcrição + resumo + pontos de ação, todo dia.</p>
@@ -220,7 +223,7 @@
   <section class="hm-final">
     <div class="hm-final-title">O próximo áudio que você receber<br><em>pode chegar já transcrito.</em></div>
     <a class="hm-cta" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA."
-       onclick="typeof fbq==='function'&&fbq('track','Lead');">▶&nbsp; Testar grátis no WhatsApp</a>
+       onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'audio',placement:'final_cta'});">▶&nbsp; Testar grátis no WhatsApp</a>
     <span class="hm-cta-note" style="color:#7a8eaa; display:block; margin-top:0.9rem;">10 áudios grátis por dia · sem cadastro · sem cartão</span>
   </section>
 
