@@ -130,10 +130,17 @@
       .doc { padding: 1.3rem 1.1rem 1rem; font-size: .88rem; }
     }
     @media print {
-      body * { visibility: hidden; }
-      .sheet, .sheet * { visibility: visible; }
-      .sheet { position: absolute; inset: 0; box-shadow: none; border-radius: 0; }
-      .doc { max-height: none; overflow: visible; }
+      @page { margin: 1.5cm; }
+      html, body { background: #fff !important; }
+      .hero, .band, .footer, #gate-state, #form-state, #loading-state { display: none !important; }
+      #result-state > *:not(.sheet) { display: none !important; }
+      .app-wrap { padding: 0 !important; background: #fff !important; }
+      .app { max-width: none !important; margin: 0 !important; padding: 0 !important;
+             background: #fff !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+      #result-state { display: block !important; }
+      .sheet { position: static !important; overflow: visible !important; background: #fff !important;
+               box-shadow: none !important; border: 0 !important; border-radius: 0 !important; }
+      .doc { max-height: none !important; overflow: visible !important; padding: 1rem 0 0 !important; color: #000 !important; }
     }
   </style>
 </head>
@@ -595,7 +602,7 @@
 
   // --- copiar ---
   $('btn-copy').addEventListener('click', function () {
-    var texto = $('doc').innerText;
+    var texto = docAtual || $('doc').innerText;
     (navigator.clipboard ? navigator.clipboard.writeText(texto) : Promise.reject()).then(function () {
       $('btn-copy').textContent = '✅ Copiado!';
       setTimeout(function () { $('btn-copy').textContent = '📋 Copiar texto'; }, 2200);
