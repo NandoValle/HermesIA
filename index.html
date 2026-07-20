@@ -629,7 +629,7 @@
   <style>
     .hm-video-sec{background:var(--navy);padding:0 1.2rem 2.5rem;text-align:center;}
     .hm-video-box{position:relative;max-width:900px;margin:0 auto;}
-    .hm-video{width:100%;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45),0 0 0 1px rgba(201,168,76,.35);display:block;}
+    .hm-video{width:100%;aspect-ratio:864/496;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45),0 0 0 1px rgba(201,168,76,.35);display:block;}
     .hm-sound{position:absolute;right:14px;bottom:14px;background:rgba(13,27,62,.78);color:var(--gold-l);border:1px solid rgba(201,168,76,.5);border-radius:20px;padding:7px 15px;font-size:.78rem;letter-spacing:.5px;cursor:pointer;font-family:inherit;transition:background .2s;}
     .hm-sound:hover{background:rgba(13,27,62,.95);}
     .hm-whatsapp{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:9999;transition:transform .2s ease,box-shadow .2s ease;}
@@ -649,6 +649,10 @@
     if(!window.gsap)return; // CDN falhou → failsafe CSS revela tudo
     document.documentElement.className+=' hm-gsap';
     gsap.registerPlugin(ScrollTrigger);
+
+    // O vídeo muda a altura da página ao carregar → remede os gatilhos de scroll
+    var vid=document.getElementById('hm-video');
+    if(vid&&vid.readyState<1){vid.addEventListener('loadedmetadata',function(){ScrollTrigger.refresh();},{once:true});}
 
     gsap.matchMedia().add('(prefers-reduced-motion: no-preference)',function(){
       var EASE='power2.out';
