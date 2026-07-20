@@ -19,6 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <!-- HermesIA Analytics (PostHog) -->
 <script src="/assets/analytics.js"></script>
+<script>document.documentElement.className+=' hm-js';</script>
 <style>
 :root{
   --navy:#0d1b3e; --navy2:#16264a; --gold:#c9a84c; --gold-l:#e5c06a;
@@ -75,20 +76,26 @@ h1 em{color:var(--gold-l);font-style:italic;}
 .foot{margin-top:46px;font-size:12.5px;color:var(--muted2);line-height:1.7;text-align:center;}
 .foot span{color:var(--gold);}
 @media(max-width:520px){h1{font-size:26px;}.scoreval{font-size:24px;min-width:60px;}}
+
+/* MOTION — entrada coreografada (GSAP). Sem JS ou sem GSAP, tudo fica visível. */
+.hm-js [data-h]{opacity:0;animation:hmShow .5s ease 1.4s forwards;} /* failsafe: revela sozinho se o GSAP não carregar */
+.hm-gsap [data-h]{animation:none;}
+@keyframes hmShow{to{opacity:1;}}
+@media(prefers-reduced-motion:reduce){.hm-js [data-h]{opacity:1;animation:none;}}
 </style>
   <link rel="icon" type="image/png" href="/emblema.png">
   <link rel="apple-touch-icon" href="/emblema.png">
 </head>
 <body>
 <div class="wrap">
-    <img src="/emblema.png" alt="HermesIA" style="width:88px;height:88px;display:block;margin:0 0 16px;">
-<div class="brand">Hermes<span>IA</span></div>
-  <span class="kicker">Diagnóstico gratuito · 2 minutos</span>
-  <h1>Sua advocacia está pronta para usar IA <em>com segurança</em>?</h1>
-  <p class="lead">O risco da IA jurídica não é a máquina errar — é você não ter como perceber o erro a tempo. Marque abaixo o que <b>já existe de forma verificável</b> no seu escritório. Sem cadastro para ver o resultado.</p>
-  <p class="note">Baseado nos três princípios da HermesIA: fonte em cada citação · sigilo do cliente preservado · a palavra final é sua.</p>
+    <img src="/emblema.png" alt="HermesIA" style="width:88px;height:88px;display:block;margin:0 0 16px;" data-h>
+<div class="brand" data-h>Hermes<span>IA</span></div>
+  <span class="kicker" data-h>Diagnóstico gratuito · 2 minutos</span>
+  <h1 data-h>Sua advocacia está pronta para usar IA <em>com segurança</em>?</h1>
+  <p class="lead" data-h>O risco da IA jurídica não é a máquina errar — é você não ter como perceber o erro a tempo. Marque abaixo o que <b>já existe de forma verificável</b> no seu escritório. Sem cadastro para ver o resultado.</p>
+  <p class="note" data-h>Baseado nos três princípios da HermesIA: fonte em cada citação · sigilo do cliente preservado · a palavra final é sua.</p>
 
-  <div class="scorebar">
+  <div class="scorebar" data-h>
     <div class="row">
       <div class="scoreval"><span id="n">0</span><small>/12</small></div>
       <div class="track"><div class="fill" id="fill"></div></div>
@@ -192,6 +199,26 @@ function showResult(score){
 document.getElementById('rcta').addEventListener('click',function(){
   const score=state.filter(Boolean).length;
   window.hmTrack&&hmTrack('prontidao_cta_whatsapp',{funnel:'prontidao',score:score,band:bandName(score)});
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(!window.gsap)return; // CDN falhou → failsafe CSS revela tudo
+  document.documentElement.className+=' hm-gsap';
+
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)',function(){
+    var EASE='power2.out';
+    if(performance.now()>=1400){ gsap.set('[data-h]',{opacity:1}); return; }
+    gsap.timeline({defaults:{ease:EASE,duration:.55}})
+      .fromTo('.wrap > img',{opacity:0,y:12},{opacity:1,y:0,duration:.65})
+      .fromTo('.brand, .kicker',{opacity:0,y:12},{opacity:1,y:0,stagger:.08},'-=0.4')
+      .fromTo('h1',{opacity:0,y:20},{opacity:1,y:0,duration:.7},'-=0.35')
+      .fromTo('.lead, .note',{opacity:0,y:14},{opacity:1,y:0,stagger:.08},'-=0.45')
+      .fromTo('.scorebar',{opacity:0},{opacity:1,duration:.5},'-=0.3') // sticky: só opacidade, sem transform
+      .fromTo('.item',{opacity:0,y:10},{opacity:1,y:0,duration:.45,stagger:.04},'-=0.25');
+  });
 });
 </script>
 </body>

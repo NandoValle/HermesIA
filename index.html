@@ -31,6 +31,7 @@
 
   <!-- HermesIA Analytics (PostHog) — vê o funil independente do Meta -->
   <script src="/assets/analytics.js"></script>
+  <script>document.documentElement.className+=' hm-js';</script>
 
   <link rel="canonical" href="https://hermesia.ia.br/">
   <link rel="icon" type="image/png" href="/emblema.png">
@@ -248,28 +249,34 @@
     .hm-demo3 .out b { color: #fff; }
     @media (max-width: 700px) { .hm-demo3 { grid-template-columns: 1fr; } }
     @media (max-width: 640px) { .hm-demo-grid { grid-template-columns: 1fr; } .hm-demo-arrow { transform: rotate(90deg); justify-content: center; } }
+
+    /* MOTION — hero coreografado (GSAP). Sem JS ou sem GSAP, tudo fica visível. */
+    .hm-js [data-h]{opacity:0;animation:hmShow .5s ease 1.4s forwards;} /* failsafe: revela sozinho se o GSAP não carregar */
+    .hm-gsap [data-h]{animation:none;}
+    @keyframes hmShow{to{opacity:1;}}
+    @media(prefers-reduced-motion:reduce){.hm-js [data-h]{opacity:1;animation:none;}}
   </style>
 </head>
 <body>
 
   <!-- HERO -->
   <section class="hm-hero">
-    <img class="hm-hero-emblem" src="/emblema.png" alt="HermesIA — emblema">
-    <div class="hm-badge-top">HERMESIA · A IA QUE FAZ O TRABALHO DURO POR VOCÊ</div>
-    <div class="hm-logo"><span>Hermes</span>IA</div>
-    <div class="hm-tagline">A IA que devolve o seu tempo</div>
-    <h1 class="hm-hero-title">Mande um áudio. <em>Receba o trabalho pronto.</em></h1>
-    <p class="hm-hero-sub">Você fala do seu jeito, direto no WhatsApp — sem aprender nada de IA. <strong>Já no ar:</strong> o HermesIA Áudio transforma qualquer áudio em transcrição + resumo + pontos de ação, na hora. Feita por um advogado, pra quem vive de tempo.</p>
+    <img class="hm-hero-emblem" src="/emblema.png" alt="HermesIA — emblema" data-h>
+    <div class="hm-badge-top" data-h>HERMESIA · A IA QUE FAZ O TRABALHO DURO POR VOCÊ</div>
+    <div class="hm-logo" data-h><span>Hermes</span>IA</div>
+    <div class="hm-tagline" data-h>A IA que devolve o seu tempo</div>
+    <h1 class="hm-hero-title" data-h>Mande um áudio. <em>Receba o trabalho pronto.</em></h1>
+    <p class="hm-hero-sub" data-h>Você fala do seu jeito, direto no WhatsApp — sem aprender nada de IA. <strong>Já no ar:</strong> o HermesIA Áudio transforma qualquer áudio em transcrição + resumo + pontos de ação, na hora. Feita por um advogado, pra quem vive de tempo.</p>
     <ul class="hm-hero-bullets">
-      <li>Você fala, ela trabalha — direto no WhatsApp, sem app novo</li>
-      <li>Você descreve o caso. O documento do cliente fica com você</li>
-      <li>Direito, Medicina, Contabilidade e outras 9 profissões</li>
+      <li data-h>Você fala, ela trabalha — direto no WhatsApp, sem app novo</li>
+      <li data-h>Você descreve o caso. O documento do cliente fica com você</li>
+      <li data-h>Direito, Medicina, Contabilidade e outras 9 profissões</li>
     </ul>
-    <div class="hm-btns">
+    <div class="hm-btns" data-h>
       <a href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." class="hm-cta" style="text-decoration:none;display:inline-block;" onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'hero'});">Começar grátis agora</a>
       <button class="hm-cta-outline" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Ver na prática</button>
     </div>
-    <p class="hm-hero-micro">Grátis, 10 áudios/dia · sem cadastro e sem cartão · o áudio é apagado depois de transcrever, sem expor o sigilo do cliente.</p>
+    <p class="hm-hero-micro" data-h>Grátis, 10 áudios/dia · sem cadastro e sem cartão · o áudio é apagado depois de transcrever, sem expor o sigilo do cliente.</p>
   </section>
 
   <!-- VÍDEO -->
@@ -618,6 +625,44 @@
     .hm-tg-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(34,158,217,.55);}
     @media(max-width:600px){.hm-whatsapp{width:54px;height:54px;right:16px;bottom:16px;}.hm-whatsapp svg{width:28px;height:28px;}.hm-telegram{width:54px;height:54px;right:16px;bottom:80px;}.hm-telegram svg{width:27px;height:27px;}.hm-tg-cta{font-size:.9rem;padding:.8rem 1.2rem;}}
   </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){
+    if(!window.gsap)return; // CDN falhou → failsafe CSS revela tudo
+    document.documentElement.className+=' hm-gsap';
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.matchMedia().add('(prefers-reduced-motion: no-preference)',function(){
+      var EASE='power2.out';
+
+      // Se o carregamento demorou e o failsafe já revelou, não re-esconde o hero
+      if(performance.now()<1400){
+        gsap.timeline({defaults:{ease:EASE,duration:.6}})
+          .fromTo('.hm-hero-emblem',{opacity:0,y:12},{opacity:1,y:0,duration:.7})
+          .fromTo('.hm-badge-top, .hm-logo, .hm-tagline',{opacity:0,y:12},{opacity:1,y:0,stagger:.08},'-=0.45')
+          .fromTo('.hm-hero-title',{opacity:0,y:22},{opacity:1,y:0,duration:.75},'-=0.35')
+          .fromTo('.hm-hero-sub',{opacity:0,y:16},{opacity:1,y:0},'-=0.5')
+          .fromTo('.hm-hero-bullets li',{opacity:0,y:12},{opacity:1,y:0,duration:.5,stagger:.08},'-=0.4')
+          .fromTo('.hm-btns[data-h]',{opacity:0,y:14},{opacity:1,y:0},'-=0.3')
+          .fromTo('.hm-hero-micro',{opacity:0},{opacity:1,duration:.6},'-=0.35');
+      }else{
+        gsap.set('[data-h]',{opacity:1});
+      }
+
+      // Reveals de scroll — uma vez só, discretos
+      gsap.utils.toArray('.hm-section-title, .hm-quote, .hm-quote-attr, .hm-anti-title, .hm-demo-title, .hm-demo-sub, .hm-founder-photo, .hm-founder-label').forEach(function(el){
+        gsap.from(el,{opacity:0,y:20,duration:.7,ease:EASE,
+          scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+      });
+      [['.hm-anti-grid','.hm-anti-col'],['.hm-tuts','.hm-tut']].forEach(function(par){
+        gsap.from(par[0]+' '+par[1],{opacity:0,y:16,duration:.55,ease:EASE,stagger:.06,
+          scrollTrigger:{trigger:par[0],start:'top 85%',once:true}});
+      });
+    });
+  });
+  </script>
 
 </body>
 </html>
