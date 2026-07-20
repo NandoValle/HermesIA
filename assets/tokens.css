@@ -1,0 +1,21 @@
+/* HermesIA — tokens de cor compartilhados (fonte única da paleta).
+   Toda página linka este arquivo ANTES do <style> inline; páginas podem
+   sobrescrever no próprio :root se precisarem (ex.: /prontidao/ usa --ink branco). */
+:root {
+  /* Navy — fundos */
+  --navy: #0d1b3e;      /* primário (hero, seções) */
+  --navy-2: #16264a;    /* cartões sobre navy */
+  --navy-deep: #0a1428; /* seções mais escuras (demo, antídoto) */
+  --navy-ink: #060f22;  /* manifesto */
+  --navy-foot: #060d1a; /* rodapé */
+
+  /* Dourado — o metal da marca */
+  --gold: #c9a84c;      /* primário: fundos de botão, bordas, ícones */
+  --gold-l: #e5c06a;    /* claro: texto dourado sobre navy */
+  --gold-d: #8a6b1f;    /* escuro: texto dourado sobre fundo claro (AA 4,9:1 em branco) */
+
+  /* Semáforo */
+  --green: #3fa96a;
+  --amber: #d6a52b;
+  --red: #c65a4a;
+}

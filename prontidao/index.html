@@ -34,15 +34,15 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=867504105954739&ev=PageView&noscript=1"/></noscript>
 <!-- End Meta Pixel Code -->
 
+<link rel="stylesheet" href="/assets/tokens.css">
 <!-- HermesIA Analytics (PostHog) -->
-<script src="/assets/analytics.js"></script>
+<script src="/assets/analytics.js" defer></script>
 <script>document.documentElement.className+=' hm-js';</script>
 <style>
+/* Paleta base em /assets/tokens.css; aqui só o que é desta página */
 :root{
-  --navy:#0d1b3e; --navy2:#16264a; --gold:#c9a84c; --gold-l:#e5c06a;
   --ink:#fff; --muted:rgba(255,255,255,.6); --muted2:rgba(255,255,255,.4);
   --card:rgba(255,255,255,.05); --line:rgba(201,168,76,.25);
-  --green:#3fa96a; --amber:#d6a52b; --red:#c65a4a;
 }
 *,*::before,*::after{box-sizing:border-box;}
 body{margin:0;font-family:'Inter',sans-serif;font-weight:300;background:var(--navy);color:var(--ink);-webkit-font-smoothing:antialiased;}
@@ -78,7 +78,7 @@ h1 em{color:var(--gold-l);font-style:italic;}
 .item .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.5px;color:var(--gold);border:1px solid var(--line);border-radius:12px;padding:2px 8px;margin-top:8px;text-transform:uppercase;}
 
 /* result */
-.result{margin-top:32px;border-radius:18px;padding:28px 24px;border:1px solid var(--line);background:var(--navy2);display:none;}
+.result{margin-top:32px;border-radius:18px;padding:28px 24px;border:1px solid var(--line);background:var(--navy-2);display:none;}
 .result.show{display:block;animation:fade .4s ease;}
 @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 .result .band{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
