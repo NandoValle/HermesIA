@@ -189,10 +189,13 @@
 
     /* TUTORIAIS */
     .hm-tuts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; max-width: 800px; margin: 0 auto; }
-    .hm-tut { background: #fff; border: 0.5px solid #ddd6c4; border-radius: 8px; padding: 1rem 1.2rem; }
-    .hm-tut-cat { font-size: 0.68rem; color: #c9a84c; font-weight: 500; letter-spacing: 1.5px; margin-bottom: 6px; }
+    .hm-tut { background: #fff; border: 0.5px solid #ddd6c4; border-radius: 8px; padding: 1rem 1.2rem; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .hm-tut:hover { transform: translateY(-4px); border-color: #c9a84c; box-shadow: 0 8px 22px rgba(13,27,62,.10); }
+    .hm-tut-cat { font-size: 0.68rem; color: #c9a84c; font-weight: 500; letter-spacing: 1.5px; margin-bottom: 6px; transition: color .2s ease; }
+    .hm-tut:hover .hm-tut-cat { color: #a5842f; }
     .hm-tut-title { font-size: 0.85rem; font-weight: 500; color: #0d1b3e; line-height: 1.45; margin-bottom: 8px; }
-    .hm-tut-badge { font-size: 0.68rem; background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 10px; }
+    .hm-tut-badge { font-size: 0.68rem; background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 10px; transition: background .2s ease, color .2s ease; }
+    .hm-tut:hover .hm-tut-badge { background: #c9a84c; color: #fdf6e3; }
 
     /* FUNDADOR */
     .hm-founder { background: #0d1b3e; padding: 3rem 2rem; text-align: center; }
