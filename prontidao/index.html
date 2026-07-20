@@ -50,6 +50,7 @@ h1 em{color:var(--gold-l);font-style:italic;}
 /* items */
 .item{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:11px;cursor:pointer;transition:border-color .15s,background .15s;}
 .item:hover{border-color:var(--gold);}
+.item:focus-visible{outline:2px solid var(--gold-l);outline-offset:2px;border-color:var(--gold);}
 .item.on{background:rgba(201,168,76,.10);border-color:var(--gold);}
 .box{flex-shrink:0;width:24px;height:24px;border:2px solid var(--gold);border-radius:7px;margin-top:2px;position:relative;transition:background .15s;}
 .item.on .box{background:var(--gold);}
@@ -152,8 +153,13 @@ let interacted=false;
 ITEMS.forEach((it,i)=>{
   const el = document.createElement('div');
   el.className='item';
-  el.innerHTML = `<div class="box"></div><div><div class="txt">${it.t}</div><span class="tag">${it.tag}</span></div>`;
-  el.onclick = ()=>{ state[i]=!state[i]; el.classList.toggle('on',state[i]); interacted=true; update(); };
+  el.setAttribute('role','checkbox');
+  el.setAttribute('aria-checked','false');
+  el.tabIndex=0;
+  el.innerHTML = `<div class="box" aria-hidden="true"></div><div><div class="txt">${it.t}</div><span class="tag">${it.tag}</span></div>`;
+  const toggle = ()=>{ state[i]=!state[i]; el.classList.toggle('on',state[i]); el.setAttribute('aria-checked',String(state[i])); interacted=true; update(); };
+  el.addEventListener('click',toggle);
+  el.addEventListener('keydown',e=>{ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(); } });
   list.appendChild(el);
 });
 
