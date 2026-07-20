@@ -19,6 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <!-- HermesIA Analytics (PostHog) -->
 <script src="/assets/analytics.js"></script>
+<script>document.documentElement.className+=' hm-js';</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;}
 body{margin:0;font-family:'Inter',sans-serif;color:#1a1a2e;background:#fff;-webkit-font-smoothing:antialiased;}
@@ -137,6 +138,12 @@ a{text-decoration:none;color:inherit;}
 @media(max-width:640px){.semaforo{grid-template-columns:1fr;}}
 
 @media(max-width:560px){.h-title{font-size:1.65rem;}.s-title{font-size:1.4rem;}.thesis .quote{font-size:1.22rem;}.cta,.cta-line{width:100%;max-width:320px;}}
+
+/* MOTION — hero coreografado (GSAP). Sem JS ou sem GSAP, tudo fica visível. */
+.hm-js [data-h]{opacity:0;animation:hmShow .5s ease 1.4s forwards;} /* failsafe: revela sozinho se o GSAP não carregar */
+.hm-gsap [data-h]{animation:none;}
+@keyframes hmShow{to{opacity:1;}}
+@media(prefers-reduced-motion:reduce){.hm-js [data-h]{opacity:1;animation:none;}}
 </style>
   <link rel="icon" type="image/png" href="/emblema.png">
   <link rel="apple-touch-icon" href="/emblema.png">
@@ -147,7 +154,7 @@ a{text-decoration:none;color:inherit;}
 <section class="hero">
   <div class="hero-inner">
 
-    <div class="brandrow">
+    <div class="brandrow" data-h>
       <img src="/emblema.png" alt="HermesIA" class="brandmark">
       <div class="logo">Hermes<span>IA</span></div>
       <div class="tagline">Para advogados</div>
@@ -157,24 +164,24 @@ a{text-decoration:none;color:inherit;}
 
       <!-- ESQUERDA: mensagem + CTA duplo -->
       <div class="hcol">
-        <span class="badge">IA jurídica com sigilo por design</span>
-        <h1 class="h-title">Você é o advogado. A HermesIA faz o trabalho pesado — <em>sem tocar no segredo do seu cliente.</em></h1>
-        <p class="h-sub">Pesquisa de jurisprudência, minuta de peça e parecer fundamentado saem prontos para a sua revisão — com a fonte em cada citação e o sigilo do cliente sob o seu controle.</p>
+        <span class="badge" data-h>IA jurídica com sigilo por design</span>
+        <h1 class="h-title" data-h>Você é o advogado. A HermesIA faz o trabalho pesado — <em>sem tocar no segredo do seu cliente.</em></h1>
+        <p class="h-sub" data-h>Pesquisa de jurisprudência, minuta de peça e parecer fundamentado saem prontos para a sua revisão — com a fonte em cada citação e o sigilo do cliente sob o seu controle.</p>
         <ul class="checks">
-          <li><span class="ck"></span><div>O dado sigiloso é <b>separado antes</b> — a IA produz a peça sem receber o segredo.</div></li>
-          <li><span class="ck"></span><div><b>Fonte em cada citação.</b> O que não existe, ela diz que não encontrou — desenhada para não inventar jurisprudência.</div></li>
-          <li><span class="ck"></span><div><b>A tese e a assinatura continuam suas.</b> Nenhuma entrega de peso sai sem a sua palavra final.</div></li>
+          <li data-h><span class="ck"></span><div>O dado sigiloso é <b>separado antes</b> — a IA produz a peça sem receber o segredo.</div></li>
+          <li data-h><span class="ck"></span><div><b>Fonte em cada citação.</b> O que não existe, ela diz que não encontrou — desenhada para não inventar jurisprudência.</div></li>
+          <li data-h><span class="ck"></span><div><b>A tese e a assinatura continuam suas.</b> Nenhuma entrega de peso sai sem a sua palavra final.</div></li>
         </ul>
-        <div class="btns">
+        <div class="btns" data-h>
           <a class="cta" href="/prontidao/">Fazer o diagnóstico grátis</a>
           <a class="cta-line" href="https://api.whatsapp.com/send/?phone=553172285422&text=Ol%C3%A1!%20Sou%20advogado%20e%20quero%20ver%20a%20HermesIA%20funcionando%20com%20um%20caso%20real%20do%20meu%20escrit%C3%B3rio." onclick="window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'advogados',placement:'hero'});">Ver com um caso meu</a>
         </div>
-        <p class="selo"><b>Feita por quem advoga há mais de 20 anos</b> e programa desde a adolescência. Belo Horizonte, MG.</p>
+        <p class="selo" data-h><b>Feita por quem advoga há mais de 20 anos</b> e programa desde a adolescência. Belo Horizonte, MG.</p>
       </div>
 
       <!-- DIREITA: prova visual do sigilo -->
       <div class="hcol">
-        <div class="proof">
+        <div class="proof" data-h>
           <h3 class="proof-h">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e5c06a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             Como o sigilo é preservado
@@ -320,6 +327,45 @@ a{text-decoration:none;color:inherit;}
   Hermes<span>IA</span> · <a href="https://hermesia.ia.br">hermesia.ia.br</a> · A IA que devolve o seu tempo.<br>
   Ferramenta de apoio à advocacia. A responsabilidade profissional é, e continua sendo, do advogado.
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(!window.gsap)return; // CDN falhou → failsafe CSS revela tudo
+  document.documentElement.className+=' hm-gsap';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)',function(){
+    var EASE='power2.out';
+
+    // Se o carregamento demorou e o failsafe já revelou, não re-esconde o hero
+    if(performance.now()<1400){
+      gsap.timeline({defaults:{ease:EASE,duration:.65}})
+        .fromTo('.hero .brandrow',{opacity:0,y:14},{opacity:1,y:0,duration:.7})
+        .fromTo('.hero .badge',{opacity:0,y:16},{opacity:1,y:0},'-=0.4')
+        .fromTo('.hero .h-title',{opacity:0,y:22},{opacity:1,y:0,duration:.75},'-=0.45')
+        .fromTo('.hero .h-sub',{opacity:0,y:18},{opacity:1,y:0},'-=0.5')
+        .fromTo('.hero .checks li',{opacity:0,y:14},{opacity:1,y:0,duration:.55,stagger:.09},'-=0.4')
+        .fromTo('.hero .btns',{opacity:0,y:16},{opacity:1,y:0},'-=0.3')
+        .fromTo('.hero .selo',{opacity:0},{opacity:1,duration:.6},'-=0.35')
+        .fromTo('.hero .proof',{opacity:0,y:26},{opacity:1,y:0,duration:.85},'-=1.0');
+    }else{
+      gsap.set('[data-h]',{opacity:1});
+    }
+
+    // Reveals de scroll — uma vez só, discretos
+    gsap.utils.toArray('.eyebrow, .s-title, .quote, .callout').forEach(function(el){
+      gsap.from(el,{opacity:0,y:22,duration:.7,ease:EASE,
+        scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+    });
+    [['.pillars','.pillar'],['.steps','.step'],['.semaforo','.lane']].forEach(function(par){
+      gsap.from(par[0]+' '+par[1],{opacity:0,y:18,duration:.6,ease:EASE,stagger:.1,
+        scrollTrigger:{trigger:par[0],start:'top 85%',once:true}});
+    });
+  });
+});
+</script>
 
 </body>
 </html>
