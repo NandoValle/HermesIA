@@ -140,7 +140,10 @@
     .hm-tagline { font-size: 0.78rem; color: #7a8eaa; letter-spacing: 3px; margin-bottom: 2.5rem; font-weight: 300; }
     .hm-hero-title { font-family: 'Playfair Display', serif; font-size: 2.1rem; color: #ffffff; line-height: 1.45; max-width: 600px; margin: 0 auto 1.2rem; }
     .hm-hero-title em { color: #e5c06a; font-style: italic; }
-    .hm-hero-sub { font-size: 0.95rem; color: #d0daea; max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.85; font-weight: 300; }
+    .hm-hero-sub { font-size: 0.95rem; color: #d0daea; max-width: 480px; margin: 0 auto 1.6rem; line-height: 1.85; font-weight: 300; }
+    .hm-hero-bullets { list-style: none; max-width: 440px; margin: 0 auto 2.3rem; text-align: left; display: inline-block; }
+    .hm-hero-bullets li { font-size: 0.86rem; color: #d0daea; line-height: 1.7; padding: 4px 0; font-weight: 300; }
+    .hm-hero-bullets li::before { content: '✓'; color: #c9a84c; font-weight: 600; margin-right: 10px; }
     .hm-hero-micro { font-size: 0.78rem; color: #8ea3c0; max-width: 440px; margin: 1.1rem auto 0; line-height: 1.6; font-weight: 300; }
     .hm-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
     .hm-cta { background: #c9a84c; color: #fdf6e3; padding: 1.1rem 2.8rem; border-radius: 4px; font-size: 0.95rem; font-weight: 500; border: none; cursor: pointer; letter-spacing: 1.5px; text-transform: uppercase; transition: background 0.2s; }
@@ -252,13 +255,18 @@
     <div class="hm-badge-top">HERMESIA · A IA QUE FAZ O TRABALHO DURO POR VOCÊ</div>
     <div class="hm-logo"><span>Hermes</span>IA</div>
     <div class="hm-tagline">A IA que devolve o seu tempo</div>
-    <h1 class="hm-hero-title">Você descreve. <em>A HermesIA entrega pronto.</em></h1>
-    <p class="hm-hero-sub">Petição, recurso, comprovante, relatório — você explica em português e recebe pronto, sem aprender nada de IA. Pra quem trabalha duro: advogado, médico, contador, motoboy, autônomo.<br><strong>Já no ar:</strong> o HermesIA Áudio — encaminhe um áudio no WhatsApp e receba transcrição + resumo na hora.</p>
+    <h1 class="hm-hero-title">Mande um áudio. <em>Receba o trabalho pronto.</em></h1>
+    <p class="hm-hero-sub">Você fala do seu jeito, direto no WhatsApp — sem aprender nada de IA. <strong>Já no ar:</strong> o HermesIA Áudio transforma qualquer áudio em transcrição + resumo + pontos de ação, na hora. Feita por um advogado, pra quem vive de tempo.</p>
+    <ul class="hm-hero-bullets">
+      <li>Você fala, ela trabalha — direto no WhatsApp, sem app novo</li>
+      <li>Você descreve o caso. O documento do cliente fica com você</li>
+      <li>Direito, Medicina, Contabilidade e outras 9 profissões</li>
+    </ul>
     <div class="hm-btns">
-      <a href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." class="hm-cta" style="text-decoration:none;display:inline-block;" onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'hero'});">Testar grátis agora</a>
+      <a href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." class="hm-cta" style="text-decoration:none;display:inline-block;" onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'hero'});">Começar grátis agora</a>
       <button class="hm-cta-outline" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Ver na prática</button>
     </div>
-    <p class="hm-hero-micro">Grátis, 10 áudios/dia · sem cadastro · o áudio é apagado depois de transcrever, sem expor o sigilo do cliente.</p>
+    <p class="hm-hero-micro">Grátis, 10 áudios/dia · sem cadastro e sem cartão · o áudio é apagado depois de transcrever, sem expor o sigilo do cliente.</p>
   </section>
 
   <!-- VÍDEO -->
