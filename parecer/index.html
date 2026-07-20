@@ -75,6 +75,24 @@
     .ex-tab{background:var(--navy-700);color:var(--paper);border:1px solid var(--navy-500);border-radius:9px;padding:10px 16px;font-family:'Inter',sans-serif;font-size:.88rem;cursor:pointer;text-align:left}
     .ex-tab[aria-selected="true"]{border-color:var(--gold-500);color:var(--gold-300)}
     .ex-tab:focus-visible{outline:2px solid var(--gold-500);outline-offset:2px}
+    .kicker{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-500);margin-bottom:var(--s1)}
+    .cena{margin:var(--s5) 0}
+    .cena .corpo{color:var(--paper);max-width:62ch;margin-top:var(--s2)}
+    .cena .corpo.mudo{color:var(--muted)}
+    .tripe{margin-top:var(--s3);display:grid;gap:var(--s2)}
+    .tripe .item{background:var(--navy-700);border:1px solid var(--navy-500);border-left:3px solid var(--gold-500);border-radius:12px;padding:var(--s3)}
+    .tripe h3{font-family:'Playfair Display',serif;color:var(--gold-300);font-size:1.05rem;margin-bottom:6px}
+    .tripe p{font-size:.93rem;color:var(--muted);max-width:60ch}
+    .sigilo-lista{margin:var(--s2) 0 0 1.2em;color:var(--paper)}
+    .sigilo-lista li{margin-top:10px;max-width:58ch}
+    .sigilo-lista b{color:var(--gold-300);font-weight:500}
+    .selo-frase{margin-top:var(--s3);font-family:'Playfair Display',serif;font-style:italic;font-size:1.08rem;color:var(--gold-300);border-left:3px solid var(--gold-500);padding-left:14px;max-width:48ch}
+    details.faq{border:1px solid var(--navy-500);background:var(--navy-700);border-radius:10px;margin-top:var(--s2)}
+    details.faq summary{cursor:pointer;padding:14px 16px;font-weight:500;color:var(--paper);list-style-position:inside}
+    details.faq summary:focus-visible{outline:2px solid var(--gold-500);outline-offset:2px;border-radius:10px}
+    details.faq[open] summary{color:var(--gold-300)}
+    details.faq .resp{padding:0 16px 14px;color:var(--muted);font-size:.95rem;max-width:62ch}
+    details.faq .resp a{color:var(--gold-300)}
     .lacre{display:flex;align-items:center;gap:var(--s2);margin:var(--s5) 0;padding:var(--s3);border:1px solid rgba(201,168,76,.3);border-radius:14px}
     .lacre img{width:52px;height:52px;flex:none}
     .lacre p{font-size:.95rem;color:var(--paper);max-width:52ch}
@@ -134,6 +152,69 @@
       </div>
       <p class="aviso-minuta" id="ex-aviso"></p>
     </div>
+
+    <hr class="divisor">
+
+    <section class="cena">
+      <p class="kicker">Por que fonte auditável</p>
+      <h2 class="sec">A citação inventada custa caro.</h2>
+      <p class="corpo">Tribunal brasileiro já aplicou multa por litigância de má-fé, com cópia do caso enviada à OAB, por recurso com jurisprudência que a IA inventou. Esse é o medo de quem leva IA para o trabalho jurídico: a citação que não existe, o precedente cancelado, a tese que desmorona na primeira conferência.</p>
+      <p class="corpo">O problema não é usar IA. É usar IA que responde sem mostrar de onde tirou.</p>
+    </section>
+
+    <section class="cena">
+      <p class="kicker">O contrato</p>
+      <h2 class="sec">Todo parecer sai com o tripé completo.</h2>
+      <div class="tripe">
+        <div class="item">
+          <h3>Precedente vinculante</h3>
+          <p>Súmula, tese repetitiva ou repercussão geral, com a força de cada um declarada no texto. Súmula vinculante, tese repetitiva e súmula comum têm pesos diferentes; o parecer diz qual é qual.</p>
+        </div>
+        <div class="item">
+          <h3>Vigência conferida</h3>
+          <p>Precedente cancelado ou com vigência não auditada aparece etiquetado, nunca como fundamento. O filtro é o padrão, não um recurso.</p>
+        </div>
+        <div class="item">
+          <h3>Doutrina com página</h3>
+          <p>A obra e a página, inclusive quando a doutrina critica o precedente. A divergência entra no peso certo, e a decisão fica com o advogado.</p>
+        </div>
+      </div>
+      <p class="corpo mudo">A ordem do material respeita a hierarquia da matéria: questão constitucional fecha no STF; lei federal, no STJ. O parecer declara qual é o caso.</p>
+    </section>
+
+    <section class="cena">
+      <p class="kicker">Sigilo</p>
+      <h2 class="sec">Seu caso fica entre você e o parecer.</h2>
+      <p class="corpo">Boa parte das “IAs jurídicas” vendidas hoje é um cardápio de atalhos: o botão bonito abre uma aba do ChatGPT e pede que você cole ali o resumo do caso — nome da parte, valores, estratégia. A partir desse momento, o caso mora numa conta de consumo, fora do seu controle e fora do seu dever de sigilo.</p>
+      <p class="corpo">Aqui o caminho é outro:</p>
+      <ul class="sigilo-lista">
+        <li><b>Acervo próprio.</b> A pesquisa roda em infraestrutura sob nosso controle; a pergunta consulta o acervo, não a internet.</li>
+        <li><b>API corporativa.</b> A redação usa serviço que, por contrato, não treina sobre seus dados.</li>
+        <li><b>Conta nenhuma de terceiros.</b> Nenhuma etapa pede que você abra o ChatGPT e cole o caso lá.</li>
+      </ul>
+      <p class="selo-frase">Sigilo prometido em página de vendas é copy. Sigilo desenhado na arquitetura é dever cumprido.</p>
+    </section>
+
+    <section class="cena">
+      <p class="kicker">Perguntas diretas</p>
+      <h2 class="sec">O que o advogado pergunta antes de confiar.</h2>
+      <details class="faq">
+        <summary>A IA daqui inventa julgado?</summary>
+        <p class="resp">Toda citação sai de um acervo auditado — súmulas e teses oficiais dos tribunais superiores, com identificação completa. O que o acervo não tem, o parecer declara que não encontrou, como você viu nos exemplos acima.</p>
+      </details>
+      <details class="faq">
+        <summary>Quem garante que a súmula ainda vale?</summary>
+        <p class="resp">O filtro de vigência é o padrão. Precedente cancelado só aparece etiquetado como tal; vigência ainda não auditada sai com ressalva expressa e data de julgamento.</p>
+      </details>
+      <details class="faq">
+        <summary>O parecer decide por mim?</summary>
+        <p class="resp">Ele fundamenta, aponta a divergência e deixa a decisão onde ela deve ficar: com o advogado. Nada aqui protocola, peticiona ou assina.</p>
+      </details>
+      <details class="faq">
+        <summary>Quanto custa?</summary>
+        <p class="resp">A demonstração é gratuita, dentro do uso justo diário. O acesso completo está em fase de convites — <a href="/experimente/">peça o seu</a> e seja chamado na abertura.</p>
+      </details>
+    </section>
 
     <div class="lacre">
       <img src="/emblema.png" alt="Selo HermesIA">
