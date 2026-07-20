@@ -251,6 +251,20 @@
     @media (max-width: 700px) { .hm-demo3 { grid-template-columns: 1fr; } }
     @media (max-width: 640px) { .hm-demo-grid { grid-template-columns: 1fr; } .hm-demo-arrow { transform: rotate(90deg); justify-content: center; } }
 
+    /* AO VIVO — chip "no ar agora" com onda de áudio (CSS puro: vive mesmo sem GSAP) */
+    .hm-live { display: flex; width: fit-content; align-items: center; gap: 10px; background: rgba(46,125,50,0.14); border: 1px solid rgba(76,175,80,0.35); border-radius: 20px; padding: 6px 16px; margin: 0 auto 1.6rem; font-size: 0.68rem; letter-spacing: 1.5px; color: #a5d6a7; font-weight: 500; }
+    .hm-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #66bb6a; position: relative; flex: none; }
+    .hm-live-dot::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid rgba(102,187,106,0.7); animation: hmPing 2.4s ease-out infinite; }
+    .hm-wave { display: inline-flex; align-items: center; gap: 2px; height: 12px; }
+    .hm-wave i { width: 2px; height: 4px; background: var(--gold); border-radius: 1px; animation: hmWave 1.6s ease-in-out infinite; }
+    .hm-wave i:nth-child(2) { animation-delay: .15s; }
+    .hm-wave i:nth-child(3) { animation-delay: .3s; }
+    .hm-wave i:nth-child(4) { animation-delay: .45s; }
+    .hm-wave i:nth-child(5) { animation-delay: .6s; }
+    @keyframes hmPing { 0% { transform: scale(.5); opacity: .9; } 70%, 100% { transform: scale(1.7); opacity: 0; } }
+    @keyframes hmWave { 0%, 100% { height: 4px; } 50% { height: 12px; } }
+    @media (prefers-reduced-motion: reduce) { .hm-live-dot::after, .hm-wave i { animation: none; } }
+
     /* MOTION — hero coreografado (GSAP). Sem JS ou sem GSAP, tudo fica visível. */
     .hm-js [data-h]{opacity:0;animation:hmShow .5s ease 1.4s forwards;} /* failsafe: revela sozinho se o GSAP não carregar */
     .hm-gsap [data-h]{animation:none;}
@@ -273,6 +287,7 @@
       <li data-h>Você descreve o caso. O documento do cliente fica com você</li>
       <li data-h>Direito, Medicina, Contabilidade e outras 9 profissões</li>
     </ul>
+    <span class="hm-live" role="status" data-h><span class="hm-live-dot" aria-hidden="true"></span>NO AR AGORA<span class="hm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></span>
     <div class="hm-btns" data-h>
       <a href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." class="hm-cta" style="text-decoration:none;display:inline-block;" onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'hero'});">Começar grátis agora</a>
       <button class="hm-cta-outline" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Ver na prática</button>
@@ -646,7 +661,8 @@
           .fromTo('.hm-hero-title',{opacity:0,y:22},{opacity:1,y:0,duration:.75},'-=0.35')
           .fromTo('.hm-hero-sub',{opacity:0,y:16},{opacity:1,y:0},'-=0.5')
           .fromTo('.hm-hero-bullets li',{opacity:0,y:12},{opacity:1,y:0,duration:.5,stagger:.08},'-=0.4')
-          .fromTo('.hm-btns[data-h]',{opacity:0,y:14},{opacity:1,y:0},'-=0.3')
+          .fromTo('.hm-live',{opacity:0,y:10},{opacity:1,y:0,duration:.5},'-=0.3')
+          .fromTo('.hm-btns[data-h]',{opacity:0,y:14},{opacity:1,y:0},'-=0.25')
           .fromTo('.hm-hero-micro',{opacity:0},{opacity:1,duration:.6},'-=0.35');
       }else{
         gsap.set('[data-h]',{opacity:1});
