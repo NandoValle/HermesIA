@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parecer em minutos — demonstração ao vivo | HermesIA</title>
+  <meta name="description" content="Faça uma pergunta jurídica e receba um parecer fundamentado, com jurisprudência vigente e doutrina citadas. Demonstração pública do motor da HermesIA.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hermesia.ia.br/parecer/">
+  <link rel="icon" type="image/png" href="/emblema.png">
+  <script src="/assets/analytics.js"></script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Parecer em minutos — demonstração ao vivo | HermesIA">
+  <meta property="og:description" content="Pergunte e leia o parecer com as fontes: precedente vinculante, controvérsia tratada no peso certo, doutrina citada.">
+  <meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy-900:#0d1b3e; --navy-800:#0a1428; --navy-700:#16264a; --navy-500:#22386b;
+      --gold-500:#c9a84c; --gold-300:#ddc17e; --paper:#F5F2EA; --muted:#9aa7c4;
+      --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:var(--navy-900);color:var(--paper);line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:var(--gold-300)}
+    .wrap{max-width:760px;margin:0 auto;padding:0 var(--s3)}
+    .topo{padding:var(--s3) 0;border-bottom:1px solid rgba(201,168,76,.18)}
+    .topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s2)}
+    .marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .marca img{width:34px;height:34px}
+    .marca span{font-family:'Playfair Display',serif;color:var(--gold-500);font-size:1.25rem;letter-spacing:1px}
+    .tag-demo{font-size:.78rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+    .hero{padding:var(--s5) 0 var(--s4)}
+    h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.7rem,4.5vw,2.5rem);line-height:1.3;max-width:19ch}
+    .sub{color:var(--muted);max-width:60ch;margin-top:var(--s2);font-size:1.02rem}
+    .sub strong{color:var(--paper);font-weight:500}
+    .card{background:var(--navy-700);border:1px solid var(--navy-500);border-radius:14px;padding:var(--s3);margin-top:var(--s4)}
+    label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:var(--s1);letter-spacing:.02em}
+    textarea{width:100%;min-height:110px;background:var(--navy-800);border:1px solid var(--navy-500);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:1rem;padding:14px 16px;resize:vertical;line-height:1.6}
+    textarea:focus{outline:2px solid var(--gold-500);outline-offset:1px;border-color:transparent}
+    .sigilo{display:flex;gap:8px;align-items:flex-start;font-size:.82rem;color:var(--muted);margin-top:var(--s2)}
+    .sigilo b{color:var(--gold-300);font-weight:500}
+    .acao{display:flex;align-items:center;gap:var(--s2);margin-top:var(--s2);flex-wrap:wrap}
+    button.gerar{background:var(--gold-500);color:#14181F;border:0;border-radius:10px;font-family:'Inter',sans-serif;font-weight:600;font-size:1rem;padding:14px 26px;cursor:pointer}
+    button.gerar:hover{background:var(--gold-300)}
+    button.gerar:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
+    button.gerar:disabled{opacity:.55;cursor:default}
+    .resto{font-size:.8rem;color:var(--muted)}
+    .erro{display:none;margin-top:var(--s2);color:#e0a1a1;font-size:.92rem}
+    .saida{display:none;margin-top:var(--s4)}
+    .parecer-doc{background:var(--paper);color:#14181F;border-radius:14px;padding:var(--s4) var(--s3);font-size:.98rem;line-height:1.75}
+    .parecer-doc h1,.parecer-doc h2,.parecer-doc h3{font-family:'Playfair Display',serif;color:var(--navy-900);line-height:1.35;margin:1.3em 0 .45em}
+    .parecer-doc h1{font-size:1.45rem;margin-top:0}
+    .parecer-doc h2{font-size:1.18rem}
+    .parecer-doc h3{font-size:1.02rem}
+    .parecer-doc p{margin:.6em 0}
+    .parecer-doc ul,.parecer-doc ol{margin:.6em 0 .6em 1.3em}
+    .parecer-doc blockquote{border-left:3px solid var(--gold-500);padding-left:14px;margin:.8em 0;color:#3c465c;font-style:italic}
+    .parecer-doc hr{border:0;border-top:1px solid #d8d2c2;margin:1.4em 0}
+    .parecer-doc table{border-collapse:collapse;margin:.8em 0;width:100%;font-size:.9rem}
+    .parecer-doc th,.parecer-doc td{border:1px solid #d8d2c2;padding:7px 10px;text-align:left;vertical-align:top}
+    .parecer-doc th{background:#ece6d6}
+    .fontes{margin-top:var(--s3)}
+    .fontes h4{font-family:'Playfair Display',serif;color:var(--gold-500);font-size:1.02rem;letter-spacing:.04em;margin-bottom:var(--s2)}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{background:var(--navy-700);border:1px solid var(--navy-500);border-radius:9px;padding:8px 13px;font-size:.82rem;color:var(--paper)}
+    .chip small{display:block;color:var(--muted);font-size:.74rem}
+    .aviso-minuta{margin-top:var(--s3);font-size:.82rem;color:var(--muted);border-left:2px solid var(--gold-500);padding-left:12px}
+    .divisor{border:0;border-top:1px solid rgba(201,168,76,.25);margin:var(--s5) 0}
+    h2.sec{font-family:'Playfair Display',serif;font-size:1.5rem;line-height:1.35}
+    .sec-sub{color:var(--muted);font-size:.92rem;margin-top:var(--s1)}
+    .ex-tabs{display:flex;gap:10px;margin:var(--s3) 0 var(--s2);flex-wrap:wrap}
+    .ex-tab{background:var(--navy-700);color:var(--paper);border:1px solid var(--navy-500);border-radius:9px;padding:10px 16px;font-family:'Inter',sans-serif;font-size:.88rem;cursor:pointer;text-align:left}
+    .ex-tab[aria-selected="true"]{border-color:var(--gold-500);color:var(--gold-300)}
+    .ex-tab:focus-visible{outline:2px solid var(--gold-500);outline-offset:2px}
+    .lacre{display:flex;align-items:center;gap:var(--s2);margin:var(--s5) 0;padding:var(--s3);border:1px solid rgba(201,168,76,.3);border-radius:14px}
+    .lacre img{width:52px;height:52px;flex:none}
+    .lacre p{font-size:.95rem;color:var(--paper);max-width:52ch}
+    .lacre a{font-weight:500}
+    footer{border-top:1px solid rgba(201,168,76,.18);padding:var(--s3) 0 var(--s4);color:var(--muted);font-size:.82rem;text-align:center}
+    @media (max-width:560px){ .wrap{padding:0 var(--s2)} .hero{padding-top:var(--s4)} .parecer-doc{padding:var(--s3) var(--s2)} }
+    @media (prefers-reduced-motion:no-preference){ .saida.mostrando{animation:surge .5s ease-out} @keyframes surge{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}} }
+  </style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="/"><img src="/emblema.png" alt="HermesIA"><span>HermesIA</span></a>
+    <span class="tag-demo">Parecer · demonstração ao vivo</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Pergunte. Receba o parecer com as fontes.</h1>
+      <p class="sub">Esta é uma demonstração pública e compacta do motor jurídico da HermesIA. Você faz uma pergunta de direito; o motor responde com <strong>precedente vinculante identificado, controvérsia tratada na proporção do peso e doutrina citada por obra e página</strong>. A versão completa do produto gera o parecer integral.</p>
+
+      <div class="card">
+        <label for="pergunta">Sua pergunta jurídica</label>
+        <textarea id="pergunta" maxlength="600" placeholder="Ex.: Cabe dano moral por inscrição indevida em cadastro de inadimplentes quando já existe negativação anterior legítima?"></textarea>
+        <p class="sigilo">🛡 <span><b>A demonstração é pública — escreva a pergunta em tese, sem nomes ou dados reais.</b> No produto, o sigilo é a arquitetura: o segredo do cliente fica com você.</span></p>
+        <div class="acao">
+          <button class="gerar" id="btn-gerar">Gerar parecer de demonstração</button>
+          <span class="resto" id="resto">Demonstração limitada por dia — uso justo.</span>
+        </div>
+        <p class="erro" id="erro"></p>
+      </div>
+
+      <div class="saida" id="saida">
+        <div class="parecer-doc" id="doc"></div>
+        <div class="fontes">
+          <h4>Fontes consultadas nesta resposta</h4>
+          <div class="chips" id="chips"></div>
+        </div>
+        <p class="aviso-minuta" id="aviso"></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <hr class="divisor">
+    <h2 class="sec">Exemplos reais, gerados por este mesmo motor</h2>
+    <p class="sec-sub">Respostas produzidas pelo motor em produção — reproduzidas na íntegra, com as fontes que ele citou.</p>
+    <div class="ex-tabs" role="tablist" id="ex-tabs"></div>
+    <div class="saida" id="ex-saida" style="display:block">
+      <div class="parecer-doc" id="ex-doc"></div>
+      <div class="fontes">
+        <h4>Fontes consultadas nesta resposta</h4>
+        <div class="chips" id="ex-chips"></div>
+      </div>
+      <p class="aviso-minuta" id="ex-aviso"></p>
+    </div>
+
+    <div class="lacre">
+      <img src="/emblema.png" alt="Selo HermesIA">
+      <p>O que você viu é a demonstração. O produto entrega o parecer integral — e o segredo do cliente permanece do lado de cá. <a href="/#demo">Conheça a HermesIA</a> ou <a href="/experimente/">peça acesso ao teste completo</a>.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">HermesIA — trabalho pronto, sem expor o segredo do cliente. · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a></div>
+</footer>
+
+<script id="exemplos-data" type="application/json">[{"titulo": "Negativação indevida com anotação anterior (Súmula 385 / Tema 922)", "parecer": "# Dano Moral por Inscrição Indevida em Cadastro de Inadimplentes com Negativação Anterior Legítima\n\n## Resposta Vinculante\n\n**Não cabe indenização por dano moral pela inscrição indevida quando preexiste legítima anotação**, ressalvado o direito ao cancelamento. (STJ, Tema 922 (Rec. Repetitivo — vinculante), fixado em 27/04/2016; Súmula 385/STJ).\n\nEsta tese é **vinculante no âmbito do STJ** e representa o entendimento consolidado da Segunda Seção dessa corte.\n\n---\n\n## Fundamento Jurídico\n\n### 1. Precedente Vinculante (STJ)\n\nO **Tema 922/STJ** (Recurso Repetitivo, 27/04/2016) estabeleceu que:\n\n> \"A inscrição indevida comandada pelo credor em cadastro de inadimplentes, quando preexistente legítima anotação, não enseja indenização por dano moral, ressalvado o direito ao cancelamento. Inteligência da Súmula 385/STJ.\"\n\nA **Súmula 385/STJ** consolida a mesma orientação: *\"Da anotação irregular em cadastro de proteção ao crédito, não cabe indenização por dano moral, quando preexistente legítima inscrição, ressalvado o direito ao cancelamento.\"*\n\nO fundamento subjacente é que **quem já é registrado como mau pagador não pode se sentir moralmente ofendido por mais uma inscrição indevida**, já que a lesão ao bem da personalidade (honra, reputação creditícia) já foi consumada pela primeira negativação legítima.\n\n### 2. Ressalva Processual\n\nO direito ao **cancelamento da inscrição indevida persiste**. Embora não haja condenação por dano moral, o devedor pode obter a exclusão da anotação irregular do cadastro.\n\n---\n\n## Controvérsia Doutrinária\n\nA doutrina fornecida **questiona a adequação da Súmula 385/STJ**, apontando deficiências na generalização:\n\n1. **Crítica ao critério binário**: A doutrina argumenta que o dano moral não deve ser negado de forma absoluta apenas porque existe inscrição anterior legítima. O dano existe, embora possa ser **menor** (quantum reduzido) em comparação com quem nunca sofreu negativação (Rosenvald; Braga Netto, p. 1400-1401).\n\n2. **Diferenciação conforme as circunstâncias**: \n   - Devedor com reincidência de inadimplência contumaz: não merece indenização;\n   - Devedor que descumpriu por fatalidade (desemprego, doença) e sofre segunda negativação indevida: poderia ter direito a quantum reduzido (Rosenvald; Braga Netto, p. 852-853).\n\n3. **Flexibilização de 2020**: A doutrina registra que *\"em 2020 o STJ admitiu a flexibilização da orientação contida na Súmula 385/STJ para reconhecer o dano moral decorrente da inscrição indevida do nome da consumidora em cadastro restritivo, ainda que não tenha havido o trânsito em julgado das outras demandas em que se apontava a irregularidade das anotações preexistentes\"* (Rosenvald; Braga Netto, p. 1400-1401, nota 1242).\n\n---\n\n## Possibilidade de Dano Moral por Outro Fundamento\n\nEmbora a inscrição indevida isolada não gere dano moral quando há negativação anterior legítima, a doutrina assinala que **dano moral pode surgir de outras condutas do credor**, independentemente da coexistência de anotações regulares:\n\n- Cobrança vexatória e indevida paralela à inscrição irregular;\n- Desleixo injustificado em cancelar a anotação indevida após ciência do erro (Rosenvald; Braga Netto, p. 1059-1060).\n\nNestes casos, a causa de pedir não é a inscrição em si, mas o comportamento abusivo ou negligente do credor.\n\n---\n\n## Observações Procedimentais\n\n1. **Competência**: A questão é de direito infraconstitucional. O STF reconheceu ser matéria sem repercussão geral (Tema 232/STF, 06/11/2009 — vigência não auditada, confirmar), consolidando a competência ordinária do STJ.\n\n2. **Ônus da prova**: O devedor deve demonstrar que a inscrição é **indevida** (isto é, não corresponde a débito válido ou exigível). A existência de negativação anterior legítima, porém, afasta a indenização por dano moral.\n\n3. **Revisão futura**: A doutrina aponta possível evolução jurisprudencial. Recomenda-se **acompanhar decisões recentes do STJ** (pós-2020) que possam ter flexibilizado a aplicação da Súmula 385 em situações específicas.\n\n---\n\n## Conclusão\n\nSob a jurisprudência vinculante atual (Súmula 385/STJ e Tema 922/STJ), **não cabe indenização por dano moral pela inscrição indevida quando preexiste legítima anotação**. O devedor, contudo, mantém o direito ao cancelamento. A controvérsia doutrinária sugere possível ressignificação do entendimento conforme as circunstâncias concretas e a conduta paralela do credor, exigindo análise particularizada do caso.", "aviso": "MINUTA — sujeita à revisão do advogado responsável. Acervo do STF com vigência NÃO auditada: confirmar antes de usar.", "juris": [{"tipo": "tese", "tribunal": "STJ", "numero": 922, "data": "2016-04-27", "status": "vigente", "sim": 0.902}, {"tipo": "repercussao_geral", "tribunal": "STF", "numero": 232, "data": "2009-11-06", "status": "vigencia_nao_auditada — tese fixada em 06/11/2009; confirmar", "sim": 0.901}, {"tipo": "sumula", "tribunal": "STJ", "numero": 385, "data": null, "status": "vigente", "sim": 0.896}, {"tipo": "tese", "tribunal": "STJ", "numero": 41, "data": "2008-12-10", "status": "vigente", "sim": 0.886}], "doutrina": [{"obra": "Responsabilidade Civil: Teoria Geral", "pagina": "1400-1401", "sim": 0.888}, {"obra": "Responsabilidade Civil: Teoria Geral", "pagina": "1059-1060", "sim": 0.875}, {"obra": "Responsabilidade Civil: Teoria Geral", "pagina": "845-847", "sim": 0.866}, {"obra": "Responsabilidade Civil: Teoria Geral", "pagina": "852-853", "sim": 0.865}]}, {"titulo": "Golpe do Pix por engenharia social: o banco responde?", "parecer": "# RESPOSTA\n\n## Síntese Executiva\n\nA questão envolve determinar se o banco responde objetivamente quando o cliente é vítima de engenharia social e efetua transferência Pix voluntariamente ao golpista. O material fornecido estabelece regra clara sobre responsabilidade objetiva das instituições financeiras, porém com ressalva crítica quanto ao alcance dessa responsabilidade.\n\n---\n\n## Fundamento Vinculante\n\n**Sim, o banco responde objetivamente — porém com limitação importante que o material não resolve completamente.**\n\nA responsabilidade objetiva das instituições financeiras por fraudes praticadas por terceiros está consolidada em:\n\n- **Súmula 479/STJ**: \"As instituições financeiras respondem objetivamente pelos danos gerados por fortuito interno relativo a fraudes e delitos praticados por terceiros no âmbito de operações bancárias.\"\n\n- **STJ, Tema 466 (Rec. Repetitivo — vinculante)**, fixado em 24.08.2011: mesma redação.\n\nAmbas afirmam que a fraude ou delito praticado por terceiro, quando ocorre no âmbito de operação bancária, integra o risco próprio da atividade (fortuito interno) e não pode ser alegado como causa excludente de responsabilidade.\n\n---\n\n## O Problema da \"Culpa Voluntária\" do Cliente\n\nContudo, o material doutrinário (D1) reconhece que existe gradação dentro da responsabilidade objetiva:\n\n> \"Na primeira hipótese, que retrata a situação em análise, o banco procede ao pagamento do cheque habilmente falsificado **sem que o correntista tenha qualquer parcela de culpa no evento danoso**. Nesse caso, a instituição bancária responde objetivamente pelos danos [...]. **Diferentemente, a culpa exclusiva de terceiro que não guarde relação de causalidade com a atividade do fornecedor, sendo absolutamente estranha ao produto ou serviço, é considerada apta a elidir a responsabilidade objetiva da instituição bancária, pois é caracterizada como fortuito externo**\" (STJ, REsp 1.093.440-PR).\n\nEssa passagem expõe a tensão: \n\n1. A Súmula 479/STJ vincula que fraudes/delitos no âmbito de operações bancárias são fortuito interno.\n2. Mas a jurisprudência citada admite que culpa exclusiva do cliente, \"estranha ao produto ou serviço\", pode elidir a responsabilidade — como fortuito externo.\n\n---\n\n## A Questão Não Resolvida pelo Material\n\nO material não oferece precedente que examine especificamente **se a voluntariedade do cliente em efetuar o Pix** (mesmo vítima de engenharia social) constitui:\n\n- **Culpa concorrente** (reduzindo indenização), ou\n- **Culpa exclusiva do cliente** (elidindo responsabilidade), ou\n- **Permanência da responsabilidade objetiva** (porque o banco deveria ter sistemas de autenticação/validação que impedissem o golpe).\n\nA doutrina (D1) menciona que \"culpa concorrente é admissível, ainda que no caso de responsabilidade objetiva\", mas não a aplica ao Pix ou à engenharia social.\n\n---\n\n## Conclusão para o Parecer\n\n**O banco responde objetivamente pela fraude** sob a Súmula 479/STJ e Tema 466/STJ. Contudo, a defesa poderá argumentar que:\n\n1. A voluntariedade do cliente em executar o Pix (ainda que induzido por fraude social) pode caracterizar \"culpa concorrente\" ou \"fortuito externo\" que afaste a responsabilidade integral; ou\n2. A engenharia social é absolutamente estranha às obrigações de segurança do banco (diferentemente de falsa assinatura em cheque ou clonagem de cartão).\n\n**Recomendação**: Buscar jurisprudência mais recente do STJ que tenha enfrentado especificamente Pix e engenharia social após a entrada massiva dessa modalidade de golpe (2020+). O material fornecido não contém decisão que resolva se o critério de \"voluntariedade viciada\" é suficiente para excluir a responsabilidade ou apenas a reduz proporcionalmente.", "aviso": "MINUTA — sujeita à revisão do advogado responsável. Acervo do STF com vigência NÃO auditada: confirmar antes de usar.", "juris": [{"tipo": "sumula", "tribunal": "STJ", "numero": 479, "data": null, "status": "vigente", "sim": 0.869}, {"tipo": "tese", "tribunal": "STJ", "numero": 466, "data": "2011-08-24", "status": "vigente", "sim": 0.86}, {"tipo": "tese", "tribunal": "STJ", "numero": 205, "data": "2010-02-24", "status": "vigente", "sim": 0.858}, {"tipo": "tese", "tribunal": "STJ", "numero": 204, "data": "2010-02-24", "status": "vigente", "sim": 0.858}], "doutrina": [{"obra": "Responsabilidade Civil: Teoria Geral", "pagina": "1723-1723", "sim": 0.854}, {"obra": "Responsabilidade Civil: Teoria Geral", "pagina": "1725-1726", "sim": 0.853}, {"obra": "Responsabilidade Civil: Teoria Geral", "pagina": "1362-1363", "sim": 0.853}, {"obra": "Responsabilidade Civil: Teoria Geral", "pagina": "1738-1739", "sim": 0.851}]}]</script>
+<script>
+(function(){
+  'use strict';
+  // --- mini-renderer de markdown (títulos, negrito, itálico, citação, listas, tabela, hr) ---
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function inline(s){
+    return s.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(?!\s)([^*]+?)\*(?!\w)/g,'<em>$1</em>');
+  }
+  function mdParaHtml(md){
+    const linhas = md.split(/\r?\n/); const out=[]; let lista=null, tabela=null, quote=[];
+    function fechaLista(){ if(lista){ out.push('</'+lista+'>'); lista=null; } }
+    function fechaTabela(){ if(tabela){ out.push('</table>'); tabela=null; } }
+    function fechaQuote(){ if(quote.length){ out.push('<blockquote>'+quote.join('<br>')+'</blockquote>'); quote=[]; } }
+    for(const raw of linhas){
+      const l = raw.trimEnd();
+      if(/^\s*$/.test(l)){ fechaLista(); fechaTabela(); fechaQuote(); continue; }
+      let m;
+      if(/^\s*\|?[\s:|-]+\|[\s:|-]*$/.test(l) && tabela){ continue; } // linha separadora da tabela
+      if(l.indexOf('|')>-1 && l.trim().startsWith('|')){
+        fechaLista(); fechaQuote();
+        const cels = l.trim().replace(/^\|/,'').replace(/\|$/,'').split('|').map(c=>inline(esc(c.trim())));
+        if(!tabela){ out.push('<table>'); tabela='th'; out.push('<tr><th>'+cels.join('</th><th>')+'</th></tr>'); }
+        else { out.push('<tr><td>'+cels.join('</td><td>')+'</td></tr>'); }
+        continue;
+      }
+      fechaTabela();
+      if((m=l.match(/^(#{1,3})\s+(.*)$/))){ fechaLista(); fechaQuote(); out.push('<h'+m[1].length+'>'+inline(esc(m[2]))+'</h'+m[1].length+'>'); continue; }
+      if(/^---+$/.test(l.trim())){ fechaLista(); fechaQuote(); out.push('<hr>'); continue; }
+      if((m=l.match(/^\s*>\s?(.*)$/))){ fechaLista(); quote.push(inline(esc(m[1]))); continue; }
+      if((m=l.match(/^\s*[-*]\s+(.*)$/))){ fechaQuote(); if(lista!=='ul'){ fechaLista(); out.push('<ul>'); lista='ul'; } out.push('<li>'+inline(esc(m[1]))+'</li>'); continue; }
+      if((m=l.match(/^\s*\d+[.)]\s+(.*)$/))){ fechaQuote(); if(lista!=='ol'){ fechaLista(); out.push('<ol>'); lista='ol'; } out.push('<li>'+inline(esc(m[1]))+'</li>'); continue; }
+      fechaQuote(); fechaLista(); out.push('<p>'+inline(esc(l))+'</p>');
+    }
+    fechaLista(); fechaTabela(); fechaQuote();
+    return out.join('\n');
+  }
+  function chipsJuris(juris, doutrina){
+    const c=[];
+    for(const j of (juris||[])){
+      const tipo=(j.tipo||'').replace(/^\w/,ch=>ch.toUpperCase());
+      c.push('<span class="chip">'+esc(tipo)+' '+esc(String(j.numero||''))+' · '+esc(j.tribunal||'')+
+        '<small>'+(j.data? 'julg. '+esc(String(j.data)) + ' · ':'')+esc(j.status||'')+'</small></span>');
+    }
+    for(const d of (doutrina||[])){
+      c.push('<span class="chip">'+esc(d.obra||'')+'<small>páginas '+esc(String(d.pagina||''))+'</small></span>');
+    }
+    return c.join('');
+  }
+
+  // --- demonstração ao vivo ---
+  const btn=document.getElementById('btn-gerar'), erro=document.getElementById('erro'), saida=document.getElementById('saida');
+  const MSG={ limite_ip:'Você já usou a demonstração de hoje. Volte amanhã — ou peça acesso ao teste completo.',
+    limite_dia:'A demonstração de hoje atingiu o limite de uso justo. Volte amanhã — ou peça acesso ao teste completo.',
+    pedido_curto:'Escreva a pergunta com um pouco mais de contexto (algumas palavras a mais bastam).',
+    origem_nao_autorizada:'A demonstração só funciona no site oficial hermesia.ia.br.',
+    erro_tecnico:'A geração falhou agora. Espere alguns instantes e tente de novo.' };
+  btn.addEventListener('click', async function(){
+    erro.style.display='none';
+    const pergunta=document.getElementById('pergunta').value.trim();
+    if(pergunta.length<20){ erro.textContent=MSG.pedido_curto; erro.style.display='block'; return; }
+    btn.disabled=true; btn.textContent='Consultando doutrina e jurisprudência…';
+    try{
+      const r=await fetch('https://bot.hermesia.ia.br/api/parecer-demo',{method:'POST',
+        headers:{'Content-Type':'application/json'}, body:JSON.stringify({pergunta})});
+      const j=await r.json().catch(()=>({}));
+      if(!r.ok){ erro.textContent=MSG[j.erro]||MSG.erro_tecnico; erro.style.display='block'; return; }
+      document.getElementById('doc').innerHTML=mdParaHtml(j.parecer||'');
+      document.getElementById('chips').innerHTML=chipsJuris(j.juris,j.doutrina);
+      document.getElementById('aviso').textContent=j.aviso||'';
+      saida.style.display='block'; saida.classList.add('mostrando');
+      saida.scrollIntoView({behavior:'smooth',block:'start'});
+      if(window.posthog) posthog.capture('parecer_demo_gerado');
+    }catch(e){ erro.textContent=MSG.erro_tecnico; erro.style.display='block'; }
+    finally{ btn.disabled=false; btn.textContent='Gerar parecer de demonstração'; }
+  });
+
+  // --- exemplos reais embutidos ---
+  const EX=JSON.parse(document.getElementById('exemplos-data').textContent);
+  const tabs=document.getElementById('ex-tabs');
+  function mostraExemplo(i){
+    for(const b of tabs.children) b.setAttribute('aria-selected', String(+b.dataset.i===i));
+    const e=EX[i];
+    document.getElementById('ex-doc').innerHTML=mdParaHtml(e.parecer);
+    document.getElementById('ex-chips').innerHTML=chipsJuris(e.juris,e.doutrina);
+    document.getElementById('ex-aviso').textContent=e.aviso||'';
+  }
+  EX.forEach(function(e,i){
+    const b=document.createElement('button');
+    b.className='ex-tab'; b.setAttribute('role','tab'); b.dataset.i=i; b.textContent=e.titulo;
+    b.addEventListener('click',function(){ mostraExemplo(i); });
+    tabs.appendChild(b);
+  });
+  mostraExemplo(0);
+})();
+</script>
+</body>
+</html>
