@@ -263,11 +263,24 @@
 
   <!-- VÍDEO -->
   <section class="hm-video-sec">
-    <video class="hm-video" autoplay muted loop playsinline preload="metadata" poster="/emblema.png">
-      <source src="/video-hermesia.mp4" type="video/mp4">
-      Seu navegador não suporta vídeo.
-    </video>
+    <div class="hm-video-box">
+      <video id="hm-video" class="hm-video" autoplay muted loop playsinline preload="metadata" poster="/emblema.png">
+        <source src="/video-hermesia.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <button class="hm-sound" id="hm-sound" type="button" aria-label="Ativar o som do vídeo">🔊 ativar som</button>
+    </div>
   </section>
+  <script>
+  (function(){
+    var v=document.getElementById('hm-video'),b=document.getElementById('hm-sound');
+    if(!v||!b)return;
+    b.addEventListener('click',function(){
+      if(v.muted){v.muted=false;v.currentTime=0;v.play();b.textContent='🔇 silenciar';window.hmTrack&&hmTrack('video_sound_on',{funnel:'home'});}
+      else{v.muted=true;b.textContent='🔊 ativar som';}
+    });
+  })();
+  </script>
 
   <!-- MANIFESTO -->
   <section class="hm-manifesto">
@@ -567,7 +580,10 @@
 
   <style>
     .hm-video-sec{background:#0d1b3e;padding:0 1.2rem 2.5rem;text-align:center;}
-    .hm-video{width:100%;max-width:900px;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45),0 0 0 1px rgba(201,168,76,.35);display:block;margin:0 auto;}
+    .hm-video-box{position:relative;max-width:900px;margin:0 auto;}
+    .hm-video{width:100%;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45),0 0 0 1px rgba(201,168,76,.35);display:block;}
+    .hm-sound{position:absolute;right:14px;bottom:14px;background:rgba(13,27,62,.78);color:#e5c06a;border:1px solid rgba(201,168,76,.5);border-radius:20px;padding:7px 15px;font-size:.78rem;letter-spacing:.5px;cursor:pointer;font-family:inherit;transition:background .2s;}
+    .hm-sound:hover{background:rgba(13,27,62,.95);}
     .hm-whatsapp{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:9999;transition:transform .2s ease,box-shadow .2s ease;}
     .hm-whatsapp:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(0,0,0,.4);}
     .hm-telegram{position:fixed;right:20px;bottom:90px;width:60px;height:60px;border-radius:50%;background:#229ed9;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:9999;transition:transform .2s ease,box-shadow .2s ease;}
