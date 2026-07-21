@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estante da HermesIA — Doutrina jurídica em edição atual</title>
+<meta name="description" content="Curadoria enxuta de doutrina em edição vigente: Civil (Rosenvald &amp; Chaves), Processo Civil (Didier, Daniel Amorim), Penal (Masson, Bitencourt), Constitucional (Lenza, Barroso, Gilmar Mendes) e clássicos. Links diretos para a Amazon.">
+<link rel="canonical" href="https://hermesia.ia.br/estante/">
+<meta property="og:title" content="Estante da HermesIA — Doutrina em edição atual">
+<meta property="og:description" content="Só o que um civilista abre toda semana: doutrina em edição atual, escolhida a dedo.">
+<meta property="og:url" content="https://hermesia.ia.br/estante/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--navy);color:#e8e4d8;line-height:1.65;font-size:16px}
+  a{color:var(--gold-l)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  /* Hero */
+  .hero{padding:64px 0 40px;border-bottom:1px solid var(--navy-2)}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(30px,5vw,46px);line-height:1.15;color:#f5f2ea;max-width:17ch}
+  .hero p.sub{margin-top:16px;max-width:62ch;color:#c9c4b4}
+  .disclosure{margin-top:24px;font-size:11.5px;color:#8f8a7a;max-width:78ch}
+
+  /* Prateleiras */
+  section.shelf{padding:64px 0 8px}
+  .shelf-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+  h2{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(22px,3.2vw,30px);color:#f5f2ea}
+  .shelf-head .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--gold) 0,transparent 100%);opacity:.45;transform:translateY(-4px)}
+  .shelf-note{font-size:14px;color:#a49f8f;max-width:66ch;margin-bottom:24px}
+
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));padding-bottom:40px}
+  .book{display:flex;flex-direction:column;justify-content:space-between;background:var(--navy-2);border:1px solid var(--navy-500,#22386b);border-top:2px solid transparent;border-radius:6px;padding:24px 20px 20px;text-decoration:none;min-height:184px;transition:border-color .25s ease,transform .25s ease}
+  .book:hover,.book:focus-visible{border-top-color:var(--gold);transform:translateY(-2px)}
+  .book:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .book .vol{font-family:'Playfair Display',serif;font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+  .book h3{font-family:'Playfair Display',serif;font-weight:600;font-size:19px;line-height:1.3;color:#f5f2ea}
+  .book .authors{font-size:13.5px;color:#c9c4b4;margin-top:8px}
+  .book .ed{font-size:12px;color:#8f8a7a;margin-top:16px;display:flex;align-items:center;gap:8px}
+  .book .ed::after{content:"ver na Amazon →";color:var(--gold-l);margin-left:auto;font-weight:500;opacity:0;transition:opacity .25s ease}
+  .book:hover .ed::after,.book:focus-visible .ed::after{opacity:1}
+  @media (prefers-reduced-motion:reduce){.book{transition:none}.book .ed::after{transition:none;opacity:1}}
+
+  /* Destaque coleção */
+  .feature{background:var(--navy-deep,#0a1428);border-top:1px solid var(--navy-2);border-bottom:1px solid var(--navy-2)}
+  .feature .grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+
+  /* Kindle Unlimited */
+  .ku{margin:64px 0;border:1px solid var(--navy-500,#22386b);border-radius:6px;padding:32px 28px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;background:var(--navy-2)}
+  .ku h2{font-size:22px}
+  .ku p{font-size:14px;color:#c9c4b4;max-width:56ch;margin-top:8px}
+  .btn{display:inline-block;background:var(--gold);color:#14181f;font-weight:600;font-size:15px;padding:12px 24px;border-radius:4px;text-decoration:none;white-space:nowrap}
+  .btn:hover{background:var(--gold-l)}
+  .btn:focus-visible{outline:2px solid #f5f2ea;outline-offset:2px}
+
+  /* Método */
+  .method{padding:24px 0 64px;max-width:70ch}
+  .method h2{font-size:22px;margin-bottom:16px}
+  .method p{font-size:14.5px;color:#b8b3a2;margin-bottom:12px}
+
+  /* Rodapé */
+  footer{background:var(--navy-foot,#060d1a);padding:40px 0 48px;border-top:1px solid var(--navy-2)}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p.legal{font-size:10.5px;color:#7d7869;line-height:1.7;margin-top:16px;max-width:86ch}
+  footer img{height:11px;vertical-align:-2px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Estante da HermesIA · Doutrina em edição atual</p>
+    <h1>A doutrina que fica aberta na mesa.</h1>
+    <p class="sub">Uma estante curta, de propósito: só obras em edição vigente, dos autores que os tribunais citam e a prática confirma. Sem resenha longa — o critério é este: se a edição envelheceu, sai da estante.</p>
+    <p class="disclosure">Como participante do Programa de Associados da Amazon, a HermesIA recebe comissão pelas compras qualificadas feitas pelos links desta página, sem custo extra para você.</p>
+  </div>
+</header>
+
+<main>
+  <section class="shelf feature" aria-labelledby="colecao">
+    <div class="wrap">
+      <div class="shelf-head"><h2 id="colecao">A coleção de referência</h2><span class="rule" aria-hidden="true"></span></div>
+      <p class="shelf-note">Nelson Rosenvald &amp; Cristiano Chaves de Farias (com Felipe Braga Netto em volumes recentes) — o curso completo, volume a volume, nas edições mais novas publicadas.</p>
+      <div class="grid">
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/854425733X/?tag=hermesialivros-20"><span class="vol">Volume 1</span><h3>Parte Geral e LINDB</h3><p class="authors">Rosenvald · Chaves de Farias</p><p class="ed">Edição 2025</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8544249302/?tag=hermesialivros-20"><span class="vol">Volume 2</span><h3>Obrigações</h3><p class="authors">Rosenvald · Chaves de Farias</p><p class="ed">Edição 2024</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8544241603/?tag=hermesialivros-20"><span class="vol">Volume 3</span><h3>Responsabilidade Civil</h3><p class="authors">Rosenvald · Chaves de Farias</p><p class="ed">Edição 2023</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8544249353/?tag=hermesialivros-20"><span class="vol">Volume 4</span><h3>Contratos</h3><p class="authors">Rosenvald · Chaves de Farias</p><p class="ed">Edição 2024</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8544257372/?tag=hermesialivros-20"><span class="vol">Volume 5</span><h3>Direitos Reais</h3><p class="authors">Rosenvald · Chaves de Farias</p><p class="ed">Edição 2025</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/854424937X/?tag=hermesialivros-20"><span class="vol">Volume 6</span><h3>Famílias</h3><p class="authors">Rosenvald · Chaves de Farias</p><p class="ed">Edição 2024</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8544257399/?tag=hermesialivros-20"><span class="vol">Volume 7</span><h3>Sucessões</h3><p class="authors">Rosenvald · Chaves de Farias</p><p class="ed">Edição 2025</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" aria-labelledby="manuais">
+    <div class="wrap">
+      <div class="shelf-head"><h2 id="manuais">Um volume só</h2><span class="rule" aria-hidden="true"></span></div>
+      <p class="shelf-note">Para quem precisa do Direito Civil inteiro em um livro — consulta rápida, revisão e segunda opinião doutrinária.</p>
+      <div class="grid">
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8530999045/?tag=hermesialivros-20"><span class="vol">Manual</span><h3>Manual de Direito Civil — Volume Único</h3><p class="authors">Flávio Tartuce</p><p class="ed">16ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6551770800/?tag=hermesialivros-20"><span class="vol">Manual</span><h3>Manual de Direito Civil Contemporâneo</h3><p class="authors">Anderson Schreiber</p><p class="ed">9ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6551771254/?tag=hermesialivros-20"><span class="vol">Manual</span><h3>Manual de Direito Civil</h3><p class="authors">Pablo Stolze · Rodolfo Pamplona</p><p class="ed">10ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6551770053/?tag=hermesialivros-20"><span class="vol">Esquematizado</span><h3>Direito Civil — Parte Geral e LINDB, vol. 1</h3><p class="authors">Carlos Roberto Gonçalves</p><p class="ed">16ª ed. · 2026</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" aria-labelledby="processo">
+    <div class="wrap">
+      <div class="shelf-head"><h2 id="processo">Processo Civil</h2><span class="rule" aria-hidden="true"></span></div>
+      <p class="shelf-note">O direito material só anda com o processo em dia. Os processualistas de referência, nas edições mais novas.</p>
+      <div class="grid">
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8544270514/?tag=hermesialivros-20"><span class="vol">Curso</span><h3>Curso de Direito Processual Civil — vol. 1</h3><p class="authors">Fredie Didier Jr.</p><p class="ed">Edição atual</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8544271006/?tag=hermesialivros-20"><span class="vol">Manual</span><h3>Manual de Direito Processual Civil — Volume Único</h3><p class="authors">Daniel Amorim Assumpção Neves</p><p class="ed">18ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8544271022/?tag=hermesialivros-20"><span class="vol">Comentado</span><h3>Código de Processo Civil Comentado</h3><p class="authors">Daniel Amorim Assumpção Neves</p><p class="ed">11ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6559778282/?tag=hermesialivros-20"><span class="vol">Manual</span><h3>Manual de Direito Processual Civil</h3><p class="authors">Alexandre Freitas Câmara</p><p class="ed">5ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8530998286/?tag=hermesialivros-20"><span class="vol">Curso</span><h3>Curso de Direito Processual Civil — vol. 1</h3><p class="authors">Humberto Theodoro Júnior</p><p class="ed">67ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6526022294/?tag=hermesialivros-20"><span class="vol">Curso</span><h3>Curso de Processo Civil — vol. 1</h3><p class="authors">Marinoni · Arenhart · Mitidiero</p><p class="ed">11ª ed.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf feature" aria-labelledby="penal">
+    <div class="wrap">
+      <div class="shelf-head"><h2 id="penal">Direito Penal &amp; Processo Penal</h2><span class="rule" aria-hidden="true"></span></div>
+      <p class="shelf-note">Da parte geral ao tribunal do júri: os penalistas que a prática criminal consulta, nas edições 2026.</p>
+      <div class="grid">
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6528500223/?tag=hermesialivros-20"><span class="vol">Curso</span><h3>Direito Penal — Parte Geral, vol. 1</h3><p class="authors">Cleber Masson</p><p class="ed">21ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8544269958/?tag=hermesialivros-20"><span class="vol">Manual</span><h3>Manual de Direito Penal — Parte Geral</h3><p class="authors">Rogério Sanches Cunha</p><p class="ed">Edição 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/655177119X/?tag=hermesialivros-20"><span class="vol">Tratado</span><h3>Tratado de Direito Penal — Parte Geral, vol. 1</h3><p class="authors">Cezar Roberto Bitencourt</p><p class="ed">32ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8544270905/?tag=hermesialivros-20"><span class="vol">Processo</span><h3>Manual de Processo Penal — Volume Único</h3><p class="authors">Renato Brasileiro de Lima</p><p class="ed">15ª ed. · 2026</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" aria-labelledby="constitucional">
+    <div class="wrap">
+      <div class="shelf-head"><h2 id="constitucional">Direito Constitucional</h2><span class="rule" aria-hidden="true"></span></div>
+      <p class="shelf-note">A Constituição pelas quatro leituras que dominam a doutrina e o STF — todas em edição 2026.</p>
+      <div class="grid">
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6551771866/?tag=hermesialivros-20"><span class="vol">Esquematizado</span><h3>Direito Constitucional</h3><p class="authors">Pedro Lenza</p><p class="ed">30ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6551771807/?tag=hermesialivros-20"><span class="vol">Curso</span><h3>Curso de Direito Constitucional — Série IDP</h3><p class="authors">Gilmar Mendes · Paulo G. Branco</p><p class="ed">21ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8544269966/?tag=hermesialivros-20"><span class="vol">Curso</span><h3>Curso de Direito Constitucional</h3><p class="authors">Marcelo Novelino</p><p class="ed">Edição 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6551771610/?tag=hermesialivros-20"><span class="vol">Curso</span><h3>Curso de Direito Constitucional Contemporâneo</h3><p class="authors">Luís Roberto Barroso</p><p class="ed">14ª ed. · 2026</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" aria-labelledby="mesa">
+    <div class="wrap">
+      <div class="shelf-head"><h2 id="mesa">Na mesa, sempre</h2><span class="rule" aria-hidden="true"></span></div>
+      <p class="shelf-note">As duas obras de consulta que não dependem de tese: a lei compilada e o Código comentado artigo por artigo.</p>
+      <div class="grid">
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6551772390/?tag=hermesialivros-20"><span class="vol">Legislação</span><h3>Vade Mecum Saraiva Tradicional</h3><p class="authors">Editora Saraiva Jur</p><p class="ed">42ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8530999207/?tag=hermesialivros-20"><span class="vol">Comentado</span><h3>Código Civil Comentado — Doutrina e Jurisprudência</h3><p class="authors">Flávio Tartuce</p><p class="ed">7ª ed. · 2026</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6556602108/?tag=hermesialivros-20"><span class="vol">Minicódigo</span><h3>Constituição Federal 2026</h3><p class="authors">Coleção Minicódigos · Edipro</p><p class="ed">Para levar no bolso</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6556602132/?tag=hermesialivros-20"><span class="vol">Minicódigo</span><h3>Código Penal 2026</h3><p class="authors">Coleção Minicódigos · Edipro</p><p class="ed">Para levar no bolso</p></a>
+      </div>
+
+      <div class="shelf-head" style="margin-top:24px"><h2 id="alem">Além da técnica</h2><span class="rule" aria-hidden="true"></span></div>
+      <p class="shelf-note">Advocacia também é mesa de negociação, palavra bem colocada e temperamento. Leituras curtas que todo profissional do direito aproveita.</p>
+      <div class="grid">
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8543108055/?tag=hermesialivros-20"><span class="vol">Negociação</span><h3>Negocie como se sua vida dependesse disso</h3><p class="authors">Chris Voss</p><p class="ed">Ex-negociador do FBI</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8543106214/?tag=hermesialivros-20"><span class="vol">Negociação</span><h3>Como chegar ao sim</h3><p class="authors">Roger Fisher · William Ury</p><p class="ed">O método de Harvard</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/852001030X/?tag=hermesialivros-20"><span class="vol">Filosofia</span><h3>Justiça — o que é fazer a coisa certa</h3><p class="authors">Michael Sandel</p><p class="ed">O curso de Harvard</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8572837469/?tag=hermesialivros-20"><span class="vol">Clássico</span><h3>Retórica</h3><p class="authors">Aristóteles</p><p class="ed">A arte de convencer, na fonte</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8572839046/?tag=hermesialivros-20"><span class="vol">Clássico</span><h3>O Príncipe</h3><p class="authors">Nicolau Maquiavel</p><p class="ed">Texto integral</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/8552100665/?tag=hermesialivros-20"><span class="vol">Clássico</span><h3>Apologia de Sócrates</h3><p class="authors">Platão</p><p class="ed">O julgamento que fundou tudo</p></a>
+        <a class="book" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/dp/6556600539/?tag=hermesialivros-20"><span class="vol">Filosofia</span><h3>Box Grandes Mestres do Estoicismo</h3><p class="authors">Sêneca · Epicteto · Marco Aurélio</p><p class="ed">Edição especial</p></a>
+      </div>
+
+      <div class="ku">
+        <div>
+          <h2>Prefere ler no Kindle?</h2>
+          <p>Boa parte da doutrina recente está no Kindle Unlimited ou em edição digital. O teste do Kindle Unlimited é gratuito por 30 dias — dá para conhecer o acervo jurídico antes de assinar.</p>
+        </div>
+        <a class="btn" rel="sponsored noopener" target="_blank" href="https://www.amazon.com.br/kindleunlimited?tag=hermesialivros-20">Testar o Kindle Unlimited</a>
+      </div>
+
+      <div class="method">
+        <h2>Como esta estante é montada</h2>
+        <p>Três critérios, aplicados sem exceção: <strong>edição em vigor</strong> (obra desatualizada sai, mesmo clássica); <strong>uso real</strong> (autores citados em decisão e em petição, não apenas em bibliografia de concurso); e <strong>independência</strong> — a comissão de afiliado não muda a ordem nem a seleção de nenhuma obra.</p>
+        <p>Encontrou uma edição mais nova do que a listada? A Amazon costuma indicar na própria página. Esta estante é revisada quando as editoras publicam as edições do ano.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a>
+    <p class="legal">Participante do Programa de Associados da Amazon: recebemos comissão por compras qualificadas feitas pelos links desta página. Curadoria editorial — a HermesIA não é escritório de advocacia. © 2026 HermesIA · <img src="/cnpj.png" alt="CNPJ da HermesIA (exibido como imagem)"> · contato@hermesia.ia.br · Belo Horizonte/MG.</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Estante da HermesIA — Direito Civil","itemListElement":[
+{"@type":"ListItem","position":1,"item":{"@type":"Book","name":"Curso de Direito Civil v.1 — Parte Geral e LINDB","author":[{"@type":"Person","name":"Nelson Rosenvald"},{"@type":"Person","name":"Cristiano Chaves de Farias"}]}},
+{"@type":"ListItem","position":2,"item":{"@type":"Book","name":"Curso de Direito Civil v.2 — Obrigações","author":[{"@type":"Person","name":"Nelson Rosenvald"},{"@type":"Person","name":"Cristiano Chaves de Farias"}]}},
+{"@type":"ListItem","position":3,"item":{"@type":"Book","name":"Curso de Direito Civil v.3 — Responsabilidade Civil","author":[{"@type":"Person","name":"Nelson Rosenvald"},{"@type":"Person","name":"Cristiano Chaves de Farias"}]}},
+{"@type":"ListItem","position":4,"item":{"@type":"Book","name":"Curso de Direito Civil v.4 — Contratos","author":[{"@type":"Person","name":"Nelson Rosenvald"},{"@type":"Person","name":"Cristiano Chaves de Farias"}]}},
+{"@type":"ListItem","position":5,"item":{"@type":"Book","name":"Curso de Direito Civil v.5 — Direitos Reais","author":[{"@type":"Person","name":"Nelson Rosenvald"},{"@type":"Person","name":"Cristiano Chaves de Farias"}]}},
+{"@type":"ListItem","position":6,"item":{"@type":"Book","name":"Curso de Direito Civil v.6 — Famílias","author":[{"@type":"Person","name":"Nelson Rosenvald"},{"@type":"Person","name":"Cristiano Chaves de Farias"}]}},
+{"@type":"ListItem","position":7,"item":{"@type":"Book","name":"Curso de Direito Civil v.7 — Sucessões","author":[{"@type":"Person","name":"Nelson Rosenvald"},{"@type":"Person","name":"Cristiano Chaves de Farias"}]}},
+{"@type":"ListItem","position":8,"item":{"@type":"Book","name":"Manual de Direito Civil — Volume Único (16ª ed.)","author":{"@type":"Person","name":"Flávio Tartuce"}}},
+{"@type":"ListItem","position":9,"item":{"@type":"Book","name":"Manual de Direito Civil Contemporâneo (9ª ed.)","author":{"@type":"Person","name":"Anderson Schreiber"}}},
+{"@type":"ListItem","position":10,"item":{"@type":"Book","name":"Manual de Direito Civil (10ª ed.)","author":[{"@type":"Person","name":"Pablo Stolze Gagliano"},{"@type":"Person","name":"Rodolfo Pamplona Filho"}]}},
+{"@type":"ListItem","position":11,"item":{"@type":"Book","name":"Direito Civil Esquematizado v.1 (16ª ed.)","author":{"@type":"Person","name":"Carlos Roberto Gonçalves"}}},
+{"@type":"ListItem","position":12,"item":{"@type":"Book","name":"Curso de Direito Processual Civil v.1","author":{"@type":"Person","name":"Fredie Didier Jr."}}},
+{"@type":"ListItem","position":13,"item":{"@type":"Book","name":"Manual de Direito Processual Civil — Volume Único (18ª ed.)","author":{"@type":"Person","name":"Daniel Amorim Assumpção Neves"}}},
+{"@type":"ListItem","position":14,"item":{"@type":"Book","name":"Código de Processo Civil Comentado (11ª ed.)","author":{"@type":"Person","name":"Daniel Amorim Assumpção Neves"}}},
+{"@type":"ListItem","position":15,"item":{"@type":"Book","name":"Manual de Direito Processual Civil (5ª ed.)","author":{"@type":"Person","name":"Alexandre Freitas Câmara"}}},
+{"@type":"ListItem","position":16,"item":{"@type":"Book","name":"Curso de Direito Processual Civil v.1 (67ª ed.)","author":{"@type":"Person","name":"Humberto Theodoro Júnior"}}},
+{"@type":"ListItem","position":17,"item":{"@type":"Book","name":"Curso de Processo Civil v.1 (11ª ed.)","author":[{"@type":"Person","name":"Luiz Guilherme Marinoni"},{"@type":"Person","name":"Sérgio Cruz Arenhart"},{"@type":"Person","name":"Daniel Mitidiero"}]}},
+{"@type":"ListItem","position":18,"item":{"@type":"Book","name":"Vade Mecum Saraiva Tradicional (42ª ed.)"}},
+{"@type":"ListItem","position":19,"item":{"@type":"Book","name":"Código Civil Comentado — Doutrina e Jurisprudência (7ª ed.)","author":{"@type":"Person","name":"Flávio Tartuce"}}},
+{"@type":"ListItem","position":20,"item":{"@type":"Book","name":"Negocie como se sua vida dependesse disso","author":{"@type":"Person","name":"Chris Voss"}}},
+{"@type":"ListItem","position":21,"item":{"@type":"Book","name":"Como chegar ao sim","author":[{"@type":"Person","name":"Roger Fisher"},{"@type":"Person","name":"William Ury"}]}},
+{"@type":"ListItem","position":22,"item":{"@type":"Book","name":"Justiça: o que é fazer a coisa certa","author":{"@type":"Person","name":"Michael Sandel"}}},
+{"@type":"ListItem","position":23,"item":{"@type":"Book","name":"Retórica","author":{"@type":"Person","name":"Aristóteles"}}},
+{"@type":"ListItem","position":24,"item":{"@type":"Book","name":"O Príncipe","author":{"@type":"Person","name":"Nicolau Maquiavel"}}},
+{"@type":"ListItem","position":25,"item":{"@type":"Book","name":"Apologia de Sócrates","author":{"@type":"Person","name":"Platão"}}},
+{"@type":"ListItem","position":26,"item":{"@type":"Book","name":"Box Grandes Mestres do Estoicismo"}},
+{"@type":"ListItem","position":27,"item":{"@type":"Book","name":"Constituição Federal 2026 — Coleção Minicódigos"}},
+{"@type":"ListItem","position":28,"item":{"@type":"Book","name":"Código Penal 2026 — Coleção Minicódigos"}},
+{"@type":"ListItem","position":29,"item":{"@type":"Book","name":"Direito Penal — Parte Geral, vol. 1 (21ª ed.)","author":{"@type":"Person","name":"Cleber Masson"}}},
+{"@type":"ListItem","position":30,"item":{"@type":"Book","name":"Manual de Direito Penal — Parte Geral (2026)","author":{"@type":"Person","name":"Rogério Sanches Cunha"}}},
+{"@type":"ListItem","position":31,"item":{"@type":"Book","name":"Tratado de Direito Penal — Parte Geral, vol. 1 (32ª ed.)","author":{"@type":"Person","name":"Cezar Roberto Bitencourt"}}},
+{"@type":"ListItem","position":32,"item":{"@type":"Book","name":"Manual de Processo Penal — Volume Único (15ª ed.)","author":{"@type":"Person","name":"Renato Brasileiro de Lima"}}},
+{"@type":"ListItem","position":33,"item":{"@type":"Book","name":"Direito Constitucional — Esquematizado (30ª ed.)","author":{"@type":"Person","name":"Pedro Lenza"}}},
+{"@type":"ListItem","position":34,"item":{"@type":"Book","name":"Curso de Direito Constitucional — Série IDP (21ª ed.)","author":[{"@type":"Person","name":"Gilmar Ferreira Mendes"},{"@type":"Person","name":"Paulo Gustavo Gonet Branco"}]}},
+{"@type":"ListItem","position":35,"item":{"@type":"Book","name":"Curso de Direito Constitucional (2026)","author":{"@type":"Person","name":"Marcelo Novelino"}}},
+{"@type":"ListItem","position":36,"item":{"@type":"Book","name":"Curso de Direito Constitucional Contemporâneo (14ª ed.)","author":{"@type":"Person","name":"Luís Roberto Barroso"}}}
+]}
+</script>
+
+</body>
+</html>
