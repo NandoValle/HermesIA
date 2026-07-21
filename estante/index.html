@@ -26,7 +26,11 @@
 
   /* Hero */
   .hero{padding:64px 0 40px;border-bottom:1px solid var(--navy-2)}
-  .emblem{display:block;width:84px;height:84px;margin-bottom:24px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))}
+  .hero-flex{display:flex;align-items:center;gap:56px}
+  .hero-text{flex:1;min-width:0}
+  .emblem-link{flex-shrink:0}
+  .emblem{display:block;width:220px;height:220px;filter:drop-shadow(0 4px 16px rgba(0,0,0,.45))}
+  @media (max-width:760px){.hero-flex{flex-direction:column-reverse;align-items:flex-start;gap:32px}.emblem{width:96px;height:96px}}
   .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
   h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(30px,5vw,46px);line-height:1.15;color:#f5f2ea;max-width:17ch}
   .hero p.sub{margin-top:16px;max-width:62ch;color:#c9c4b4}
@@ -78,12 +82,14 @@
 <body>
 
 <header class="hero">
-  <div class="wrap">
-    <a href="/" title="HermesIA — página inicial"><img class="emblem" src="/emblema.png" alt="Brasão da HermesIA — o Selo do Guardião" width="84" height="84"></a>
-    <p class="eyebrow">Estante da HermesIA · Doutrina em edição atual</p>
-    <h1>A doutrina que fica aberta na mesa.</h1>
-    <p class="sub">Uma estante curta, de propósito: só obras em edição vigente, dos autores que os tribunais citam e a prática confirma. Sem resenha longa — o critério é este: se a edição envelheceu, sai da estante.</p>
-    <p class="disclosure">Como participante do Programa de Associados da Amazon, a HermesIA recebe comissão pelas compras qualificadas feitas pelos links desta página, sem custo extra para você.</p>
+  <div class="wrap hero-flex">
+    <div class="hero-text">
+      <p class="eyebrow">Estante da HermesIA · Doutrina em edição atual</p>
+      <h1>A doutrina que fica aberta na mesa.</h1>
+      <p class="sub">Uma estante curta, de propósito: só obras em edição vigente, dos autores que os tribunais citam e a prática confirma. Sem resenha longa — o critério é este: se a edição envelheceu, sai da estante.</p>
+      <p class="disclosure">Como participante do Programa de Associados da Amazon, a HermesIA recebe comissão pelas compras qualificadas feitas pelos links desta página, sem custo extra para você.</p>
+    </div>
+    <a class="emblem-link" href="/" title="HermesIA — página inicial"><img class="emblem" src="/emblema.png" alt="Brasão da HermesIA — o Selo do Guardião" width="220" height="220"></a>
   </div>
 </header>
 
