@@ -110,7 +110,7 @@
         "name": "A IA substitui o profissional?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Não. A HermesIA acelera a parte mecânica e entrega um rascunho pronto — mas você sempre revisa antes de usar, e a responsabilidade (e a autoria) é sempre sua."
+          "text": "Não. A HermesIA acelera a parte mecânica e entrega um rascunho pronto, mas você sempre revisa antes de usar, e a responsabilidade (e a autoria) é sempre sua."
         }
       },
       {
@@ -118,7 +118,7 @@
         "name": "É o mesmo que outros \"Hermes IA\" que existem por aí?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Não. A HermesIA não é um assistente genérico nem um curso de IA. É a plataforma que entrega o trabalho pronto pra profissionais e autônomos brasileiros — criada por um advogado que programa há 40 anos."
+          "text": "Não. A HermesIA não é um assistente genérico nem um curso de IA. É a plataforma que entrega o trabalho pronto pra profissionais e autônomos brasileiros, criada por um advogado que programa há 40 anos."
         }
       }
     ]
@@ -281,9 +281,9 @@
     <div class="hm-logo" data-h><span>Hermes</span>IA</div>
     <div class="hm-tagline" data-h>A IA que devolve o seu tempo</div>
     <h1 class="hm-hero-title" data-h>Mande um áudio. <em>Receba o trabalho pronto.</em></h1>
-    <p class="hm-hero-sub" data-h>Você fala do seu jeito, direto no WhatsApp — sem aprender nada de IA. <strong>Já no ar:</strong> o HermesIA Áudio transforma qualquer áudio em transcrição + resumo + pontos de ação, na hora. Feita por um advogado, pra quem vive de tempo.</p>
+    <p class="hm-hero-sub" data-h>Você fala do seu jeito, direto no WhatsApp, sem aprender nada de IA. <strong>Já no ar:</strong> o HermesIA Áudio transforma qualquer áudio em transcrição + resumo + pontos de ação, na hora. Feita por um advogado, pra quem vive de tempo.</p>
     <ul class="hm-hero-bullets">
-      <li data-h>Você fala, ela trabalha — direto no WhatsApp, sem app novo</li>
+      <li data-h>Você fala, ela trabalha: direto no WhatsApp, sem app novo</li>
       <li data-h>Você descreve o caso. O documento do cliente fica com você</li>
       <li data-h>Direito, Medicina, Contabilidade e outras 9 profissões</li>
     </ul>
@@ -309,6 +309,7 @@
   (function(){
     var v=document.getElementById('hm-video'),b=document.getElementById('hm-sound');
     if(!v||!b)return;
+    if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();}
     b.addEventListener('click',function(){
       if(v.muted){v.muted=false;v.currentTime=0;v.play();b.textContent='🔇 silenciar';window.hmTrack&&hmTrack('video_sound_on',{funnel:'home'});}
       else{v.muted=true;b.textContent='🔊 ativar som';}
@@ -320,7 +321,7 @@
   <section class="hm-manifesto">
     <p class="hm-quote">"A sociedade do cansaço é uma sociedade do desempenho. Seus habitantes não são mais sujeitos de obediência, mas sujeitos de desempenho e produção."</p>
     <p class="hm-quote-attr">— Byung-Chul Han · A Sociedade do Cansaço</p>
-    <p style="color:#c8d8ec;font-size:0.95rem;max-width:560px;margin:1.8rem auto 0;text-align:center;line-height:1.85;font-weight:300;">A tecnologia acelerou esse cansaço. A HermesIA inverte a lógica: usa a inteligência artificial não para exigir mais de você — mas para te devolver o tempo.</p>
+    <p style="color:#c8d8ec;font-size:0.95rem;max-width:560px;margin:1.8rem auto 0;text-align:center;line-height:1.85;font-weight:300;">A tecnologia acelerou esse cansaço. A HermesIA inverte a lógica: usa a inteligência artificial não para exigir mais de você, mas para te devolver o tempo.</p>
   </section>
 
   <!-- ANTÍDOTO -->
@@ -354,23 +355,23 @@
         <div class="cat">⚖️ ADVOGADO</div>
         <div class="you">"Cliente não pagou meus honorários de R$ 8.000. Quero entrar com ação de cobrança."</div>
         <div class="sep">recebe</div>
-        <div class="out"><b>AÇÃO DE COBRANÇA</b> — fatos, fundamentação e pedidos, estruturada e pronta para revisar e protocolar.</div>
+        <div class="out"><b>AÇÃO DE COBRANÇA:</b> fatos, fundamentação e pedidos, estruturada e pronta para revisar e protocolar.</div>
       </div>
       <div class="card">
         <div class="cat">🏍️ ENTREGADOR</div>
         <div class="you">"Minha conta no iFood foi bloqueada sem motivo. Preciso recorrer."</div>
         <div class="sep">recebe</div>
-        <div class="out"><b>RECURSO DE REATIVAÇÃO</b> — pedido educado e organizado, com os fatos em ordem, pronto pra enviar ao app.</div>
+        <div class="out"><b>RECURSO DE REATIVAÇÃO:</b> pedido educado e organizado, com os fatos em ordem, pronto pra enviar ao app.</div>
       </div>
       <div class="card">
         <div class="cat">🧾 AUTÔNOMO</div>
         <div class="you">"Preciso comprovar minha renda pra alugar um apê. Ganho por mês variável."</div>
         <div class="sep">recebe</div>
-        <div class="out"><b>DECLARAÇÃO DE RENDA</b> — mês a mês, com média e total, pronta para imprimir e assinar.</div>
+        <div class="out"><b>DECLARAÇÃO DE RENDA:</b> mês a mês, com média e total, pronta para imprimir e assinar.</div>
       </div>
     </div>
     <div class="hm-demo-foot">
-      <span class="hm-demo-badge">EXEMPLOS ILUSTRATIVOS · VOCÊ SEMPRE REVISA ANTES DE USAR — A RESPONSABILIDADE É SUA</span>
+      <span class="hm-demo-badge">EXEMPLOS ILUSTRATIVOS · VOCÊ SEMPRE REVISA ANTES DE USAR · A RESPONSABILIDADE É SUA</span>
       <p class="hm-price">Primeiro mês <b>grátis</b> · depois <b>R$ 27/mês</b> (preço de lançamento). E <b>de graça</b> pra quem não pode pagar.</p>
       <div class="hm-audio-btns" style="margin-top:1.5rem;">
         <a class="hm-audio-cta" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'demo_foot'});">Testar o Áudio grátis no WhatsApp</a>
@@ -399,7 +400,7 @@
   </style>
   <section class="hm-audio-band">
     <div class="hm-audio-badge">NOVO · VOZ PRIMEIRO</div>
-    <h2 class="hm-audio-title">Afogado em áudios? <em>Encaminhe — e receba o trabalho pronto.</em></h2>
+    <h2 class="hm-audio-title">Afogado em áudios? <em>Encaminhe e receba o trabalho pronto.</em></h2>
     <p class="hm-audio-sub">Aquele áudio de 8 minutos do cliente vira, em segundos, transcrição + resumo + o que precisa ser feito. Direto no WhatsApp, sem app novo, sem cadastro.</p>
     <div class="hm-audio-chips">
       <span class="hm-audio-chip"><i class="ti ti-file-text" aria-hidden="true"></i>Transcrição completa</span>
@@ -431,7 +432,7 @@
     <p class="hm-section-sub">Três passos. Sem prompt, sem curso, sem complicação.</p>
     <div class="hm-pillars">
       <div class="hm-pillar"><div style="font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);line-height:1;margin-bottom:10px;">1</div><div class="hm-pillar-title">Descreva</div><div class="hm-pillar-text">Conte o que precisa em português, como num áudio pro seu estagiário.</div></div>
-      <div class="hm-pillar"><div style="font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);line-height:1;margin-bottom:10px;">2</div><div class="hm-pillar-title">A IA faz</div><div class="hm-pillar-text">A HermesIA redige, organiza e formata — e devolve o documento pronto.</div></div>
+      <div class="hm-pillar"><div style="font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);line-height:1;margin-bottom:10px;">2</div><div class="hm-pillar-title">A IA faz</div><div class="hm-pillar-text">A HermesIA redige, organiza e formata, e devolve o documento pronto.</div></div>
       <div class="hm-pillar"><div style="font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold);line-height:1;margin-bottom:10px;">3</div><div class="hm-pillar-title">Revise e use</div><div class="hm-pillar-text">Você confere, ajusta se quiser e usa. A responsabilidade é sempre sua.</div></div>
     </div>
   </section>
@@ -440,10 +441,10 @@
   <section class="hm-section">
     <h2 class="hm-section-title">Por que a HermesIA é diferente</h2>
     <div class="hm-divider"></div>
-    <p class="hm-section-sub">A IA que normalmente te cobra mais, aqui trabalha por você: produza mais em menos tempo — e recupere o tempo de viver.</p>
+    <p class="hm-section-sub">A IA que normalmente te cobra mais, aqui trabalha por você: produza mais em menos tempo e recupere o tempo de viver.</p>
     <div class="hm-pillars">
       <div class="hm-pillar"><i class="ti ti-brain" aria-hidden="true"></i><div class="hm-pillar-title">Trabalho pronto</div><div class="hm-pillar-text">Você não opera nem aprende IA: descreve o que precisa e recebe o resultado.</div></div>
-      <div class="hm-pillar"><i class="ti ti-clock-off" aria-hidden="true"></i><div class="hm-pillar-title">Mais rápido, mais leve</div><div class="hm-pillar-text">Você produz mais em menos tempo — e o tempo que sobra fica pra você.</div></div>
+      <div class="hm-pillar"><i class="ti ti-clock-off" aria-hidden="true"></i><div class="hm-pillar-title">Mais rápido, mais leve</div><div class="hm-pillar-text">Você produz mais em menos tempo, e o que sobra fica pra você.</div></div>
       <div class="hm-pillar"><i class="ti ti-shield-check" aria-hidden="true"></i><div class="hm-pillar-title">Criada por quem usa</div><div class="hm-pillar-text">Fundada por um advogado sênior que viveu o esgotamento profissional.</div></div>
       <div class="hm-pillar"><i class="ti ti-book" aria-hidden="true"></i><div class="hm-pillar-title">Tutoriais gratuitos</div><div class="hm-pillar-text">Conteúdo prático e gratuito para cada profissão aprender no seu ritmo.</div></div>
     </div>
@@ -473,7 +474,7 @@
   <section class="hm-section" id="tuts">
     <h2 class="hm-section-title">Tutoriais gratuitos por profissão</h2>
     <div class="hm-divider"></div>
-    <p class="hm-section-sub">Aprenda a usar IA para recuperar horas do seu dia — conteúdo prático, direto ao ponto.</p>
+    <p class="hm-section-sub">Aprenda a usar IA para recuperar horas do seu dia: conteúdo prático, direto ao ponto.</p>
     <div class="hm-tuts">
       <a class="hm-tut" href="/tutoriais/peticoes-com-ia.html" style="text-decoration:none;display:block;"><div class="hm-tut-cat">DIREITO</div><div class="hm-tut-title">Como redigir petições com IA em minutos</div><span class="hm-tut-badge">Ler tutorial →</span></a>
       <a class="hm-tut" href="/tutoriais/prontuarios-com-ia.html" style="text-decoration:none;display:block;"><div class="hm-tut-cat">MEDICINA</div><div class="hm-tut-title">IA para otimizar prontuários e anamnese</div><span class="hm-tut-badge">Ler tutorial →</span></a>
@@ -493,7 +494,7 @@
   <section class="hm-founder">
     <img class="hm-founder-photo" src="/fundador.png" alt="Fernando Antônio Vale Rodrigues, fundador da HermesIA" onerror="this.style.display='none'">
     <div class="hm-founder-label">NOTA DO FUNDADOR</div>
-    <p class="hm-founder-text">"Passei décadas como advogado sênior e vi colegas adoecerem de excesso de trabalho. Mas eu também programo desde 1984 — escrevi minhas primeiras linhas em BASIC num MSX, com 8 anos. Quarenta anos depois, uni as duas vidas para criar a HermesIA: a IA feita por quem viveu a dor e sabe construir a solução. A tecnologia deve nos libertar — não nos aprisionar em mais produtividade. Aqui, a IA trabalha por você. Não o contrário."</p>
+    <p class="hm-founder-text">"Passei décadas como advogado sênior e vi colegas adoecerem de excesso de trabalho. Mas eu também programo desde 1984: escrevi minhas primeiras linhas em BASIC num MSX, com 8 anos. Quarenta anos depois, uni as duas vidas para criar a HermesIA: a IA feita por quem viveu a dor e sabe construir a solução. A tecnologia deve nos libertar, não nos aprisionar em mais produtividade. Aqui, a IA trabalha por você. Não o contrário."</p>
     <div class="hm-founder-name">Fernando Antônio Vale Rodrigues</div>
     <div class="hm-founder-role">Advogado Sênior desde 2003 + Programador desde 1984 · Fundador &amp; CEO da HermesIA · Belo Horizonte, MG</div>
     <div style="margin-top:1.3rem;">
@@ -507,9 +508,9 @@
   <section class="hm-section" id="seguranca">
     <h2 class="hm-section-title">Segurança e privacidade</h2>
     <div class="hm-divider"></div>
-    <p class="hm-section-sub">Construída com os princípios da LGPD desde o primeiro dia — especialmente para quem lida com sigilo profissional.</p>
+    <p class="hm-section-sub">Construída com os princípios da LGPD desde o primeiro dia, especialmente para quem lida com sigilo profissional.</p>
     <div class="hm-pillars">
-      <div class="hm-pillar"><i class="ti ti-microphone-off" aria-hidden="true"></i><div class="hm-pillar-title">Seu áudio não fica guardado</div><div class="hm-pillar-text">No HermesIA Áudio, o arquivo é transcrito e descartado — o áudio em si não é armazenado nos nossos servidores.</div></div>
+      <div class="hm-pillar"><i class="ti ti-microphone-off" aria-hidden="true"></i><div class="hm-pillar-title">Seu áudio não fica guardado</div><div class="hm-pillar-text">No HermesIA Áudio, o arquivo é transcrito e descartado: o áudio em si não é armazenado nos nossos servidores.</div></div>
       <div class="hm-pillar"><i class="ti ti-lock" aria-hidden="true"></i><div class="hm-pillar-title">Sem expor o sigilo do cliente</div><div class="hm-pillar-text">Você descreve o caso do seu jeito. Não precisa entregar documentos confidenciais pra "ensinar" a IA.</div></div>
       <div class="hm-pillar"><i class="ti ti-database-off" aria-hidden="true"></i><div class="hm-pillar-title">Dados mínimos</div><div class="hm-pillar-text">Pedimos só o essencial pra te avisar quando o acesso abrir. Nada de dado sensível na lista de espera.</div></div>
       <div class="hm-pillar"><i class="ti ti-user-check" aria-hidden="true"></i><div class="hm-pillar-title">Você no controle</div><div class="hm-pillar-text">A autoria e a responsabilidade do documento são sempre suas. Regras claras na <a href="/privacidade.html" style="color:var(--gold-d);font-weight:500;">Política de Privacidade</a> e nos <a href="/termos.html" style="color:var(--gold-d);font-weight:500;">Termos</a>.</div></div>
@@ -531,11 +532,11 @@
       </details>
       <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
         <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;">A IA substitui o profissional?</summary>
-        <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">Não. A HermesIA acelera a parte mecânica e entrega um rascunho pronto — mas você sempre revisa antes de usar, e a responsabilidade (e a autoria) é sempre sua.</p>
+        <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">Não. A HermesIA acelera a parte mecânica e entrega um rascunho pronto, mas você sempre revisa antes de usar, e a responsabilidade (e a autoria) é sempre sua.</p>
       </details>
       <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
         <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;">É o mesmo que outros "Hermes IA" que existem por aí?</summary>
-        <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">Não. A HermesIA não é um assistente genérico nem um curso de IA. É a plataforma que entrega o trabalho pronto pra profissionais e autônomos brasileiros — criada por um advogado que programa há 40 anos.</p>
+        <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">Não. A HermesIA não é um assistente genérico nem um curso de IA. É a plataforma que entrega o trabalho pronto pra profissionais e autônomos brasileiros, criada por um advogado que programa há 40 anos.</p>
       </details>
     </div>
   </section>
@@ -546,12 +547,12 @@
     <div class="hm-divider"></div>
     <p class="hm-section-sub">Transparência total: o que está no ar agora e o que vem a seguir.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;max-width:760px;margin:0 auto;">
-      <div style="background:#fff;border:0.5px solid #ddd6c4;border-left:3px solid #2e7d32;border-radius:8px;padding:1.3rem;">
+      <div style="background:#fff;border:0.5px solid #ddd6c4;border-left:2px solid #2e7d32;border-radius:8px;padding:1.3rem;">
         <div style="font-size:0.68rem;letter-spacing:1.5px;color:#2e7d32;font-weight:600;margin-bottom:0.6rem;">✅ JÁ NO AR</div>
         <div style="font-weight:600;color:var(--navy);margin-bottom:0.4rem;">HermesIA Áudio (no WhatsApp)</div>
         <div style="font-size:0.85rem;color:#556;line-height:1.6;">Encaminhe um áudio e receba transcrição + resumo + pontos de ação. Grátis, 10 por dia, sem cadastro e sem app novo.</div>
       </div>
-      <div style="background:#fff;border:0.5px solid #ddd6c4;border-left:3px solid var(--gold);border-radius:8px;padding:1.3rem;">
+      <div style="background:#fff;border:0.5px solid #ddd6c4;border-left:2px solid var(--gold);border-radius:8px;padding:1.3rem;">
         <div style="font-size:0.68rem;letter-spacing:1.5px;color:var(--gold-d);font-weight:600;margin-bottom:0.6rem;">⏳ EM FASE FINAL</div>
         <div style="font-weight:600;color:var(--navy);margin-bottom:0.4rem;">A plataforma completa de documentos</div>
         <div style="font-size:0.85rem;color:#556;line-height:1.6;">Você descreve e recebe petição, recurso, laudo, relatório prontos pra revisar. Entre na lista e avisamos por ordem de entrada. <a href="#wl" style="color:var(--gold-d);font-weight:500;">Entrar na lista →</a></div>
@@ -563,7 +564,7 @@
   <section class="hm-form" id="wl">
     <h2 class="hm-section-title">Comece hoje</h2>
     <div class="hm-divider"></div>
-    <p class="hm-section-sub">O HermesIA Áudio já está no ar — teste grátis agora, direto no WhatsApp, sem cadastro e sem cartão. A plataforma completa de documentos está em fase final: deixe seu contato e avisamos assim que o acesso abrir.</p>
+    <p class="hm-section-sub">O HermesIA Áudio já está no ar: teste grátis agora, direto no WhatsApp, sem cadastro e sem cartão. A plataforma completa de documentos está em fase final: deixe seu contato e avisamos assim que o acesso abrir.</p>
     <form id="hm-wl-form" style="max-width:440px;margin:1.6rem auto 0;display:flex;flex-direction:column;gap:10px;text-align:left;">
       <input class="hm-input" type="text" name="nome" placeholder="Seu nome" aria-label="Seu nome" autocomplete="name" required style="width:100%;">
       <input class="hm-input" type="email" name="email" placeholder="Seu melhor e-mail" aria-label="Seu melhor e-mail" autocomplete="email" required style="width:100%;">
@@ -590,8 +591,8 @@
         try{
           var r=await fetch(SB_URL+'/rest/v1/lista_espera',{method:'POST',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(d)});
           if(r.ok){ f.reset(); msg.style.color='#2e7d32'; msg.textContent='Pronto! Você está na lista. Avisamos assim que o acesso abrir. ✅'; if(typeof fbq==='function')fbq('track','Lead'); if(window.hmTrack)hmTrack('lead_captured',{funnel:'home',profissao:(d.profissao||null)}); }
-          else { var t=await r.text(); msg.style.color='#c62828'; msg.textContent='Não consegui salvar agora — tente de novo ou fale no WhatsApp abaixo.'; console.error('waitlist', r.status, t); }
-        }catch(err){ msg.style.color='#c62828'; msg.textContent='Erro de conexão — tente de novo ou fale no WhatsApp abaixo.'; console.error(err); }
+          else { var t=await r.text(); msg.style.color='#c62828'; msg.textContent='Não consegui salvar agora, tente de novo ou fale no WhatsApp abaixo.'; console.error('waitlist', r.status, t); }
+        }catch(err){ msg.style.color='#c62828'; msg.textContent='Erro de conexão: tente de novo ou fale no WhatsApp abaixo.'; console.error(err); }
         finally{ btn.disabled=false; }
       });
     })();
@@ -632,9 +633,9 @@
     .hm-video{width:100%;aspect-ratio:864/496;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45),0 0 0 1px rgba(201,168,76,.35);display:block;}
     .hm-sound{position:absolute;right:14px;bottom:14px;background:rgba(13,27,62,.78);color:var(--gold-l);border:1px solid rgba(201,168,76,.5);border-radius:20px;padding:7px 15px;font-size:.78rem;letter-spacing:.5px;cursor:pointer;font-family:inherit;transition:background .2s;}
     .hm-sound:hover{background:rgba(13,27,62,.95);}
-    .hm-whatsapp{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:9999;transition:transform .2s ease,box-shadow .2s ease;}
+    .hm-whatsapp{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:100;transition:transform .2s ease,box-shadow .2s ease;}
     .hm-whatsapp:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(0,0,0,.4);}
-    .hm-telegram{position:fixed;right:20px;bottom:90px;width:60px;height:60px;border-radius:50%;background:#229ed9;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:9999;transition:transform .2s ease,box-shadow .2s ease;}
+    .hm-telegram{position:fixed;right:20px;bottom:90px;width:60px;height:60px;border-radius:50%;background:#229ed9;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:100;transition:transform .2s ease,box-shadow .2s ease;}
     .hm-telegram:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(0,0,0,.4);}
     .hm-telegram svg{margin-left:-2px;}
     .hm-tg-cta{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;background:#229ed9;color:#fff;font-weight:600;font-size:.98rem;padding:.85rem 1.6rem;border-radius:40px;text-decoration:none;box-shadow:0 6px 18px rgba(34,158,217,.4);transition:transform .2s ease,box-shadow .2s ease;}
