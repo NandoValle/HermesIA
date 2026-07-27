@@ -1,0 +1,12 @@
+# Binarios: nunca converter fim de linha (core.autocrlf=true corromperia o arquivo).
+# Descoberto 27/07/2026: o PDF do guia /sigilo/ foi classificado como texto no git add.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.gif   binary
+*.ico   binary
+*.mp4   binary
+*.woff  binary
+*.woff2 binary
