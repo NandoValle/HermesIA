@@ -127,8 +127,6 @@ h1 em{color:var(--gold-l);font-style:italic;}
     <h2 id="rtitle"></h2>
     <p id="rtext"></p>
     <div class="edge" id="redge"></div>
-    <a class="cta" id="rcta" href="#" target="_blank" rel="noopener">Ver com um caso do meu escritório →</a>
-    <p class="cta-sub">Você leva um processo real, com os seus fatos. Vê a HermesIA trabalhando no seu caso, sem custo e sem compromisso.</p>
   </div>
 
   <p class="foot">Hermes<span>IA</span> · hermesia.ia.br · A IA que devolve o seu tempo.<br>Este diagnóstico é orientativo. A responsabilidade profissional é, e continua sendo, sua.</p>
@@ -149,9 +147,6 @@ const ITEMS = [
   {t:"Você <b>mede</b> quanto tempo cada peça leva e quanto custa produzir.", tag:"Métrica"},
   {t:"Existe um <b>plano B</b> quando a ferramenta falha ou entrega errado.", tag:"Plano B"},
 ];
-
-const WA = "https://api.whatsapp.com/send/?phone=553172285422&text=" +
-  encodeURIComponent("Olá! Fiz o Diagnóstico de Prontidão Jurídica no site e quero ver a HermesIA funcionando com um caso real do meu escritório.");
 
 const BANDS = [
   { max:4, color:"var(--red)", band:"Base frágil: o risco está invisível",
@@ -209,15 +204,8 @@ function showResult(score){
   document.getElementById('rtitle').textContent=b.title;
   document.getElementById('rtext').textContent=b.text;
   document.getElementById('redge').innerHTML=b.edge;
-  document.getElementById('rcta').href=WA;
   res.classList.add('show');
 }
-
-document.getElementById('rcta').addEventListener('click',function(){
-  const score=state.filter(Boolean).length;
-  if(typeof fbq==='function')fbq('track','Lead');
-  window.hmTrack&&hmTrack('prontidao_cta_whatsapp',{funnel:'prontidao',score:score,band:bandName(score)});
-});
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>

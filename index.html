@@ -289,7 +289,7 @@
     </ul>
     <span class="hm-live" role="status" data-h><span class="hm-live-dot" aria-hidden="true"></span>NO AR AGORA<span class="hm-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></span>
     <div class="hm-btns" data-h>
-      <a href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." class="hm-cta" style="text-decoration:none;display:inline-block;" onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'hero'});">Começar grátis agora</a>
+      
       <button class="hm-cta-outline" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Ver na prática</button>
     </div>
     <p class="hm-hero-micro" data-h>Grátis, 10 áudios/dia · sem cadastro e sem cartão · o áudio é apagado depois de transcrever, sem expor o sigilo do cliente.</p>
@@ -374,7 +374,7 @@
       <span class="hm-demo-badge">EXEMPLOS ILUSTRATIVOS · VOCÊ SEMPRE REVISA ANTES DE USAR · A RESPONSABILIDADE É SUA</span>
       <p class="hm-price">Primeiro mês <b>grátis</b> · depois <b>R$ 27/mês</b> (preço de lançamento). E <b>de graça</b> pra quem não pode pagar.</p>
       <div class="hm-audio-btns" style="margin-top:1.5rem;">
-        <a class="hm-audio-cta" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'demo_foot'});">Testar o Áudio grátis no WhatsApp</a>
+        
         <a class="hm-audio-cta-line" href="#wl">Lista da plataforma completa</a>
       </div>
     </div>
@@ -409,7 +409,7 @@
     </div>
     <div class="hm-audio-btns">
       <a class="hm-audio-cta" href="/audio/">Conhecer o HermesIA Áudio</a>
-      <a class="hm-audio-cta-line" href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'audio_band'});">Testar grátis no WhatsApp</a>
+      
     </div>
     <span class="hm-audio-note">Grátis: 10 áudios por dia · sem cartão</span>
   </section>
@@ -576,7 +576,7 @@
     </form>
     <p style="font-size:0.82rem;color:#556;margin-top:1.6rem;">Ou teste agora mesmo, sem cadastro:</p>
     <div class="hm-btns" style="margin-top:0.6rem;">
-      <a href="https://wa.me/553172285422?text=Oi!%20Quero%20testar%20a%20transcri%C3%A7%C3%A3o%20de%20%C3%A1udios%20da%20HermesIA." class="hm-cta-outline" style="text-decoration:none;display:inline-block;" onclick="typeof fbq==='function'&&fbq('track','Lead');window.hmTrack&&hmTrack('lead_intent_whatsapp',{funnel:'home',placement:'waitlist_section'});">Testar o Áudio grátis no WhatsApp</a>
+      
     </div>
     <script>
     (function(){
@@ -591,8 +591,8 @@
         try{
           var r=await fetch(SB_URL+'/rest/v1/lista_espera',{method:'POST',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(d)});
           if(r.ok){ f.reset(); msg.style.color='#2e7d32'; msg.textContent='Pronto! Você está na lista. Avisamos assim que o acesso abrir. ✅'; if(typeof fbq==='function')fbq('track','Lead'); if(window.hmTrack)hmTrack('lead_captured',{funnel:'home',profissao:(d.profissao||null)}); }
-          else { var t=await r.text(); msg.style.color='#c62828'; msg.textContent='Não consegui salvar agora, tente de novo ou fale no WhatsApp abaixo.'; console.error('waitlist', r.status, t); }
-        }catch(err){ msg.style.color='#c62828'; msg.textContent='Erro de conexão: tente de novo ou fale no WhatsApp abaixo.'; console.error(err); }
+          else { var t=await r.text(); msg.style.color='#c62828'; msg.textContent='Não consegui salvar agora, tente de novo em instantes.'; console.error('waitlist', r.status, t); }
+        }catch(err){ msg.style.color='#c62828'; msg.textContent='Erro de conexão: tente de novo em instantes.'; console.error(err); }
         finally{ btn.disabled=false; }
       });
     })();
