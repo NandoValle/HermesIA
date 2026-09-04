@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Capa</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  @page{ size:A4; margin:0; }
+  body{
+    width:210mm; height:297mm;
+    background:#0B1730;
+    font-family:'Inter','Liberation Sans',sans-serif;
+    color:#C7D2E4;
+    position:relative;
+    overflow:hidden;
+  }
+  /* halo suave atrás do brasão */
+  .halo{
+    position:absolute; left:50%; top:96mm; transform:translate(-50%,-50%);
+    width:190mm; height:190mm; border-radius:50%;
+    background:radial-gradient(circle, rgba(201,168,76,.13) 0%, rgba(201,168,76,.045) 38%, rgba(11,23,48,0) 68%);
+  }
+  /* moldura */
+  .frame{
+    position:absolute; left:13mm; top:13mm; right:13mm; bottom:13mm;
+    border:.5pt solid rgba(201,168,76,.42);
+  }
+  .frame::before{
+    content:""; position:absolute; left:2.2mm; top:2.2mm; right:2.2mm; bottom:2.2mm;
+    border:.25pt solid rgba(201,168,76,.22);
+  }
+  .stage{
+    position:absolute; left:26mm; right:26mm; top:26mm; bottom:26mm;
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:7.6pt;
+    letter-spacing:.32em; text-transform:uppercase; color:#C9A84C;
+  }
+  .eyebrow-rule{ width:14mm; height:.5pt; background:rgba(201,168,76,.6); margin:4mm auto 0; }
+
+  .emblem{ width:46mm; height:46mm; margin:16mm 0 13mm; display:block; }
+
+  h1{
+    font-family:'Playfair Display','Liberation Serif',serif;
+    font-weight:700; font-size:29pt; line-height:1.16;
+    color:#F4EAD2; letter-spacing:-.012em; max-width:148mm;
+  }
+  h1 .gold{ color:#C9A84C; }
+
+  .rule{ width:26mm; height:.75pt; background:#C9A84C; margin:9mm 0 8mm; }
+
+  .standfirst{
+    font-weight:300; font-size:10.6pt; line-height:1.68;
+    color:#9FB0CA; max-width:126mm;
+  }
+  .kicker{
+    margin-top:7mm; font-family:'IBM Plex Mono',monospace; font-size:8pt;
+    letter-spacing:.06em; color:#7E8FAC; line-height:1.7; max-width:126mm;
+  }
+  .kicker b{ color:#C9A84C; font-weight:500; }
+
+  .meta{
+    margin-top:auto; width:100%;
+    display:grid; grid-template-columns:repeat(3,1fr);
+    border-top:.5pt solid rgba(201,168,76,.34);
+    padding-top:5mm;
+  }
+  .meta div{ padding:0 4mm; border-right:.5pt solid rgba(255,255,255,.10); text-align:left; }
+  .meta div:first-child{ padding-left:0; }
+  .meta div:last-child{ border-right:0; padding-right:0; }
+  .meta dt{
+    font-family:'IBM Plex Mono',monospace; font-size:6.6pt; letter-spacing:.2em;
+    text-transform:uppercase; color:#6F80A0; margin-bottom:1.8mm;
+  }
+  .meta dd{ font-size:8.6pt; line-height:1.45; color:#D7E0EE; font-weight:400; }
+  .meta dd span{ display:block; color:#8496B3; font-size:7.6pt; margin-top:.8mm; }
+
+  .footbar{ position:absolute; left:0; right:0; bottom:0; height:3mm; background:#C9A84C; }
+  .footbar::before{
+    content:""; position:absolute; left:0; right:0; top:-1.1mm; height:.4mm;
+    background:rgba(201,168,76,.45);
+  }
+</style>
+</head>
+<body>
+  <div class="halo"></div>
+  <div class="frame"></div>
+
+  <div class="stage">
+    <div>
+      <div class="eyebrow">HermesIA · Revisão de evidência</div>
+      <div class="eyebrow-rule"></div>
+    </div>
+
+    <img class="emblem" src="__EMBLEMA__" alt="Brasão HermesIA">
+
+    <h1>Dá para treinar musculação depois de aplicar <span class="gold">toxina botulínica?</span></h1>
+
+    <div class="rule"></div>
+
+    <p class="standfirst">A regra das 24 a 48 horas é repetida em quase toda clínica do Brasil. Ela nunca teve muito estudo por trás — e o que saiu nos últimos anos aponta em outra direção.</p>
+
+    <p class="kicker">Três cenários, treze fontes, <b>zero</b> ensaios sobre musculação pesada.</p>
+
+    <dl class="meta">
+      <div>
+        <dt>Documento</dt>
+        <dd>Revisão de evidência<span>Literatura internacional e acervo SciELO</span></dd>
+      </div>
+      <div>
+        <dt>Levantamento</dt>
+        <dd>4 de setembro de 2026<span>Textos completos não acessados</span></dd>
+      </div>
+      <div>
+        <dt>Preparado para</dt>
+        <dd>HermesIA<span>hermesia.ia.br</span></dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="footbar"></div>
+</body>
+</html>
