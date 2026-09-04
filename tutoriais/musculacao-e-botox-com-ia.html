@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA para musculação e estética: fichas, anamnese e acompanhamento | HermesIA</title>
+  <meta name="description" content="Guia prático para quem vive de musculação e estética: como usar inteligência artificial para organizar ficha de treino, anamnese, termo de consentimento e o retorno do cliente — com os cuidados do seu conselho e da LGPD.">
+  <meta name="keywords" content="IA para estética, IA para academia, inteligência artificial clínica de estética, anamnese com IA, toxina botulínica registro, ficha de treino com IA">
+  <meta name="author" content="Fernando Antônio Vale Rodrigues">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hermesia.ia.br/tutoriais/musculacao-e-botox-com-ia.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="IA para musculação e estética: fichas, anamnese e acompanhamento">
+  <meta property="og:description" content="Passo a passo para academias e clínicas de estética usarem IA com segurança.">
+  <meta property="og:url" content="https://hermesia.ia.br/tutoriais/musculacao-e-botox-com-ia.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HermesIA">
+  <meta property="og:image" content="https://hermesia.ia.br/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IA para musculação e estética: fichas, anamnese e acompanhamento">
+  <meta name="twitter:description" content="Passo a passo para academias e clínicas de estética usarem IA com segurança.">
+  <meta name="twitter:image" content="https://hermesia.ia.br/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "IA para musculação e estética: fichas, anamnese e acompanhamento",
+    "description": "Guia prático para profissionais de musculação e estética usarem inteligência artificial na organização de fichas, anamnese e acompanhamento, com qualidade e segurança.",
+    "author": { "@type": "Person", "name": "Fernando Antônio Vale Rodrigues" },
+    "publisher": { "@type": "Organization", "name": "HermesIA", "url": "https://hermesia.ia.br/" },
+    "datePublished": "2026-09-04",
+    "inLanguage": "pt-BR",
+    "mainEntityOfPage": "https://hermesia.ia.br/tutoriais/musculacao-e-botox-com-ia.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.45.0/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fff; line-height: 1.8; }
+    .ar-top { background: #0d1b3e; padding: 1.4rem 2rem; text-align: center; }
+    .ar-top a { text-decoration: none; }
+    .ar-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #c9a84c; letter-spacing: 1px; }
+    .ar-logo span { color: #fff; }
+    .ar-wrap { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+    .ar-crumb { font-size: 0.78rem; color: #8a6b1f; margin-bottom: 1.5rem; }
+    .ar-crumb a { color: #8a6b1f; text-decoration: none; }
+    .ar-cat { font-size: 0.72rem; color: #c9a84c; font-weight: 500; letter-spacing: 2px; margin-bottom: 0.8rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #0d1b3e; line-height: 1.3; margin-bottom: 1rem; }
+    .ar-lead { font-size: 1.05rem; color: #445; margin-bottom: 2rem; font-weight: 300; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0d1b3e; margin: 2.2rem 0 0.8rem; }
+    h3 { font-size: 1.05rem; color: #0d1b3e; margin: 1.6rem 0 0.5rem; font-weight: 500; }
+    p { font-size: 0.97rem; color: #333; margin-bottom: 1rem; }
+    ul, ol { margin: 0 0 1.2rem 1.3rem; }
+    li { font-size: 0.97rem; color: #333; margin-bottom: 0.5rem; }
+    .ar-prompt { background: #0a1428; color: #d7e2f2; border-left: 3px solid #c9a84c; border-radius: 6px; padding: 1.2rem 1.4rem; font-size: 0.9rem; line-height: 1.7; margin: 1.2rem 0; white-space: pre-wrap; font-family: 'Inter', sans-serif; }
+    .ar-note { background: #fdf6e3; border: 0.5px solid #e8d9a8; border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
+    .ar-note-title { font-size: 0.8rem; font-weight: 500; color: #8a6b1f; letter-spacing: 1px; margin-bottom: 0.5rem; }
+    .ar-note p { font-size: 0.9rem; color: #5a4a1f; margin-bottom: 0.5rem; }
+    .ar-cta-box { background: #0d1b3e; border-radius: 10px; padding: 2rem; text-align: center; margin: 2.5rem 0 1rem; }
+    .ar-cta-box h2 { color: #fff; margin-top: 0; }
+    .ar-cta-box p { color: #c8d8ec; font-size: 0.92rem; }
+    .ar-cta { display: inline-block; background: #c9a84c; color: #fdf6e3; padding: 1rem 2.4rem; border-radius: 4px; font-size: 0.9rem; font-weight: 500; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; margin-top: 0.8rem; }
+    .ar-cta:hover { background: #dfc05e; }
+    .ar-footer { background: #060d1a; padding: 1.8rem 2rem; text-align: center; }
+    .ar-footer p { color: #3a5070; font-size: 0.78rem; margin: 0; }
+    .ar-footer .b { color: #c9a84c; font-family: 'Playfair Display', serif; }
+    @media (max-width: 500px) { h1 { font-size: 1.6rem; } }
+  </style>
+  <!-- HermesIA Analytics (PostHog) -->
+  <script src="/assets/analytics.js"></script>
+  <link rel="icon" type="image/png" href="/emblema.png">
+  <link rel="apple-touch-icon" href="/emblema.png">
+</head>
+<body>
+  <header class="ar-top"><a href="/"><img src="/emblema.png" alt="HermesIA" style="width:60px;height:60px;display:block;margin:0 auto .5rem;"><span class="ar-logo"><span>Hermes</span>IA</span></a></header>
+  <article class="ar-wrap">
+    <nav class="ar-crumb"><a href="/">Início</a> › Tutoriais › Musculação e Estética</nav>
+    <div class="ar-cat">MUSCULAÇÃO E ESTÉTICA</div>
+    <h1>IA para musculação e estética: fichas, anamnese e acompanhamento</h1>
+    <p class="ar-lead">Quem trabalha com corpo vive a mesma rotina dos dois lados do balcão: o cliente que puxa ferro na segunda é o mesmo que marca a aplicação de toxina botulínica na quinta. E, nos dois casos, a parte que rouba o seu tempo não é o atendimento — é a ficha, a anamnese, o termo de consentimento e a mensagem de retorno. Veja como usar inteligência artificial para organizar essa papelada sem abrir mão do que só você pode fazer.</p>
+    <video autoplay muted loop playsinline preload="auto" poster="/emblema.png" style="width:100%;border-radius:10px;margin:0 0 2rem;box-shadow:0 8px 28px rgba(0,0,0,.25),0 0 0 1px rgba(201,168,76,.3);display:block;">
+      <source src="/video-hermesia.mp4" type="video/mp4">
+    </video>
+
+    <h2>Por que isso importa</h2>
+    <p>Academia e clínica de estética compartilham um gargalo silencioso: tudo o que você faz precisa ficar registrado. Avaliação física, restrições, evolução de carga, histórico de saúde, produto e lote utilizados, orientações de pós-procedimento, retorno agendado. É registro que protege o cliente e protege você — e é justamente ele que fica pela metade quando a agenda aperta.</p>
+    <p>A IA não avalia, não indica e não aplica nada. O que ela faz bem é a parte braçal: transformar as suas anotações soltas em ficha organizada, padronizar o texto que você repete dez vezes por semana e devolver em minutos o que hoje você escreve à noite, depois do último atendimento.</p>
+
+    <h2>Antes de começar: o que é seu e o que é da IA</h2>
+    <p>Essa fronteira precisa estar clara antes da primeira linha de prompt.</p>
+    <ul>
+      <li><strong>Só do profissional habilitado:</strong> avaliação, indicação, prescrição, escolha de técnica, dose e produto, e a execução do procedimento. Aplicação de toxina botulínica é ato de profissional habilitado, dentro das atribuições definidas pelo conselho da sua categoria — nada disso se delega a uma ferramenta.</li>
+      <li><strong>Pode ser da IA:</strong> estruturar a ficha a partir dos dados que você forneceu, organizar a anamnese que você coletou, redigir o rascunho de um texto de orientação padrão, resumir a evolução de um acompanhamento, transformar áudio de pós-consulta em registro escrito.</li>
+    </ul>
+    <p>Em uma frase: a IA escreve o que você decidiu, nunca decide o que você vai escrever.</p>
+
+    <h2>Passo a passo</h2>
+
+    <h3>1. Padronize a coleta</h3>
+    <p>Antes de automatizar qualquer coisa, defina o que você sempre pergunta e sempre registra. No treino: objetivo, frequência, histórico de lesão, restrições, liberação médica quando houver. No procedimento estético: histórico de saúde, medicações em uso, alergias, procedimentos anteriores, expectativa declarada pelo cliente e o consentimento formal. Um roteiro fixo é o que permite que o resto vire rotina.</p>
+
+    <h3>2. Alimente a IA com o que você já decidiu</h3>
+    <p>Entregue os parâmetros prontos — divisão de treino que você montou, orientações de pós que você já usa, dados da avaliação. Quanto mais específico o insumo, menos a ferramenta tenta "completar" com invenção. E o que ela inventar é você que assina.</p>
+
+    <h3>3. Use um prompt estruturado</h3>
+    <p>Um bom ponto de partida:</p>
+    <div class="ar-prompt">Você é um assistente de organização de registros de uma clínica de estética e treinamento físico. Organize as informações que EU forneci. Não indique, não prescreva, não sugira dose, produto ou técnica, e não complete lacunas por conta própria — se faltar informação, liste o que falta.
+
+Cliente: [use apenas iniciais ou um código interno].
+Contexto do atendimento: [avaliação física / retorno de procedimento / acompanhamento].
+Dados coletados por mim: [cole aqui a anamnese, restrições, medicações, histórico].
+Conduta que eu defini: [descreva exatamente o que foi feito ou planejado].
+Orientações que eu passei ao cliente: [liste].
+
+Entregue em três blocos:
+1) Ficha de registro do atendimento, em tópicos objetivos.
+2) Resumo da evolução em relação ao atendimento anterior, se eu tiver fornecido.
+3) Texto de orientação para o cliente, em linguagem simples, sem promessa de resultado e sem prazo de efeito que eu não tenha informado.
+
+Ao final, aponte o que ficou faltando nos meus dados.</div>
+    <p>Repare em dois detalhes: o cliente entra por iniciais ou código, e a ferramenta é proibida de preencher buracos. Os dois pontos são o que separa um registro útil de um problema.</p>
+
+    <h3>4. Revise, assine e arquive</h3>
+    <p>Leia linha a linha antes de aproveitar qualquer coisa. Confira nomes, datas, produto e lote, e corrija o que a IA tiver suavizado ou generalizado. O documento que vai para o prontuário ou para a ficha do aluno é seu, com a sua responsabilidade técnica — a origem do rascunho não muda isso.</p>
+
+    <div class="ar-note">
+      <div class="ar-note-title">⚠️ CUIDADOS ÉTICOS, TÉCNICOS E DE PRIVACIDADE</div>
+      <p><strong>Indicação e prescrição são atos profissionais.</strong> A IA organiza texto. Avaliação, indicação, dose, técnica e execução seguem sendo atribuição exclusiva do profissional habilitado, conforme as normas do seu conselho (CFM, CFO, COFEN, CRBM, CREF ou outro, conforme a sua formação). Confirme na fonte oficial do seu conselho o que a sua habilitação permite: essas normas mudam.</p>
+      <p><strong>Dado de saúde é dado sensível.</strong> A LGPD dá tratamento reforçado a informações de saúde, e fotos de rosto e corpo entram nesse pacote. Anonimize sempre que possível, não jogue prontuário inteiro em ferramenta pública e verifique o que a ferramenta faz com o que você digita.</p>
+      <p><strong>Consentimento é documento, não formalidade.</strong> O termo de consentimento pode ter o rascunho organizado por IA, mas precisa ser revisado, adequado ao procedimento real e assinado — de preferência com apoio jurídico na versão padrão que a sua clínica adota.</p>
+      <p><strong>Cuidado com a publicidade.</strong> Não use IA para gerar promessa de resultado. Vários conselhos vedam ou restringem imagens de "antes e depois" e anúncios que garantam efeito, e a divulgação de medicamentos tem regra própria — confira as normas vigentes antes de publicar.</p>
+      <p><strong>Sobre a palavra "botox".</strong> Botox® é marca registrada de um fabricante; o termo técnico correto no registro e na comunicação profissional é toxina botulínica. Vale ajustar isso nos seus modelos de documento.</p>
+    </div>
+
+    <h2>O resultado</h2>
+    <p>Com o roteiro padronizado e o registro saindo em minutos, sobra o que não dá para terceirizar: olhar o cliente, corrigir a execução, acompanhar a evolução de verdade. A papelada deixa de ser o trabalho depois do trabalho. É esse o propósito da HermesIA: a tecnologia trabalhando por você, não o contrário.</p>
+
+    <div class="ar-cta-box">
+      <h2>Quer a IA já adaptada ao seu trabalho?</h2>
+      <p>A HermesIA está sendo construída para profissionais liberais — com os fluxos e o vocabulário da sua área. Entre na lista de espera.</p>
+      <a class="ar-cta" href="/#wl">Quero recuperar meu tempo</a>
+    </div>
+  </article>
+  <footer class="ar-footer">
+    <p><span class="b">HermesIA</span> · hermesia.ia.br · contato@hermesia.ia.br</p>
+    <p>© 2026 HermesIA · Tecnologia que devolve o seu tempo</p>
+  </footer>
+</body>
+</html>
