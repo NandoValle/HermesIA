@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Fontes de documentos (HTML de impressao e scripts de geracao).
+# Nao sao paginas do site: ficam no repositorio so para regerar os PDFs.
+Disallow: /estudos/
+
 Sitemap: https://hermesia.ia.br/sitemap.xml
