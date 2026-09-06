@@ -3,6 +3,12 @@
 > Estudo comparado das camadas textual, histórica, matemática, hermética,
 > polêmica e moderna do número 666. Escrito para **descrever** tradições com
 > precisão, não para endossar nem para ridicularizar nenhuma delas.
+>
+> **Documento-irmão:** `numero-666-linha-do-tempo.md` segue o número no tempo,
+> entrada por entrada, da primeira menção localizável (séc. VIII a.C.) a 2026,
+> com grau de confiança e base documental de cada afirmação. Vários pontos
+> deste estudo foram corrigidos a partir daquela pesquisa; estão marcados com
+> "(ver linha do tempo)".
 
 ---
 
@@ -174,7 +180,9 @@ duas não são necessariamente excludentes.
 |---|---|---|
 | Papiro 115 (P. Oxy. 4499, Oxirrinco, Egito) | c. 225–275 d.C. | **616** (`χιϛ`) |
 | Codex Ephraemi Rescriptus (C) | século V | **616** |
-| Codex Sinaiticus (א), Codex Alexandrinus (A) e a maioria dos manuscritos | séculos IV–V em diante | **666** |
+| Papiro 47 (Chester Beatty) | séc. III | **666** (`χξϛ`, em numerais) |
+| Codex Sinaiticus (א), Codex Alexandrinus (A) e a maioria dos manuscritos | séculos IV–V em diante | **666** (por extenso) |
+| Ticônio (donatista) e a versão armênia | c. 380 / séc. V | **616** |
 | Irineu de Lião, *Contra as Heresias* V,30 | c. 180 d.C. | conhece **616**, defende **666** |
 
 Irineu diz que 666 está "em todos os bons e antigos exemplares" e que 616 é
@@ -184,7 +192,10 @@ P115 é um dos testemunhos mais antigos que temos do Apocalipse, e traz 616.
 
 **[HISTÓRIA]** A explicação mais aceita é que **as duas cifras codificam o
 mesmo nome em duas grafias** (seção 5.1). Nenhuma outra hipótese explica a
-variante com a mesma economia.
+variante com a mesma economia. O P115 foi publicado por Juan Chapa em *The
+Oxyrhynchus Papyri* 66 (1999); a tradição do 616 na Antiguidade tardia é
+donatista, remontando a Ticônio e ao *Liber genealogus* (J. Hoover, *Journal
+of Ecclesiastical History* 72, 2021).
 
 **[HISTÓRIA — hipótese minoritária]** Peter Williams observou que, no P115,
 a forma `χιϛ` é visualmente quase idêntica às abreviaturas sagradas
@@ -282,10 +293,16 @@ outras camadas.
 
 Objeções honestas: exige que um leitor de língua grega pense numa
 transliteração hebraica; e nenhum autor antigo registra explicitamente essa
-solução — ela foi redescoberta no século XIX (por vários estudiosos alemães
-independentemente, por volta de 1830). Os defensores respondem que o silêncio
-antigo é esperado: a comunidade que sabia perdeu-se com o fim do cristianismo
-judaico-palestino.
+solução — ela foi redescoberta por filólogos alemães entre 1831 e 1837:
+**Fritzsche** (1831, o primeiro), **Benary** (1836), **Hitzig** e **Reuss**
+(1837). Há uma única exceção antiga, isolada: o *Liber genealogus* donatista
+(438 d.C.), que espera o Anticristo como Nero *redivivus* e usa o nome de Nero
+num cálculo (Gumerlock, *WTJ* 2006). Um apoio material veio em 1961, com a
+publicação do documento **Mur 18** de Wadi Murabba'at (55/56 d.C.), uma nota
+promissória que grafa o nome do imperador exatamente como `נרון קסר` — prova
+de que a grafia era corrente na Judeia, não de que João a usou (ver linha do
+tempo). Os defensores respondem ao silêncio antigo dizendo que a comunidade
+que sabia perdeu-se com o fim do cristianismo judaico-palestino.
 
 ### 5.2. As soluções de Irineu (c. 180 d.C.) [TEXTO/HISTÓRIA]
 
@@ -350,11 +367,19 @@ qualquer leitor judeu do século I conhecia.
 imediato descreve o rei acumulando **ouro** (10,14-22), **cavalos** do Egito
 (10,26-29) e, logo depois, **mulheres estrangeiras** (11,1-8) — exatamente as
 três coisas que Deuteronômio 17,16-17 proíbe ao rei ("não multiplicará para si
-cavalos… nem mulheres… nem prata e ouro em excesso"). Muitos comentaristas
-leem o 666 aqui como uma **marca literária do excesso**: o ponto em que o rei
-sábio começa a se corromper. Nesse caso, o autor do Apocalipse, ao escolher
-666, estaria evocando **o poder que se corrompe pela plenitude material**.
-Leitura plausível e influente, não certeza.
+cavalos… nem mulheres… nem prata e ouro em excesso"). Uma linha de
+comentaristas lê o 666 aqui como uma **marca literária do excesso**: o ponto
+em que o rei sábio começa a se corromper. Nesse caso, o autor do Apocalipse,
+ao escolher 666, estaria evocando **o poder que se corrompe pela plenitude
+material**. Leitura plausível e influente, não certeza — e é importante saber
+que ela é **moderna**: nenhum rabino antigo nem Padre da Igreja faz essa
+ligação (o Talmude, Sanhedrin 21b, liga Salomão a Dt 17 pelas mulheres e
+cavalos, sem falar do ouro; os comentaristas judeus medievais tentam
+*contabilizar* o número). A leitura vem de Austin Farrer (1949), Bauckham
+(1993), Beale (1999) e, em forma acadêmica plena, de Bodner & Strawn,
+"Solomon and 666 (Revelation 13.18)", *New Testament Studies* 66 (2020). A
+Septuaginta e Flávio Josefo mantêm o 666 sem comentário (ver linha do
+tempo).
 
 ### 6.2. Os filhos de Adonicão — Esdras 2,13 [TEXTO]
 
@@ -363,19 +388,28 @@ sessenta e seis". A lista paralela em **Neemias 7,18** traz 667 — divergência
 textual real entre as duas listas, sem qualquer carga simbólica. É um bom
 lembrete de que o número também aparece de forma **perfeitamente neutra**.
 
-### 6.3. Golias — 1 Samuel 17,4-7 [PADRÃO]
+### 6.3. Golias — 1 Samuel 17,4-7 [PADRÃO — moderno]
 
 Golias media "seis côvados e um palmo"; a ponta da sua lança pesava
-"seiscentos siclos"; e o texto enumera seis peças de armamento. Comentaristas
-notam aqui um padrão 6-6-6 do "gigante que desafia Deus". É um padrão
-literário observado, não afirmado pelo texto.
+"seiscentos siclos"; e conta-se seis peças de armamento. Daí o suposto padrão
+6-6-6 do "gigante que desafia Deus". **A primeira atestação localizada dessa
+leitura é E. W. Bullinger, *Number in Scripture* (1894)**, repetida por A. W.
+Pink (1923) — é leitura moderna, de matriz dispensacionalista, sem paralelo
+antigo ou judaico. E depende de escolhas de contagem: a altura é "seis
+côvados *e um palmo*" (a Septuaginta e 4QSam^a dão *quatro* côvados), e as
+"seis peças" só fecham incluindo o escudo carregado por outro homem (ver
+linha do tempo).
 
 ### 6.4. A estátua de Nabucodonosor — Daniel 3,1-7 [PADRÃO]
 
 A estátua de ouro tinha "sessenta côvados de altura e seis de largura", e a
-adoração era ordenada ao som de uma lista de **seis instrumentos**. Daniel 3 é
-a fonte direta da "imagem da Besta" de Apocalipse 13, e o padrão 60-6-6 é
-notado por muitos comentaristas. Novamente: observação, não afirmação.
+adoração era ordenada ao som de uma lista de instrumentos (seis em três das
+quatro ocorrências; cinco em 3,7). Daniel 3 é a fonte direta da "imagem da
+Besta" de Apocalipse 13. Aqui a leitura numérica **é antiga**: **Irineu, c.
+180 d.C.** (*Adversus Haereses* V,29,2), já compõe o 666 com os **600 anos de
+Noé** no dilúvio mais os **60 × 6 côvados** da estátua. A contagem dos **seis
+instrumentos** como terceiro "6", porém, só aparece em Bullinger (1894).
+Observação, não afirmação do texto (ver linha do tempo).
 
 O conjunto sugere algo consistente: **na literatura bíblica, o padrão do 6
 tende a acompanhar o poder humano no auge, o gigantismo, a estátua de ouro,
@@ -532,17 +566,43 @@ correspondência é *causal* (o autor de 1 Reis sabia de alguma aritmologia
 solar) ou uma convergência literária posterior, não se sabe; mas dentro do
 sistema hermético ela é considerada significativa.
 
-**[TRADIÇÃO — origem dos nomes]** Não sei ao certo de onde Agrippa tirou os
-nomes Nakhiel e Sorath; a hipótese corrente é que ele os recebeu de fontes
-judaico-árabes medievais (possivelmente via Abraão ibn Ezra ou tratados de
-magia astral). Trate a origem como incerta.
+**[HISTÓRIA — genealogia do quadrado do Sol]** A pesquisa da linha do tempo
+permitiu datar cada elo: os primeiros quadrados 6×6 documentados estão nos
+**Ikhwān al-Ṣafāʾ** (Basra/Bagdá, c. 983), sem planeta; a **associação dos
+sete quadrados aos sete planetas** aparece em **Ibn al-Zarqālluh** (Toledo,
+séc. XI) e entra no Ocidente pelo manuscrito afonsino Vat. Reg. Lat. 1283a
+(anos 1280); o 6×6 é chamado explicitamente de **"quadrado do Sol"** por
+**Paolo Dagomari** (Florença, séc. XIV); o *Liber de Angelis* (c. 1440) já
+traz os sete quadrados com metais e "anjos ou demônios"; **Pacioli** (c.
+1500) os descreve sem magia; e **Agrippa** (ms. 1510; impresso 1533) é o
+primeiro a nomear **Sorath**. Ou seja: a estrutura 6×6 = 666 é **nove séculos
+posterior ao Apocalipse**, e nada indica que João conhecesse um quadrado
+mágico.
+
+**[TRADIÇÃO — origem dos nomes]** Para as **Inteligências** (Agiel, Johphiel,
+Graphiel, **Nachiel**, Hagiel, Tiriel, Malcha) há um precedente possível em
+texto hebraico do séc. XII atribuído a Abraão ibn Ezra ("Abraham Avenares",
+segundo nota de Joseph Peterson citando Peuckert, *Pansophie*). Para os
+**Espíritos** (Zazel, Hismael, Bartzabel, **Sorath**, Kedemel,
+Taphthartharath, Chasmodai) **não foi localizada nenhuma ocorrência anterior
+a Agrippa** em fonte árabe, hebraica ou latina. K. A. Nowotny (*Journal of
+the Warburg and Courtauld Institutes* 12, 1949) mostrou que o método de
+Agrippa parte da aritmética e ajusta as letras aos números. A conclusão mais
+provável — interpretação, não fato — é que Sorath foi **construído** no
+ambiente de Tritêmio/Agrippa para fechar em 666. Trate a origem como
+incerta (ver linha do tempo).
 
 ---
 
 ## 10. Cabala cristã e Árvore da Vida — Tiphereth, o Sol e o ouro
 
 **[TRADIÇÃO]** Na Árvore da Vida cabalística, tal como sistematizada pela
-cabala cristã renascentista e depois pela Golden Dawn (1888), a **sexta
+cabala cristã renascentista e depois pela Golden Dawn (1888) — e é preciso
+frisar: a **tabela fixa** planeta→sefirá (Tiphereth = Sol, Netzach = Vênus,
+Hod = Mercúrio…) é construção da cabala cristã (Pico, Agrippa, Kircher)
+canonizada pela Golden Dawn; o Zohar e os *Tikkunei Zohar* têm alegorias
+solares para Tiferet (e Yesod), mas não essa tabela (confiança baixa-média;
+ver linha do tempo) —, a **sexta
 sefirá** é **Tiphereth** ("Beleza"), e a ela se atribuem:
 
 - o **Sol** entre os planetas;
@@ -603,13 +663,24 @@ criatura que se exalta e o Criador que se rebaixa e transcende.
 - **Séculos IV–V**: com a cristianização do Império, a Besta deixa de ser Roma.
   Agostinho (*Cidade de Deus* XX) desloca o Apocalipse para o plano espiritual
   e desaconselha cálculos de datas e nomes. O 666 fica em suspenso.
-- **Séculos VIII–XII**: o *Comentário ao Apocalipse* de Beato de Liébana e
-  seus manuscritos ilustrados (os "Beatos") fixam a iconografia da Besta na
-  Espanha; Joaquim de Fiore (séc. XII) reintroduz a leitura histórica
-  (identificando a Besta com Saladino e, depois, com forças internas à
-  Igreja).
-- **Séculos XIII–XV**: os movimentos espirituais franciscanos aplicam o
-  Anticristo a papas concretos — abrindo caminho para a Reforma.
+- **Séculos VI–VII**: Primásio (Antemos, Arnoume), Ecumênio e André de
+  Cesareia (611; listas gregas como Lampetis, Benediktos, ὁ Νικητής, Κακὸς
+  Ὁδηγός…) — todas somando 666, todas nomes de homem ou título. Em quatro
+  séculos, **nenhum autor identifica 666 com Satanás**.
+- **Séculos VIII–XII**: Beda (Titan, Arnoume, Antemos); Beato de Liébana (c.
+  776) calcula ANTECHRISTUM = 666 com o alfabeto latino posicional, e seus
+  manuscritos ilustrados (os "Beatos") fixam a iconografia da Besta na
+  Espanha; Joaquim de Fiore (1190–91, a Ricardo I) reintroduz a leitura
+  histórica (Saladino como sexta cabeça), mas **sem usar o 666**.
+- **1213**: Inocêncio III, na encíclica *Quia maior* (5ª Cruzada), inaugura a
+  **leitura cronológica**: "esta seita [de Maomé] durará 666 anos". No séc.
+  XIV, Nicolau de Lira e Pedro Auriol identificam o Anticristo com **Maomé**
+  ("que reinou até 666"; Μαομετις = 666).
+- **Séculos XIII–XV**: os espirituais franciscanos (Olivi, Ubertino de
+  Casale) aplicam a Besta a papas concretos (Bonifácio VIII, Bento XI) — sem
+  cálculo do 666 localizado — abrindo caminho para a Reforma. Lutero, na
+  glosa a Ap 13,18 (1530–1546), herda a leitura cronológica de Inocêncio:
+  "**São 666 anos. Tanto dura o papado terreno**" (ver linha do tempo).
 
 A lição estrutural: **cada época calculou e encontrou o próprio adversário.**
 Isso não desqualifica o símbolo; é o modo como ele funciona. Sua forma é
@@ -621,18 +692,36 @@ estável; seu conteúdo é preenchido por quem lê.
 
 ### 13.1. O que aconteceu [HISTÓRIA]
 
-Lutero identifica o papado com o Anticristo já em 1520; a partir daí a
-gematria é usada como arma polêmica. **Andreas Helwig**, em *Antichristus
-Romanus* (1612), testa quinze títulos papais em hebraico, grego e latim em
-busca de 666 e destaca **VICARIUS FILII DEI** ("Vigário do Filho de Deus"),
-cujos algarismos romanos somam:
+Lutero identifica o papado com o Anticristo já em 1520 (a Besta aparece com
+tiara papal na Bíblia de setembro de 1522, ilustrada por Cranach); a partir
+daí a gematria é usada como arma polêmica — Lateinos, Romiith, e, segundo
+Cornelius a Lapide, *Antitheos* computado em alemão, grego e hebraico. Do lado
+católico, **Belarmino** (*De Romano Pontifice* III.10, 1586–93) refuta esses
+cálculos (objeta, por exemplo, que a grafia correta Λατῖνος dá 661) e devolve
+o Anticristo ao futuro. É para satisfazer "todas as condições que Belarmino
+exigira" que **Andreas Helwig**, em *Antichristus Romanus* (Wittenberg,
+1612), testa quinze títulos papais em hebraico, grego e latim e destaca
+**VICARIUS FILII DEI** ("Vigário do Filho de Deus"), cujos algarismos romanos
+somam:
 
 | V | I | C | A | R | I | U | S | F | I | L | I | I | D | E | I |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 5 | 1 | 100 | – | – | 1 | 5 | – | – | 1 | 50 | 1 | 1 | 500 | – | 1 |
 
 Total: 112 + 53 + 501 = **666**. (U vale como V, que é a mesma letra latina.)
-A leitura foi depois adotada por correntes adventistas e outras.
+Helwig **nunca falou em tiara**. A cadeia posterior é datável passo a passo
+(ver linha do tempo): **1832**, um romance de Anne Tuttle Jones Bullard põe na
+boca de uma personagem que "um cavalheiro viu o papa" com uma **mitra** com
+as palavras (primeira alegação de inscrição — e é ficção); **1845**, o
+ex-católico Balthazer Hoffmann afirma ter visto Gregório XVI usar uma
+**tiara** com as palavras numa missa de Páscoa; **1865**, Uriah Smith
+introduz o título no adventismo ("em letras de joias na sua mitra ou coroa
+pontifical") — antes dele, William Miller (1842) ridicularizava a gematria e
+lia 666 como anos de Roma pagã; **1914–1915**, o jornal católico *Our Sunday
+Visitor* afirma que o título está na mitra/coroa do papa; **1941**, o mesmo
+jornal se retrata: "não existe tal inscrição na tiara papal"; **1943–1957**,
+comissões adventistas declaram que a interpretação não depende da inscrição
+e denunciam uma foto retocada da tiara (*The Ministry*, nov. 1948).
 
 ### 13.2. O que se pode afirmar com segurança, de cada lado [TEXTO/HISTÓRIA]
 
@@ -668,7 +757,11 @@ tenta pela exaltação espiritual) e de Ahriman (que tenta pela materialização
 técnica). Sorath seria a **negação do Eu**, o poder que quer destruir a
 individualidade humana no seu núcleo.
 
-Steiner associa o número a **ciclos históricos de 666 anos**:
+Steiner desenvolve o tema em três séries de conferências: Nuremberg, junho de
+1908 (GA 104 — Sorath como "demônio solar", 400+200+6+60); Dornach, outubro
+de 1918 (GA 184 — o ano 666 e Gondishapur); Dornach, setembro de 1924 (GA
+346 — "a era do terceiro 666: 1998"). Associa o número a **ciclos históricos
+de 666 anos**:
 
 - **ano 666**: a Academia de Gondishapur (Pérsia) teria estado prestes a dar
   à humanidade, de forma prematura, um conhecimento que só deveria amadurecer
@@ -689,9 +782,16 @@ história.
 
 **[HISTÓRIA/TRADIÇÃO]** Aleister Crowley (1875–1947) assumiu o número
 deliberadamente. Assinava-se **Τὸ Μέγα Θηρίον** ("A Grande Besta"), cuja
-isopsefia é 370 + 49 + 247 = **666**; contou que a mãe, de família da
-*Plymouth Brethren*, o chamava assim quando criança. Mas o sentido que ele
-dava ao número **não era** o do cristianismo invertido:
+isopsefia é 370 + 49 + 247 = **666** — lema adotado em 12/10/1915, no seu 40º
+aniversário; contou que a mãe, de família da *Plymouth Brethren*, o chamava
+assim quando criança. A frase célebre — "antes de chegar à adolescência, eu
+já sabia que era A BESTA cujo número é 666" — está na Introdução de *Magick
+in Theory and Practice* (1929), p. xi, e não nas *Confessions*, como se
+costuma citar. (No texto do *Liber AL*, de 1904, aparece "the Beast", mas não
+o numeral.) O sentido que ele dava ao número **não era** o do cristianismo
+invertido — e não era novidade: W. Wynn Westcott, cofundador da Golden Dawn,
+já escrevia em 1890 que "o grande número do Sol é 666, chamado Sorath… sobre
+o qual tanta tolice se escreveu":
 
 - Crowley trabalhava com as correspondências da Golden Dawn (seção 10): o 6 é
   Tiphereth, o Sol, o coração. O 666 é para ele o **número solar por
@@ -715,11 +815,17 @@ coloca o valor.
 
 **[HISTÓRIA]** O 666 como **ícone de transgressão** é um produto do século XX:
 
-- **1966**: Anton LaVey funda a Church of Satan; o 666 entra no repertório
-  visual do satanismo moderno, que é essencialmente ateu e teatral.
-- **1976**: o filme *A Profecia* (*The Omen*) populariza a ideia da **marca de
-  nascença 666** — que não existe em nenhuma fonte antiga; é invenção do
-  roteiro.
+- **30/04/1966**: Anton LaVey funda a Church of Satan; o 666 entra no
+  repertório visual do satanismo moderno, que é essencialmente ateu e
+  teatral. O número não foi localizado no texto da *Satanic Bible* (1969); o
+  FAQ oficial da organização diz que LaVey "o usou como decoração assustadora,
+  sem outro significado".
+- **06/06/1976**: o filme *A Profecia* (*The Omen*) estreia no Reino Unido em
+  6/6/76 e populariza a ideia da **marca de nascença 666** — que não existe
+  em nenhuma fonte antiga; é invenção do roteiro.
+- **1981–1982**: Mary Stewart Relfe (*When Your Money Fails: The "666" System
+  Is Here*; *The New Money System*) origina a alegação de que os **códigos de
+  barras** contêm 666.
 - **1982**: o álbum *The Number of the Beast*, do Iron Maiden, consolida o
   número no heavy metal, gênero que o usará por décadas como provocação
   antirreligiosa.
@@ -740,9 +846,12 @@ parte pela estigmatização do número (e pelo roubo constante das placas).
 **[MODERNO]** A leitura hoje mais difundida na internet — "ver 666 é um aviso
 de que você está desequilibrado, focado demais no material; reconecte-se com
 o espiritual" — **não é antiga**. O conceito de *angel numbers* foi
-popularizado nos anos 1990 pela autora norte-americana **Doreen Virtue**,
-dentro do mercado editorial New Age (a própria autora, ao converter-se ao
-cristianismo evangélico, renegou publicamente esse trabalho). A numerologia
+popularizado pela autora norte-americana **Doreen Virtue** — um capítulo em
+*Healing with the Angels* (1999) e o guia *Angel Numbers* (2005), cuja
+entrada diz: "666 — seus pensamentos estão desequilibrados, focados demais no
+mundo material… equilibre entre o céu e a terra" —, dentro do mercado
+editorial New Age (a própria autora, ao converter-se ao cristianismo em 2017,
+renegou publicamente esse trabalho). A numerologia
 moderna em que ela se apoia (6 = Vênus, harmonia, lar, responsabilidade)
 deriva das sistematizações do início do século XX (L. Dow Balliett, "Cheiro"),
 não da aritmologia pitagórica propriamente dita.
@@ -757,8 +866,10 @@ o viés mais comum na internet hoje.
 ## 18. Fora do Ocidente
 
 **[MODERNO]** Em mandarim, **666 (六六六, liùliùliù)** soa como 溜 (liū),
-"liso, escorregadio, habilidoso". Nasceu como gíria de jogadores online para
-elogiar uma jogada e hoje significa "arrasou", "mandou bem"; o 6 já era
+"liso, escorregadio, habilidoso". Nasceu em partidas de *League of Legends*,
+difundido pelo streamer 爱萝莉 na plataforma YY (c. 2014–15), entrou na lista
+oficial de gírias do jogo em 2015 e virou mainstream com o slogan "双击666" do
+Kuaishou (2016); hoje significa "arrasou", "mandou bem"; o 6 já era
 auspicioso pelo idiomatismo tradicional 六六大顺 (*liù liù dà shùn*, "tudo
 corre bem"). É o mesmo número com valência **inteiramente positiva**, numa
 cultura que não passou pelo Apocalipse.
@@ -770,8 +881,16 @@ clássica que atribua significado especial ao 666; o sistema *abjad*
 canônica desse número nele. Se houver, não a encontrei.
 
 **[HISTÓRIA]** No **Judaísmo** rabínico, o 666 de 1 Reis 10,14 é lido como um
-dado do reinado de Salomão, e não conheço uma tradição judaica clássica que o
-associe ao mal. A associação negativa é cristã.
+dado do reinado de Salomão. A pesquisa não localizou **nenhuma** passagem do
+Talmude, do Midrash, do Zohar ou da cabala luriânica que atribua significado
+ao 666. O único material judaico encontrado é tardio, de segunda mão e de tom
+**neutro ou positivo**: uma citação atribuída ao Gaon de Vilna (séc. XVIII)
+segundo a qual o 666 "contém um potencial messiânico oculto" (não localizada
+na fonte primária), a gematria de Números 14,17 (עתה יגדל נא כח אדני = 666,
+conferida) e o nome do bairro de Mea Shearim (מאה שערים = 666, conferido).
+A associação negativa é cristã. Note-se também que a redução 6+6+6 = 18 = חי
+("vida") **não é procedimento da gematria clássica**, que soma letras, não
+algarismos arábicos.
 
 Esse é provavelmente o dado mais importante deste documento inteiro: **o
 número não carrega significado em si. Ele carrega a história de quem o leu.**
