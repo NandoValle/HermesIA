@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como entrar em playlists do Spotify com IA | HermesIA</title>
+  <meta name="description" content="Guia prático para músicos independentes: como funcionam as playlists editoriais e algorítmicas do Spotify, como fazer o pitch no Spotify for Artists e como usar IA para escrever um pitch de 500 caracteres que os curadores leem até o fim.">
+  <meta name="keywords" content="como entrar em playlist do Spotify, pitch Spotify for Artists, playlist editorial Spotify, Release Radar, Discover Weekly, IA para músicos, artista independente">
+  <meta name="author" content="Fernando Antônio Vale Rodrigues">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hermesia.ia.br/tutoriais/spotify-playlists-com-ia.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Como entrar em playlists do Spotify com IA">
+  <meta property="og:description" content="Passo a passo do pitch no Spotify for Artists e o prompt pronto para escrever a descrição da sua música.">
+  <meta property="og:url" content="https://hermesia.ia.br/tutoriais/spotify-playlists-com-ia.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HermesIA">
+  <meta property="og:image" content="https://hermesia.ia.br/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Como entrar em playlists do Spotify com IA">
+  <meta name="twitter:description" content="Passo a passo do pitch no Spotify for Artists e o prompt pronto para escrever a descrição da sua música.">
+  <meta name="twitter:image" content="https://hermesia.ia.br/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Como entrar em playlists do Spotify com IA",
+    "description": "Guia prático para músicos independentes: como funcionam as playlists do Spotify, como fazer o pitch no Spotify for Artists e como usar IA para escrever um pitch que os curadores leem até o fim.",
+    "author": { "@type": "Person", "name": "Fernando Antônio Vale Rodrigues" },
+    "publisher": { "@type": "Organization", "name": "HermesIA", "url": "https://hermesia.ia.br/" },
+    "datePublished": "2026-09-07",
+    "inLanguage": "pt-BR",
+    "mainEntityOfPage": "https://hermesia.ia.br/tutoriais/spotify-playlists-com-ia.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.45.0/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fff; line-height: 1.8; }
+    .ar-top { background: #0d1b3e; padding: 1.4rem 2rem; text-align: center; }
+    .ar-top a { text-decoration: none; }
+    .ar-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #c9a84c; letter-spacing: 1px; }
+    .ar-logo span { color: #fff; }
+    .ar-wrap { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+    .ar-crumb { font-size: 0.78rem; color: #8a6b1f; margin-bottom: 1.5rem; }
+    .ar-crumb a { color: #8a6b1f; text-decoration: none; }
+    .ar-cat { font-size: 0.72rem; color: #c9a84c; font-weight: 500; letter-spacing: 2px; margin-bottom: 0.8rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #0d1b3e; line-height: 1.3; margin-bottom: 1rem; }
+    .ar-lead { font-size: 1.05rem; color: #445; margin-bottom: 2rem; font-weight: 300; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0d1b3e; margin: 2.2rem 0 0.8rem; }
+    h3 { font-size: 1.05rem; color: #0d1b3e; margin: 1.6rem 0 0.5rem; font-weight: 500; }
+    p { font-size: 0.97rem; color: #333; margin-bottom: 1rem; }
+    a { color: #8a6b1f; }
+    ul, ol { margin: 0 0 1.2rem 1.3rem; }
+    li { font-size: 0.97rem; color: #333; margin-bottom: 0.5rem; }
+    .ar-prompt { background: #0a1428; color: #d7e2f2; border-left: 3px solid #c9a84c; border-radius: 6px; padding: 1.2rem 1.4rem; font-size: 0.9rem; line-height: 1.7; margin: 1.2rem 0; white-space: pre-wrap; font-family: 'Inter', sans-serif; }
+    .ar-note { background: #fdf6e3; border: 0.5px solid #e8d9a8; border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
+    .ar-note-title { font-size: 0.8rem; font-weight: 500; color: #8a6b1f; letter-spacing: 1px; margin-bottom: 0.5rem; }
+    .ar-note p { font-size: 0.9rem; color: #5a4a1f; margin-bottom: 0.5rem; }
+    .ar-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 1.2rem 0 1.6rem; }
+    .ar-type { background: #fff; border: 0.5px solid #ddd6c4; border-radius: 8px; padding: 1rem 1.1rem; }
+    .ar-type i { font-size: 22px; color: #c9a84c; display: block; margin-bottom: 6px; }
+    .ar-type-name { font-size: 0.85rem; font-weight: 500; color: #0d1b3e; margin-bottom: 4px; }
+    .ar-type p { font-size: 0.84rem; color: #555; margin: 0; line-height: 1.55; }
+    .ar-timeline { list-style: none; margin: 1.2rem 0 1.6rem; padding: 0; border-left: 2px solid #e8d9a8; }
+    .ar-timeline li { position: relative; padding: 0 0 1rem 1.3rem; font-size: 0.93rem; }
+    .ar-timeline li::before { content: ""; position: absolute; left: -7px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: #c9a84c; }
+    .ar-timeline strong { color: #0d1b3e; }
+    .ar-cta-box { background: #0d1b3e; border-radius: 10px; padding: 2rem; text-align: center; margin: 2.5rem 0 1rem; }
+    .ar-cta-box h2 { color: #fff; margin-top: 0; }
+    .ar-cta-box p { color: #c8d8ec; font-size: 0.92rem; }
+    .ar-cta { display: inline-block; background: #c9a84c; color: #fdf6e3; padding: 1rem 2.4rem; border-radius: 4px; font-size: 0.9rem; font-weight: 500; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; margin-top: 0.8rem; }
+    .ar-cta:hover { background: #dfc05e; }
+    .ar-footer { background: #060d1a; padding: 1.8rem 2rem; text-align: center; }
+    .ar-footer p { color: #3a5070; font-size: 0.78rem; margin: 0; }
+    .ar-footer .b { color: #c9a84c; font-family: 'Playfair Display', serif; }
+    @media (max-width: 500px) { h1 { font-size: 1.6rem; } }
+  </style>
+  <!-- HermesIA Analytics (PostHog) -->
+  <script src="/assets/analytics.js"></script>
+  <link rel="icon" type="image/png" href="/emblema.png">
+  <link rel="apple-touch-icon" href="/emblema.png">
+</head>
+<body>
+  <header class="ar-top"><a href="/"><img src="/emblema.png" alt="HermesIA" style="width:60px;height:60px;display:block;margin:0 auto .5rem;"><span class="ar-logo"><span>Hermes</span>IA</span></a></header>
+  <article class="ar-wrap">
+    <nav class="ar-crumb"><a href="/">Início</a> › Tutoriais › Músico independente</nav>
+    <div class="ar-cat">MÚSICO / ARTISTA INDEPENDENTE</div>
+    <h1>Como entrar em playlists do Spotify com IA</h1>
+    <p class="ar-lead">Entrar numa playlist é o que separa uma música ouvida por 200 amigos de uma ouvida por 200 mil desconhecidos. O caminho oficial existe, é gratuito e cabe num formulário de 500 caracteres. Veja como ele funciona e como usar inteligência artificial para escrever um pitch que o curador lê até o fim.</p>
+    <video autoplay muted loop playsinline preload="auto" poster="/emblema.png" style="width:100%;border-radius:10px;margin:0 0 2rem;box-shadow:0 8px 28px rgba(0,0,0,.25),0 0 0 1px rgba(201,168,76,.3);display:block;">
+      <source src="/video-hermesia.mp4" type="video/mp4">
+    </video>
+
+    <h2>Por que isso importa</h2>
+    <p>Boa parte dos artistas independentes lança a música, posta o link e espera. O Spotify, porém, tem um canal próprio para apresentar músicas ainda não lançadas aos seus curadores: o pitch pelo <strong>Spotify for Artists</strong>. É o único caminho oficial para as playlists editoriais e, de quebra, é o que coloca sua música no Release Radar de quem já te segue. Quem não faz o pitch simplesmente não entra na fila.</p>
+    <p>Antes do passo a passo, vale entender que existem três tipos de playlist, e cada um se conquista de um jeito:</p>
+
+    <div class="ar-types">
+      <div class="ar-type"><i class="ti ti-star" aria-hidden="true"></i><div class="ar-type-name">Editoriais</div><p>Montadas por curadores do Spotify (ex.: Novidades da Semana, Creme, Pagodeira). Só se entra pelo pitch no Spotify for Artists, antes do lançamento.</p></div>
+      <div class="ar-type"><i class="ti ti-sparkles" aria-hidden="true"></i><div class="ar-type-name">Algorítmicas</div><p>Release Radar, Discover Weekly, Rádio e Mixes. Ninguém escolhe à mão: entram músicas que o algoritmo entende bem e que os ouvintes salvam e ouvem até o fim.</p></div>
+      <div class="ar-type"><i class="ti ti-users" aria-hidden="true"></i><div class="ar-type-name">De ouvintes e curadores</div><p>Playlists criadas por pessoas, blogs e selos. Conquista-se com contato direto e um pitch curto, pessoal e bem escrito.</p></div>
+    </div>
+
+    <h2>Passo a passo</h2>
+
+    <h3>1. Distribua a música com antecedência</h3>
+    <p>O pitch só é possível para música <strong>ainda não lançada</strong> e que já tenha sido entregue ao Spotify pela sua distribuidora (DistroKid, ONErpm, CD Baby, Ditto etc.). A regra oficial é enviar o pitch no mínimo <strong>7 dias antes</strong> da data de lançamento. Na prática, quanto mais cedo, melhor: os curadores têm fila, e um pitch enviado com 3 ou 4 semanas de folga tem muito mais chance de ser ouvido do que um enviado na véspera do prazo.</p>
+    <ul class="ar-timeline">
+      <li><strong>5 a 6 semanas antes:</strong> música masterizada, capa pronta, enviada à distribuidora com a data de lançamento definida.</li>
+      <li><strong>3 a 4 semanas antes:</strong> a faixa aparece em <em>Music › Upcoming</em> no Spotify for Artists. Faça o pitch aqui.</li>
+      <li><strong>7 dias antes:</strong> prazo mínimo. Depois disso, o botão de pitch some e a música não entra no Release Radar dos seus seguidores.</li>
+      <li><strong>Dia do lançamento e 2 semanas seguintes:</strong> hora de gerar saves, ouvintes completos e seguidores. É o que alimenta as playlists algorítmicas.</li>
+    </ul>
+
+    <h3>2. Reivindique e complete o seu perfil no Spotify for Artists</h3>
+    <p>Acesse <a href="https://artists.spotify.com/" target="_blank" rel="noopener">artists.spotify.com</a>, reivindique o seu perfil de artista e preencha o básico: foto, biografia, cidade e redes. Curador olha perfil antes de decidir. Um perfil vazio passa a impressão de projeto abandonado, ainda que a música seja boa. A IA ajuda também aqui: peça uma biografia de 3 parágrafos a partir da sua história, no tom que você quiser.</p>
+
+    <h3>3. Preencha o formulário de pitch por completo</h3>
+    <p>No menu <em>Music › Upcoming</em>, escolha a faixa e clique em <em>Pitch a song</em>. O formulário pede gênero e subgênero, clima (mood), estilo, instrumentos, idioma, cultura e cidade, além de uma descrição de até <strong>500 caracteres</strong>. Dois detalhes importantes:</p>
+    <ul>
+      <li>Você só pode apresentar <strong>uma música por lançamento</strong>. Num EP ou álbum, escolha a faixa mais forte.</li>
+      <li>Os campos de gênero, clima e instrumentos alimentam o algoritmo mesmo que nenhum curador te escolha. Preencher tudo, com honestidade, melhora suas recomendações automáticas.</li>
+    </ul>
+    <p>A interface é em inglês, mas o texto do pitch pode ser em português: os curadores do Brasil são brasileiros.</p>
+
+    <h3>4. Deixe a IA escrever o pitch de 500 caracteres</h3>
+    <p>É o campo mais importante e o mais mal usado. O curador lê dezenas de pitches por dia; o seu precisa dizer, em poucas linhas, <em>o que é</em> a música, <em>para quem</em> ela é e <em>por que agora</em>. Conte o que só você sabe (a história, a sonoridade, o momento da carreira) e deixe a IA transformar isso em texto enxuto:</p>
+    <div class="ar-prompt">Você é um assistente de marketing musical. Escreva a descrição de pitch de uma música para os curadores de playlist do Spotify, com NO MÁXIMO 500 caracteres (contando espaços), em português do Brasil.
+
+Artista: [nome]. Cidade: [cidade/estado].
+Música: [título]. Gênero e subgênero: [ex.: MPB / indie folk].
+Instrumentos e sonoridade: [ex.: violão de nylon, bateria eletrônica, vocal grave].
+Clima e tema da letra: [ex.: melancólica, fala de saudade de quem ficou no interior].
+Referências parecidas: [2 ou 3 artistas].
+Momento da carreira e conquistas reais: [ex.: 2º single, 40 mil ouvintes mensais, tocou no festival X]. Só use o que eu informei; não invente números nem prêmios.
+Playlists em que a música se encaixa: [ex.: Creme, Novidades MPB, Indie Brasil].
+
+Estrutura: 1 frase que apresenta a música e o gênero; 1 a 2 frases de história ou diferencial; 1 frase sobre o público e as playlists. Tom direto, sem clichês como "única", "inovadora" ou "sucesso". Ao final, informe a contagem de caracteres.</div>
+    <p>Repare: os fatos são seus. A IA não inventa ouvintes mensais nem prêmios, porque o curador confere e a mentira queima o seu nome. Peça 2 ou 3 versões, escolha a que soa como você e ajuste uma ou duas palavras à mão.</p>
+
+    <h3>5. Depois do lançamento, alimente o algoritmo</h3>
+    <p>Pitch enviado no prazo garante a música no <strong>Release Radar</strong> dos seus seguidores na sexta-feira do lançamento. Daí em diante, quem decide é o comportamento dos ouvintes nas primeiras semanas: saves, adição a playlists próprias, músicas ouvidas até o fim e poucos pulos. É isso que empurra a faixa para o Discover Weekly, para a Rádio e para os Mixes de pessoas que nunca ouviram você. O que você pode fazer:</p>
+    <ul>
+      <li>Peça a quem te acompanha para <strong>seguir o perfil</strong> antes do lançamento (é o que define quem recebe o Release Radar) e para <strong>salvar</strong> a música no dia.</li>
+      <li>Monte a sua própria playlist com a faixa entre músicas parecidas e divulgue ela, não só o link da música.</li>
+      <li>Use o link de pré-save da distribuidora e a ferramenta de <em>Countdown</em> do Spotify for Artists, quando disponível.</li>
+      <li>Envie pitches curtos e pessoais para curadores independentes do seu gênero. A IA escreve a mensagem a partir do mesmo material do passo 4: peça uma versão de 4 linhas, citando o nome da playlist e por que a sua música conversa com ela.</li>
+    </ul>
+
+    <div class="ar-note">
+      <div class="ar-note-title">⚠️ IMPORTANTE</div>
+      <p><strong>Pitch não é garantia.</strong> O Spotify não promete inclusão em playlist editorial, e a maioria dos pitches não é aceita. O que o pitch garante é a presença no Release Radar dos seguidores e dados melhores para o algoritmo. Repita a cada lançamento.</p>
+      <p><strong>Nunca pague por playlist ou por streams.</strong> Serviços que vendem "garantia de playlist" ou milhares de plays usam bots. O Spotify detecta reprodução artificial, retém pagamentos e pode remover a música e a conta. Curadores sérios não cobram para ouvir.</p>
+      <p><strong>Confira as regras na fonte.</strong> Prazos, campos do formulário e recursos do Spotify for Artists mudam com frequência. Antes de cada lançamento, vale conferir a <a href="https://artists.spotify.com/" target="_blank" rel="noopener">central de ajuda oficial</a>: este guia reflete o funcionamento em setembro de 2026.</p>
+    </div>
+
+    <h2>O resultado</h2>
+    <p>Com esse fluxo, o lançamento deixa de ser um post e uma torcida: vira um calendário, um formulário preenchido inteiro e um pitch que respeita o tempo do curador. Você continua sendo o autor da música e da história; a IA só tira do seu caminho a parte que trava todo mundo, que é transformar tudo isso em 500 caracteres bem escritos. Esse é o propósito da HermesIA: a tecnologia trabalhando por você, não o contrário.</p>
+
+    <div class="ar-cta-box">
+      <h2>Quer a IA já adaptada ao seu trabalho?</h2>
+      <p>A HermesIA está sendo construída para quem vive do próprio talento, com os fluxos e o vocabulário da sua área. Entre na lista de espera.</p>
+      <a class="ar-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfs8822dlQtsHrnqwZQZ8MRm2zxog68Mrh0qeFDs0vU2ogMvQ/viewform" target="_blank" rel="noopener">Quero recuperar meu tempo</a>
+    </div>
+  </article>
+  <footer class="ar-footer">
+    <p><span class="b">HermesIA</span> · hermesia.ia.br · contato@hermesia.ia.br</p>
+    <p>© 2026 HermesIA · Tecnologia que devolve o seu tempo</p>
+  </footer>
+</body>
+</html>
