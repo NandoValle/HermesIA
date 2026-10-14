@@ -84,6 +84,21 @@
   }
   </script>
 
+  <!-- Dados estruturados: página, autoria e última atualização -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://hermesia.ia.br/",
+    "url": "https://hermesia.ia.br/",
+    "name": "HermesIA — A IA que faz o trabalho pronto pra você",
+    "inLanguage": "pt-BR",
+    "dateModified": "2026-10-14",
+    "author": { "@type": "Person", "name": "Fernando Antônio Vale Rodrigues" },
+    "publisher": { "@type": "Organization", "name": "HermesIA", "url": "https://hermesia.ia.br/" }
+  }
+  </script>
+
   <!-- Dados estruturados: FAQ (chance de aparecer expandido no Google) -->
   <script type="application/ld+json">
   {
@@ -120,6 +135,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Não. A HermesIA não é um assistente genérico nem um curso de IA. É a plataforma que entrega o trabalho pronto pra profissionais e autônomos brasileiros, criada por um advogado que programa há 40 anos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que é a HermesIA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "É uma plataforma brasileira de inteligência artificial para profissionais liberais e autônomos: você descreve o que precisa em português comum e recebe o documento pronto para revisar. Foi fundada por Fernando Antônio Vale Rodrigues, advogado desde 2003, em Belo Horizonte (MG)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A HermesIA já está aberta ao público?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ainda não. O HermesIA Áudio (no WhatsApp) está em preparação e a plataforma completa de documentos está em fase final. A única ação disponível hoje é entrar na lista de espera, e o aviso sai por ordem de entrada."
         }
       }
     ]
@@ -275,6 +306,7 @@
 </head>
 <body>
 
+  <main id="conteudo">
   <!-- HERO -->
   <section class="hm-hero">
     <img class="hm-hero-emblem" src="/emblema.png" alt="HermesIA — emblema" data-h>
@@ -442,6 +474,7 @@
   <section class="hm-section-alt">
     <h2 class="hm-section-title">No que você trabalha?</h2>
     <div class="hm-divider"></div>
+    <p class="hm-section-sub">A HermesIA atende Direito, Medicina, Contabilidade, Finanças, Educação, Psicologia, Engenharia, Odontologia, Personal Trainer, Motoboy/Entregador e Motorista de app, e outras profissões.</p>
     <div class="hm-profs">
       <div class="hm-prof"><i class="ti ti-gavel" aria-hidden="true"></i><div class="hm-prof-name">Direito</div></div>
       <div class="hm-prof"><i class="ti ti-stethoscope" aria-hidden="true"></i><div class="hm-prof-name">Medicina</div></div>
@@ -511,20 +544,28 @@
     <div class="hm-divider"></div>
     <div style="max-width:680px;margin:0 auto;">
       <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
-        <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;">Preciso aprender prompt ou entender de IA?</summary>
+        <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;"><h3 style="display:inline;font:inherit;margin:0;">Preciso aprender prompt ou entender de IA?</h3></summary>
         <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">Não. Você descreve o que precisa em português normal e recebe o resultado pronto. Esse é exatamente o diferencial: zero curva de aprendizado.</p>
       </details>
       <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
-        <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;">Quanto custa?</summary>
+        <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;"><h3 style="display:inline;font:inherit;margin:0;">Quanto custa?</h3></summary>
         <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">O HermesIA Áudio ainda não está aberto. No lançamento, será gratuito: 10 áudios por dia, sem cadastro e sem cartão. As condições da plataforma completa de documentos serão divulgadas no lançamento — quem está na lista de espera é avisado primeiro. Haverá acesso gratuito para quem não puder pagar.</p>
       </details>
       <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
-        <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;">A IA substitui o profissional?</summary>
+        <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;"><h3 style="display:inline;font:inherit;margin:0;">A IA substitui o profissional?</h3></summary>
         <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">Não. A HermesIA acelera a parte mecânica e entrega um rascunho pronto, mas você sempre revisa antes de usar, e a responsabilidade (e a autoria) é sempre sua.</p>
       </details>
       <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
-        <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;">É o mesmo que outros "Hermes IA" que existem por aí?</summary>
+        <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;"><h3 style="display:inline;font:inherit;margin:0;">É o mesmo que outros "Hermes IA" que existem por aí?</h3></summary>
         <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">Não. A HermesIA não é um assistente genérico nem um curso de IA. É a plataforma que entrega o trabalho pronto pra profissionais e autônomos brasileiros, criada por um advogado que programa há 40 anos.</p>
+      </details>
+      <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
+        <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;"><h3 style="display:inline;font:inherit;margin:0;">O que é a HermesIA?</h3></summary>
+        <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">É uma plataforma brasileira de inteligência artificial para profissionais liberais e autônomos: você descreve o que precisa em português comum e recebe o documento pronto para revisar. Foi fundada por Fernando Antônio Vale Rodrigues, advogado desde 2003, em Belo Horizonte (MG).</p>
+      </details>
+      <details style="background:#fff;border:0.5px solid #ddd6c4;border-radius:8px;padding:1rem 1.2rem;margin-bottom:10px;">
+        <summary style="cursor:pointer;font-weight:500;color:var(--navy);font-size:0.95rem;"><h3 style="display:inline;font:inherit;margin:0;">A HermesIA já está aberta ao público?</h3></summary>
+        <p style="margin-top:8px;font-size:0.9rem;color:#556;line-height:1.7;">Ainda não. O HermesIA Áudio (no WhatsApp) está em preparação e a plataforma completa de documentos está em fase final. A única ação disponível hoje é entrar na lista de espera, e o aviso sai por ordem de entrada.</p>
       </details>
     </div>
   </section>
@@ -553,14 +594,14 @@
     <h2 class="hm-section-title">Comece hoje</h2>
     <div class="hm-divider"></div>
     <p class="hm-section-sub">A plataforma completa de documentos está em fase final: deixe seu contato e avisamos assim que o acesso abrir, por ordem de entrada.</p>
-    <form id="hm-wl-form" style="max-width:440px;margin:1.6rem auto 0;display:flex;flex-direction:column;gap:10px;text-align:left;">
-      <input class="hm-input" type="text" name="nome" placeholder="Seu nome" aria-label="Seu nome" autocomplete="name" required style="width:100%;">
-      <input class="hm-input" type="email" name="email" placeholder="Seu melhor e-mail" aria-label="Seu melhor e-mail" autocomplete="email" required style="width:100%;">
-      <input class="hm-input" type="text" name="profissao" placeholder="Sua profissão (ex.: advogado, contador, motoboy)" aria-label="Sua profissão" autocomplete="organization-title" style="width:100%;">
-      <input class="hm-input" type="tel" name="whatsapp" placeholder="WhatsApp (opcional)" aria-label="WhatsApp, opcional" autocomplete="tel" style="width:100%;">
+    <form id="hm-wl-form" toolname="entrar_na_lista_de_espera" tooldescription="Preenche o formulário de lista de espera da HermesIA, plataforma brasileira de IA que entrega documento pronto para profissionais. Efeito: apenas preenche os campos nesta página; o envio só acontece quando a pessoa clica em Entrar na lista de espera, e então nome e e-mail (e profissão e WhatsApp, se informados) são gravados na lista de espera. Limite: não cria conta, não cobra nada e não garante acesso; o serviço ainda não está aberto, e o aviso sai por ordem de entrada. Peça o consentimento da pessoa antes de preencher os dados dela." style="max-width:440px;margin:1.6rem auto 0;display:flex;flex-direction:column;gap:10px;text-align:left;">
+      <input class="hm-input" type="text" name="nome" toolparamdescription="Nome da pessoa que quer entrar na lista de espera." placeholder="Seu nome" aria-label="Seu nome" autocomplete="name" required style="width:100%;">
+      <input class="hm-input" type="email" name="email" toolparamdescription="E-mail da pessoa, onde ela será avisada quando o acesso abrir." placeholder="Seu melhor e-mail" aria-label="Seu melhor e-mail" autocomplete="email" required style="width:100%;">
+      <input class="hm-input" type="text" name="profissao" toolparamdescription="Profissão da pessoa, texto livre (ex.: advogado, contador, motoboy). Opcional." placeholder="Sua profissão (ex.: advogado, contador, motoboy)" aria-label="Sua profissão" autocomplete="organization-title" style="width:100%;">
+      <input class="hm-input" type="tel" name="whatsapp" toolparamdescription="WhatsApp da pessoa com DDD. Opcional; pode ficar vazio." placeholder="WhatsApp (opcional)" aria-label="WhatsApp, opcional" autocomplete="tel" style="width:100%;">
       <button type="submit" class="hm-cta" style="border:none;cursor:pointer;width:100%;">Entrar na lista de espera →</button>
       <p id="hm-wl-msg" role="status" aria-live="polite" style="font-size:0.82rem;color:#556;text-align:center;min-height:1.1em;margin-top:2px;"></p>
-      <p style="font-size:0.72rem;color:#556;text-align:center;line-height:1.5;">Avisamos assim que o acesso abrir, por ordem de entrada. Sem spam.</p>
+      <p style="font-size:0.72rem;color:#556;text-align:center;line-height:1.5;">Avisamos assim que o acesso abrir, por ordem de entrada. Sem spam. Prefere não usar um assistente de IA? Preencha o formulário normalmente.</p>
     </form>
     <script>
     (function(){
@@ -590,6 +631,8 @@
     <a href="/advogados/" style="display:inline-block;border:1px solid var(--gold);color:var(--gold-l);padding:0.8rem 2rem;border-radius:4px;font-size:0.82rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='rgba(201,168,76,0.12)'" onmouseout="this.style.background='transparent'">Conhecer a porta para advogados →</a>
   </section>
 
+  </main>
+
   <!-- RODAPÉ -->
   <footer class="hm-footer">
     <p class="hm-footer-text"><span class="hm-footer-brand">HermesIA</span> · hermesia.ia.br · contato@hermesia.ia.br</p>
@@ -597,6 +640,7 @@
     <p class="hm-footer-text" style="margin-top:0.7rem;">
       <a href="https://elevenlabs.io/startup-grants" target="_blank" rel="noopener"><img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp" alt="ElevenLabs Grants" style="width:200px;max-width:60%;opacity:0.85;vertical-align:middle;" loading="lazy"></a>
     </p>
+    <p class="hm-footer-text">Página atualizada em <time datetime="2026-10-14">14 de outubro de 2026</time> · Autor: Fernando Antônio Vale Rodrigues</p>
     <p class="hm-footer-text">© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Tecnologia que devolve o seu tempo · Belo Horizonte, MG</p>
   </footer>
 
@@ -656,6 +700,50 @@
   });
   </script>
 
+<script>
+  /* WebMCP: duas ferramentas so de leitura, respondidas a partir do que ja esta publicado nesta pagina.
+     Sem document.modelContext a pagina fica identica e o formulario segue como caminho manual.
+     Cancelamento: execute() recebe o AbortSignal em { signal } e aborta antes e depois de montar a resposta. */
+  (function(){
+    var mc=document.modelContext;
+    if(!mc||typeof mc.registerTool!=='function')return;
+    function abortar(s){ if(s&&s.aborted) throw new DOMException('Consulta cancelada.','AbortError'); }
+    var SITUACAO={
+      aberto_ao_publico:false,
+      hermesia_audio:'em preparação: encaminhar um áudio e receber transcrição + resumo + pontos de ação; condições anunciadas para a abertura: 10 áudios por dia, grátis, sem cadastro e sem app novo',
+      plataforma_de_documentos:'em fase final: descrever o que precisa e receber petição, recurso, laudo ou relatório prontos para revisar',
+      unica_acao_disponivel:'entrar na lista de espera em https://hermesia.ia.br/#wl; o aviso sai por ordem de entrada',
+      responsabilidade:'a revisão, a autoria e a responsabilidade pelo documento são sempre de quem assina',
+      atualizado_em:'2026-10-14'
+    };
+    mc.registerTool({
+      name:'consultar_situacao_hermesia',
+      description:'Devolve a situação publicada da HermesIA: se já está aberta ao público, o estado do HermesIA Áudio e da plataforma completa de documentos, e a única ação disponível hoje. Efeito: apenas leitura do que já está publicado nesta página; não altera estado, não envia dados e não faz requisição a servidor nenhum. Limite: não informa data de lançamento nem preço, porque nenhum dos dois foi publicado. Resultado: um objeto JSON em texto.',
+      annotations:{readOnlyHint:true},
+      inputSchema:{type:'object',properties:{},required:[],additionalProperties:false},
+      execute:async function(params,ctx){
+        abortar(ctx&&ctx.signal);
+        return JSON.stringify(SITUACAO,null,2);
+      }
+    });
+    mc.registerTool({
+      name:'listar_tutoriais_gratuitos',
+      description:'Lista os tutoriais gratuitos da HermesIA, um por profissão, com título e endereço de cada um. Efeito: apenas leitura dos links já publicados nesta página; não altera estado, não envia dados e não faz requisição externa. Limite: só os tutoriais da home; um filtro sem correspondência devolve lista vazia. Resultado: lista JSON em texto com profissão, título e url.',
+      annotations:{readOnlyHint:true},
+      inputSchema:{type:'object',properties:{profissao:{type:'string',description:'Trecho do nome da profissão para filtrar (ex.: direito, medicina, entregador). Ignora maiúsculas e acentos. Omitido, devolve todos os tutoriais.'}},required:[],additionalProperties:false},
+      execute:async function(params,ctx){
+        abortar(ctx&&ctx.signal);
+        var norm=function(v){return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();};
+        var alvo=norm(params&&params.profissao);
+        var itens=Array.prototype.map.call(document.querySelectorAll('.hm-tuts a.hm-tut'),function(a){
+          return {profissao:a.querySelector('.hm-tut-cat').textContent.trim(),titulo:a.querySelector('.hm-tut-title').textContent.trim(),url:a.href};
+        }).filter(function(t){return !alvo||norm(t.profissao).indexOf(alvo)!==-1;});
+        abortar(ctx&&ctx.signal);
+        return JSON.stringify(itens,null,2);
+      }
+    });
+  })();
+  </script>
 <script src="/assets/whatsapp-fab.js" defer></script>
 </body>
 </html>

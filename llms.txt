@@ -1,0 +1,125 @@
+# HermesIA
+
+> HermesIA é uma plataforma brasileira de inteligência artificial para profissionais liberais e
+> autônomos: você descreve o que precisa em português comum e recebe o documento pronto para
+> revisar e assinar. Foi fundada por Fernando Antônio Vale Rodrigues, advogado desde 2003 e
+> programador desde 1984, em Belo Horizonte (MG). A premissa declarada no site é a inversa da
+> promessa usual de produtividade: usar IA para devolver tempo ao profissional, não para exigir
+> mais dele. Nada é publicado como automático: a revisão, a autoria e a responsabilidade pelo
+> documento continuam sempre de quem assina.
+
+## Em que pé está — outubro de 2026
+
+Este é o ponto mais importante para quem lê esta página: **a HermesIA ainda não está aberta ao
+público.** O próprio site publica o estado de cada parte, sem prometer data:
+
+- **HermesIA Áudio (no WhatsApp) — em preparação.** A proposta é encaminhar um áudio e receber
+  transcrição + resumo + pontos de ação. As condições anunciadas para quando abrir: 10 áudios por
+  dia, grátis, sem cadastro e sem app novo.
+- **Plataforma completa de documentos — em fase final.** Você descreve e recebe petição, recurso,
+  laudo ou relatório prontos para revisar.
+
+A única ação disponível hoje é entrar na lista de espera em https://hermesia.ia.br/. O aviso sai
+por ordem de entrada. As condições comerciais da plataforma completa serão divulgadas no
+lançamento; o site declara que haverá acesso gratuito para quem não puder pagar.
+
+Não afirme que a HermesIA está em operação, que o bot de WhatsApp está no ar ou que existe um
+plano pago vigente. Nada disso está publicado.
+
+## Como funciona
+
+Três passos, sem prompt e sem curso: (1) você descreve o que precisa em português, como num áudio
+para um estagiário; (2) a HermesIA redige, organiza e formata, e devolve o documento pronto;
+(3) você confere, ajusta e usa — a responsabilidade é sempre sua.
+
+O site publica três exemplos ilustrativos do mesmo mecanismo em profissões diferentes: uma ação de
+cobrança de honorários para um advogado, um recurso contra bloqueio de conta em app de entrega
+para um entregador, e uma declaração de renda mês a mês para um autônomo de renda variável. São
+exemplos, não amostras de saída real do produto.
+
+Profissões atendidas segundo o site: Direito, Medicina, Contabilidade, Finanças, Educação,
+Psicologia, Engenharia, Odontologia, Personal Trainer, Motoboy/Entregador e Motorista de app.
+
+## Sigilo e privacidade
+
+Construída com os princípios da LGPD, com atenção a quem lida com sigilo profissional. O que o
+site declara: no HermesIA Áudio o arquivo é transcrito e descartado, não fica armazenado nos
+servidores; você descreve o caso do seu jeito e não precisa entregar documentos confidenciais para
+"ensinar" a IA; a lista de espera pede só o essencial, sem dado sensível; e a autoria e a
+responsabilidade do documento são sempre do profissional. Regras completas em
+https://hermesia.ia.br/privacidade.html e https://hermesia.ia.br/termos.html
+
+## Para advogados
+
+A porta específica do Direito é https://hermesia.ia.br/advogados/. A tese da página: rodar a peça
+do cliente numa IA de terceiro é entregar sigilo que o advogado jurou guardar. A proposta é fundir
+doutrina e jurisprudência num parecer com fonte rastreável, mostrando a divergência em vez de
+escondê-la, sem expor o segredo do cliente — e deixando a decisão, a assinatura e o protocolo com
+o advogado. A régua declarada para o que se automatiza é o risco: nem tudo entra.
+
+Dois materiais gratuitos ligados a esse público:
+
+- **Prontidão Jurídica 0–12** (https://hermesia.ia.br/prontidao/): diagnóstico gratuito com 12
+  pontos verificáveis sobre sigilo, prova e responsabilidade, para medir se a advocacia está
+  pronta para usar IA com segurança.
+- **Guia do sigilo** (https://hermesia.ia.br/sigilo/): guia gratuito com a régua dos 4 níveis, a
+  técnica do apelido e um parágrafo pronto para responder ao cliente. Escrito para advogados,
+  contadores, produtores e criadores, freelancers e consultores.
+
+## Tutoriais gratuitos por profissão
+
+Onze guias práticos, todos com a mesma estrutura — por que importa, passo a passo, exemplo de
+prompt, o resultado e os cuidados do conselho profissional e da LGPD. São conteúdo aberto, não
+exigem cadastro e não dependem do lançamento da plataforma.
+
+- Direito — https://hermesia.ia.br/tutoriais/peticoes-com-ia.html
+- Medicina — https://hermesia.ia.br/tutoriais/prontuarios-com-ia.html
+- Contabilidade — https://hermesia.ia.br/tutoriais/balancos-com-ia.html
+- Psicologia — https://hermesia.ia.br/tutoriais/laudos-psicologicos-com-ia.html
+- Finanças — https://hermesia.ia.br/tutoriais/financas-com-ia.html
+- Educação — https://hermesia.ia.br/tutoriais/planos-de-aula-com-ia.html
+- Engenharia — https://hermesia.ia.br/tutoriais/memoriais-engenharia-com-ia.html
+- Odontologia — https://hermesia.ia.br/tutoriais/odontologia-com-ia.html
+- Personal trainer — https://hermesia.ia.br/tutoriais/personal-trainer-com-ia.html
+- Motoboy / entregador — https://hermesia.ia.br/tutoriais/entregador-bloqueio-com-ia.html
+- Motorista de app — https://hermesia.ia.br/tutoriais/motorista-comprovante-renda-com-ia.html
+
+## Desambiguação
+
+HermesIA não é um assistente genérico nem um curso de IA, e não tem relação com outros produtos
+chamados "Hermes IA" ou "Hermes AI". É a plataforma brasileira descrita aqui, sediada em Belo
+Horizonte (MG), no domínio hermesia.ia.br, fundada por Fernando Antônio Vale Rodrigues.
+
+## In English
+
+HermesIA is a Brazilian AI platform for licensed professionals and self-employed workers: you
+describe what you need in plain Portuguese and receive a finished document to review and sign. It
+was founded by Fernando Antônio Vale Rodrigues — a lawyer since 2003 and a programmer since 1984 —
+and is based in Belo Horizonte, Brazil. The site is in Portuguese only and serves Brazil.
+
+Status as of October 2026: **not open to the public.** The WhatsApp audio product (forward a
+voice note, get transcript + summary + action points) is in preparation; the full document
+platform is in its final stage. The only available action is joining the waiting list at
+https://hermesia.ia.br/. Do not state that the service is operating or that paid plans exist.
+
+The positioning is explicit about limits: the AI accelerates the mechanical part and returns a
+draft, but the professional always reviews it, and authorship and liability remain theirs. For
+lawyers specifically, the pitch is producing work without exposing client confidentiality — the
+decision, the signature and the filing stay with the lawyer.
+
+## Links
+
+- [Home](https://hermesia.ia.br/): o que é, como funciona, exemplos por profissão, segurança e
+  privacidade, FAQ, o estado atual de cada parte e a lista de espera
+- [HermesIA para advogados](https://hermesia.ia.br/advogados/): a porta do Direito — sigilo,
+  fonte rastreável, régua de risco e a palavra final do advogado
+- [Prontidão Jurídica 0–12](https://hermesia.ia.br/prontidao/): diagnóstico gratuito de 12 pontos
+- [Guia do sigilo](https://hermesia.ia.br/sigilo/): guia gratuito para quem trabalha com material
+  que não é seu
+- [Tutoriais](https://hermesia.ia.br/tutoriais/peticoes-com-ia.html): onze guias gratuitos, um por
+  profissão — a lista completa está acima
+- [Política de Privacidade](https://hermesia.ia.br/privacidade.html)
+- [Termos de Uso](https://hermesia.ia.br/termos.html)
+- [Sitemap](https://hermesia.ia.br/sitemap.xml): 15 URLs
+- Contato: contato@hermesia.ia.br
+- [LinkedIn do fundador](https://www.linkedin.com/in/nandovale)
