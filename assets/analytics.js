@@ -1,18 +1,22 @@
 /* ===================================================================
-   HermesIA · Analytics (PostHog)
+   HermesIA · Analytics (PostHog + Microsoft Clarity)
    -------------------------------------------------------------------
-   >>> ÚNICO lugar a editar: cole a sua Project API Key abaixo. <<<
-   Enquanto a chave não for colada, o PostHog fica DESLIGADO
+   >>> ÚNICO lugar a editar: cole as chaves abaixo. <<<
+   Enquanto a chave não for colada, o serviço fica DESLIGADO
    (nada quebra no site — hmTrack() vira um no-op seguro).
 
    Como pegar a chave:  PostHog > Settings > Project > Project API Key
    Formato: phc_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+   Clarity Project ID:  clarity.microsoft.com > projeto > Settings > Overview
+   (também aparece na URL: /projects/view/<PROJECT_ID>/)
    =================================================================== */
 (function () {
   'use strict';
 
   var POSTHOG_KEY  = 'phc_pUP4S7Kry4KRGLUHkswYYTZao6YjuxQhaCrYGCVqVfR5';   // projeto "HermesIA" (org Hermesia.ia.br)
   var POSTHOG_HOST = 'https://us.i.posthog.com';        // US Cloud
+  var CLARITY_ID   = 'y2x78qwj5j';                      // projeto "HermesIA" (hermesia.ia.br)
 
   /* ---- daqui pra baixo não precisa mexer ---- */
 
@@ -21,6 +25,25 @@
   // stub seguro: chamar window.hmTrack() nunca derruba a página,
   // mesmo antes do PostHog carregar ou se a chave ainda não existir.
   window.hmTrack = function () {};
+
+  /* ---- Microsoft Clarity (mapas de calor + gravação de sessão) -------------
+     Fica ANTES da trava do PostHog de propósito: os dois serviços são
+     independentes, um não pode morrer por falta da chave do outro.
+     Trava 1: sem ID real, não injeta nada (seguro publicar assim).
+     Trava 2: mesma convenção do PostHog — página que declara
+              window.HM_ANALYTICS={record:false} (ex.: /experimente/) fica fora.
+     Trava 3: id "clarity-script" impede segunda injeção na mesma página.
+     Loader idêntico ao do pacote oficial @microsoft/clarity v1.0.2.        */
+  if (CLARITY_ID.indexOf('COLE_SEU') === -1 && cfg.record !== false) {
+    (function (c, l, a, r, i, t, y) {
+      if (l.getElementById('clarity-script')) return;
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1;
+      t.src = 'https://www.clarity.ms/tag/' + i;
+      t.id = 'clarity-script';
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', CLARITY_ID);
+  }
 
   // TRAVA: sem chave real, não inicializa nada (seguro publicar assim).
   if (POSTHOG_KEY.indexOf('COLE_SUA_CHAVE') !== -1) return;
@@ -43,7 +66,10 @@
   });
 
   // Helper único usado pelas páginas: seguro e à prova de erro.
+  // O mesmo evento vai para os dois: PostHog (com props) e Clarity (só o nome,
+  // vira Smart event lá). Nenhum HTML precisou mudar por causa disso.
   window.hmTrack = function (ev, props) {
     try { if (window.posthog) posthog.capture(ev, props || {}); } catch (e) {}
+    try { if (window.clarity)  clarity('event', ev); } catch (e) {}
   };
 })();
