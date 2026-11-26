@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Estudo de Mercado — Super Inteligênc[IA] × HermesIA</title>
+<meta name="description" content="Documento interno da HermesIA: comparação de posicionamento com a comunidade Super Inteligênc[IA] Jurídica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<style>
+  :root { --ink:#1c2733; --muted:#5b6878; --line:#dbe2ec; --soft:#f4f7fb; --paper:#ffffff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Inter',system-ui,Arial,sans-serif; color:var(--ink); line-height:1.65; background:var(--paper); }
+  .wrap { max-width:900px; margin:0 auto; padding:0 16px; }
+  header { background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 60%,var(--navy-2) 100%); color:#fff; padding:56px 0 46px; }
+  .brand { color:var(--gold-l); font-size:.78rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:14px; font-weight:600; }
+  header h1 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.7rem,5vw,2.6rem); line-height:1.2; margin-bottom:14px; }
+  header h1 em { color:var(--gold-l); font-style:normal; }
+  header .sub { color:#c8d5e6; font-size:clamp(1rem,2.5vw,1.12rem); max-width:680px; }
+  .meta { margin-top:18px; color:#9fb0c8; font-size:.85rem; }
+  .rule { height:3px; width:70px; background:var(--gold); margin-top:22px; border-radius:2px; }
+  section { padding:42px 0 6px; }
+  h2 { font-family:'Playfair Display',Georgia,serif; color:var(--navy); font-size:clamp(1.3rem,3.2vw,1.7rem); border-left:4px solid var(--gold); padding-left:12px; margin-bottom:16px; line-height:1.3; }
+  h3 { color:var(--navy); font-size:1.02rem; margin-bottom:6px; }
+  p { margin-bottom:12px; }
+  .lead { font-size:1.08rem; }
+  .thesis { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:20px 0; }
+  .side { border-radius:12px; padding:22px; }
+  .side.si { background:#14110a; color:#eadcb6; }
+  .side.hi { background:var(--navy); color:#e8eef7; }
+  .side .tag { font-size:.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--gold-l); font-weight:600; }
+  .side .big { font-family:'Playfair Display',Georgia,serif; font-size:1.5rem; color:#fff; margin:6px 0 8px; line-height:1.25; }
+  .side p { font-size:.93rem; margin:0; }
+  .tablebox { overflow-x:auto; margin:16px 0; border:1px solid var(--line); border-radius:10px; }
+  table { border-collapse:collapse; width:100%; min-width:620px; font-size:.9rem; }
+  th { background:var(--navy); color:#fff; text-align:left; padding:10px 12px; font-weight:600; }
+  th:first-child { width:20%; }
+  td { border-top:1px solid var(--line); padding:9px 12px; vertical-align:top; }
+  td:first-child { font-weight:600; color:var(--navy); }
+  tr:nth-child(even) td { background:var(--soft); }
+  .ladder { display:flex; flex-direction:column; gap:8px; margin:18px 0; }
+  .step { display:flex; gap:14px; align-items:stretch; }
+  .step .lvl { flex:0 0 46px; background:var(--gold); color:var(--navy-ink); border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-family:'Playfair Display',Georgia,serif; font-size:1.2rem; }
+  .step .box { flex:1; background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:12px 14px; }
+  .step .box b { color:var(--navy); }
+  .step .box span { display:block; font-size:.88rem; color:var(--muted); }
+  .cards { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:18px 0; }
+  .card { background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:18px; }
+  .card .n { font-family:'Playfair Display',Georgia,serif; font-size:1.6rem; color:var(--gold-d); line-height:1; margin-bottom:6px; }
+  .card p { font-size:.92rem; margin:0; }
+  .card.win { border-top:3px solid var(--green); }
+  .card.watch { border-top:3px solid var(--amber); }
+  .card.act { border-top:3px solid var(--gold); }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 14px; }
+  .chip { font-size:.8rem; padding:4px 10px; border-radius:20px; background:var(--soft); border:1px solid var(--line); color:var(--navy); }
+  .chip.t { background:#fdf6e3; border-color:#ecd9a2; color:var(--gold-d); }
+  .note { background:#fdf6e3; border-left:4px solid var(--gold); padding:14px 16px; border-radius:0 8px 8px 0; margin:16px 0; color:#4a3f1e; font-size:.95rem; }
+  .dont { background:#fbeeec; border-left:4px solid var(--red); padding:14px 16px; border-radius:0 8px 8px 0; margin:16px 0; color:#5a2a22; font-size:.95rem; }
+  ul { padding-left:22px; margin-bottom:12px; }
+  li { margin:6px 0; }
+  .verdict { background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 100%); color:#e8eef7; border-radius:12px; padding:30px 24px; margin:40px 0 10px; }
+  .verdict h2 { color:#fff; border-color:var(--gold-l); }
+  .verdict p { color:#c8d5e6; }
+  .verdict strong { color:var(--gold-l); }
+  footer { border-top:1px solid var(--line); padding:22px 0 34px; color:#7a8798; font-size:.82rem; text-align:center; margin-top:30px; }
+  @media (max-width:640px) {
+    .thesis, .cards { grid-template-columns:1fr; }
+    header { padding:40px 0 34px; }
+  }
+</style>
+<script src="/assets/analytics.js" defer></script>
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">HermesIA · Estudo de mercado · Uso interno</div>
+    <h1>Super Inteligênc[IA] × HermesIA: <em>dois caminhos</em> para levar IA ao advogado</h1>
+    <div class="sub">O que a comunidade jurídica de IA mais visível do momento vende, como ela organiza a oferta, e o que a HermesIA deve aprender com isso sem abrir mão do próprio posicionamento.</div>
+    <div class="meta">Novembro de 2026 · Fonte: vitrine pública da comunidade e o próprio site hermesia.ia.br</div>
+    <div class="rule"></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <h2>Em uma frase</h2>
+  <p class="lead">As duas falam com o advogado brasileiro usando IA como gancho, mas vendem coisas opostas.</p>
+  <div class="thesis">
+    <div class="side si">
+      <div class="tag">Super Inteligênc[IA]</div>
+      <div class="big">Vende a transformação do escritório</div>
+      <p>Comunidade, MBA, mentorias e consultorias. A promessa é <b>mais lucro</b>.</p>
+    </div>
+    <div class="side hi">
+      <div class="tag">HermesIA</div>
+      <div class="big">Vende o trabalho pronto</div>
+      <p>Você descreve, recebe o documento e assina. A promessa é <b>tempo de volta</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>O que a vitrine deles mostra</h2>
+  <p>A página pública (“Vitrine Jurídico”) roda na plataforma de comunidades Cativa Lab, com tema preto e dourado. O conteúdo fica atrás de login. Fora o banner de boas-vindas, há 21 cards organizados em quatro linhas.</p>
+
+  <h3>Comunidade Super Inteligênc[IA] Jurídica</h3>
+  <div class="chips">
+    <span class="chip">Comunidade Jurídica</span>
+    <span class="chip">Calendário de Encontros Jurídicos (ao vivo)</span>
+    <span class="chip">Mentorias e oficinas de aceleração</span>
+  </div>
+  <p style="margin-bottom:4px;font-size:.92rem;color:var(--muted)">Sete trilhas:</p>
+  <div class="chips">
+    <span class="chip t">IA e múltiplas tecnologias</span>
+    <span class="chip t">Gestão jurídica</span>
+    <span class="chip t">Produção e operação jurídica</span>
+    <span class="chip t">Caixa rápido e escala</span>
+    <span class="chip t">Lucro automático</span>
+    <span class="chip t">Máquina de lucro</span>
+    <span class="chip t">Soluções premium e gestão comercial</span>
+    <span class="chip t">Nichos lucrativos</span>
+  </div>
+  <p class="note" style="margin-top:4px">Só uma das trilhas fala de tecnologia. As outras falam de gestão, caixa, lucro, nichos e vendas. A IA é a porta de entrada; o produto real é <b>crescimento do escritório</b>.</p>
+
+  <h3 style="margin-top:22px">A escada de oferta</h3>
+  <div class="ladder">
+    <div class="step"><div class="lvl">1</div><div class="box"><b>Comunidade</b><span>Grupos, encontros ao vivo e as trilhas acima.</span></div></div>
+    <div class="step"><div class="lvl">2</div><div class="box"><b>MBA: IA, Gestão Estratégica e Serviços Jurídicos de Alta Performance</b><span>Área de Alunos, Comunidade MBA e calendário de encontros próprio.</span></div></div>
+    <div class="step"><div class="lvl">3</div><div class="box"><b>VIP</b><span>Soluções Premium · Mentoria de Desenvolvimento de Negócios · Consultorias de Funis de Vendas, Desenvolvimento de Tecnologia e Crescimento/Governança Corporativa.</span></div></div>
+    <div class="step"><div class="lvl">4</div><div class="box"><b>VIP ★</b><span>Mesa do Conselho Classe [I]A · Dúvidas &amp; Sugestões.</span></div></div>
+  </div>
+  <p>Os cards VIP aparecem na vitrine, mas não levam a lugar nenhum: servem para mostrar o que existe e despertar vontade de subir de nível. O fundador aparece em quase todos os cards, mas o nome dele não aparece em nenhum texto da página.</p>
+</section>
+
+<section>
+  <h2>Lado a lado</h2>
+  <div class="tablebox">
+  <table>
+    <thead><tr><th></th><th>Super Inteligênc[IA]</th><th>HermesIA</th></tr></thead>
+    <tbody>
+      <tr><td>O que é</td><td>Comunidade com cursos, mentorias e consultorias</td><td>Produto: você descreve, recebe o documento</td></tr>
+      <tr><td>Papel da IA</td><td>Uma trilha entre sete</td><td>É o próprio produto</td></tr>
+      <tr><td>Público</td><td>Só advocacia, com foco no dono de escritório que quer crescer</td><td>Advogados, mais 10 profissões e o consumidor final (INSS, multa, golpe no Pix, plano de saúde…)</td></tr>
+      <tr><td>Promessa emocional</td><td>Ambição: “Máquina de lucro”, “Caixa rápido e escala”</td><td>Alívio: “A IA que devolve o seu tempo”, o antídoto da sociedade do cansaço</td></tr>
+      <tr><td>Como ganha dinheiro</td><td>Escada: comunidade → MBA → VIP → VIP ★</td><td>Ainda não divulgado. Lista de espera, Áudio grátis (10 por dia) e acesso gratuito para quem não puder pagar</td></tr>
+      <tr><td>O que é aberto ao público</td><td>Só a vitrine</td><td>11 tutoriais, guia do sigilo, diagnóstico Prontidão 0–12, demo de parecer</td></tr>
+      <tr><td>Fundador</td><td>O rosto em quase todos os cards, sem o nome</td><td>Nomeado, com credenciais objetivas: advogado desde 2003, programador desde 1984</td></tr>
+      <tr><td>Riscos que assume</td><td>Nenhum aparece na vitrine</td><td>Sigilo (Estatuto da OAB, art. 34, VII, e LGPD), fonte em cada citação, régua de risco, “a responsabilidade é sua”</td></tr>
+      <tr><td>Visual</td><td>Preto e dourado; martelo, balança, notas de dólar</td><td>Azul-marinho e dourado; tom sóbrio</td></tr>
+      <tr><td>Estado atual</td><td>Em operação e vendendo</td><td>Ainda não aberta (lista de espera)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>Onde a HermesIA está à frente</h2>
+  <div class="cards">
+    <div class="card win"><div class="n">01</div><h3>Diferencial difícil de copiar</h3><p>O sigilo por desenho (“a IA produz a peça sem receber o segredo”) é técnico e pesa juridicamente. A vitrine deles não fala do assunto.</p></div>
+    <div class="card win"><div class="n">02</div><h3>Dá valor antes de cobrar</h3><p>Tutoriais, guia, diagnóstico e demo abertos criam confiança e trazem visitas pela busca. A vitrine deles não tem texto que o Google consiga ler: o título fica dentro da imagem.</p></div>
+    <div class="card win"><div class="n">03</div><h3>Honestidade como argumento</h3><p>“Exemplo ilustrativo”, “você sempre revisa”, o estado de cada parte publicado sem data inventada. Advogado desconfia de promessa fácil, e isso pesa a favor.</p></div>
+    <div class="card win"><div class="n">04</div><h3>Mercado maior</h3><p>As páginas de dor do consumidor abrem um mercado B2C que uma comunidade jurídica nem disputa.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Onde eles estão à frente</h2>
+  <div class="cards">
+    <div class="card watch"><div class="n">01</div><h3>Receita e escada de preços</h3><p>Já vendem, com vários degraus. O VIP fica visível e trancado para gerar desejo.</p></div>
+    <div class="card watch"><div class="n">02</div><h3>Motivo para voltar</h3><p>Encontros ao vivo, grupos e o “Conselho” trazem o cliente de volta toda semana. A HermesIA, hoje, é usada só quando a pessoa precisa de algo.</p></div>
+    <div class="card watch"><div class="n">03</div><h3>A dor de quem decide a compra</h3><p>O sócio de escritório quer faturar mais. “Devolver tempo” é verdade, mas soa mais fraco que “lucro” para quem assina o cheque.</p></div>
+    <div class="card watch"><div class="n">04</div><h3>A oferta inteira numa tela</h3><p>Uma grade de cards, uma linha por degrau. Dá para ver o mapa inteiro da oferta de uma vez.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>O que fazer: aprender sem trocar de tese</h2>
+  <div class="cards">
+    <div class="card act"><div class="n">A</div><h3>Mostrar o tempo também como dinheiro</h3><p>“A petição que levava 3 horas sai em 15 minutos; são X horas faturáveis por mês.” A tese continua a mesma, só dita na língua de quem paga.</p></div>
+    <div class="card act"><div class="n">B</div><h3>Desenhar a escada antes do lançamento</h3><p>Áudio grátis → plataforma de documentos → nível “escritório” (equipe, sigilo auditável, suporte). No lugar de “VIP”, um grupo pequeno de advogados fundadores combina mais com o discurso.</p></div>
+    <div class="card act"><div class="n">C</div><h3>Criar um encontro recorrente</h3><p>Um encontro mensal ao vivo (“o caso do mês com IA, sem expor o cliente”) ou uma newsletter do Guia do Sigilo: algo para trazer o cliente de volta.</p></div>
+    <div class="card act"><div class="n">D</div><h3>Uma vitrine da oferta completa</h3><p>Uma página que mostre todas as portas (Áudio, documentos, advogados, tutoriais, guias) numa grade só, mas com texto de verdade, legível pelo Google e por IAs.</p></div>
+  </div>
+  <div class="dont"><b>O que não copiar:</b> o apelo “Lucro automático / Máquina de lucro”. Ele contradiz a tese anticansaço da HermesIA e o tom sóbrio que a OAB espera de comunicação na advocacia.</div>
+</section>
+
+<div class="verdict">
+  <h2>Conclusão</h2>
+  <p>A Super Inteligênc[IA] prova que <strong>advogado paga por pertencer e por crescer</strong>. A HermesIA tem o que eles não têm: <strong>um produto que faz o trabalho, protege o sigilo e assume os limites da IA</strong>.</p>
+  <p style="margin:0">O caminho é somar a eles o que falta à HermesIA hoje: uma escada de oferta clara e um motivo para o cliente voltar, sem trocar o “tempo de volta” pelo “lucro automático”.</p>
+</div>
+
+<p class="note">Limites deste estudo: só a vitrine pública da comunidade foi analisada. Preço, conteúdo das trilhas e tamanho da base ficam atrás do login. Os nomes de produtos e trilhas foram transcritos dos cards publicados por eles.</p>
+
+</main>
+
+<footer>
+  <div class="wrap">HermesIA · Belo Horizonte, MG · Documento interno, não indexado · <a href="/" style="color:var(--gold-d)">hermesia.ia.br</a></div>
+</footer>
+
+</body>
+</html>
