@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA para ONGs e terceiro setor — curso grátis | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro para associações, fundações, institutos e projetos sociais: IA em projetos, editais, prestação de contas e comunicação, com o MROSC, a LGPD e o ECA. 6 aulas, quiz e política para imprimir.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/ia-para-ongs-e-terceiro-setor/">
+<meta property="og:title" content="IA para ONGs e terceiro setor — curso grátis da Academia HermesIA">
+<meta property="og:description" content="6 aulas em português: projetos e editais, prestação de contas pelo MROSC, dados de quem a organização atende, histórias e fotos com dignidade. Com política de IA para imprimir.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/ia-para-ongs-e-terceiro-setor/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+
+  /* Tabela por profissão */
+  .tbl-wrap{overflow-x:auto;margin:8px 0 18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;line-height:1.55}
+  .tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:13px}
+  .tbl td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;color:#2a3042}
+  .tbl tr:nth-child(even) td{background:#fbf8ee}
+  /* Régua */
+  .levels{display:grid;gap:10px;margin:8px 0 20px}
+  .lv{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:#fff;border-left-width:1px}
+  .lv b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .lv p{font-size:15px!important;margin:0!important;line-height:1.65!important}
+  .lv.l1{background:#f1f8f2;border-color:#cfe3d3}
+  .lv.l2{background:#f3f6fb;border-color:#d5ddeb}
+  .lv.l3{background:#fbf6e8;border-color:#eadcb3}
+  .lv.l4{background:#fbf0ee;border-color:#efd2cb}
+  /* Política */
+  .pol-sub{font-size:15px!important;color:var(--muted)!important}
+  .pol{margin:0 0 18px 22px}
+  .pol li{font-size:15.5px;line-height:1.85;margin-bottom:10px}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#politica){display:none!important}
+    html.print-check #politica{border:0;margin:0;padding:0}
+    html.print-check #politica .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Terceiro setor</p>
+    <h1>IA para ONGs e terceiro setor</h1>
+    <p class="sub">Para associações, fundações, institutos, coletivos e projetos sociais. Use a IA para escrever projetos, prestar contas e comunicar o seu trabalho, protegendo os dados e a dignidade de quem vocês atendem.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>6 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 50 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português e adaptado às leis do Brasil. Vale para qualquer ferramenta. Se você ainda não fez, comece pelo curso <a href="/academia/capacidades-e-limites-da-ia/" style="color:var(--gold-l)">Capacidades e limites da IA</a>.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 6 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>Onde a IA ajuda</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>Projetos, editais e captação</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>Prestação de contas</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>Dados de quem vocês atendem</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Histórias, fotos e dignidade</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>Equipe e voluntários</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#politica"><span class="ck"><span>✎</span></span>Política da organização para imprimir</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para quem dirige, trabalha ou é voluntário numa organização da sociedade civil: assistência social, educação, cultura, saúde, meio ambiente, defesa de direitos, organizações religiosas e associações de bairro. Não exige conhecimento técnico nem ferramenta paga. Ao terminar, a organização terá duas tarefas escolhidas para começar, regras claras para os dados das pessoas atendidas e uma política de uma página para a equipe.</p>
+      <p style="margin-top:12px;"><b>O que este curso não promete:</b> que a IA escreva o projeto aprovado ou a prestação de contas perfeita. Ela organiza e redige. Os fatos, os números e a responsabilidade continuam sendo da organização.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>Onde a IA ajuda uma organização social</h2>
+      <p>Organização social costuma ter equipe pequena e muita coisa para escrever: projeto, relatório, ata, post, e-mail para doador, resposta a edital, prestação de contas. Quem atende as pessoas de dia escreve à noite. É nessas tarefas de texto que a IA mais ajuda.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Um setor grande, que já começou a usar</h4>
+        <p>O Mapa das Organizações da Sociedade Civil, do Ipea, registrou 879.326 organizações ativas até 2023. Na pesquisa TIC Organizações sem Fins Lucrativos 2025, do Cetic.br, uma em cada três organizações já usa IA generativa no trabalho. O uso mais comum é gerar textos (27%), seguido de criar imagens ou vídeos (20%) e desenvolver código (10%). O uso é maior nas organizações religiosas (45%) e de educação e pesquisa (42%), seguidas por saúde e assistência social (31%) e cultura e recreação (20%).</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Ajuda muito</th><th>Ajuda com conferência</th><th>A decisão é da organização</th></tr></thead>
+          <tbody>
+            <tr><td>Atas, e-mails e posts</td><td>Projetos e respostas a editais</td><td>Quem é atendido e como</td></tr>
+            <tr><td>Resumo de documentos longos</td><td>Relatórios com números</td><td>Uso dos recursos e prestação de contas final</td></tr>
+            <tr><td>Texto em linguagem simples</td><td>Análise de dados de atendimento, sem identificar ninguém</td><td>O que a organização diz em nome da causa</td></tr>
+            <tr><td>Ideias de campanha e de calendário</td><td>Planilhas e orçamentos</td><td>Com quem fazer parceria e de quem receber recursos</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Uma associação de moradores grava a reunião mensal no celular, transcreve e pede à IA uma ata com as decisões e uma lista de tarefas com responsável e prazo. Antes de circular, a secretária confere os nomes e as decisões. O que levava uma noite passou a levar meia hora.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A IA rende mais nas tarefas de escrever e organizar.</li>
+          <li>Um terço das organizações brasileiras já usa IA generativa.</li>
+          <li>Decisões sobre pessoas e recursos continuam com a organização.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>Projetos, editais e captação</h2>
+      <p>Escrever projeto é onde a IA mais economiza tempo de uma organização. Ela organiza requisitos, estrutura objetivos e metas, deixa o texto claro. Mas ela não conhece o seu território, o seu público nem a sua história. Isso vem de vocês.</p>
+      <h3>Como usar</h3>
+      <ul>
+        <li><b>Comece pelo edital.</b> Cole o edital e peça a lista de requisitos, critérios de avaliação e documentos exigidos, com o número do item de cada um. Depois confira no texto original.</li>
+        <li><b>Entregue os fatos.</b> Público, território, histórico, resultados anteriores, equipe e orçamento disponível.</li>
+        <li><b>Peça estrutura antes do texto.</b> Objetivos, metas, indicadores e cronograma. Metas que vocês conseguem cumprir e medir.</li>
+        <li><b>Peça um avaliador.</b> “Leia como avaliador deste edital e aponte o que está fraco ou sem evidência.”</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Antes e depois</p>
+        <div class="cmp">
+          <div class="weak"><b>Pedido vago</b>Escreva um projeto para o edital de cultura.</div>
+          <div class="strong"><b>Pedido completo</b>Somos um coletivo de música num bairro da periferia de Contagem (MG), com seis anos de oficinas para jovens de 12 a 17 anos. Em 2025 atendemos 84 jovens. Seguem o edital e o nosso relatório do ano passado. Liste os requisitos do edital com o número do item e proponha objetivos, metas e indicadores que caibam num orçamento de R$ 40 mil. Não invente dados: onde faltar informação, escreva [PREENCHER].</div>
+        </div>
+      </div>
+      <h3>Três coisas que a IA faz e o projeto não pode ter</h3>
+      <ol>
+        <li><b>Número inventado.</b> Pessoas atendidas, resultados e indicadores só com dado real. A meta que entra no plano de trabalho vira compromisso e será cobrada na prestação de contas.</li>
+        <li><b>Fonte que não existe.</b> Pesquisa, estatística ou lei citada pela IA precisa ser conferida na fonte. A IA às vezes inventa referências com aparência séria.</li>
+        <li><b>Texto que serve para qualquer um.</b> “Transformar vidas”, “impacto social significativo”, “protagonismo”. O avaliador lê dezenas de projetos iguais. O que convence é o fato específico: quantos, onde, desde quando, com que resultado.</li>
+      </ol>
+      <p>Leia também as regras do edital sobre autoria e originalidade. Alguns pedem declaração de que a proposta é original ou de como ela foi elaborada.</p>
+      <h3>Doadores e captação</h3>
+      <p>A IA ajuda a escrever o agradecimento, o relatório anual para doadores e a campanha de fim de ano. A regra é a mesma: história real, com autorização; número real; e clareza sobre como o dinheiro é usado.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>A doação ficou digital</h4>
+        <p>Na TIC Organizações sem Fins Lucrativos 2025, 66% das organizações disseram ter recebido doações por PIX e 29% receberam doações pela internet, por site, redes sociais ou financiamento coletivo. Oito em cada dez organizações têm perfil em alguma rede social. Comunicação bem escrita, frequente e honesta passou a ser parte da captação.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Comece pelo edital e entregue os fatos da organização.</li>
+          <li>Onde faltar dado, marque [PREENCHER]; nunca deixe a IA completar.</li>
+          <li>Fato específico convence mais que frase bonita.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>Prestação de contas e relatórios</h2>
+      <p>Para quem tem parceria com o poder público, a prestação de contas é obrigação legal, com prazo, forma e consequência. A IA ajuda muito a organizar o material, desde que não preencha nenhuma lacuna por conta própria.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>O que o Marco Regulatório das OSCs pede</h4>
+        <p>A Lei 13.019/2014, conhecida como MROSC, rege as parcerias entre organizações da sociedade civil e a administração pública. Entre outras regras:</p>
+        <ul>
+          <li>A organização deve divulgar na internet e em locais visíveis das suas sedes todas as parcerias com a administração pública (art. 11).</li>
+          <li>A prestação de contas deve permitir avaliar a execução, com descrição pormenorizada das atividades e comprovação do alcance das metas e dos resultados (art. 64).</li>
+          <li>Valores ligados a metas e resultados descumpridos sem justificativa suficiente são glosados (art. 64, § 1º).</li>
+          <li>O relatório de execução do objeto traz as atividades desenvolvidas e o comparativo entre as metas propostas e os resultados alcançados (art. 66, I).</li>
+          <li>As contas são prestadas em até noventa dias do fim da parceria, ou ao final de cada exercício se ela durar mais de um ano (art. 69).</li>
+        </ul>
+      </div>
+      <h3>Onde a IA ajuda</h3>
+      <ul>
+        <li><b>Organizar as provas.</b> Listas de presença, fotos, relatórios de oficina e atas viram uma tabela: meta, resultado e comprovante.</li>
+        <li><b>Escrever a narrativa a partir dos dados.</b> Com a tabela pronta, peça um texto claro que descreva o que foi feito, na ordem do plano de trabalho.</li>
+        <li><b>Conferir consistência.</b> “O número de participantes no texto bate com o da tabela? Liste as divergências.”</li>
+        <li><b>Traduzir para linguagem simples</b> o relatório que vai para a comunidade e para os doadores.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Um pedido seguro: <i>“Monte uma tabela com três colunas: meta do plano de trabalho, resultado alcançado e comprovante. Use só os dados abaixo. Onde não houver comprovante, escreva SEM COMPROVANTE. Não some nem calcule nada.”</i> As contas ficam com a planilha e com o contador.</p>
+      </div>
+      <h3>Onde a IA não pode entrar</h3>
+      <p>Se faltou comprovante ou se uma meta não foi cumprida, o relatório diz isso e apresenta a justificativa. A IA tende a completar lacunas com algo plausível e a deixar o texto otimista. Numa prestação de contas, isso é declarar o que não aconteceu, com consequência para a organização e para quem a representa. Leia cada número contra o documento de origem antes de enviar.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>O MROSC exige comprovar metas e resultados, com prazo.</li>
+          <li>A IA organiza provas e redige; os números vêm dos documentos.</li>
+          <li>Meta não cumprida se explica; não se esconde.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>Dados de quem vocês atendem</h2>
+      <p>Organização social guarda dados delicados: cadastro de famílias, renda, saúde, deficiência, religião, situação de violência, dados de crianças. Quando alguém cola esse material numa ferramenta de IA, os dados saem da organização e vão para os servidores de outra empresa.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>A LGPD vale para o terceiro setor</h4>
+        <ul>
+          <li>A Lei Geral de Proteção de Dados (Lei 13.709/2018) se aplica às organizações sem fins lucrativos como a qualquer outra.</li>
+          <li>Origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização religiosa, filosófica ou política, saúde, vida sexual e dados genéticos ou biométricos são dados sensíveis (art. 5º, II). Só podem ser tratados nas hipóteses restritas do art. 11.</li>
+          <li>Dados de crianças e adolescentes são tratados no seu melhor interesse. Os de crianças pedem consentimento específico e em destaque de pelo menos um dos pais ou do responsável legal (art. 14).</li>
+        </ul>
+        <p>Na TIC Organizações sem Fins Lucrativos 2025, 52% das organizações já tinham área ou pessoa responsável pela LGPD (eram 29% em 2022). Mas só 31% ofereceram treinamento interno sobre privacidade e proteção de dados.</p>
+      </div>
+      <h3>O que pode e o que não deve subir</h3>
+      <ul>
+        <li><b>Pode:</b> textos institucionais, editais, modelos, dados agregados (“84 jovens atendidos, 60% meninas”).</li>
+        <li><b>Com cuidado:</b> um caso para planejar o atendimento, sem nome, endereço, escola ou detalhe que identifique. Em comunidade pequena, um único detalhe identifica a pessoa.</li>
+        <li><b>Não deve:</b> cadastros, fichas de acolhimento, laudos, prontuários, relatos de violência, listas de beneficiários, fotos de documentos.</li>
+      </ul>
+      <p>A técnica completa, com a régua de quatro níveis e o método de anonimizar, está no curso <a href="/academia/sigilo-lgpd-e-etica-com-ia/">Sigilo, LGPD e ética profissional com IA</a>.</p>
+      <h3>Decisões sobre pessoas</h3>
+      <p>Quem entra no programa, quem recebe a cesta, a bolsa ou a vaga: a IA pode ajudar a organizar os critérios, mas quem decide é uma pessoa. Se uma decisão for tomada só por sistema automatizado, a pessoa afetada tem direito de pedir a revisão (LGPD, art. 20).</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Os dados das pessoas atendidas costumam ser sensíveis.</li>
+          <li>Cadastros, fichas e relatos não sobem para ferramentas de IA.</li>
+          <li>Decisão sobre quem é atendido fica com uma pessoa.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Histórias, fotos e dignidade</h2>
+      <p>A comunicação de uma causa vive de histórias. A IA facilita escrever e ilustrar essas histórias e, junto, traz tentações que podem custar a confiança de quem apoia vocês.</p>
+      <h3>Quatro regras</h3>
+      <ol>
+        <li><b>História real, com autorização e sem expor demais.</b> Pergunte à pessoa como ela quer ser apresentada. Troque o nome quando for preciso e retire detalhes que a identifiquem.</li>
+        <li><b>Imagem gerada não é registro.</b> Não publique a imagem gerada de uma “família atendida” como se fosse foto do projeto. Se usar ilustração feita com IA, diga que é ilustração. Cena de pobreza inventada engana o doador e reforça estereótipos.</li>
+        <li><b>Depoimento só verdadeiro.</b> Pedir à IA “depoimentos emocionantes de beneficiários” e publicar como reais é enganar quem doa.</li>
+        <li><b>Rosto e voz de pessoas reais só com autorização.</b> O Código Civil protege a imagem contra o uso não autorizado (art. 20). Não clone a voz de um beneficiário, de um voluntário ou de uma pessoa pública para a campanha.</li>
+      </ol>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Crianças e adolescentes</h4>
+        <p>O Estatuto da Criança e do Adolescente garante o direito ao respeito, que abrange a preservação da imagem, da identidade e da autonomia (Lei 8.069/1990, art. 17). Na comunicação: autorização dos responsáveis, nenhum rosto identificável em situação de vulnerabilidade e nenhuma foto de criança enviada a ferramentas de IA.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Um bom uso da IA aqui é como revisora: <i>“Este texto de campanha trata as pessoas atendidas com dignidade? Aponte termos que reforçam estereótipos, expõem demais ou apresentam as pessoas só como vítimas.”</i> Ela costuma achar o que a pressa deixou passar.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>História real, com autorização e sem expor demais.</li>
+          <li>Imagem gerada é ilustração e deve ser apresentada assim.</li>
+          <li>Foto de criança: autorização e nunca em ferramenta de IA.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>Adotar com a equipe e com os voluntários</h2>
+      <p>Na organização social, quem usa IA é muitas vezes o voluntário, no celular dele e na conta dele. Sem regra combinada, dados de pessoas atendidas acabam em contas que a organização nem sabe que existem.</p>
+      <div class="levels">
+        <div class="lv l1"><b>Passo 1 · Escolha duas tarefas</b><p>Uma de comunicação e uma administrativa, as duas de baixo risco. Exemplo: posts da semana e atas de reunião.</p></div>
+        <div class="lv l2"><b>Passo 2 · Defina a conta</b><p>Conta da organização, não pessoal. Uso das conversas para treinamento desligado quando houver a opção. Acesso retirado quando a pessoa sai.</p></div>
+        <div class="lv l3"><b>Passo 3 · Escreva a política</b><p>Uma página, no modelo ao final do curso. Apresente numa conversa de meia hora com a equipe e os voluntários, com exemplos do dia a dia de vocês.</p></div>
+        <div class="lv l4"><b>Passo 4 · Reveja em três meses</b><p>O que funcionou, o que deu problema, o que muda. Escolha a próxima tarefa.</p></div>
+      </div>
+      <h3>Planos para organizações</h3>
+      <p>Alguns fornecedores oferecem desconto ou plano gratuito para organizações sem fins lucrativos. Antes de aceitar, leia o que o plano diz sobre uso dos dados para treinamento e sobre onde eles ficam guardados. De graça não pode significar sem proteção para as pessoas atendidas.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Antes de automatizar qualquer coisa, pergunte: <i>“Isto aproxima ou afasta a organização das pessoas que ela atende?”</i> Economizar tempo na ata é ótimo. Trocar por um robô a escuta de quem chega pedindo ajuda tira justamente o que dá sentido ao trabalho.</p>
+      </div>
+      <p>Usar a tecnologia a favor da missão conversa com os <a href="/#ods">Objetivos de Desenvolvimento Sustentável da ONU</a>, que a HermesIA acompanha na página inicial.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Duas tarefas de baixo risco para começar.</li>
+          <li>Conta da organização, regras por escrito, acesso retirado na saída.</li>
+          <li>A missão vem antes da economia de tempo.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- PARA IMPRIMIR -->
+    <section class="lesson" id="politica">
+      <p class="num">Para imprimir e preencher</p>
+      <h2>Política de uso de IA da organização</h2>
+      <p class="pol-sub">Organização: ______________________ · Aprovada em ___/___/______ · Responsável: ______________________</p>
+      <ol class="pol">
+        <li><b>Para que usamos IA.</b> ______________________________________________</li>
+        <li><b>Ferramentas e contas autorizadas (da organização).</b> ______________________________________________</li>
+        <li><b>Quem revisa antes de publicar ou enviar.</b> ______________________________________________</li>
+        <li><b>Responsável pelos dados pessoais (LGPD).</b> ______________________ · Contato: ______________________</li>
+        <li><b>Próxima revisão desta política.</b> ___/___/______</li>
+      </ol>
+      <p class="check-h">Regras</p>
+      <ul class="check">
+        <li>Nunca sobem: cadastros, fichas de acolhimento, laudos, prontuários, relatos de violência, listas de beneficiários, documentos.</li>
+        <li>Dados e fotos de crianças e adolescentes: nunca em ferramenta de IA.</li>
+        <li>Número em projeto, relatório ou campanha: só dado real, conferido na origem.</li>
+        <li>Prestação de contas: o que não foi feito é dito e justificado.</li>
+        <li>Histórias e fotos de pessoas atendidas: só com autorização e com respeito à dignidade.</li>
+        <li>Imagem gerada por IA é apresentada como ilustração.</li>
+        <li>Decisão sobre quem é atendido é tomada por uma pessoa.</li>
+        <li>Quem sai da organização perde o acesso às contas.</li>
+      </ul>
+      <button class="btn no-print" type="button" id="print-btn">Imprimir a política</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas e dados citados</h2>
+      <ul class="sources">
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019.htm" target="_blank" rel="noopener">Lei 13.019/2014 (Marco Regulatório das Organizações da Sociedade Civil)</a>, com a redação da Lei 13.204/2015: arts. 11, 64, 66 e 69</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener">Lei 13.709/2018 (LGPD)</a>: arts. 5º, II, 11, 14 e 20</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank" rel="noopener">Lei 8.069/1990 (Estatuto da Criança e do Adolescente)</a>, art. 17</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm" target="_blank" rel="noopener">Lei 10.406/2002 (Código Civil)</a>, art. 20</li>
+        <li><a href="https://mapaosc.ipea.gov.br/post/186/mapa-brasil-tem-879.326-organizacoes-ativas-ate-2023" target="_blank" rel="noopener">Ipea, Mapa das Organizações da Sociedade Civil</a> (dados até 2023)</li>
+        <li><a href="https://cetic.br/pt/noticia/um-terco-das-organizacoes-sem-fins-de-lucro-no-brasil-ja-usa-ia-generativa-aponta-pesquisa-do-cetic-br/" target="_blank" rel="noopener">Cetic.br, TIC Organizações sem Fins Lucrativos 2025</a> (divulgada em julho de 2026)</li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. As normas mudam: confira sempre a redação atual na fonte oficial.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui a orientação de advogado ou contador, nem a do órgão responsável pela parceria, nem a análise do caso concreto. A HermesIA não é escritório de advocacia nem de contabilidade e não presta consultoria jurídica ou contábil. Marcas citadas pertencem a seus titulares.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-ongs-v1', TOTAL=6, CURSO='ia-ongs', done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:CURSO,aula:+i});
+    });
+  });
+  render();
+
+  var Q=[{"q": "Segundo a TIC Organizações sem Fins Lucrativos 2025, qual é o uso mais comum da IA generativa nessas organizações?", "o": ["Gerar textos.", "Desenvolver código.", "Atender por telefone."], "c": 0, "e": "Geração de textos (27%), seguida de imagens ou vídeos (20%) (aula 1)."}, {"q": "Ao escrever um projeto com IA, onde faltar informação você deve:", "o": ["Deixar a IA completar com um número plausível.", "Marcar [PREENCHER] e buscar o dado real.", "Tirar a meta do projeto para não chamar atenção."], "c": 1, "e": "Meta e número do projeto viram compromisso; só dado real (aula 2)."}, {"q": "Pelo MROSC, a prestação de contas precisa trazer:", "o": ["Só as notas fiscais.", "Um texto institucional sobre a missão.", "Descrição das atividades e comprovação do alcance das metas e dos resultados."], "c": 2, "e": "Lei 13.019/2014, art. 64 (aula 3)."}, {"q": "Uma meta não foi cumprida, e a IA sugeriu um texto que a apresenta como alcançada. O que fazer?", "o": ["Corrigir: o relatório diz o que aconteceu e traz a justificativa.", "Aceitar, porque o texto ficou convincente.", "Apagar a meta do relatório."], "c": 0, "e": "Meta descumprida sem justificativa suficiente gera glosa (art. 64, § 1º; aula 3)."}, {"q": "Qual destes NÃO deve ser colado numa ferramenta de IA?", "o": ["O texto do edital.", "A ficha de acolhimento de uma família, com dados de saúde.", "O total de jovens atendidos no ano."], "c": 1, "e": "Fichas e cadastros têm dados sensíveis de pessoas identificáveis (aula 4)."}, {"q": "Dados sobre convicção religiosa e saúde são, pela LGPD:", "o": ["Dados públicos.", "Dados anônimos.", "Dados pessoais sensíveis, com hipóteses de tratamento restritas."], "c": 2, "e": "LGPD, art. 5º, II, e art. 11 (aula 4)."}, {"q": "Para a campanha de Natal, alguém sugere gerar com IA a foto de uma família em situação de pobreza e publicar como se fosse do projeto. Isso:", "o": ["Engana o doador; imagem gerada deve ser apresentada como ilustração.", "É permitido, porque a família não existe.", "É o jeito certo de proteger as pessoas atendidas."], "c": 0, "e": "Imagem gerada não é registro (aula 5)."}, {"q": "Qual conta a equipe e os voluntários devem usar para trabalhar com IA?", "o": ["A conta pessoal de cada um.", "Conta da organização, com regras escritas e acesso retirado quando a pessoa sai.", "Qualquer conta, desde que paga."], "c": 1, "e": "Sem regra, os dados vão parar em contas que a organização não conhece (aula 6)."}];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: agora preencha a política da organização logo abaixo e apresente à equipe.':'Vale rever as aulas indicadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:CURSO,acertos:right});
+  }
+
+  document.getElementById('print-btn').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+    if(window.hmTrack) hmTrack('curso_documento_impresso',{curso:CURSO});
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "IA para ONGs e terceiro setor", "description": "Curso grátis em português para organizações da sociedade civil: uso de IA em projetos, editais, captação, prestação de contas e comunicação, com o Marco Regulatório das OSCs, a LGPD e o Estatuto da Criança e do Adolescente, e uma política de uso de IA para imprimir.", "inLanguage": "pt-BR", "isAccessibleForFree": true, "url": "https://hermesia.ia.br/academia/ia-para-ongs-e-terceiro-setor/", "provider": {"@type": "Organization", "name": "HermesIA", "sameAs": "https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Implantar IA na organização: as cinco decisões — curso grátis | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro para gestores: as cinco decisões para implantar IA numa empresa ou instituição, com a LGPD e as resoluções da ANPD. 7 aulas, quiz e plano para imprimir.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/implantar-ia-na-organizacao/">
+<meta property="og:title" content="Implantar IA na organização: as cinco decisões — curso grátis da Academia HermesIA">
+<meta property="og:description" content="7 aulas em português: para quê, quem acessa, quais dados, quanto custa e quem responde, mais um roteiro de 90 dias. Com a LGPD, a ANPD e o plano das cinco decisões para imprimir.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/implantar-ia-na-organizacao/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+
+  /* Tabela por profissão */
+  .tbl-wrap{overflow-x:auto;margin:8px 0 18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;line-height:1.55}
+  .tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:13px}
+  .tbl td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;color:#2a3042}
+  .tbl tr:nth-child(even) td{background:#fbf8ee}
+  /* Régua */
+  .levels{display:grid;gap:10px;margin:8px 0 20px}
+  .lv{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:#fff;border-left-width:1px}
+  .lv b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .lv p{font-size:15px!important;margin:0!important;line-height:1.65!important}
+  .lv.l1{background:#f1f8f2;border-color:#cfe3d3}
+  .lv.l2{background:#f3f6fb;border-color:#d5ddeb}
+  .lv.l3{background:#fbf6e8;border-color:#eadcb3}
+  .lv.l4{background:#fbf0ee;border-color:#efd2cb}
+  /* Política */
+  .pol-sub{font-size:15px!important;color:var(--muted)!important}
+  .pol{margin:0 0 18px 22px}
+  .pol li{font-size:15.5px;line-height:1.85;margin-bottom:10px}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#plano){display:none!important}
+    html.print-check #plano{border:0;margin:0;padding:0}
+    html.print-check #plano .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Gestão</p>
+    <h1>Implantar IA na organização: as cinco decisões</h1>
+    <p class="sub">Para donos de empresa, diretores e responsáveis por tecnologia, RH, jurídico ou proteção de dados. Tome as cinco decisões que fazem a IA dar resultado com segurança, em vez de virar uso escondido em contas pessoais.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>7 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 60 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português e adaptado às leis do Brasil. Vale para qualquer fornecedor de IA. Para treinar a equipe depois, use os cursos <a href="/academia/capacidades-e-limites-da-ia/" style="color:var(--gold-l)">Capacidades e limites da IA</a> e <a href="/academia/sigilo-lgpd-e-etica-com-ia/" style="color:var(--gold-l)">Sigilo, LGPD e ética</a>.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 7 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>Por que decidir agora</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>Decisão 1: para quê</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>Decisão 2: quem acessa</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>Decisão 3: quais dados</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Decisão 4: quanto e como medir</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>Decisão 5: quem responde</a></li>
+      <li data-l="7"><a href="#aula-7"><span class="ck"><span>7</span></span>Os primeiros 90 dias</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#plano"><span class="ck"><span>✎</span></span>Plano das cinco decisões para imprimir</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para quem precisa decidir como uma empresa, um escritório ou uma instituição vai usar IA: sócios, diretores, gestores de área, TI, RH, jurídico e encarregado de dados. Não é um curso técnico. Ao terminar, você terá o plano das cinco decisões preenchido, com um dono para cada uma, e um roteiro para os primeiros 90 dias.</p>
+      <p style="margin-top:12px;"><b>O que este curso não faz:</b> escolher o fornecedor por você nem substituir a análise do seu jurídico sobre contratos e dados. Ele organiza as perguntas certas, na ordem certa.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>Por que decidir agora</h2>
+      <p>A IA já está dentro da sua organização, com ou sem decisão da direção. Funcionários usam no celular, em contas pessoais, com documentos de trabalho. Quando a organização não decide, cada pessoa decide sozinha, e ninguém sabe que dados saíram.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>A adoção acelerou em 2025</h4>
+        <p>Na pesquisa TIC Empresas 2025, do Cetic.br, o uso de IA declarado pelas empresas brasileiras passou de 13% para 17% em um ano. Nas pequenas, de 10% para 15%. Nas grandes, de 38% para 50%. Entre as que usam, 80% compraram software pronto, e a geração de textos e respostas automáticas foi o tipo de IA que mais cresceu, de 20% para 30%.</p>
+      </div>
+      <h3>As cinco decisões</h3>
+      <ol>
+        <li><b>Para quê:</b> quais problemas a IA vai resolver primeiro.</li>
+        <li><b>Quem acessa:</b> quais pessoas, com qual ferramenta e em que tipo de conta.</li>
+        <li><b>Quais dados:</b> o que pode entrar na ferramenta e o que nunca entra.</li>
+        <li><b>Quanto e como medir:</b> o orçamento e os números que dizem se valeu.</li>
+        <li><b>Quem responde:</b> os donos do programa, das regras e dos incidentes.</li>
+      </ol>
+      <p>Não é um projeto de um ano. Uma organização de porte médio consegue tomar as cinco decisões em poucas semanas, desde que cada uma tenha um dono com nome e prazo.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Proibir a IA sem oferecer alternativa quase nunca funciona: o uso continua, só que escondido, em contas pessoais, onde a organização não vê nada. O caminho mais seguro é oferecer uma ferramenta aprovada, com regras claras, e explicar por quê.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Sem decisão da direção, cada pessoa decide sozinha.</li>
+          <li>Cinco decisões, cada uma com um dono.</li>
+          <li>Ferramenta aprovada com regras protege mais que proibição.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>Decisão 1: para que usar</h2>
+      <p>Começar pela ferramenta é o erro mais comum. Comece pelos problemas: tarefas que tomam tempo, se repetem e têm um resultado que dá para conferir.</p>
+      <h3>Como escolher os primeiros casos</h3>
+      <p>Peça a cada área três tarefas candidatas. Dê a cada uma duas notas: o valor (tempo economizado, qualidade) e o risco (estrago se sair errado, dados envolvidos). Comece pelas de valor alto e risco baixo, que sejam frequentes e fáceis de medir.</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Caso</th><th>Valor</th><th>Risco</th><th>Começar?</th></tr></thead>
+          <tbody>
+            <tr><td>Resumo e ata de reuniões internas</td><td>Alto</td><td>Baixo</td><td>Sim</td></tr>
+            <tr><td>Rascunho de respostas ao atendimento, com revisão</td><td>Alto</td><td>Médio</td><td>Sim, com revisão obrigatória</td></tr>
+            <tr><td>Primeira versão de procedimentos e manuais</td><td>Médio</td><td>Baixo</td><td>Sim</td></tr>
+            <tr><td>Triagem de currículos</td><td>Médio</td><td>Alto: decisão sobre pessoas</td><td>Depois, com regras e uma pessoa decidindo</td></tr>
+            <tr><td>Parecer jurídico ou contábil final</td><td>Alto</td><td>Alto</td><td>Só com o profissional responsável revisando</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Piloto antes de escala</h3>
+      <p>Escolha dois ou três casos, um grupo pequeno de pessoas e um prazo de quatro a oito semanas. Meça antes de começar e meça no final. Só depois decida se expande.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Decisões sobre pessoas pedem mais cuidado</h4>
+        <p>Pela LGPD, a pessoa pode pedir a revisão de decisões tomadas unicamente com base em tratamento automatizado que afetem os seus interesses, inclusive as que definem o seu perfil profissional, de consumo e de crédito (Lei 13.709/2018, art. 20). Recrutamento, crédito e avaliação de desempenho não são bons primeiros casos e, quando vierem, exigem uma pessoa decidindo.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Comece pelos problemas, não pela ferramenta.</li>
+          <li>Valor alto, risco baixo, frequente e mensurável.</li>
+          <li>Decisões sobre pessoas ficam para depois, com revisão humana.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>Decisão 2: quem acessa e com qual ferramenta</h2>
+      <p>A ferramenta certa é a que a organização controla. Conta pessoal é como levar o arquivo da empresa para casa num pen drive: pode até dar certo, mas a organização perde o controle do que saiu.</p>
+      <h3>O que verificar no plano corporativo</h3>
+      <ul>
+        <li><b>Contrato de proteção de dados.</b> Em regra, a sua organização é a controladora e o fornecedor atua como operador, que deve seguir as instruções do controlador (LGPD, art. 39). Isso precisa estar escrito.</li>
+        <li><b>Treinamento.</b> Os seus dados são usados para treinar modelos? Peça a resposta por escrito, no contrato ou nos termos do plano.</li>
+        <li><b>Local e prazo de guarda.</b> Em que país os dados ficam e por quanto tempo as conversas são guardadas.</li>
+        <li><b>Gestão de acessos.</b> Login único com a conta da empresa, painel de administração e retirada do acesso no mesmo dia em que a pessoa sai.</li>
+        <li><b>Registros.</b> Histórico de uso disponível para auditoria e para apurar incidentes.</li>
+      </ul>
+      <h3>Quem recebe acesso</h3>
+      <p>Comece pelo grupo do piloto. Libere por função, não por pedido individual. E treine antes de entregar a senha: duas horas sobre o que a IA faz bem, onde erra e o que nunca entra na ferramenta.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Segurança é dever, não opção</h4>
+        <p>Os agentes de tratamento devem adotar medidas de segurança, técnicas e administrativas, para proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas (LGPD, art. 46). Conta pessoal de funcionário com dado de cliente é exatamente o tipo de situação que a lei manda evitar.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Ferramenta corporativa, com contrato de proteção de dados.</li>
+          <li>Treinamento com os seus dados, local e prazo de guarda: por escrito.</li>
+          <li>Acesso por função, com treinamento antes e retirada na saída.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>Decisão 3: quais dados podem entrar</h2>
+      <p>É a pergunta que mais preocupa o jurídico e a TI, e a que mais trava a adoção quando fica sem resposta. A saída é classificar a informação e ligar cada nível a uma regra.</p>
+      <div class="levels">
+        <div class="lv l1"><b>Pública</b><p>Já está no site, no catálogo, na imprensa. Pode entrar em qualquer ferramenta aprovada.</p></div>
+        <div class="lv l2"><b>Interna</b><p>Procedimentos, atas, planejamento sem números sensíveis. Só na ferramenta corporativa.</p></div>
+        <div class="lv l3"><b>Confidencial</b><p>Contratos, estratégia, preços, dados de clientes e de funcionários. Só na ferramenta corporativa com contrato de proteção de dados, com o mínimo necessário e com autorização do dono da informação.</p></div>
+        <div class="lv l4"><b>Restrita</b><p>Dados sensíveis, dados de crianças, segredos industriais, informação sob sigilo profissional ou contratual. Não entra, salvo projeto específico aprovado pelo encarregado de dados e pelo jurídico.</p></div>
+      </div>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Dados que saem do país</h4>
+        <ul>
+          <li>A maioria das ferramentas de IA processa dados fora do Brasil. A LGPD só permite a transferência internacional de dados pessoais nas hipóteses do art. 33.</li>
+          <li>A Resolução CD/ANPD 19/2024 aprovou o regulamento de transferência internacional e as cláusulas-padrão contratuais. Para valer, as cláusulas devem ser adotadas na íntegra e sem alteração. O prazo de doze meses para incorporá-las aos contratos terminou em agosto de 2025.</li>
+          <li>Pergunte ao fornecedor, por escrito, qual hipótese do art. 33 ele usa. Guarde a resposta com o contrato.</li>
+        </ul>
+        <p>Mantenha também o registro das operações de tratamento (art. 37). Para tratamentos de maior risco, a ANPD pode exigir relatório de impacto à proteção de dados (art. 38).</p>
+      </div>
+      <h3>Atenção aos contratos com clientes</h3>
+      <p>Muitos contratos de confidencialidade proíbem repassar informações do cliente a terceiros. O fornecedor da ferramenta de IA é um terceiro. Antes de enviar documentos de um cliente, confira o contrato e, se preciso, peça autorização.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>A régua dos quatro níveis, com exemplos por profissão e o método de anonimizar documentos, está no curso <a href="/academia/sigilo-lgpd-e-etica-com-ia/">Sigilo, LGPD e ética profissional com IA</a>. Use-o no treinamento da equipe.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Quatro níveis de informação, cada um com uma regra.</li>
+          <li>Dado que sai do país precisa de base no art. 33 da LGPD.</li>
+          <li>Confira os contratos de confidencialidade com clientes.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Decisão 4: quanto gastar e como medir</h2>
+      <p>IA tem dois custos visíveis, a licença por usuário e o consumo nas integrações e automações, e alguns escondidos: o tempo de treinar a equipe, de revisar o que a IA produz e de integrar aos sistemas.</p>
+      <h3>Orçamento</h3>
+      <ul>
+        <li>Comece pelo piloto, com licença só para quem vai usar.</li>
+        <li>A cada trimestre, veja quem usa de fato e realoque as licenças paradas.</li>
+        <li>Reserve horas de treinamento e de revisão no orçamento, não só a assinatura.</li>
+      </ul>
+      <h3>O que medir</h3>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Métrica</th><th>Como medir</th></tr></thead>
+          <tbody>
+            <tr><td>Tempo por tarefa</td><td>Antes e depois, na mesma tarefa, com as mesmas pessoas</td></tr>
+            <tr><td>Qualidade</td><td>Retrabalho, erros encontrados na revisão e reclamações</td></tr>
+            <tr><td>Adoção</td><td>Quantas pessoas usam por semana, e para quê</td></tr>
+            <tr><td>Incidentes</td><td>Dado indevido na ferramenta e erro que chegou ao cliente</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Critério de parada, definido antes</h3>
+      <p>Escreva antes do piloto o que fará você parar ou trocar de caso. Por exemplo: “Se em oito semanas o tempo da tarefa não cair 20%, ou se o retrabalho aumentar, paramos e escolhemos outro caso.”</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Horas economizadas sem medir qualidade enganam. Se a equipe ganhou tempo mas passou a enviar textos com erro, o ganho é falso e a conta chega depois. Meça sempre os dois juntos.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Licença, consumo, treinamento e revisão entram na conta.</li>
+          <li>Meça tempo e qualidade, antes e depois.</li>
+          <li>Defina o critério de parada antes de começar.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>Decisão 5: quem responde</h2>
+      <p>Toda ferramenta precisa de dono. Na IA, são três papéis, que numa empresa pequena podem caber em duas pessoas:</p>
+      <ul>
+        <li><b>Dono do programa</b> (diretoria ou área de negócio): define prioridades, orçamento e casos.</li>
+        <li><b>Responsável técnico</b> (TI ou fornecedor de TI): contas, acessos, segurança e integrações.</li>
+        <li><b>Encarregado de dados e jurídico:</b> regras sobre dados, contratos com fornecedores e incidentes.</li>
+      </ul>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>O que a LGPD e a ANPD pedem</h4>
+        <ul>
+          <li><b>Encarregado.</b> O controlador deve indicar um encarregado, com identidade e contato divulgados publicamente. Ele recebe reclamações dos titulares e comunicações da ANPD e orienta funcionários sobre proteção de dados (LGPD, art. 41). A Resolução CD/ANPD 18/2024 regulamenta essa função. Agentes de pequeno porte podem ser dispensados de indicar encarregado, desde que mantenham um canal de comunicação com o titular (Resolução CD/ANPD 2/2022).</li>
+          <li><b>Incidentes.</b> Incidente que possa causar risco ou dano relevante aos titulares deve ser comunicado à ANPD e aos titulares (LGPD, art. 48). A Resolução CD/ANPD 15/2024 fixa, como regra, o prazo de três dias úteis a partir do momento em que o controlador sabe que o incidente afetou dados pessoais.</li>
+          <li><b>Boas práticas.</b> A LGPD incentiva regras internas de boas práticas e governança, com procedimentos, ações educativas e supervisão (art. 50).</li>
+        </ul>
+        <p>O projeto do marco legal da IA (PL 2.338/2023), aprovado pelo Senado em dezembro de 2024, trará obrigações próprias para sistemas de IA. Ele seguia em tramitação na Câmara dos Deputados nas notícias mais recentes que encontramos, de meados de 2026.</p>
+      </div>
+      <h3>A política de uma página</h3>
+      <p>Ninguém lê manual de 30 páginas. A política de IA cabe numa folha: ferramentas aprovadas; o que nunca entra; revisão humana obrigatória para tudo o que sai para clientes, órgãos públicos ou imprensa; cuidado com decisões sobre pessoas; e a quem avisar quando algo der errado. O curso <a href="/academia/sigilo-lgpd-e-etica-com-ia/">Sigilo, LGPD e ética</a> traz um modelo pronto.</p>
+      <h3>Canal de erro sem punição</h3>
+      <p>Quem colou um dado no lugar errado precisa avisar rápido. Se a primeira reação da empresa for punir, o próximo erro fica escondido, e o prazo de comunicação à ANPD corre do mesmo jeito. Premie quem avisa cedo.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Três papéis: programa, técnica, dados e jurídico.</li>
+          <li>Incidente relevante: comunicação em prazo curto.</li>
+          <li>Política de uma página e canal de erro sem punição.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-7">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 7 -->
+    <section class="lesson" id="aula-7" data-l="7">
+      <p class="num">Aula 7</p>
+      <h2>Os primeiros 90 dias</h2>
+      <p>Com as cinco decisões tomadas, a implantação cabe num trimestre. O roteiro abaixo serve para uma empresa de 20 ou de 2.000 pessoas; muda o tamanho do grupo, não a ordem.</p>
+      <div class="levels">
+        <div class="lv l1"><b>Dias 1 a 15 · Decidir</b><p>Nomeie os três donos. Escolha dois ou três casos. Escolha a ferramenta corporativa. Escreva a política de uma página.</p></div>
+        <div class="lv l2"><b>Dias 16 a 30 · Preparar</b><p>Contrate e configure: contas da empresa, login único, treinamento com os seus dados desligado. Meça o “antes” de cada caso. Treine o grupo piloto.</p></div>
+        <div class="lv l3"><b>Dias 31 a 75 · Pilotar</b><p>Use de verdade. Reunião rápida a cada 15 dias. Registre erros e acertos. Monte uma biblioteca com os pedidos que funcionaram.</p></div>
+        <div class="lv l4"><b>Dias 76 a 90 · Decidir de novo</b><p>Meça o “depois”. Expanda, ajuste ou pare, conforme o critério combinado. Revise a política e comunique à organização inteira.</p></div>
+      </div>
+      <h3>Treinamento sem custo</h3>
+      <p>Os cursos da <a href="/academia/">Academia HermesIA</a> são gratuitos e podem ser usados no treinamento da equipe: <a href="/academia/capacidades-e-limites-da-ia/">Capacidades e limites da IA</a> para todos, <a href="/academia/como-pedir-bem-a-ia/">Como pedir bem à IA</a> para quem vai usar todo dia e <a href="/academia/sigilo-lgpd-e-etica-com-ia/">Sigilo, LGPD e ética</a> para quem lida com dados de clientes.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Na comunicação interna, comece pelo motivo: <i>“Queremos que vocês usem IA, com segurança, e por isso escolhemos uma ferramenta e combinamos regras.”</i> Um comunicado que só lista proibições ensina a equipe a esconder o uso.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Decidir, preparar, pilotar e decidir de novo.</li>
+          <li>Medir antes e depois de cada caso.</li>
+          <li>Comunicar o motivo, não só as regras.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="7" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- PARA IMPRIMIR -->
+    <section class="lesson" id="plano">
+      <p class="num">Para imprimir e preencher</p>
+      <h2>Plano das cinco decisões</h2>
+      <p class="pol-sub">Organização: ______________________ · Início em ___/___/______</p>
+      <ol class="pol">
+        <li><b>Para quê.</b> Casos do piloto: 1) ____________________ 2) ____________________ 3) ____________________ · Medida “antes”: ______________________</li>
+        <li><b>Quem acessa.</b> Ferramenta corporativa: ______________________ · Grupo piloto: ______ pessoas · Login único ( ) · Treinamento com nossos dados desligado ( ) · Retirada de acesso na saída ( )</li>
+        <li><b>Quais dados.</b> Pública ( ) · Interna ( ) · Confidencial ( ), com autorização de: ______________________ · Restrita: não entra · Base do art. 33 informada pelo fornecedor: ______________________</li>
+        <li><b>Quanto e como medir.</b> Orçamento do piloto: R$ ____________ · Métricas: tempo ______________ e qualidade ______________ · Critério de parada: ______________________</li>
+        <li><b>Quem responde.</b> Dono do programa: ______________________ · Responsável técnico: ______________________ · Encarregado de dados: ______________________ · Canal para erros e incidentes: ______________________</li>
+      </ol>
+      <p class="check-h">Antes de liberar para toda a organização</p>
+      <ul class="check">
+        <li>Política de uma página aprovada e divulgada.</li>
+        <li>Contrato do fornecedor revisado pelo jurídico: dados, treinamento, local e prazo de guarda.</li>
+        <li>Grupo piloto treinado.</li>
+        <li>Resultado do piloto medido e registrado.</li>
+        <li>Canal de incidentes testado, com o prazo de comunicação conhecido por todos os responsáveis.</li>
+        <li>Data da próxima revisão: ___/___/______</li>
+      </ul>
+      <button class="btn no-print" type="button" id="print-btn">Imprimir o plano</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas e dados citados</h2>
+      <ul class="sources">
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener">Lei 13.709/2018 (LGPD)</a>: arts. 20, 33, 37, 38, 39, 41, 46, 48 e 50</li>
+        <li>Resolução CD/ANPD 18/2024 (regulamento sobre a atuação do encarregado)</li>
+        <li><a href="https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024" target="_blank" rel="noopener">Resolução CD/ANPD 19/2024 (transferência internacional e cláusulas-padrão contratuais)</a></li>
+        <li><a href="https://www.gov.br/anpd/pt-br/canais_atendimento/agente-de-tratamento/comunicado-de-incidente-de-seguranca-cis/comunicacao-de-incidentes-de-seguranca" target="_blank" rel="noopener">Resolução CD/ANPD 15/2024 (comunicação de incidente de segurança)</a></li>
+        <li><a href="https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-2-de-27-de-janeiro-de-2022" target="_blank" rel="noopener">Resolução CD/ANPD 2/2022 (agentes de tratamento de pequeno porte)</a>, alterada pela Resolução CD/ANPD 15/2024</li>
+        <li><a href="https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" target="_blank" rel="noopener">PL 2.338/2023 (marco legal da IA)</a>, situação no Congresso</li>
+        <li><a href="https://cetic.br/pt/noticia/uso-de-inteligencia-artificial-por-empresas-brasileiras-avanca-e-atinge-17-aponta-pesquisa-do-cetic-br/" target="_blank" rel="noopener">Cetic.br, TIC Empresas 2025</a> (divulgada em junho de 2026; empresas com mais de dez pessoas)</li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. As normas mudam: confira sempre a redação atual na fonte oficial.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui a orientação do jurídico, do encarregado de dados ou de um advogado, nem a análise do caso concreto. A HermesIA não é escritório de advocacia e não presta consultoria jurídica. Marcas citadas pertencem a seus titulares.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-implantar-v1', TOTAL=7, CURSO='implantar-ia', done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:CURSO,aula:+i});
+    });
+  });
+  render();
+
+  var Q=[{"q": "Por que proibir a IA sem oferecer alternativa costuma dar errado?", "o": ["Porque o uso continua, escondido, em contas pessoais que a organização não vê.", "Porque a lei obriga as empresas a usar IA.", "Porque a proibição encarece as licenças."], "c": 0, "e": "Ferramenta aprovada com regras protege mais que proibição (aula 1)."}, {"q": "Qual destes é o melhor primeiro caso para um piloto?", "o": ["Parecer jurídico final, sem revisão.", "Resumo e ata de reuniões internas: valor alto, risco baixo e fácil de medir.", "Triagem automática de currículos."], "c": 1, "e": "Comece por valor alto, risco baixo, frequente e mensurável (aula 2)."}, {"q": "Um sistema reprova candidatos sozinho, sem ninguém revisar. Pela LGPD, o candidato:", "o": ["Não tem nenhum direito.", "Só pode reclamar com o fornecedor da ferramenta.", "Pode pedir a revisão da decisão tomada só por tratamento automatizado."], "c": 2, "e": "LGPD, art. 20 (aula 2)."}, {"q": "Na relação com o fornecedor da ferramenta de IA, em regra:", "o": ["O fornecedor atua como operador e deve seguir as instruções da sua organização.", "O fornecedor pode usar os dados como quiser.", "A LGPD não se aplica a ferramentas de IA."], "c": 0, "e": "LGPD, art. 39; isso deve estar no contrato (aula 3)."}, {"q": "A ferramenta processa os dados fora do Brasil. O que a LGPD exige?", "o": ["Nada, porque a internet é global.", "Que a transferência se encaixe numa das hipóteses do art. 33, como as cláusulas-padrão da ANPD.", "Que os dados sejam traduzidos para o inglês."], "c": 1, "e": "LGPD, art. 33, e Resolução CD/ANPD 19/2024 (aula 4)."}, {"q": "O contrato com um cliente proíbe repassar informações dele a terceiros. Você pode colar os documentos desse cliente na ferramenta de IA?", "o": ["Sim, porque IA não é terceiro.", "Sim, desde que a conta seja paga.", "Não sem conferir o contrato e, se preciso, pedir autorização: o fornecedor da ferramenta é um terceiro."], "c": 2, "e": "Confira os contratos de confidencialidade antes (aula 4)."}, {"q": "Qual par de métricas mostra se o piloto deu resultado?", "o": ["Tempo por tarefa e qualidade, antes e depois.", "Número de licenças compradas e de reuniões feitas.", "Quantidade de textos gerados pela IA."], "c": 0, "e": "Tempo sem qualidade engana; meça os dois (aula 5)."}, {"q": "Um funcionário percebe que colou dados de clientes na ferramenta errada. O melhor é:", "o": ["Apagar a conversa e não contar a ninguém.", "Avisar logo pelo canal combinado, porque o prazo para comunicar incidente relevante é curto.", "Esperar para ver se alguém percebe."], "c": 1, "e": "LGPD, art. 48, e Resolução CD/ANPD 15/2024; canal de erro sem punição (aula 6)."}];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: agora preencha o plano das cinco decisões logo abaixo e dê um dono a cada uma.':'Vale rever as aulas indicadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:CURSO,acertos:right});
+  }
+
+  document.getElementById('print-btn').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+    if(window.hmTrack) hmTrack('curso_documento_impresso',{curso:CURSO});
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Implantar IA na organização: as cinco decisões", "description": "Curso grátis em português para gestores: as cinco decisões para implantar IA numa organização (casos de uso, acesso, dados, custo e governança) e um roteiro de 90 dias, com a LGPD e as resoluções da ANPD, e um plano para imprimir.", "inLanguage": "pt-BR", "isAccessibleForFree": true, "url": "https://hermesia.ia.br/academia/implantar-ia-na-organizacao/", "provider": {"@type": "Organization", "name": "HermesIA", "sameAs": "https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>

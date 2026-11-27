@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA no trabalho criativo — curso grátis | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro para quem escreve, ilustra, fotografa, compõe ou cria conteúdo: usar IA sem perder a sua voz, com as regras do Brasil sobre autoria, imagem, voz e publicidade. 6 aulas, quiz e política para imprimir.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/ia-no-trabalho-criativo/">
+<meta property="og:title" content="IA no trabalho criativo — curso grátis da Academia HermesIA">
+<meta property="og:description" content="6 aulas em português: onde a IA entra no processo criativo, direito autoral, imagem e voz de pessoas reais, transparência com público e cliente. Com política de IA para imprimir.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/ia-no-trabalho-criativo/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+
+  /* Tabela por profissão */
+  .tbl-wrap{overflow-x:auto;margin:8px 0 18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;line-height:1.55}
+  .tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:13px}
+  .tbl td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;color:#2a3042}
+  .tbl tr:nth-child(even) td{background:#fbf8ee}
+  /* Régua */
+  .levels{display:grid;gap:10px;margin:8px 0 20px}
+  .lv{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:#fff;border-left-width:1px}
+  .lv b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .lv p{font-size:15px!important;margin:0!important;line-height:1.65!important}
+  .lv.l1{background:#f1f8f2;border-color:#cfe3d3}
+  .lv.l2{background:#f3f6fb;border-color:#d5ddeb}
+  .lv.l3{background:#fbf6e8;border-color:#eadcb3}
+  .lv.l4{background:#fbf0ee;border-color:#efd2cb}
+  /* Política */
+  .pol-sub{font-size:15px!important;color:var(--muted)!important}
+  .pol{margin:0 0 18px 22px}
+  .pol li{font-size:15.5px;line-height:1.85;margin-bottom:10px}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#politica){display:none!important}
+    html.print-check #politica{border:0;margin:0;padding:0}
+    html.print-check #politica .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Criação</p>
+    <h1>IA no trabalho criativo</h1>
+    <p class="sub">Para quem escreve, ilustra, fotografa, compõe, edita vídeo ou cria conteúdo. Use a IA como assistente, mantenha a sua voz e saiba o que a lei brasileira diz sobre autoria, imagem, voz e transparência.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>6 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 50 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português e adaptado às leis do Brasil. Vale para qualquer ferramenta. Se você ainda não fez, comece pelo curso <a href="/academia/capacidades-e-limites-da-ia/" style="color:var(--gold-l)">Capacidades e limites da IA</a>.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 6 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>Onde a IA entra</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>A sua voz em primeiro lugar</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>Quem é o autor</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>Rosto, voz e pessoas reais</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Transparência com público e cliente</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>O seu jeito de trabalhar</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#politica"><span class="ck"><span>✎</span></span>Minha política de IA para imprimir</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para escritores, redatores, ilustradores, designers, fotógrafos, músicos, produtores de vídeo, criadores de conteúdo e quem trabalha com eles. Não exige conhecimento técnico. Ao terminar, você terá decidido em que partes do seu trabalho a IA entra, saberá o que a lei protege e terá uma política curta para mostrar a clientes e ao público.</p>
+      <p style="margin-top:12px;"><b>O que este curso não faz:</b> dizer se você deve ou não usar IA. Essa escolha é sua e as duas respostas são legítimas. O curso ajuda a decidir com informação e a usar sem se prejudicar nem prejudicar ninguém.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>Onde a IA entra no processo criativo</h2>
+      <p>Quase todo trabalho criativo passa pelas mesmas etapas: pesquisar, ter a ideia, rascunhar, produzir, revisar e entregar. A IA pode ajudar em todas, mas não precisa estar em todas. A primeira decisão é sua: em quais etapas ela entra e quais você guarda para você.</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Bom para delegar</th><th>Use com cuidado</th><th>Guarde para você</th></tr></thead>
+          <tbody>
+            <tr><td>Pesquisa de referências e de contexto</td><td>Rascunho de texto, roteiro ou letra</td><td>A ideia central e o ponto de vista</td></tr>
+            <tr><td>Variações de título, legenda e descrição</td><td>Imagem de referência e painel de inspiração</td><td>As escolhas finais de estética</td></tr>
+            <tr><td>Transcrição, legendas e organização de arquivos</td><td>Tradução e adaptação</td><td>O que você assina como seu</td></tr>
+            <tr><td>Revisão de ortografia e de consistência</td><td>Voz sintética e trilha gerada</td><td>A relação com o cliente e com o público</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Uma pergunta para cada etapa</h3>
+      <p>Antes de entregar uma etapa à IA, pergunte: <i>“Se a máquina fizer esta parte, o trabalho continua sendo meu?”</i> A resposta muda de pessoa para pessoa. Um tradutor pode aceitar um rascunho automático e revisar cada frase. Um poeta pode não querer nenhuma linha que não seja dele. As duas escolhas são válidas, desde que sejam escolhas e não descuido.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Uma ilustradora usa IA só antes de desenhar: pede referências históricas, paletas possíveis e perguntas para entender melhor o briefing do cliente. O desenho é todo dela. Ela ganhou tempo na fase de que menos gostava e protegeu justamente a parte que é o seu diferencial.</p>
+      </div>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Os clientes vão perguntar</h4>
+        <p>Na pesquisa TIC Empresas 2025, do Cetic.br, o uso de IA pelas empresas brasileiras passou de 13% para 17% em um ano. Entre as empresas de artes, cultura, esporte e recreação que usam IA, as ferramentas de análise de texto saltaram de 14% para 40%. Quem contrata trabalho criativo vai querer saber se você usa IA e como. Ter essa resposta pronta é parte do ofício.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A IA pode ajudar em todas as etapas, mas não precisa estar em todas.</li>
+          <li>Delegue o que toma tempo e não é o seu diferencial.</li>
+          <li>Decida de propósito o que fica só com você.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>A sua voz em primeiro lugar</h2>
+      <p>Para quem cria, o maior risco da IA não é jurídico. É ficar igual a todo mundo. Os modelos aprenderam com milhões de textos e imagens e tendem ao meio: a frase mais provável, a composição mais comum, a paleta que todo mundo usa. Sem direção, o resultado é competente e genérico.</p>
+      <h3>Como usar sem perder o seu jeito</h3>
+      <ul>
+        <li><b>Comece por você.</b> Escreva o rascunho, faça o esboço, grave a melodia no celular. Depois peça à IA crítica, alternativas pontuais e revisão, não a obra inteira.</li>
+        <li><b>Use como crítico, não como autor.</b> “Aponte os três trechos mais fracos deste roteiro e diga por quê. Não reescreva.” Quem reescreve é você.</li>
+        <li><b>Conheça o seu estilo.</b> Cole trechos seus e peça que ela descreva o que caracteriza a sua escrita: ritmo, vocabulário, temas. A descrição ajuda você a ter consciência das próprias escolhas.</li>
+        <li><b>Peça para fugir do óbvio.</b> “Liste dez ideias de capa e marque as cinco mais batidas.” Comece pelas outras.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Antes e depois</p>
+        <div class="cmp">
+          <div class="weak"><b>Pedido que entrega o trabalho</b>Escreva uma legenda para o meu post sobre o novo single.</div>
+          <div class="strong"><b>Pedido que puxa o seu melhor</b>Sou compositor e lancei uma música sobre a casa da minha avó no interior de Minas. Abaixo, três legendas minhas que tiveram boa resposta. Não escreva a legenda. Faça cinco perguntas que me ajudem a lembrar detalhes da história que valem ser contados.</div>
+        </div>
+      </div>
+      <h3>O teste do nome tampado</h3>
+      <p>Cubra a assinatura. Alguém que conhece o seu trabalho reconheceria que é seu? Se não reconheceria, a IA está mandando mais do que deveria. Volte uma etapa e assuma mais decisões.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>A IA é muito boa para destravar. Quem escreve pode pedir dez começos para uma cena, não gostar de nenhum e, justamente por não gostar, descobrir o próprio. O valor não está no texto da máquina, e sim na reação que ele provoca em você.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Sem direção, a IA entrega o resultado médio.</li>
+          <li>Comece por você; use a IA como crítico e como provocação.</li>
+          <li>Se ninguém reconhece que é seu, assuma mais decisões.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>Quem é o autor quando a IA participa</h2>
+      <p>A Lei de Direitos Autorais (Lei 9.610/1998) protege as criações do espírito, expressas por qualquer meio (art. 7º), e diz que autor é a pessoa física criadora da obra (art. 11). Ela foi escrita antes da IA generativa, e o Brasil ainda não tem uma lei específica sobre o tema.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>O que a lei diz hoje</h4>
+        <ul>
+          <li><b>Protege a obra, não a ideia.</b> Ideias, métodos e conceitos não são protegidos como direito autoral (art. 8º, I).</li>
+          <li><b>Autor é pessoa física.</b> A ferramenta e a empresa que a fornece não são autoras (art. 11).</li>
+          <li><b>Obra alheia depende de autorização.</b> Reproduzir, adaptar, fazer arranjo ou transformar a obra de outra pessoa exige autorização prévia e expressa do autor (art. 29).</li>
+          <li><b>O autor tem direitos morais.</b> Entre eles, ter o nome indicado na obra e se opor a modificações que a prejudiquem (art. 24).</li>
+        </ul>
+        <p>O projeto do marco legal da IA (PL 2.338/2023), aprovado pelo Senado em dezembro de 2024, traz regras sobre direitos autorais no treinamento de modelos. Ele seguia em tramitação na Câmara dos Deputados nas notícias mais recentes que encontramos, de meados de 2026. Enquanto não vira lei, vale o que está acima.</p>
+      </div>
+      <h3>O que isso significa no dia a dia</h3>
+      <ul>
+        <li><b>Quanto mais decisões suas, mais firme a autoria.</b> O que você criou, escolheu, editou e combinou tem a sua marca.</li>
+        <li><b>Resultado de um pedido de uma linha tem proteção incerta.</b> Não venda como obra exclusiva algo que você não saberia defender como seu.</li>
+        <li><b>Guarde o caminho.</b> Rascunhos, versões, arquivos de projeto e histórico de edição mostram o seu trabalho se a autoria for questionada.</li>
+      </ul>
+      <h3>Usar obra de outras pessoas</h3>
+      <p>Pedir uma música de um gênero, como samba ou forró, é uma coisa. Pedir para recriar a melodia de uma canção conhecida, continuar o livro de um autor vivo ou gerar o personagem de outra pessoa é outra: isso é adaptar ou transformar obra alheia, e depende de autorização (art. 29, III). O mesmo cuidado vale para o que você envia à ferramenta. Fotos de outro fotógrafo coladas para “fazer parecido” são obra de outra pessoa.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Antes de entregar a um cliente, leia os termos da ferramenta: eles dizem se o resultado pode ser usado comercialmente e quem fica com os direitos sobre ele. Distribuidoras de música, bancos de imagem e editoras também têm regras próprias sobre conteúdo feito com IA. Confira antes de enviar.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Autor é a pessoa física; a lei protege a obra, não a ideia.</li>
+          <li>Guarde rascunhos e versões: eles mostram a sua autoria.</li>
+          <li>Recriar ou adaptar obra alheia depende de autorização.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>Rosto, voz e pessoas reais</h2>
+      <p>A IA imita rostos e vozes com muita fidelidade. É aqui que estão os riscos mais sérios, para quem cria e para quem é imitado.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Imagem e voz têm dono</h4>
+        <ul>
+          <li>A Constituição assegura a proteção à reprodução da imagem e da voz humanas (art. 5º, XXVIII, “a”).</li>
+          <li>Pelo Código Civil, o uso da imagem de uma pessoa pode ser proibido, com indenização, se atingir a sua honra ou se tiver fins comerciais sem autorização (art. 20). Se a pessoa já morreu, o cônjuge, os pais e os filhos podem pedir essa proteção (art. 20, parágrafo único).</li>
+          <li>É crime fazer montagem em foto, vídeo ou áudio para incluir uma pessoa em cena de nudez ou de sexo (Código Penal, art. 216-B, parágrafo único).</li>
+          <li>Na violência psicológica contra a mulher, a pena aumenta de metade se o crime usar inteligência artificial ou outro recurso que altere a imagem ou o som da vítima (Código Penal, art. 147-B, parágrafo único, incluído pela Lei 15.123/2025).</li>
+          <li>Na propaganda eleitoral, quem usa conteúdo sintético deve informar de modo explícito, destacado e acessível que ele foi fabricado ou manipulado, e com qual tecnologia. O deepfake para prejudicar ou favorecer candidatura é proibido, mesmo com autorização da pessoa retratada (Resolução TSE 23.610/2019, arts. 9º-B e 9º-C).</li>
+        </ul>
+      </div>
+      <h3>Três regras</h3>
+      <ol>
+        <li><b>Rosto e voz de alguém só com autorização por escrito.</b> A autorização diz para que, por quanto tempo e onde a imagem ou a voz serão usadas. Vale para o ator contratado, para o cliente que aparece no vídeo e, com mais razão, para a voz de um cantor conhecido.</li>
+        <li><b>Quem já morreu também é protegido.</b> Em 2023, um comercial em que Maria Rita cantava ao lado de uma recriação digital da mãe, Elis Regina, abriu no Conar um debate sobre avisar o público do uso de IA. O processo foi arquivado, mas a pergunta ficou: o público tem o direito de saber quando a imagem é sintética.</li>
+        <li><b>Nada íntimo, humilhante ou enganoso com pessoa real.</b> Nem como piada, nem como “sátira” mal pensada. Além do dano à pessoa, pode ser crime.</li>
+      </ol>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Clonar a própria voz para narrar os seus vídeos é legítimo e pode economizar horas de gravação. Mesmo assim, guarde as amostras e o acesso à conta como guarda uma senha. Uma voz clonada nas mãos erradas serve para golpe com a sua família, os seus clientes e o seu público.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Imagem e voz de pessoa real: só com autorização por escrito.</li>
+          <li>Montagem íntima e deepfake contra alguém podem ser crime.</li>
+          <li>Proteja o acesso à sua própria voz clonada.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Transparência com o público e com o cliente</h2>
+      <p>Quando avisar que você usou IA? Fora da propaganda eleitoral, não há no Brasil uma norma geral que obrigue a rotular todo conteúdo feito com IA. Mas há regras específicas e um critério simples que resolve quase todos os casos.</p>
+      <h3>O critério</h3>
+      <p><b>Avise quando a informação mudar o que a pessoa acredita ou decide.</b> Imagem realista de pessoa, lugar ou acontecimento; “foto” de produto; voz de alguém; depoimento; cena apresentada como registro. Nesses casos, o aviso é obrigatório pela ética e, muitas vezes, pela lei. Não é preciso avisar que você usou um corretor ortográfico ou que a IA sugeriu cinco títulos e você escolheu um.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Publicidade e influência</h4>
+        <ul>
+          <li>A publicidade precisa ser reconhecida como publicidade (Código de Defesa do Consumidor, art. 36) e não pode induzir o consumidor a erro (art. 37). Isso vale para peça feita à mão ou com IA.</li>
+          <li>Em 2026, o Conar atualizou o seu Guia de Marketing e Publicidade por Influenciadores Digitais. O guia reforça que conteúdo criado, editado ou segmentado com IA segue as mesmas regras éticas da publicidade e que post pago deve ser identificado de forma explícita, com a ferramenta da plataforma ou com termos como #publi e #publicidade, visíveis sem precisar clicar em “mais”.</li>
+          <li>As principais redes sociais pedem rótulo em conteúdo realista gerado ou alterado por IA. Siga a regra de cada plataforma: além de ética, ela decide o alcance do seu post.</li>
+        </ul>
+      </div>
+      <h3>Com o cliente, combine antes</h3>
+      <p>Coloque na proposta ou no contrato:</p>
+      <ul>
+        <li>em quais etapas você usa IA e o que é entregue como trabalho seu;</li>
+        <li>quem fica com os direitos sobre o resultado;</li>
+        <li>se o cliente pode pedir que o projeto dele seja feito sem IA;</li>
+        <li>que material confidencial do cliente, como briefing, lançamento ainda não anunciado ou dados de consumidores, não vai para ferramentas de IA sem autorização.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Uma frase para a sua proposta: <i>“Uso ferramentas de IA para pesquisa e organização. A criação final de textos, imagens e áudios é feita ou revisada por mim. Material confidencial do cliente não é enviado a ferramentas de IA sem autorização por escrito.”</i> Ajuste ao que você realmente faz.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Avise quando a informação mudar o que a pessoa acredita ou decide.</li>
+          <li>Publicidade feita com IA segue as mesmas regras: identificada e sem enganar.</li>
+          <li>Combine com o cliente, por escrito, como você usa IA.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>O seu jeito de trabalhar com IA</h2>
+      <p>Decidir uma vez, com calma, evita decidir mal com prazo apertado. Monte o seu fluxo em quatro passos e escreva a sua política no modelo ao final do curso.</p>
+      <div class="levels">
+        <div class="lv l1"><b>Passo 1 · Mapeie</b><p>Liste as etapas do seu trabalho e marque, em cada uma, se a IA entra, entra com cuidado ou não entra. Use a tabela da aula 1.</p></div>
+        <div class="lv l2"><b>Passo 2 · Escolha as ferramentas</b><p>Leia o que os termos dizem sobre uso comercial do resultado e sobre treinamento com o que você envia. Prefira contas em que dá para desligar o uso dos seus arquivos para treinamento.</p></div>
+        <div class="lv l3"><b>Passo 3 · Documente</b><p>Guarde rascunhos e versões. Anote em cada projeto o que foi feito com IA. Leva um minuto e resolve muita dúvida depois.</p></div>
+        <div class="lv l4"><b>Passo 4 · Comunique</b><p>Coloque a sua política no portfólio, na proposta e no contrato. Cliente que sabe o que esperar confia mais.</p></div>
+      </div>
+      <h3>Sinais de que está funcionando</h3>
+      <ul>
+        <li>Sobra mais tempo para as partes do trabalho de que você gosta.</li>
+        <li>O seu trabalho continua reconhecível.</li>
+        <li>Você sabe explicar, etapa por etapa, como chegou ao resultado.</li>
+      </ul>
+      <h3>Sinais de alerta</h3>
+      <ul>
+        <li>Os seus trabalhos estão ficando parecidos com os de todo mundo.</li>
+        <li>Você entregou algo que não sabe se pode vender.</li>
+        <li>Um cliente descobriu pelo resultado, e não por você, que houve IA no projeto.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>A medida do sucesso não é quanto você usa IA. É quanto tempo sobra para o que só você faz. Se depois de um mês você ganhou horas nas tarefas chatas e o trabalho continua com a sua cara, o método funcionou.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Mapeie, escolha as ferramentas, documente e comunique.</li>
+          <li>Guarde o caminho de cada projeto.</li>
+          <li>Escreva a sua política e mostre a quem contrata você.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- PARA IMPRIMIR -->
+    <section class="lesson" id="politica">
+      <p class="num">Para imprimir e preencher</p>
+      <h2>Minha política de IA na criação</h2>
+      <p class="pol-sub">Nome ou estúdio: ______________________ · Atualizada em ___/___/______</p>
+      <ol class="pol">
+        <li><b>Onde uso IA.</b> ______________________________________________</li>
+        <li><b>Onde não uso.</b> ______________________________________________</li>
+        <li><b>O que entrego como trabalho meu.</b> ______________________________________________</li>
+        <li><b>Ferramentas e contas.</b> ______________________ · Uso dos meus arquivos para treinamento desligado: ( ) sim ( ) não há opção</li>
+        <li><b>O que aviso ao público e ao cliente.</b> ______________________________________________</li>
+      </ol>
+      <p class="check-h">Compromissos</p>
+      <ul class="check">
+        <li>Rosto e voz de pessoa real só com autorização por escrito.</li>
+        <li>Não uso obra de outra pessoa como material de trabalho sem ter direito de usar.</li>
+        <li>Material confidencial de cliente não vai para ferramenta de IA sem autorização.</li>
+        <li>Imagem realista, voz sintética e conteúdo alterado são avisados ao público.</li>
+        <li>Publicidade sempre identificada (#publi, #publicidade ou a ferramenta da plataforma).</li>
+        <li>Guardo rascunhos e versões de cada projeto.</li>
+        <li>Nada íntimo, humilhante ou enganoso com pessoa real.</li>
+      </ul>
+      <button class="btn no-print" type="button" id="print-btn">Imprimir a política</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas e dados citados</h2>
+      <ul class="sources">
+        <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm" target="_blank" rel="noopener">Constituição Federal</a>, art. 5º, XXVIII, “a”</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l9610.htm" target="_blank" rel="noopener">Lei 9.610/1998 (Direitos Autorais)</a>: arts. 7º, 8º, 11, 24 e 29</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm" target="_blank" rel="noopener">Lei 10.406/2002 (Código Civil)</a>, art. 20</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm" target="_blank" rel="noopener">Código Penal</a>: art. 147-B, parágrafo único (incluído pela Lei 15.123/2025), e art. 216-B, parágrafo único</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener">Lei 8.078/1990 (Código de Defesa do Consumidor)</a>: arts. 36 e 37</li>
+        <li><a href="https://www.tse.jus.br/legislacao/compilada/res/2019/resolucao-no-23-610-de-18-de-dezembro-de-2019" target="_blank" rel="noopener">Resolução TSE 23.610/2019</a>, arts. 9º-B e 9º-C, com as alterações das Resoluções 23.732/2024 e 23.755/2026</li>
+        <li>Conar, Guia de Marketing e Publicidade por Influenciadores Digitais, edição atualizada em 2026</li>
+        <li><a href="https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" target="_blank" rel="noopener">PL 2.338/2023 (marco legal da IA)</a>, situação no Congresso</li>
+        <li><a href="https://cetic.br/pt/noticia/uso-de-inteligencia-artificial-por-empresas-brasileiras-avanca-e-atinge-17-aponta-pesquisa-do-cetic-br/" target="_blank" rel="noopener">Cetic.br, TIC Empresas 2025</a> (divulgada em junho de 2026)</li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. As normas mudam: confira sempre a redação atual na fonte oficial.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui a orientação de um advogado nem a análise do caso concreto. A HermesIA não é escritório de advocacia e não presta consultoria jurídica. Marcas e nomes citados pertencem a seus titulares.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-criativo-v1', TOTAL=6, CURSO='ia-trabalho-criativo', done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:CURSO,aula:+i});
+    });
+  });
+  render();
+
+  var Q=[{"q": "Antes de usar IA num projeto criativo, qual é a primeira decisão?", "o": ["Em quais etapas ela entra e quais você guarda para você.", "Qual ferramenta é a mais famosa.", "Usar IA em todas as etapas para ganhar tempo."], "c": 0, "e": "A IA pode ajudar em todas as etapas, mas não precisa estar em todas (aula 1)."}, {"q": "Qual destes usos ajuda a preservar o seu estilo?", "o": ["Pedir a obra pronta a partir de uma frase.", "Pedir crítica e perguntas sobre um rascunho seu.", "Copiar o resultado sem editar."], "c": 1, "e": "Comece por você e use a IA como crítico e provocação, não como autor (aula 2)."}, {"q": "Pela Lei 9.610/1998, quem é o autor de uma obra?", "o": ["A empresa dona da ferramenta de IA.", "Quem pagou a assinatura da ferramenta.", "A pessoa física criadora da obra."], "c": 2, "e": "Lei de Direitos Autorais, art. 11 (aula 3)."}, {"q": "Por que guardar rascunhos, versões e arquivos de cada projeto?", "o": ["Para mostrar o seu trabalho criativo se a autoria for questionada.", "Porque a lei obriga a registrar todo rascunho.", "Para usar como material de treinamento da IA."], "c": 0, "e": "O caminho do projeto mostra as decisões que são suas (aula 3)."}, {"q": "Um cliente pede um jingle que recria, com IA, a melodia de uma música famosa. Sem autorização do autor, isso:", "o": ["É permitido, porque foi a IA que fez.", "Depende de autorização prévia e expressa do autor.", "É permitido se a música tiver mais de dez anos."], "c": 1, "e": "Adaptar ou transformar obra alheia exige autorização (Lei 9.610/1998, art. 29; aula 3)."}, {"q": "Para usar a voz de uma pessoa real numa peça comercial feita com IA, você precisa de:", "o": ["Só citar o nome dela na legenda.", "Nada, se a voz foi gerada por máquina.", "Autorização por escrito, dizendo uso, prazo e onde."], "c": 2, "e": "Constituição, art. 5º, XXVIII, “a”, e Código Civil, art. 20 (aula 4)."}, {"q": "Pelas regras do TSE, propaganda eleitoral com conteúdo sintético deve:", "o": ["Informar de modo explícito, destacado e acessível que foi fabricada ou manipulada.", "Ser aprovada antes pelo Conar.", "Ser publicada só depois da eleição."], "c": 0, "e": "Resolução TSE 23.610/2019, art. 9º-B (aula 4)."}, {"q": "Quando avisar o público de que você usou IA?", "o": ["Sempre que usou um corretor ortográfico.", "Quando a informação mudar o que a pessoa acredita ou decide, como imagem realista, voz ou depoimento.", "Nunca, porque não há norma geral."], "c": 1, "e": "Esse é o critério que resolve quase todos os casos (aula 5)."}];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: agora preencha a sua política de IA logo abaixo e coloque no portfólio.':'Vale rever as aulas indicadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:CURSO,acertos:right});
+  }
+
+  document.getElementById('print-btn').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+    if(window.hmTrack) hmTrack('curso_documento_impresso',{curso:CURSO});
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "IA no trabalho criativo", "description": "Curso grátis em português para profissionais criativos: uso de IA sem perder a própria voz, direito autoral, imagem e voz de pessoas reais e transparência com público e cliente, com as normas brasileiras e uma política de uso de IA para imprimir.", "inLanguage": "pt-BR", "isAccessibleForFree": true, "url": "https://hermesia.ia.br/academia/ia-no-trabalho-criativo/", "provider": {"@type": "Organization", "name": "HermesIA", "sameAs": "https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>
