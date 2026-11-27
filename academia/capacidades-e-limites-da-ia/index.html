@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capacidades e limites da IA — curso grátis em português | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro: como a IA escreve, o que ela sabe, onde erra e como usar no trabalho com segurança, dentro da LGPD e do sigilo profissional. 6 aulas e quiz.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/capacidades-e-limites-da-ia/">
+<meta property="og:title" content="Capacidades e limites da IA — curso grátis da Academia HermesIA">
+<meta property="og:description" content="6 aulas em português, adaptadas às leis do Brasil: quando confiar na IA, quando conferir e o que nunca colar numa conversa.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/capacidades-e-limites-da-ia/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:1fr;gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#checklist){display:none!important}
+    html.print-check #checklist{border:0;margin:0;padding:0}
+    html.print-check #checklist .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Curso 1</p>
+    <h1>Capacidades e limites da IA</h1>
+    <p class="sub">Entenda como a IA escreve, o que ela sabe, onde erra e como usar no trabalho com segurança, dentro das leis do Brasil. Feito para quem nunca estudou tecnologia.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>6 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 45 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português e adaptado às leis do Brasil. Vale para qualquer ferramenta: ChatGPT, Claude, Gemini, Copilot e outras.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 6 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>A IA escreve prevendo a próxima palavra</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>O que ela sabe e até quando</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>A memória de trabalho</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>Como direcionar a IA</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Onde ela erra e como conferir</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>Responsabilidade e leis do Brasil</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#checklist"><span class="ck"><span>✎</span></span>Checklist para imprimir</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para profissionais que já usam, ou querem usar, IA em textos, documentos e atendimento: advogados, contadores, profissionais de saúde, professores, consultores e autônomos. Ao terminar, você vai saber quando confiar na resposta, quando conferir e o que deixar fora da conversa.</p>
+      <p style="margin-top:12px;"><b>Por que começar por aqui:</b> segundo pesquisa Datafolha de 2025, 93% dos brasileiros já usam alguma ferramenta com IA, mas só 54% dizem entender o que ela é. Usar sem entender é o caminho mais curto para o erro que vai assinado com o seu nome.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>A IA escreve prevendo a próxima palavra</h2>
+      <p>Quando você faz uma pergunta, a IA não abre um arquivo com a resposta certa. Ela escreve a resposta um pedacinho por vez. A cada passo, calcula qual trecho de texto é o mais provável para vir em seguida, com base nos padrões que aprendeu lendo uma quantidade enorme de textos. Esses pedacinhos se chamam <b>tokens</b>: podem ser uma palavra inteira, parte de uma palavra ou um sinal de pontuação.</p>
+      <p>Esse mecanismo explica quase tudo o que a IA faz bem e quase tudo o que ela faz mal. Ela é excelente em produzir texto fluente, organizado e no tom certo, porque foi exatamente isso que aprendeu: como os textos costumam ser. Só que texto provável e texto verdadeiro são coisas diferentes. Quando a pergunta trata de algo que aparece muito nos textos de treinamento, o provável quase sempre coincide com o verdadeiro. Quando trata de algo raro, específico ou recente, a IA pode montar uma resposta com cara de certa e conteúdo inventado.</p>
+      <p>Por isso, a segurança do texto não diz nada sobre a qualidade da informação. A IA escreve com o mesmo tom confiante quando acerta e quando erra.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Peça a uma IA o artigo do Código de Defesa do Consumidor sobre vício do produto. Ela provavelmente vai acertar (art. 18), porque esse artigo aparece em milhares de textos. Agora peça o número de uma resolução pouco conhecida do conselho da sua profissão. A chance de vir um número plausível, porém errado, é bem maior. E o tom da resposta será o mesmo nos dois casos.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Por que os tokens importam</p>
+        <p>As ferramentas medem limites e custos em tokens, não em palavras. Em português, palavras longas como “inconstitucionalidade” costumam virar vários tokens. Por isso o mesmo conteúdo em português tende a ocupar mais espaço do que em inglês, o que pesa em documentos longos.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A IA gera texto provável, um pedaço por vez.</li>
+          <li>Fluência e segurança no tom não provam que a informação está certa.</li>
+          <li>Quanto mais raro, específico ou recente o assunto, maior o risco de invenção.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>O que ela sabe e até quando</h2>
+      <p>Tudo o que a IA sabe de memória veio dos textos usados no treinamento, e esses textos param numa data, chamada <b>data de corte</b>. O que aconteceu depois ela não conhece, a menos que você entregue a informação na conversa ou que a ferramenta faça uma busca na internet e mostre as fontes.</p>
+      <p>No Brasil isso pesa, porque as normas mudam rápido. A Reforma Tributária é um bom exemplo: a Emenda Constitucional 132 é de dezembro de 2023, e a Lei Complementar 214, que instituiu o IBS e a CBS, é de janeiro de 2025. Um modelo treinado antes disso vai responder sobre tributos com as regras antigas, e com toda a segurança.</p>
+      <p>O conhecimento também é desigual. A IA leu muito mais sobre temas dos Estados Unidos do que do Brasil, e muito mais sobre leis federais conhecidas do que sobre normas municipais, portarias ou resoluções de conselhos regionais. Quanto mais local e específico o assunto, menos ela sabe e mais preenche com o que parece provável.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <h4>O jeito seguro de trabalhar com lei atual</h4>
+        <p>Em vez de perguntar o que diz a lei, entregue a lei. Copie o texto oficial e peça, por exemplo: <i>“Com base apenas no texto abaixo, explique em linguagem simples o que muda para um MEI. Se a resposta não estiver no texto, diga que não está.”</i> Assim a IA trabalha sobre a fonte certa, e você consegue conferir cada frase.</p>
+      </div>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Onde buscar a fonte oficial</h4>
+        <ul>
+          <li><b>Leis federais:</b> site do Planalto (planalto.gov.br), na versão compilada, que já traz as alterações.</li>
+          <li><b>Atos publicados:</b> Diário Oficial da União, no site da Imprensa Nacional (in.gov.br).</li>
+          <li><b>Jurisprudência:</b> o site do próprio tribunal e o Banco Nacional de Precedentes, do CNJ.</li>
+          <li><b>Normas da sua profissão:</b> o site do conselho federal e do conselho regional.</li>
+        </ul>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A IA não conhece o que aconteceu depois da data de corte.</li>
+          <li>Ela sabe menos sobre o que é local, recente ou muito específico.</li>
+          <li>Para trabalhar com norma atual, cole o texto oficial e peça que ela use só ele.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>A memória de trabalho: o que cabe numa conversa</h2>
+      <p>Durante uma conversa, a IA trabalha com tudo o que está nela: as suas mensagens, os arquivos anexados e as próprias respostas. Esse conjunto se chama <b>janela de contexto</b>. Pense numa mesa de trabalho: o que está sobre a mesa ela consegue usar; o que ficou fora, ela não vê.</p>
+      <p>A mesa é grande, mas tem limite. Em conversas muito longas, ou com muitos documentos, as primeiras partes podem sair da mesa ou receber menos atenção. Um sintoma comum: lá pela vigésima mensagem, a IA esquece uma instrução que você deu no começo.</p>
+      <p>Outro ponto importante: a cada nova mensagem, a ferramenta envia de novo a conversa inteira para ser processada. Tudo o que você colou no início continua viajando até o fim da conversa. Isso faz diferença para o sigilo, como você verá na aula 6.</p>
+      <p>Em regra, uma conversa nova começa com a mesa vazia. Algumas ferramentas oferecem memória entre conversas; vale saber se a sua está com esse recurso ligado e o que ele guarda.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <h4>Quatro hábitos que melhoram qualquer resultado</h4>
+        <ol>
+          <li><b>Uma conversa por tarefa.</b> Para quem atende clientes, uma conversa por caso.</li>
+          <li><b>Resuma e recomece.</b> Quando a conversa ficar longa, peça um resumo do que foi decidido e abra outra a partir dele.</li>
+          <li><b>Peça a origem.</b> Em documentos longos, peça que a IA indique a cláusula, a página ou o trecho de onde tirou cada informação. Conferir fica fácil.</li>
+          <li><b>Reforce o essencial.</b> Em materiais extensos, coloque a instrução mais importante no início e repita no fim.</li>
+        </ol>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A IA usa o que está na conversa atual: a janela de contexto.</li>
+          <li>Conversas longas perdem detalhes do começo.</li>
+          <li>Tudo o que foi colado é reenviado a cada mensagem.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>Como direcionar a IA para o resultado que você quer</h2>
+      <p>A IA segue instruções muito bem, desde que elas existam. Um pedido vago produz um texto genérico; um pedido com contexto produz um texto útil. Você não precisa aprender comandos especiais: escreva como escreveria para um assistente competente que acabou de chegar e ainda não conhece o seu trabalho.</p>
+      <p>Um bom pedido costuma ter cinco partes:</p>
+      <ul>
+        <li><b>Contexto:</b> quem você é e para quem é o texto.</li>
+        <li><b>Tarefa:</b> o que exatamente deve ser feito.</li>
+        <li><b>Material:</b> os dados, documentos ou rascunhos que ela deve usar.</li>
+        <li><b>Formato:</b> tamanho, estrutura e tom.</li>
+        <li><b>Critérios:</b> o que não pode faltar e o que deve ser evitado.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Antes e depois</p>
+        <div class="cmp">
+          <div class="weak"><b>Pedido vago</b>Escreva um e-mail cobrando um cliente.</div>
+          <div class="strong"><b>Pedido com contexto</b>Sou contador e atendo pequenas empresas. Escreva um e-mail curto e cordial para um cliente, que vou chamar de Cliente A, com dois meses de honorários em atraso. Objetivo: receber sem desgastar a relação. Ofereça parcelar em duas vezes. Tom respeitoso e direto, sem ameaças. No máximo 120 palavras, terminando com uma pergunta que facilite a resposta.</div>
+        </div>
+        <p style="margin-top:12px;">Repare que o pedido com contexto não traz o nome real do cliente. Dá para ter um ótimo resultado sem expor ninguém.</p>
+      </div>
+      <h3>Três técnicas que funcionam em qualquer ferramenta</h3>
+      <ul>
+        <li><b>Mostre um exemplo.</b> Cole um texto seu de que você gosta e peça que a IA siga o mesmo estilo.</li>
+        <li><b>Peça perguntas antes da resposta.</b> <i>“Antes de escrever, faça as perguntas de que precisar para fazer um bom trabalho.”</i></li>
+        <li><b>Ajuste em vez de recomeçar.</b> <i>“Está bom, mas encurte o segundo parágrafo e deixe o tom mais formal.”</i></li>
+      </ul>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Pedido com contexto, tarefa, material, formato e critérios rende muito mais.</li>
+          <li>Exemplos do seu próprio texto ensinam o estilo que você quer.</li>
+          <li>Refinar a resposta costuma ser mais rápido do que começar do zero.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Onde ela erra e como conferir</h2>
+      <p>Depois das aulas 1 e 2, os erros da IA ficam previsíveis. Os mais comuns no trabalho são estes:</p>
+      <ul>
+        <li><b>Citações inventadas:</b> artigos, súmulas, acórdãos, livros e autores que parecem reais e não existem, ou existem com outro conteúdo.</li>
+        <li><b>Números e contas:</b> cálculos longos, prazos, percentuais e somas podem sair errados, mesmo com uma explicação convincente.</li>
+        <li><b>Informação desatualizada:</b> a norma mudou e ela não sabe.</li>
+        <li><b>Concordância fácil:</b> se a pergunta parte de uma premissa errada, a IA tende a seguir a premissa em vez de corrigi-la.</li>
+        <li><b>Confiança uniforme:</b> o mesmo tom seguro para o certo e para o errado.</li>
+      </ul>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Isso já chegou aos tribunais</h4>
+        <p>Tribunais brasileiros, como o TSE, o TJSC, o TJSP, o TJPR e Tribunais Regionais do Trabalho, já aplicaram multa por litigância de má-fé em processos que citavam jurisprudência inexistente, gerada por IA. O Código de Processo Civil exige expor os fatos em juízo conforme a verdade (art. 77, I) e considera litigância de má-fé alterar a verdade dos fatos (art. 80, II). As decisões repetem a mesma ideia: quem assina tem o dever de conferir.</p>
+        <p>A lógica vale fora do Direito. O laudo, o balanço, o prontuário e o memorial respondem em nome de quem os assina, não da ferramenta.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <h4>Conferência em quatro passos</h4>
+        <ol>
+          <li>Toda citação vai para a fonte oficial antes de entrar no texto.</li>
+          <li>Todo número é recalculado, de preferência numa planilha.</li>
+          <li>Todo fato que pode ter mudado é conferido numa fonte com data.</li>
+          <li>Peça à própria IA: <i>“Aponte os trechos desta resposta em que você pode ter errado ou inventado algo.”</i> Isso ajuda a achar pontos fracos, mas não substitui os passos 1 a 3.</li>
+        </ol>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Citações, números e fatos recentes são os pontos de maior risco.</li>
+          <li>No Brasil, jurisprudência inventada por IA já gerou multa por má-fé.</li>
+          <li>Quem assina responde: conferir faz parte do trabalho.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>Use a IA com responsabilidade, dentro das leis do Brasil</h2>
+      <p>Quando você cola um texto numa ferramenta de IA, ele sai do seu computador e vai para os servidores de uma empresa, muitas vezes fora do Brasil. Se esse texto traz dados de outras pessoas, entram em cena a LGPD e, em muitas profissões, o dever de sigilo.</p>
+      <h3>O que a LGPD pede de você</h3>
+      <ul>
+        <li><b>Dado pessoal</b> é qualquer informação que identifique uma pessoa. <b>Dado sensível</b> é o que trata de saúde, vida sexual, origem racial ou étnica, convicção religiosa, opinião política, filiação sindical, dado genético ou biométrico (Lei 13.709/2018, art. 5º, II), e tem regras mais rígidas (art. 11).</li>
+        <li><b>Use só o necessário</b> para a finalidade, pelo princípio da necessidade (art. 6º, III). Se a tarefa funciona sem o nome do cliente, o nome fica de fora.</li>
+        <li><b>Enviar dados para outro país</b> é transferência internacional, com regras próprias (art. 33).</li>
+        <li><b>Quem trata dados deve protegê-los</b> com medidas de segurança (art. 46).</li>
+      </ul>
+      <h3>O dever de sigilo profissional</h3>
+      <p>Várias profissões têm dever de sigilo com consequência disciplinar. O Estatuto da Advocacia trata a violação de sigilo profissional como infração (Lei 8.906/1994, art. 34, VII). O Código de Ética Médica proíbe revelar fato conhecido no exercício da profissão, salvo as exceções que prevê (art. 73). E o Código Penal pune quem revela, sem justa causa, segredo conhecido em razão da profissão, quando a revelação pode causar dano (art. 154). Confira também o código de ética do seu conselho.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>A OAB já orientou o uso de IA</h4>
+        <p>Em novembro de 2024, o Conselho Federal da OAB aprovou recomendações para o uso de IA generativa na prática jurídica. Elas ligam o uso dessas ferramentas ao Estatuto da Advocacia, ao Código de Ética e Disciplina e à LGPD, e tratam de confidencialidade, prática ética e comunicação ao cliente sobre o uso de IA.</p>
+        <p>O uso já é a regra; as regras internas ainda são exceção. Pesquisa da OAB-SP com parceiros, de 2026, mostra que três em cada quatro profissionais do Direito usam IA no trabalho, e levantamentos do setor apontam que só cerca de 11% das bancas têm diretrizes escritas para esse uso. O checklist no fim deste curso é um bom ponto de partida para criar as suas.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <h4>A régua dos quatro níveis</h4>
+        <ul>
+          <li><b>Sobe como está:</b> texto sem dado de ninguém, como modelos, teses e pesquisas.</li>
+          <li><b>Sobe descaracterizado:</b> material de cliente com nomes, documentos e detalhes trocados.</li>
+          <li><b>Só em ambiente com contrato:</b> o que não dá para descaracterizar, e apenas em conta profissional com termos de proteção de dados.</li>
+          <li><b>Não sobe nunca:</b> o que identificaria o cliente mesmo sem o nome dele.</li>
+        </ul>
+        <h4 style="margin-top:16px;">A técnica do apelido</h4>
+        <p>Troque nomes por apelidos (Cliente A, Empresa B), tire CPF, endereço e números de processo, e mantenha só o que a tarefa precisa. A qualidade da resposta continua a mesma.</p>
+        <h4 style="margin-top:16px;">Três ajustes de configuração</h4>
+        <p>Se a ferramenta permitir, desligue o uso das suas conversas para treinamento, veja por quanto tempo o histórico fica guardado e, para trabalho, prefira uma conta profissional.</p>
+      </div>
+      <p>Para ir mais fundo, o guia gratuito <a href="/sigilo/">Use IA no trabalho e mantenha o segredo do seu cliente</a> traz a régua completa, exemplos de antes e depois e um parágrafo pronto para responder ao cliente.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Texto colado numa IA sai do seu controle e pode ir para fora do país.</li>
+          <li>LGPD: só o necessário, cuidado redobrado com dado sensível.</li>
+          <li>Classifique antes de colar e descaracterize o que identifica alguém.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section class="lesson" id="checklist">
+      <p class="num">Para imprimir</p>
+      <h2>Checklist de uso da IA no trabalho</h2>
+      <p class="check-h">Antes de pedir</p>
+      <ul class="check">
+        <li>Classifiquei o material na régua dos quatro níveis.</li>
+        <li>Troquei nomes, CPF, endereços e números de processo por apelidos.</li>
+        <li>Dei contexto, tarefa, material, formato e critérios.</li>
+        <li>Colei o texto oficial quando a resposta depende de norma atual.</li>
+      </ul>
+      <p class="check-h">Antes de usar a resposta</p>
+      <ul class="check">
+        <li>Conferi cada citação na fonte oficial.</li>
+        <li>Recalculei os números e os prazos.</li>
+        <li>Li o texto inteiro como se eu mesmo tivesse escrito.</li>
+        <li>Assumo a autoria e a responsabilidade pelo que vou assinar.</li>
+      </ul>
+      <button class="btn no-print" type="button" id="print-check">Imprimir o checklist</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas e decisões citadas</h2>
+      <ul class="sources">
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener">Lei 13.709/2018 (LGPD)</a></li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8906.htm" target="_blank" rel="noopener">Lei 8.906/1994 (Estatuto da Advocacia e da OAB)</a></li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm" target="_blank" rel="noopener">Lei 13.105/2015 (Código de Processo Civil)</a></li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm" target="_blank" rel="noopener">Decreto-Lei 2.848/1940 (Código Penal)</a></li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener">Lei 8.078/1990 (Código de Defesa do Consumidor)</a></li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm" target="_blank" rel="noopener">Emenda Constitucional 132/2023 (Reforma Tributária)</a></li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm" target="_blank" rel="noopener">Lei Complementar 214/2025 (IBS e CBS)</a></li>
+        <li>Código de Ética Médica (Resolução CFM 2.217/2018), art. 73</li>
+        <li><a href="https://www.oab.org.br/noticia/62711/confira-versao-final-da-recomendacao-do-cfoab-sobre-o-uso-de-ia-na-pratica-juridica" target="_blank" rel="noopener">Recomendação do Conselho Federal da OAB sobre IA generativa (nov/2024)</a></li>
+        <li><a href="https://www.tjsc.jus.br/web/imprensa/-/tjsc-multa-autor-de-recurso-por-jurisprudencia-falsa-gerada-por-ia" target="_blank" rel="noopener">TJSC multa autor de recurso por jurisprudência falsa gerada por IA</a></li>
+        <li><a href="https://www.cnnbrasil.com.br/tecnologia/ia-ja-alcanca-93-dos-brasileiros-mas-so-54-dizem-entender-o-termo/" target="_blank" rel="noopener">Datafolha e Observatório Fundação Itaú (2025): IA alcança 93% dos brasileiros, 54% entendem o termo</a></li>
+        <li><a href="https://www.oabsp.org.br/jornaldaadvocacia/2026/03/26/tres-em-cada-quatro-advogados-usam-inteligencia-artificial-no-trabalho" target="_blank" rel="noopener">OAB-SP (2026): três em cada quatro advogados usam IA no trabalho</a></li>
+        <li><a href="https://analise.com/noticias/enquanto-quase-80-dos-advogados-utilizam-ia-apenas-11-das-bancas-tem-diretrizes-sobre-esse-uso" target="_blank" rel="noopener">Análise: quase 80% dos advogados usam IA, 11% das bancas têm diretrizes</a></li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. Normas e decisões conferidas em 27 de novembro de 2026.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui a orientação do seu conselho profissional nem a análise do caso concreto. A HermesIA não é escritório de advocacia e não presta consultoria jurídica. ChatGPT, Claude, Gemini e Copilot são marcas de seus respectivos titulares, citadas só como exemplo.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-capacidades-v1', TOTAL=6, done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:'capacidades-e-limites',aula:+i});
+    });
+  });
+  render();
+
+  var Q=[
+    {q:'A IA respondeu com um texto seguro e bem escrito. Isso indica que:',o:['A informação foi verificada antes de ser escrita.','O texto é provável, o que não garante que seja verdadeiro.','Ela consultou a legislação atualizada.'],c:1,e:'A IA escreve o trecho mais provável, com o mesmo tom quando acerta e quando erra (aula 1).'},
+    {q:'Você precisa trabalhar com uma lei publicada no ano passado. O caminho mais seguro é:',o:['Perguntar se a IA conhece a lei e confiar se ela disser que sim.','Colar o texto oficial na conversa e pedir que a IA use apenas esse texto.','Pedir que a IA cite o número da lei para comprovar que a conhece.'],c:1,e:'O que veio depois da data de corte a IA não conhece. Entregue a fonte oficial (aula 2).'},
+    {q:'Numa conversa muito longa, com vários documentos, a IA começou a esquecer instruções. O melhor a fazer é:',o:['Pedir um resumo do que foi decidido e abrir uma nova conversa a partir dele.','Continuar na mesma conversa e repetir tudo a cada mensagem.','Trocar de ferramenta.'],c:0,e:'A janela de contexto tem limite. Resumir e recomeçar mantém o essencial sobre a mesa (aula 3).'},
+    {q:'Qual pedido tende a dar o melhor resultado?',o:['“Faça uma notificação.”','“Seja criativo e capriche.”','Um pedido com contexto, tarefa, material, formato e critérios.'],c:2,e:'Contexto e critérios transformam um texto genérico em um texto útil (aula 4).'},
+    {q:'A IA citou um acórdão com número, relator e data. Antes de usar, você deve:',o:['Confiar, porque os dados são detalhados.','Conferir na fonte oficial do tribunal.','Perguntar à IA se o acórdão existe.'],c:1,e:'Detalhe não é prova. Toda citação vai para a fonte oficial (aula 5).'},
+    {q:'No Brasil, petições com jurisprudência inventada por IA:',o:['Já geraram multa por litigância de má-fé em vários tribunais.','Nunca foram questionadas pelos tribunais.','São aceitas quando o advogado informa que usou IA.'],c:0,e:'TSE, TJSC, TJSP, TJPR e TRTs já aplicaram multa nesses casos. Quem assina deve conferir (aula 5).'},
+    {q:'Pela LGPD, uma informação sobre a saúde de um cliente é:',o:['Dado público.','Dado pessoal comum.','Dado pessoal sensível, com regras mais rígidas.'],c:2,e:'Saúde está no rol de dados sensíveis do art. 5º, II, da LGPD (aula 6).'},
+    {q:'Antes de colar material de cliente numa ferramenta de IA, o primeiro passo é:',o:['Classificar o material e descaracterizar o que identifica a pessoa.','Colar tudo, porque a ferramenta é segura.','Pedir autorização à ferramenta.'],c:0,e:'A régua dos quatro níveis e a técnica do apelido vêm antes de qualquer pedido (aula 6).'}
+  ];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: você já sabe quando confiar e quando conferir.':'Vale rever as aulas marcadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:'capacidades-e-limites',acertos:right});
+  }
+
+  document.getElementById('print-check').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Capacidades e limites da IA","description":"Curso grátis em português: como a IA escreve, o que ela sabe, onde erra e como usar no trabalho com segurança, dentro da LGPD e do sigilo profissional.","inLanguage":"pt-BR","isAccessibleForFree":true,"url":"https://hermesia.ia.br/academia/capacidades-e-limites-da-ia/","provider":{"@type":"Organization","name":"HermesIA","sameAs":"https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>
