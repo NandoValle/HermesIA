@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA na advocacia — curso grátis | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro para advogados: pesquisa sem jurisprudência inventada, minutas de peças, análise de contratos, sigilo e as regras da OAB, do CPC e do CNJ. 6 aulas, quiz e checklist antes de protocolar.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/ia-na-advocacia/">
+<meta property="og:title" content="IA na advocacia — curso grátis da Academia HermesIA">
+<meta property="og:description" content="6 aulas em português: o que delegar à IA no escritório, pesquisa com conferência, peças, contratos, sigilo e a IA nos tribunais. Com checklist antes de protocolar.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/ia-na-advocacia/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+
+  /* Tabela por profissão */
+  .tbl-wrap{overflow-x:auto;margin:8px 0 18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;line-height:1.55}
+  .tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:13px}
+  .tbl td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;color:#2a3042}
+  .tbl tr:nth-child(even) td{background:#fbf8ee}
+  /* Régua */
+  .levels{display:grid;gap:10px;margin:8px 0 20px}
+  .lv{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:#fff;border-left-width:1px}
+  .lv b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .lv p{font-size:15px!important;margin:0!important;line-height:1.65!important}
+  .lv.l1{background:#f1f8f2;border-color:#cfe3d3}
+  .lv.l2{background:#f3f6fb;border-color:#d5ddeb}
+  .lv.l3{background:#fbf6e8;border-color:#eadcb3}
+  .lv.l4{background:#fbf0ee;border-color:#efd2cb}
+  /* Política */
+  .pol-sub{font-size:15px!important;color:var(--muted)!important}
+  .pol{margin:0 0 18px 22px}
+  .pol li{font-size:15.5px;line-height:1.85;margin-bottom:10px}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#checklist){display:none!important}
+    html.print-check #checklist{border:0;margin:0;padding:0}
+    html.print-check #checklist .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Direito</p>
+    <h1>IA na advocacia</h1>
+    <p class="sub">Do atendimento ao protocolo: o que delegar à IA, como pesquisar sem cair em jurisprudência inventada, como chegar a uma boa minuta e o que o Estatuto, o Código de Ética, o CPC e a LGPD exigem de quem assina.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>6 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 55 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português e com as normas do Brasil. Antes deste, vale fazer <a href="/academia/capacidades-e-limites-da-ia/" style="color:var(--gold-l)">Capacidades e limites da IA</a> e <a href="/academia/sigilo-lgpd-e-etica-com-ia/" style="color:var(--gold-l)">Sigilo, LGPD e ética profissional com IA</a>.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 6 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>O que delegar e o que é seu</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>Pesquisa sem invenção</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>Do relato à minuta</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>Contratos e documentos longos</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Sigilo e cliente</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>A IA nos tribunais e a rotina</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#checklist"><span class="ck"><span>✎</span></span>Checklist antes de protocolar</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para advogados autônomos, sócios e associados de escritórios pequenos e médios, departamentos jurídicos e estagiários. Não trata de uma ferramenta específica: o método vale para qualquer IA de texto, de uso geral ou jurídica. Ao terminar, você terá um fluxo de trabalho para pesquisa, peças e contratos, e uma rotina de conferência para aplicar antes de qualquer protocolo.</p>
+      <p style="margin-top:12px;"><b>Por que isso importa agora:</b> três em cada quatro profissionais do Direito já usam IA no trabalho (OAB-SP, 2026), e tribunais de todo o país já multaram partes por petições com jurisprudência que não existe. A ferramenta é a mesma nos dois grupos. O que muda é o método.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>O que delegar à IA e o que é só seu</h2>
+      <p>A IA não substitui o advogado, e não é por gentileza: é pela lei e pela natureza do trabalho. A postulação em juízo e a consultoria, a assessoria e a direção jurídicas são atividades privativas da advocacia (Lei 8.906/1994, art. 1º), e o advogado responde pelos atos que praticar com dolo ou culpa no exercício profissional (art. 32). Quem assina é você, e a responsabilidade vai junto com a assinatura.</p>
+      <p>Dentro desse limite, há muito trabalho que a IA faz bem e rápido. Pense nela como um estagiário que escreve muito bem, leu de tudo, nunca viu um processo de verdade e às vezes inventa.</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Delegue com revisão</th><th>Delegue só com conferência na fonte</th><th>Não delegue</th></tr></thead>
+          <tbody>
+            <tr><td>Organizar o relato do cliente em ordem cronológica</td><td>Pesquisa de legislação e jurisprudência</td><td>A escolha da tese e da estratégia</td></tr>
+            <tr><td>Primeira versão de e-mails, notificações e relatórios</td><td>Resumo de decisões e de autos</td><td>O conselho ao cliente sobre riscos</td></tr>
+            <tr><td>Revisão de clareza, gramática e estrutura</td><td>Contagem de prazos e cálculos</td><td>A decisão de protocolar</td></tr>
+            <tr><td>Lista de perguntas para a reunião ou a audiência</td><td>Análise de cláusulas de contrato</td><td>A conferência final do que será assinado</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Onde o ganho é maior</h3>
+      <p>O maior ganho não está em pedir a peça inteira. Está nas etapas em volta dela: transformar um áudio confuso do cliente numa linha do tempo, extrair de um contrato de quarenta páginas as cláusulas que interessam, achar os pontos fracos da sua própria argumentação, reescrever um parágrafo truncado. São tarefas em que você confere o resultado em minutos, porque tem o material original ao lado.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Um bom primeiro uso: cole o seu próprio rascunho de petição, sem os dados das partes, e peça: “Leia como o advogado da parte contrária. Liste os três argumentos mais fracos e o que você alegaria contra cada um.” Você não depende de nenhuma citação da IA e sai com a peça mais forte.</p>
+      </div>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>A OAB já tratou do tema</h4>
+        <p>Em novembro de 2024, o Conselho Federal da OAB aprovou recomendações para o uso de IA generativa na prática jurídica. Elas se organizam em quatro frentes: respeito à legislação aplicável, confidencialidade e privacidade, prática jurídica ética e comunicação ao cliente sobre o uso de IA. Este curso segue essa ordem de preocupações.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Postular e aconselhar são atos privativos; quem assina responde.</li>
+          <li>Delegue organização, rascunho e revisão; estratégia é sua.</li>
+          <li>O maior ganho está nas etapas em volta da peça.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>Pesquisa sem jurisprudência inventada</h2>
+      <p>O erro mais conhecido da IA no Direito é a citação que não existe: número de processo, relator, data e ementa montados com aparência perfeita. Isso acontece porque a IA escreve o texto mais provável, e uma ementa plausível é fácil de produzir. O detalhe não é prova de existência.</p>
+      <h3>Um método em cinco passos</h3>
+      <ol>
+        <li><b>Use a IA para mapear, não para citar.</b> Peça os institutos envolvidos, as teses possíveis dos dois lados, os dispositivos que costumam ser discutidos e os termos de busca. Trate tudo como hipótese.</li>
+        <li><b>Busque na fonte.</b> Legislação no Planalto, na versão compilada. Jurisprudência no site do próprio tribunal, na pesquisa do STF e do STJ e no Banco Nacional de Precedentes, do CNJ. Súmulas e temas repetitivos nas páginas oficiais de cada corte.</li>
+        <li><b>Traga o texto oficial para a conversa.</b> Cole o inteiro teor ou a ementa que você encontrou e peça: “Com base apenas neste texto, resuma a tese, os fundamentos determinantes e em que este caso difere do meu.”</li>
+        <li><b>Confira o que vai citar.</b> Para cada precedente: existe? O número e o órgão estão certos? A ementa diz o que a peça afirma? Continua valendo, ou foi superado?</li>
+        <li><b>Guarde a prova.</b> Salve o link ou o PDF do inteiro teor na pasta do caso. Se o juízo perguntar, você mostra.</li>
+      </ol>
+      <div class="box">
+        <p class="lbl">Antes e depois</p>
+        <div class="cmp">
+          <div class="weak"><b>Pedido de risco</b>Cite cinco acórdãos do STJ favoráveis à inversão do ônus da prova em contrato bancário.</div>
+          <div class="strong"><b>Pedido seguro</b>Quero pesquisar a inversão do ônus da prova em contrato bancário. Liste os dispositivos legais normalmente discutidos, as teses dos dois lados e dez expressões de busca para eu usar na pesquisa de jurisprudência do STJ. Não cite números de processos.</div>
+        </div>
+      </div>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>O que o CPC diz e o que os tribunais têm feito</h4>
+        <p>O Código de Processo Civil impõe às partes e aos procuradores o dever de expor os fatos conforme a verdade (art. 77, I) e trata como litigante de má-fé quem altera a verdade dos fatos (art. 80, II). A multa vai de mais de 1% a menos de 10% do valor corrigido da causa, além de indenização à parte contrária (art. 81). Tribunais como o TSE, o TJSC, o TJSP, o TJPR e Tribunais Regionais do Trabalho já aplicaram essa multa em casos de jurisprudência inexistente gerada por IA, e há decisões que mandaram comunicar a OAB para apuração disciplinar.</p>
+        <p>O Estatuto, por sua vez, trata como infração prejudicar, por culpa grave, interesse confiado ao patrocínio do advogado (art. 34, IX) e incidir em erros reiterados que evidenciem inépcia profissional (art. 34, XXIV). Dizer que “foi a IA” não é defesa.</p>
+      </div>
+      <h3>Ferramentas jurídicas com busca</h3>
+      <p>Ferramentas que consultam bases de jurisprudência e mostram o link da decisão reduzem o risco de invenção, mas não o eliminam: a decisão pode existir e a IA resumir errado o que ela diz. A regra não muda. Abriu o inteiro teor e leu? Pode citar.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Use a IA para mapear teses e termos de busca, não para citar.</li>
+          <li>Cole o inteiro teor oficial e peça análise só desse texto.</li>
+          <li>Citação inexistente gera multa e pode chegar à OAB.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>Peças: do relato do cliente à minuta</h2>
+      <p>Pedir “faça uma petição inicial de indenização” gera um texto genérico, com fatos inventados para preencher lacunas. Uma boa minuta nasce de um fluxo em etapas, em que você aprova cada uma antes de passar à seguinte.</p>
+      <ol>
+        <li><b>Fatos.</b> Entregue o relato do cliente e os documentos, já descaracterizados, e peça uma linha do tempo, a lista de fatos com o documento que prova cada um e a lista do que falta provar.</li>
+        <li><b>Perguntas.</b> Peça: “Que informações faltam para esta ação? Liste as perguntas que devo fazer ao cliente.” É um ótimo roteiro para a segunda reunião.</li>
+        <li><b>Tese.</b> A escolha é sua. Diga à IA qual é a tese, os fundamentos legais e os precedentes que você já conferiu (aula 2).</li>
+        <li><b>Estrutura.</b> Peça só o esqueleto: tópicos, ordem dos argumentos, pedidos. Ajuste antes de escrever.</li>
+        <li><b>Redação.</b> Peça um tópico por vez, com o material daquele tópico. Dê um modelo seu como exemplo de estilo.</li>
+        <li><b>Revisão adversarial.</b> Peça que a IA leia como a parte contrária e como o juiz, e aponte lacunas, contradições e pedidos mal formulados.</li>
+      </ol>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <h4>Duas instruções que evitam quase todo o estrago</h4>
+        <p>Inclua em todo pedido de redação: <i>“Use apenas os fatos que eu forneci. Onde faltar informação, escreva [COMPLETAR] em vez de supor.”</i> E: <i>“Não cite jurisprudência nem doutrina. Deixe a marca [PRECEDENTE] onde couber uma citação, que eu mesmo insiro.”</i> A minuta sai com buracos visíveis, o que é muito melhor do que sair com buracos disfarçados.</p>
+      </div>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Confira os requisitos, não só o texto</h4>
+        <p>Um texto bem escrito pode ser uma inicial inepta. Confira os requisitos do art. 319 do CPC: juízo, qualificação das partes, fatos e fundamentos jurídicos, pedido com suas especificações, valor da causa, provas e opção pela audiência de conciliação. O pedido deve ser certo e determinado (arts. 322 e 324). Peça à IA uma conferência item por item contra o texto do artigo, que você cola na conversa, e depois confira você mesmo.</p>
+      </div>
+      <h3>Prazos e cálculos</h3>
+      <p>Não confie na IA para contar prazo nem para calcular. Ela erra a contagem em dias úteis (CPC, art. 219), desconhece feriados locais e suspensões do tribunal e se confunde em atualização monetária e juros. Prazo se confere na intimação e no calendário do tribunal. Cálculo se faz em planilha ou no sistema próprio.</p>
+      <h3>O estilo que os julgadores pedem</h3>
+      <p>A IA tende a alongar. Peça o contrário: frases curtas, um argumento por tópico, pedidos numerados, nada de adjetivos. Uma peça de oito páginas claras costuma ser lida com mais atenção do que uma de trinta.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Fatos, perguntas, tese, estrutura, redação, revisão.</li>
+          <li>Mande marcar [COMPLETAR] e [PRECEDENTE] em vez de supor.</li>
+          <li>Requisitos, prazos e cálculos você confere fora da IA.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>Contratos e documentos longos</h2>
+      <p>Ler, comparar e resumir documentos extensos é uma das tarefas em que a IA mais economiza tempo. Também é onde um erro passa despercebido com mais facilidade, porque ninguém quer reler quarenta páginas. O método resolve: toda afirmação da IA precisa apontar para um lugar do documento.</p>
+      <h3>Pedidos que funcionam</h3>
+      <ul>
+        <li><b>Resumo com endereço.</b> “Resuma este contrato em tópicos. Para cada ponto, indique o número da cláusula e transcreva o trecho entre aspas.”</li>
+        <li><b>Tabela de obrigações.</b> “Monte uma tabela com: obrigação, de quem, prazo, penalidade e cláusula.”</li>
+        <li><b>Lista de riscos por lado.</b> “Sou advogado da CONTRATADA. Liste as cláusulas desfavoráveis a ela, explique por quê e sugira uma redação alternativa.”</li>
+        <li><b>Comparação de versões.</b> “Compare a versão A e a versão B. Liste o que foi incluído, retirado e alterado, com o número da cláusula.”</li>
+        <li><b>O que falta.</b> “Que cláusulas usuais neste tipo de contrato não aparecem aqui?” A resposta é uma hipótese para você avaliar.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Confira por amostragem dirigida: abra o documento e verifique todas as cláusulas que a IA apontou como risco, mais as que tratam de valor, prazo, multa, rescisão, foro e limitação de responsabilidade. Essas você lê no original, sempre. O resumo serve para orientar a leitura, não para dispensá-la.</p>
+      </div>
+      <h3>Três limites que você precisa conhecer</h3>
+      <ol>
+        <li><b>Documento longo demais perde detalhes.</b> Em arquivos muito extensos, a IA pode pular trechos ou dar menos atenção ao meio do texto. Divida por capítulos e peça a análise de cada parte.</li>
+        <li><b>PDF digitalizado é imagem.</b> Se o arquivo é uma foto do papel, a leitura depende do reconhecimento de caracteres, que troca números e pula linhas. Confira valores, datas e nomes no original.</li>
+        <li><b>A IA não conhece o que está fora do documento.</b> Aditivos, anexos não enviados, a negociação anterior e o costume do setor ficam de fora, a menos que você conte.</li>
+      </ol>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Modelos estrangeiros no meio do contrato</h4>
+        <p>Ao sugerir cláusulas, a IA mistura padrões de contratos estrangeiros com o direito brasileiro. Desconfie de expressões traduzidas e de cláusulas que ignoram regras cogentes daqui, como as do Código de Defesa do Consumidor, da legislação trabalhista e da Lei do Inquilinato. Peça sempre: “Redija conforme o direito brasileiro e indique o dispositivo legal em que cada cláusula se apoia”, e confira o dispositivo.</p>
+      </div>
+      <p>E o cuidado de sempre: contrato tem nome, CPF, CNPJ, endereço, valores e, muitas vezes, segredo de negócio. Antes de subir, classifique e descaracterize. É o assunto da próxima aula.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Exija cláusula e trecho transcrito para cada afirmação.</li>
+          <li>Leia no original o que trata de valor, prazo, multa e rescisão.</li>
+          <li>Divida documentos longos e desconfie de cláusula importada.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Sigilo, cliente e publicidade</h2>
+      <p>O sigilo profissional é dever e prerrogativa do advogado. Violá-lo sem justa causa é infração disciplinar (Lei 8.906/1994, art. 34, VII), o Código de Ética e Disciplina dedica um capítulo ao tema (arts. 35 a 38), e o Código Penal pune a revelação de segredo profissional (art. 154). Colar os autos numa ferramenta de IA é entregar esse material a um terceiro.</p>
+      <h3>A régua aplicada à advocacia</h3>
+      <div class="levels">
+        <div class="lv l1"><b>Nível 1 · Sobe como está</b><p>Lei, súmula, acórdão publicado, edital, dúvida em abstrato, modelo seu sem dados.</p></div>
+        <div class="lv l2"><b>Nível 2 · Sobe descaracterizado</b><p>O caso concreto, com as partes como CLIENTE, RÉ e EMPRESA-A, sem CPF, CNPJ, endereço, número de processo, datas e valores exatos.</p></div>
+        <div class="lv l3"><b>Nível 3 · Só em ambiente com contrato</b><p>Dados sensíveis, processos em segredo de justiça, segredo de negócio, material sob cláusula de confidencialidade. Só em plano com contrato de proteção de dados e treinamento desligado, ou em IA local.</p></div>
+        <div class="lv l4"><b>Nível 4 · Não sobe</b><p>A confidência do cliente, a estratégia de defesa em matéria penal, o que você não conseguiria explicar ao cliente ter entregue a terceiros.</p></div>
+      </div>
+      <p>A técnica completa, com a tabela de apelidos e a configuração da ferramenta, está no curso <a href="/academia/sigilo-lgpd-e-etica-com-ia/">Sigilo, LGPD e ética profissional com IA</a>. Aqui, três pontos próprios do escritório.</p>
+      <h3>1. O número do processo identifica</h3>
+      <p>Tirar o nome e deixar o número dos autos não descaracteriza nada: qualquer pessoa consulta o processo pelo número. O mesmo vale para o nome do arquivo, o cabeçalho com o timbre e o rodapé com a OAB do colega.</p>
+      <h3>2. Fale com o cliente</h3>
+      <p>As recomendações da OAB tratam da comunicação ao cliente sobre o uso de IA. O caminho mais simples é uma cláusula no contrato de honorários dizendo que o escritório usa ferramentas de IA como apoio, com revisão do advogado e sem envio de dados identificados a serviços sem contrato de proteção de dados. Prometa só o que você de fato faz. E lembre que o dever de informar o cliente, de modo claro, sobre os riscos da pretensão é seu (Código de Ética e Disciplina, art. 9º), e não se delega.</p>
+      <h3>3. Publicidade continua tendo regra</h3>
+      <p>A IA escreve posts e artigos com facilidade, e com a mesma facilidade promete resultado, usa tom de captação e compara escritórios. A publicidade na advocacia segue o Código de Ética e o Provimento 205/2021 do Conselho Federal: caráter informativo, sobriedade, sem promessa de resultado e sem mercantilização. Leia cada texto com o Provimento ao lado antes de publicar.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Regras do escritório em uma página: ferramentas autorizadas e em qual conta; o que nunca sobe; quem revisa; como se registra a conferência das citações. O modelo de política do curso de sigilo serve de ponto de partida. Estagiários e associados precisam conhecer a regra antes de usar.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Autos em IA são material entregue a terceiro: classifique antes.</li>
+          <li>Número de processo identifica; descaracterize de verdade.</li>
+          <li>Informe o cliente e siga o Provimento 205/2021 na publicidade.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>A IA do outro lado e a rotina do escritório</h2>
+      <p>O Judiciário também usa IA. Tribunais empregam sistemas para classificar processos, agrupar casos repetitivos, sugerir minutas e resumir autos. Isso muda o ambiente em que a sua peça será lida.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>O CNJ regulou o uso de IA no Judiciário</h4>
+        <p>A Resolução CNJ 615, de 2025, estabeleceu diretrizes para o desenvolvimento, o uso e a governança de soluções de IA no Poder Judiciário, substituindo a Resolução 332/2020. As linhas centrais são a supervisão humana, a classificação das soluções por nível de risco, a transparência e a proteção de dados. A IA pode apoiar o trabalho do magistrado, mas a decisão e a responsabilidade por ela continuam sendo dele. Vale ler o texto no site do CNJ e acompanhar as normas do tribunal em que você atua.</p>
+      </div>
+      <h3>O que isso muda na sua peça</h3>
+      <ul>
+        <li><b>Clareza vale mais.</b> Peça bem estruturada, com fatos em ordem, pedidos numerados e citações exatas, é mais bem compreendida por pessoas e por sistemas de triagem.</li>
+        <li><b>Citação errada aparece mais.</b> Ferramentas de conferência de precedentes tornam visível o número de processo que não existe.</li>
+        <li><b>Fundamentação continua exigível.</b> A decisão que apenas invoca precedente sem identificar os fundamentos determinantes, ou que não enfrenta os argumentos capazes de mudar a conclusão, não se considera fundamentada (CPC, art. 489, § 1º). Se uma decisão parecer genérica, o caminho é o recurso cabível, com esse fundamento.</li>
+      </ul>
+      <h3>A rotina de conferência do escritório</h3>
+      <p>O que protege o escritório não é a ferramenta. É a rotina, igual para todos, aplicada a toda peça em que a IA participou:</p>
+      <ol>
+        <li><b>Fatos:</b> cada fato da peça tem documento ou declaração do cliente que o sustenta.</li>
+        <li><b>Normas:</b> cada dispositivo foi lido na versão atual, na fonte oficial.</li>
+        <li><b>Precedentes:</b> cada citação foi aberta no site do tribunal, e o inteiro teor está na pasta do caso.</li>
+        <li><b>Números:</b> prazos, valores e cálculos foram refeitos fora da IA.</li>
+        <li><b>Dados:</b> nada identificado subiu para ferramenta sem contrato.</li>
+        <li><b>Responsável:</b> um advogado leu a peça inteira e assume a autoria.</li>
+      </ol>
+      <p>O checklist no fim deste curso traz essa rotina pronta para imprimir e deixar ao lado do computador.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Registre a conferência. Uma linha na pasta do caso, com data e nome de quem conferiu as citações, custa trinta segundos. Se um dia a peça for questionada, essa linha mostra que houve diligência, e isso pesa na avaliação de culpa.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Tribunais usam IA, com supervisão humana exigida pelo CNJ.</li>
+          <li>Peça clara e citação exata valem ainda mais.</li>
+          <li>A rotina de conferência, registrada, é o que protege o escritório.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- PARA IMPRIMIR -->
+    <section class="lesson" id="checklist">
+      <p class="num">Para imprimir e preencher</p>
+      <h2>Checklist antes de protocolar</h2>
+      <p class="pol-sub">Caso: ______________________ · Peça: ______________________ · Data: ___/___/______</p>
+      <p class="check-h">Antes de subir material para a IA</p>
+      <ul class="check">
+        <li>Classifiquei o material na régua dos quatro níveis.</li>
+        <li>Troquei partes por apelidos e tirei CPF, CNPJ, endereço, número do processo, datas e valores exatos.</li>
+        <li>Conferi nome do arquivo, cabeçalho, rodapé e metadados.</li>
+        <li>Usei a conta do escritório, com treinamento desligado.</li>
+      </ul>
+      <p class="check-h">Antes de protocolar</p>
+      <ul class="check">
+        <li>Cada fato tem documento ou declaração do cliente que o sustenta.</li>
+        <li>Cada dispositivo legal foi lido na versão atual, na fonte oficial.</li>
+        <li>Cada precedente foi aberto no site do tribunal; o inteiro teor está na pasta do caso.</li>
+        <li>A ementa diz o que a peça afirma, e o precedente não foi superado.</li>
+        <li>Prazos conferidos na intimação e no calendário do tribunal.</li>
+        <li>Valores e cálculos refeitos em planilha ou sistema próprio.</li>
+        <li>Requisitos da peça conferidos (na inicial, CPC, art. 319; pedidos certos e determinados).</li>
+        <li>Não sobrou nenhuma marca [COMPLETAR] ou [PRECEDENTE] no texto.</li>
+        <li>Devolvi os nomes reais no meu computador e reli a peça inteira.</li>
+      </ul>
+      <p class="check-h">Registro</p>
+      <ul class="check">
+        <li>Citações conferidas por: ______________________ em ___/___/______</li>
+        <li>Advogado responsável pela peça: ______________________ · OAB ______________</li>
+      </ul>
+      <button class="btn no-print" type="button" id="print-btn">Imprimir o checklist</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas e documentos citados</h2>
+      <ul class="sources">
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8906.htm" target="_blank" rel="noopener">Lei 8.906/1994 (Estatuto da Advocacia e da OAB)</a>: arts. 1º, 32 e 34, VII, IX e XXIV</li>
+        <li><a href="https://www.oab.org.br/leisnormas/legislacao/resolucoes/02-2015" target="_blank" rel="noopener">Código de Ética e Disciplina da OAB (Resolução 02/2015)</a>: arts. 9º e 35 a 38</li>
+        <li>Provimento 205/2021 do Conselho Federal da OAB (publicidade e informação da advocacia)</li>
+        <li><a href="https://www.oab.org.br/noticia/62711/confira-versao-final-da-recomendacao-do-cfoab-sobre-o-uso-de-ia-na-pratica-juridica" target="_blank" rel="noopener">Recomendação do Conselho Federal da OAB sobre IA generativa (nov/2024)</a></li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm" target="_blank" rel="noopener">Lei 13.105/2015 (Código de Processo Civil)</a>: arts. 77, 80, 81, 219, 319, 322, 324 e 489, § 1º</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm" target="_blank" rel="noopener">Decreto-Lei 2.848/1940 (Código Penal)</a>, art. 154</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener">Lei 13.709/2018 (LGPD)</a></li>
+        <li>Resolução CNJ 615/2025 (IA no Poder Judiciário), no site do CNJ</li>
+        <li><a href="https://www.tjsc.jus.br/web/imprensa/-/tjsc-multa-autor-de-recurso-por-jurisprudencia-falsa-gerada-por-ia" target="_blank" rel="noopener">TJSC multa autor de recurso por jurisprudência falsa gerada por IA</a></li>
+        <li><a href="https://www.oabsp.org.br/jornaldaadvocacia/2026/03/26/tres-em-cada-quatro-advogados-usam-inteligencia-artificial-no-trabalho" target="_blank" rel="noopener">OAB-SP (2026): três em cada quatro advogados usam IA no trabalho</a></li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. As normas mudam: confira sempre a redação atual na fonte oficial.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui a leitura das normas, a orientação da OAB nem a análise do caso concreto. A HermesIA não é escritório de advocacia e não presta consultoria jurídica.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-advocacia-v1', TOTAL=6, done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:'ia-na-advocacia',aula:+i});
+    });
+  });
+  render();
+
+  var Q=[
+    {"q": "Qual destas tarefas NÃO deve ser delegada à IA?", "o": ["Escolher a tese e a estratégia do caso.", "Organizar o relato do cliente em ordem cronológica.", "Revisar a clareza de um parágrafo."], "c": 0, "e": "Estratégia e aconselhamento são do advogado, que responde pelo que assina (aula 1)."},
+    {"q": "O jeito mais seguro de usar IA na pesquisa de jurisprudência é:", "o": ["Pedir que ela cite acórdãos com número e relator.", "Perguntar à IA se o acórdão que ela citou existe.", "Pedir teses e termos de busca, pesquisar no site do tribunal e colar o inteiro teor para análise."], "c": 2, "e": "A IA mapeia; a citação vem da fonte oficial (aula 2)."},
+    {"q": "Pelo CPC, a multa por litigância de má-fé é de:", "o": ["Um salário mínimo, em qualquer caso.", "Mais de 1% e menos de 10% do valor corrigido da causa.", "50% do valor da causa."], "c": 1, "e": "Art. 81 do CPC. Tribunais já a aplicaram por jurisprudência inventada por IA (aula 2)."},
+    {"q": "Ao pedir a redação de um tópico da peça, qual instrução reduz mais o risco?", "o": ["“Use apenas os fatos fornecidos e marque [COMPLETAR] onde faltar informação.”", "“Seja criativo e complete o que faltar.”", "“Inclua o máximo de jurisprudência possível.”"], "c": 0, "e": "Buraco visível é melhor do que buraco disfarçado (aula 3)."},
+    {"q": "A contagem de um prazo recursal deve ser:", "o": ["Feita pela IA, que conhece o CPC.", "Estimada com folga de um dia.", "Conferida na intimação e no calendário do tribunal."], "c": 2, "e": "A IA erra dias úteis, feriados locais e suspensões (aula 3)."},
+    {"q": "No resumo de um contrato feito por IA, o que torna a conferência possível?", "o": ["Um resumo bem curto.", "A indicação da cláusula e a transcrição do trecho para cada ponto.", "O uso de linguagem técnica."], "c": 1, "e": "Toda afirmação deve apontar para um lugar do documento (aula 4)."},
+    {"q": "Você retirou o nome das partes, mas deixou o número do processo. O material está descaracterizado?", "o": ["Não: o número dos autos permite identificar o caso.", "Sim, sem nome não há identificação.", "Sim, se o processo for cível."], "c": 0, "e": "Número de processo, timbre e nome do arquivo também identificam (aula 5)."},
+    {"q": "Sobre o uso de IA pelo Judiciário, a Resolução CNJ 615/2025 estabelece, entre outras diretrizes:", "o": ["Que a IA pode decidir sozinha em causas simples.", "A proibição de qualquer uso de IA nos tribunais.", "Supervisão humana, com a decisão e a responsabilidade mantidas com o magistrado."], "c": 2, "e": "A IA apoia; a decisão continua humana (aula 6)."}
+  ];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: agora imprima o checklist logo abaixo e adote a rotina de conferência no escritório.':'Vale rever as aulas indicadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:'ia-na-advocacia',acertos:right});
+  }
+
+  document.getElementById('print-btn').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"IA na advocacia","description":"Curso grátis em português para a advocacia: uso de IA em pesquisa, peças e contratos com conferência de citações, dentro do Estatuto da Advocacia, do Código de Ética da OAB, do CPC e da LGPD, com checklist para imprimir.","inLanguage":"pt-BR","isAccessibleForFree":true,"url":"https://hermesia.ia.br/academia/ia-na-advocacia/","provider":{"@type":"Organization","name":"HermesIA","sameAs":"https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>

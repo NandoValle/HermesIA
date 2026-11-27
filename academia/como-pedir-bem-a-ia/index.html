@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como pedir bem à IA — curso grátis | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro: como escrever pedidos (prompts) que rendem textos úteis em qualquer ferramenta de IA. 6 aulas, quiz e roteiro de pedido para imprimir.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/como-pedir-bem-a-ia/">
+<meta property="og:title" content="Como pedir bem à IA — curso grátis da Academia HermesIA">
+<meta property="og:description" content="6 aulas em português: as cinco partes de um bom pedido, exemplos, perguntas, refino e a sua biblioteca de pedidos. Com roteiro para imprimir.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/como-pedir-bem-a-ia/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+
+  /* Tabela por profissão */
+  .tbl-wrap{overflow-x:auto;margin:8px 0 18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;line-height:1.55}
+  .tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:13px}
+  .tbl td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;color:#2a3042}
+  .tbl tr:nth-child(even) td{background:#fbf8ee}
+  /* Régua */
+  .levels{display:grid;gap:10px;margin:8px 0 20px}
+  .lv{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:#fff;border-left-width:1px}
+  .lv b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .lv p{font-size:15px!important;margin:0!important;line-height:1.65!important}
+  .lv.l1{background:#f1f8f2;border-color:#cfe3d3}
+  .lv.l2{background:#f3f6fb;border-color:#d5ddeb}
+  .lv.l3{background:#fbf6e8;border-color:#eadcb3}
+  .lv.l4{background:#fbf0ee;border-color:#efd2cb}
+  /* Política */
+  .pol-sub{font-size:15px!important;color:var(--muted)!important}
+  .pol{margin:0 0 18px 22px}
+  .pol li{font-size:15.5px;line-height:1.85;margin-bottom:10px}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#roteiro){display:none!important}
+    html.print-check #roteiro{border:0;margin:0;padding:0}
+    html.print-check #roteiro .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Fundamentos</p>
+    <h1>Como pedir bem à IA</h1>
+    <p class="sub">O resultado da IA depende do pedido que ela recebe. Aprenda a escrever pedidos claros, com contexto, exemplos e critérios, e a refinar a resposta até ela servir de verdade. Vale para qualquer ferramenta.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>6 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 45 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português, com exemplos do trabalho no Brasil. Se você ainda não fez, comece pelo curso <a href="/academia/capacidades-e-limites-da-ia/" style="color:var(--gold-l)">Capacidades e limites da IA</a>.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 6 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>O pedido decide o resultado</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>As cinco partes do pedido</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>Mostre com exemplos</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>Perguntas e etapas</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Refinar a resposta</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>Sua biblioteca de pedidos</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#roteiro"><span class="ck"><span>✎</span></span>Roteiro de pedido para imprimir</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para quem já usa IA e sente que as respostas saem genéricas, longas demais ou fora do ponto. Você não precisa saber programar nem decorar comandos. Ao terminar, vai saber montar um pedido completo, mostrar o que quer com exemplos, corrigir o rumo da conversa e guardar os pedidos que funcionam.</p>
+      <p style="margin-top:12px;"><b>Uma palavra sobre o nome:</b> em inglês, o pedido que você escreve para a IA se chama <i>prompt</i>. Neste curso usamos “pedido”, porque é isso que ele é: um pedido de trabalho, escrito em português comum.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>O pedido decide o resultado</h2>
+      <p>Imagine que um estagiário competente começou hoje no seu escritório. Ele escreve bem, leu muito e trabalha rápido. Só que não conhece os seus clientes, não sabe o que você já tentou, não viu os documentos e não imagina qual é o seu padrão de qualidade. Se você disser apenas “faça um e-mail para o cliente”, ele vai entregar um e-mail qualquer.</p>
+      <p>A IA está sempre nessa situação. Ela só conhece o que está escrito na conversa. Tudo o que ficou na sua cabeça, e não no pedido, ela preenche com o que é mais comum. Por isso o texto sai genérico: o genérico é o mais provável quando faltam informações.</p>
+      <h3>O custo do pedido vago</h3>
+      <p>Um pedido de dez palavras parece economizar tempo. Na prática, ele cobra depois: você recebe um texto que não serve, pede de novo, corrige, pede de novo. Dois minutos a mais no pedido costumam poupar vinte na revisão.</p>
+      <div class="box">
+        <p class="lbl">Antes e depois</p>
+        <div class="cmp">
+          <div class="weak"><b>Pedido vago</b>Faça um post sobre a minha clínica.</div>
+          <div class="strong"><b>Pedido completo</b>Sou fisioterapeuta e tenho uma clínica pequena em Belo Horizonte, que atende principalmente pessoas acima de 60 anos. Escreva um post para o Instagram avisando que abrimos turma de exercícios para equilíbrio às terças, 9h. Tom acolhedor, sem prometer cura nem resultado. Até 80 palavras, com um convite para chamar no WhatsApp no final.</div>
+        </div>
+      </div>
+      <p>O segundo pedido não usa nenhuma palavra técnica. Ele só conta o que qualquer pessoa precisaria saber para fazer o trabalho bem.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Antes de enviar um pedido, faça o teste do estagiário: se você entregasse esse mesmo texto a uma pessoa nova na equipe, ela conseguiria fazer o trabalho sem voltar com perguntas? Se não, falta alguma coisa no pedido.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A IA só sabe o que está escrito na conversa.</li>
+          <li>Pedido vago gera texto genérico e retrabalho.</li>
+          <li>Faça o teste do estagiário antes de enviar.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>As cinco partes de um bom pedido</h2>
+      <p>No curso Capacidades e limites da IA você viu as cinco partes de um bom pedido. Agora vamos usar cada uma de propósito. Você não precisa de todas em toda conversa, mas, quando a resposta decepciona, quase sempre uma delas faltou.</p>
+      <ol>
+        <li><b>Contexto:</b> quem você é, para quem é o texto e qual é a situação. “Sou síndica de um prédio de 40 apartamentos e preciso avisar os moradores sobre uma obra.”</li>
+        <li><b>Tarefa:</b> o que deve ser feito, com um verbo claro: escrever, resumir, comparar, revisar, listar, traduzir, explicar. Uma tarefa por pedido rende mais do que três misturadas.</li>
+        <li><b>Material:</b> o que a IA deve usar: o rascunho, os dados, o texto da norma, a mensagem que você recebeu. Diga também se ela deve ficar só nesse material.</li>
+        <li><b>Formato:</b> tamanho, estrutura e tom. “Até 150 palavras”, “em tópicos”, “em tabela com três colunas”, “linguagem simples, sem juridiquês”.</li>
+        <li><b>Critérios:</b> o que não pode faltar e o que deve ficar de fora. “Inclua a data e o horário. Não use tom de ameaça. Não invente informações que eu não dei.”</li>
+      </ol>
+      <div class="box">
+        <p class="lbl">Exemplo montado</p>
+        <p><b>Contexto.</b> Sou dono de uma oficina mecânica e um cliente reclamou, com razão, de atraso de três dias na entrega do carro.</p>
+        <p><b>Tarefa.</b> Escreva uma mensagem de WhatsApp pedindo desculpas e explicando o que vamos fazer.</p>
+        <p><b>Material.</b> O atraso foi por falta de uma peça. O carro fica pronto na sexta, até 17h. Vou dar 10% de desconto na mão de obra.</p>
+        <p><b>Formato.</b> Curta, no máximo seis linhas, tom respeitoso e direto.</p>
+        <p><b>Critérios.</b> Assuma o erro sem culpar o fornecedor. Não prometa nada além do que está aqui.</p>
+      </div>
+      <h3>Separe o material do pedido</h3>
+      <p>Quando você cola um texto longo, deixe claro onde ele começa e termina. Uma linha como “TEXTO A SER RESUMIDO:” antes do material, ou o material entre aspas triplas, evita que a IA confunda as suas instruções com o conteúdo que deve analisar.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Diga que o texto é para o Brasil</h4>
+        <p>A IA leu muito mais material estrangeiro do que brasileiro. Vale pedir de forma expressa: português do Brasil, datas no formato dia/mês/ano, valores em reais, e as normas e os órgãos daqui. Se o texto depende de lei, cole o texto oficial e peça que ela use só ele.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Contexto, tarefa, material, formato e critérios.</li>
+          <li>Uma tarefa por pedido e material bem delimitado.</li>
+          <li>Peça português do Brasil, reais e normas daqui.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>Mostre o que você quer com exemplos</h2>
+      <p>Descrever um estilo é difícil. “Quero um tom profissional, mas próximo” significa uma coisa para você e outra para a IA. Um exemplo resolve o que três parágrafos de explicação não resolvem.</p>
+      <h3>Três jeitos de usar exemplos</h3>
+      <ul>
+        <li><b>O seu próprio texto como modelo de estilo.</b> Cole dois ou três textos seus de que você gosta e peça: “Escreva no mesmo estilo destes exemplos: tamanho das frases, vocabulário e jeito de abrir e fechar.”</li>
+        <li><b>Um modelo de estrutura.</b> Se o resultado precisa seguir um formato, mostre o formato: os títulos das seções, a ordem, o que vai em cada parte. A IA preenche o molde.</li>
+        <li><b>Pares de entrada e saída.</b> Para tarefas repetitivas, mostre dois ou três casos resolvidos e depois entregue o novo. “Mensagem do cliente: … Resposta: …”, e por fim a mensagem que você quer responder.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Uma contadora quer padronizar o resumo mensal que manda aos clientes. Em vez de explicar o padrão, ela cola dois resumos antigos, com os nomes trocados por “Cliente A” e “Cliente B”, e escreve: “Use estes dois como modelo de estrutura e de tom. Com os dados abaixo, escreva o resumo de novembro.” O resultado sai no padrão dela na primeira tentativa.</p>
+      </div>
+      <h3>Cuidados com os exemplos</h3>
+      <ul>
+        <li><b>A IA copia o que você mostra.</b> Se os exemplos são longos, a resposta sai longa. Se todos começam do mesmo jeito, a resposta também começa assim. Escolha exemplos que você gostaria de ver repetidos.</li>
+        <li><b>Varie quando quiser variedade.</b> Com um exemplo só, ela tende a imitar até os detalhes. Dois ou três exemplos diferentes entre si ensinam o padrão, não a cópia.</li>
+        <li><b>Exemplo também carrega dado.</b> O texto antigo que você cola pode ter nome de cliente, CPF, endereço ou valor. Troque por apelidos antes, como você viu no curso de sigilo.</li>
+      </ul>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>O exemplo é seu ou de outra pessoa?</h4>
+        <p>Usar os seus próprios textos como modelo é sempre seguro. Colar o texto de outro autor para a IA imitar pede mais cuidado: a Lei de Direitos Autorais (Lei 9.610/1998) protege a obra, e publicar algo muito parecido com o original pode dar problema. Para inspiração de estilo, prefira descrever as características ou usar material seu.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Um exemplo ensina mais do que uma descrição.</li>
+          <li>Dois ou três exemplos variados ensinam o padrão.</li>
+          <li>Tire dados de clientes dos exemplos antes de colar.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>Peça perguntas, plano e etapas</h2>
+      <p>Em tarefas simples, um pedido completo basta. Em tarefas grandes, como uma proposta comercial, um relatório ou um plano de aula, pedir tudo de uma vez costuma dar um texto raso. Três técnicas melhoram muito o resultado.</p>
+      <h3>1. Peça as perguntas antes da resposta</h3>
+      <p>Escreva no fim do pedido: <i>“Antes de escrever, faça as perguntas de que você precisa para fazer um bom trabalho.”</i> A IA devolve cinco ou seis perguntas, você responde em uma linha cada, e o texto final sai muito mais próximo do que você queria. É o jeito mais fácil de descobrir o que faltou no seu pedido.</p>
+      <h3>2. Peça o plano antes do texto</h3>
+      <p>Para textos longos, peça primeiro só a estrutura: <i>“Proponha os tópicos deste relatório, com uma linha sobre o que vai em cada um. Não escreva o texto ainda.”</i> Corrigir um roteiro leva um minuto. Corrigir dez páginas escritas sobre um roteiro errado leva a tarde.</p>
+      <h3>3. Divida o trabalho em etapas</h3>
+      <p>Em vez de “analise este contrato e escreva um e-mail para o cliente”, faça em passos: primeiro o resumo do contrato, depois a lista de pontos de atenção, depois o e-mail com base nos pontos que você aprovou. Em cada etapa você confere antes de seguir, e um erro no começo não contamina o resto.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <h4>Peça para ela pensar antes de concluir</h4>
+        <p>Em problemas com várias condições, como comparar três orçamentos ou decidir entre dois caminhos, peça: “Explique o seu raciocínio passo a passo antes de dar a conclusão.” A resposta melhora, e você consegue ver em que ponto ela se apoiou numa premissa errada.</p>
+      </div>
+      <h3>Dê um papel, com moderação</h3>
+      <p>Dizer “aja como um revisor de textos exigente” ou “responda como quem explica para um cliente leigo” ajuda a ajustar o tom e o nível de detalhe. Mas o papel não substitui o contexto: “aja como um especialista” sem dizer qual é a situação continua sendo um pedido vago. E o papel não dá à IA conhecimento que ela não tem: pedir que ela “seja um advogado” não torna a citação confiável.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Peça perguntas antes da resposta.</li>
+          <li>Aprove o roteiro antes do texto longo.</li>
+          <li>Divida tarefas grandes e confira a cada etapa.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Refine: a primeira resposta é um rascunho</h2>
+      <p>Quem usa bem a IA quase nunca fica com a primeira resposta. A conversa funciona como uma oficina: você recebe um rascunho, diz o que mudar e recebe outro. O segredo está em dar retorno específico.</p>
+      <div class="box">
+        <p class="lbl">Antes e depois</p>
+        <div class="cmp">
+          <div class="weak"><b>Retorno vago</b>Não gostei. Melhore.</div>
+          <div class="strong"><b>Retorno específico</b>O primeiro parágrafo está bom. O segundo está longo: corte pela metade e tire os adjetivos. Troque “solicitamos” por “pedimos”. Termine com a data limite em negrito.</div>
+        </div>
+      </div>
+      <h3>Pedidos de refino que funcionam</h3>
+      <ul>
+        <li><b>Mantenha o que está bom.</b> “Não mexa nos dois primeiros parágrafos. Reescreva só o terceiro.” Sem isso, ela reescreve tudo e você perde o que já tinha aprovado.</li>
+        <li><b>Peça versões.</b> “Dê três opções de título: uma direta, uma com pergunta e uma mais formal.” Escolher é mais rápido do que descrever.</li>
+        <li><b>Peça a crítica.</b> “Releia este texto como o cliente que vai recebê-lo. O que está confuso? O que ele pode entender mal?”</li>
+        <li><b>Peça as incertezas.</b> “Aponte os trechos em que você não tem certeza ou em que completou algo que eu não informei.”</li>
+      </ul>
+      <h3>Permita que ela diga “não sei”</h3>
+      <p>A IA tende a responder mesmo quando não tem base, e a concordar com quem pergunta. Duas frases reduzem esse problema: <i>“Se a informação não estiver no material, diga que não está”</i> e <i>“Se você discordar da minha premissa, diga antes de continuar.”</i> Elas não eliminam o erro, e a conferência na fonte continua sendo sua, mas diminuem a invenção.</p>
+      <h3>Quando recomeçar</h3>
+      <p>Se depois de três ou quatro ajustes a resposta continua errando no mesmo ponto, o problema costuma estar no pedido inicial ou na conversa, que ficou longa e cheia de versões antigas. Abra uma conversa nova, escreva o pedido de novo com o que você aprendeu e cole só a versão mais recente do texto.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Revisar é parte do trabalho, não um extra</h4>
+        <p>O texto sai com o seu nome. Petição, laudo, parecer, contrato, proposta e post respondem em nome de quem assina e publica. Tribunais brasileiros já multaram partes por jurisprudência inventada por IA, e o Código de Defesa do Consumidor vale para o que a sua empresa promete num anúncio, tenha sido escrito por você ou pela ferramenta.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Dê retorno específico: o que manter, o que mudar.</li>
+          <li>Peça versões, crítica e os pontos de incerteza.</li>
+          <li>Sem avanço em três ajustes? Recomece com um pedido melhor.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>Monte a sua biblioteca de pedidos</h2>
+      <p>Boa parte do seu trabalho se repete: o mesmo tipo de e-mail, o mesmo relatório mensal, a mesma resposta a uma dúvida frequente. Quando um pedido funciona, não o deixe perdido no histórico. Guarde.</p>
+      <h3>Como guardar um pedido que funciona</h3>
+      <ol>
+        <li><b>Transforme em modelo.</b> Troque o que muda a cada vez por lacunas: [NOME DO SERVIÇO], [PRAZO], [VALOR]. O resto fica fixo.</li>
+        <li><b>Dê um nome que você vai achar.</b> “Cobrança cordial, segunda mensagem” é melhor do que “pedido 7”.</li>
+        <li><b>Anote para que serve e o que conferir.</b> Uma linha: “Conferir sempre a data e o valor antes de enviar.”</li>
+        <li><b>Guarde num lugar simples:</b> um documento de texto, uma nota no celular ou uma planilha. O que importa é abrir em dez segundos.</li>
+      </ol>
+      <div class="box">
+        <p class="lbl">Modelo com lacunas</p>
+        <p>Sou [PROFISSÃO] e atendo [TIPO DE CLIENTE]. Escreva uma mensagem de WhatsApp lembrando o cliente do compromisso de [DATA], às [HORA]. Tom cordial e direto, até quatro linhas. Peça confirmação com “sim” ou “preciso remarcar”. Não inclua nada além disso.</p>
+      </div>
+      <h3>Instruções que valem para todas as conversas</h3>
+      <p>Muitas ferramentas têm um campo de instruções personalizadas, ou permitem criar um projeto com instruções e arquivos fixos. É o lugar certo para o que você repetiria em todo pedido: a sua profissão, o seu público, o tom que você usa, o que nunca fazer. Escreva uma vez e pare de repetir.</p>
+      <p>Dois cuidados. Primeiro, o que fica nas instruções fixas é enviado em todas as conversas, então não coloque ali dados de clientes. Segundo, revise essas instruções de tempos em tempos: uma regra antiga esquecida ali explica muita resposta estranha.</p>
+      <h3>Biblioteca da equipe</h3>
+      <p>Se você trabalha com outras pessoas, uma biblioteca compartilhada evita que cada um reinvente os mesmos pedidos e padroniza a qualidade. Combine quem pode alterar os modelos e inclua neles o lembrete de sigilo: nenhum modelo deve pedir nome completo, CPF ou número de processo quando um apelido resolve.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Comece pequeno: nesta semana, guarde três pedidos. Escolha as três tarefas de texto que você mais repete. Na próxima vez que uma delas aparecer, use o modelo e ajuste o que não ficou bom. Em um mês, a biblioteca se paga.</p>
+      </div>
+      <p>O próximo passo depende do seu trabalho. Se você lida com informação de clientes, faça o curso <a href="/academia/sigilo-lgpd-e-etica-com-ia/">Sigilo, LGPD e ética profissional com IA</a>. Depois, escolha o curso da sua área na <a href="/academia/">Academia HermesIA</a>.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Pedido que funcionou vira modelo com lacunas.</li>
+          <li>Use as instruções fixas da ferramenta, sem dados de clientes.</li>
+          <li>Comece guardando três pedidos nesta semana.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- PARA IMPRIMIR -->
+    <section class="lesson" id="roteiro">
+      <p class="num">Para imprimir e preencher</p>
+      <h2>Roteiro de pedido</h2>
+      <p class="pol-sub">Preencha antes de pedir. Depois de usar, guarde o pedido que funcionou.</p>
+      <ol class="pol">
+        <li><b>Contexto.</b> Quem sou e para quem é o texto: ______________________________________________</li>
+        <li><b>Tarefa.</b> O que deve ser feito (um verbo, uma tarefa): ______________________________________________</li>
+        <li><b>Material.</b> O que ela deve usar: ______________________ · Usar só este material? ( ) sim ( ) não</li>
+        <li><b>Formato.</b> Tamanho: __________ · Estrutura: __________ · Tom: __________</li>
+        <li><b>Critérios.</b> Não pode faltar: ______________________ · Deve ficar de fora: ______________________</li>
+        <li><b>Exemplo.</b> Vou colar um texto meu como modelo? ( ) sim ( ) não</li>
+      </ol>
+      <p class="check-h">Antes de enviar</p>
+      <ul class="check">
+        <li>Passei no teste do estagiário: uma pessoa nova entenderia o pedido.</li>
+        <li>Troquei nomes e identificadores de clientes por apelidos.</li>
+        <li>Pedi português do Brasil e, se depende de norma, colei o texto oficial.</li>
+        <li>Em tarefa grande, pedi as perguntas ou o roteiro antes do texto.</li>
+      </ul>
+      <p class="check-h">Antes de usar a resposta</p>
+      <ul class="check">
+        <li>Dei retorno específico e pedi os pontos de incerteza.</li>
+        <li>Conferi citações, números e datas na fonte.</li>
+        <li>Guardei o pedido como modelo, com lacunas e um nome fácil de achar.</li>
+      </ul>
+      <button class="btn no-print" type="button" id="print-btn">Imprimir o roteiro</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas citadas e leituras</h2>
+      <ul class="sources">
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l9610.htm" target="_blank" rel="noopener">Lei 9.610/1998 (Lei de Direitos Autorais)</a></li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener">Lei 8.078/1990 (Código de Defesa do Consumidor)</a></li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener">Lei 13.709/2018 (LGPD)</a></li>
+        <li>Curso <a href="/academia/capacidades-e-limites-da-ia/">Capacidades e limites da IA</a>, aulas 4 e 5, da Academia HermesIA</li>
+        <li>Curso <a href="/academia/sigilo-lgpd-e-etica-com-ia/">Sigilo, LGPD e ética profissional com IA</a>, aula 5 (técnica do apelido)</li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. As normas mudam: confira sempre a redação atual na fonte oficial.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui a orientação do seu conselho profissional nem a análise do caso concreto. A HermesIA não é escritório de advocacia e não presta consultoria jurídica. Instagram, WhatsApp e outras marcas citadas pertencem a seus titulares.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-pedir-v1', TOTAL=6, done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:'como-pedir-bem',aula:+i});
+    });
+  });
+  render();
+
+  var Q=[
+    {"q": "Por que um pedido vago costuma gerar um texto genérico?", "o": ["Porque a IA tem preguiça de escrever.", "Porque textos curtos são sempre ruins.", "Porque, sem informação, ela preenche as lacunas com o que é mais comum."], "c": 2, "e": "A IA só conhece o que está na conversa; o resto ela completa com o mais provável (aula 1)."},
+    {"q": "Qual destes itens é um exemplo de “critério” num pedido?", "o": ["“Sou dentista e atendo crianças.”", "“Não prometa resultado e inclua o horário de atendimento.”", "“Escreva um post.”"], "c": 1, "e": "Critérios dizem o que não pode faltar e o que deve ficar de fora (aula 2)."},
+    {"q": "Você quer que a IA escreva no seu estilo. O caminho mais eficaz é:", "o": ["Colar dois ou três textos seus e pedir que ela siga o mesmo estilo.", "Escrever “capriche” no fim do pedido.", "Pedir um texto mais longo."], "c": 0, "e": "Exemplos ensinam o padrão melhor do que descrições (aula 3)."},
+    {"q": "Antes de colar um texto antigo como exemplo, você deve:", "o": ["Aumentar o tamanho da fonte.", "Traduzir o texto para o inglês.", "Trocar nomes e identificadores de clientes por apelidos."], "c": 2, "e": "O exemplo também carrega dados; descaracterize antes de colar (aula 3)."},
+    {"q": "Você vai pedir um relatório de dez páginas. O melhor primeiro passo é:", "o": ["Pedir o relatório inteiro de uma vez.", "Pedir só a estrutura, aprovar e depois pedir o texto.", "Pedir o relatório em outro idioma."], "c": 1, "e": "Corrigir o roteiro é muito mais rápido do que corrigir o texto pronto (aula 4)."},
+    {"q": "Qual retorno ajuda mais a IA a melhorar um rascunho?", "o": ["“Não gostei.”", "“Melhore.”", "“Mantenha o primeiro parágrafo, corte o segundo pela metade e troque o tom para mais formal.”"], "c": 2, "e": "Retorno específico diz o que manter e o que mudar (aula 5)."},
+    {"q": "A frase “se a informação não estiver no material, diga que não está” serve para:", "o": ["Reduzir a chance de a IA inventar para preencher lacunas.", "Deixar a resposta mais longa.", "Dispensar a conferência na fonte."], "c": 0, "e": "Ela reduz a invenção, mas a conferência continua sendo sua (aula 5)."},
+    {"q": "O que NÃO deve ir nas instruções fixas da ferramenta?", "o": ["A sua profissão e o seu público.", "O tom que você costuma usar.", "Dados de clientes."], "c": 2, "e": "As instruções fixas são enviadas em todas as conversas; dados de clientes ficam de fora (aula 6)."}
+  ];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: agora preencha o roteiro de pedido logo abaixo e guarde os seus três primeiros modelos.':'Vale rever as aulas indicadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:'como-pedir-bem',acertos:right});
+  }
+
+  document.getElementById('print-btn').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Como pedir bem à IA","description":"Curso grátis em português: como escrever pedidos (prompts) claros para ferramentas de IA, com exemplos do trabalho no Brasil e roteiro de pedido para imprimir.","inLanguage":"pt-BR","isAccessibleForFree":true,"url":"https://hermesia.ia.br/academia/como-pedir-bem-a-ia/","provider":{"@type":"Organization","name":"HermesIA","sameAs":"https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>
