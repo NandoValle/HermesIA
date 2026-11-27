@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sigilo, LGPD e ética profissional com IA — curso grátis | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro: como usar IA com material de cliente dentro da LGPD e do sigilo profissional da sua profissão. 7 aulas, quiz e modelo de política de uso de IA.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/sigilo-lgpd-e-etica-com-ia/">
+<meta property="og:title" content="Sigilo, LGPD e ética profissional com IA — curso grátis da Academia HermesIA">
+<meta property="og:description" content="7 aulas em português: o que a LGPD e o código da sua profissão exigem quando você usa IA com material de cliente. Com modelo de política de uso de IA.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/sigilo-lgpd-e-etica-com-ia/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+
+  /* Tabela por profissão */
+  .tbl-wrap{overflow-x:auto;margin:8px 0 18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;line-height:1.55}
+  .tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:13px}
+  .tbl td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;color:#2a3042}
+  .tbl tr:nth-child(even) td{background:#fbf8ee}
+  /* Régua */
+  .levels{display:grid;gap:10px;margin:8px 0 20px}
+  .lv{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:#fff;border-left-width:1px}
+  .lv b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .lv p{font-size:15px!important;margin:0!important;line-height:1.65!important}
+  .lv.l1{background:#f1f8f2;border-color:#cfe3d3}
+  .lv.l2{background:#f3f6fb;border-color:#d5ddeb}
+  .lv.l3{background:#fbf6e8;border-color:#eadcb3}
+  .lv.l4{background:#fbf0ee;border-color:#efd2cb}
+  /* Política */
+  .pol-sub{font-size:15px!important;color:var(--muted)!important}
+  .pol{margin:0 0 18px 22px}
+  .pol li{font-size:15.5px;line-height:1.85;margin-bottom:10px}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#politica){display:none!important}
+    html.print-check #politica{border:0;margin:0;padding:0}
+    html.print-check #politica .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Fundamentos</p>
+    <h1>Sigilo, LGPD e ética profissional com IA</h1>
+    <p class="sub">Use IA com material de cliente sabendo o que a LGPD e o código da sua profissão exigem. Com exemplos de advocacia, saúde, psicologia e contabilidade, e um modelo de política de uso de IA para o seu escritório ou consultório.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>7 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 50 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português e adaptado às leis do Brasil. Se você ainda não fez, comece pelo curso <a href="/academia/capacidades-e-limites-da-ia/" style="color:var(--gold-l)">Capacidades e limites da IA</a>.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 7 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>Para onde vai o que você cola</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>A LGPD e o seu papel</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>O sigilo de cada profissão</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>A régua dos quatro níveis</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Descaracterizar sem perder qualidade</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>Configure, registre, comprove</a></li>
+      <li data-l="7"><a href="#aula-7"><span class="ck"><span>7</span></span>Regras da casa e incidentes</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#politica"><span class="ck"><span>✎</span></span>Modelo de política de uso de IA</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para quem trabalha com informação que não é sua: advogados, médicos, psicólogos, contadores, dentistas, consultores, freelancers sob contrato de confidencialidade. Ao terminar, você vai saber classificar o material antes de colar, descaracterizar sem perder a qualidade da resposta, configurar a ferramenta e montar as regras da sua casa.</p>
+      <p style="margin-top:12px;"><b>Por que isso importa agora:</b> três em cada quatro profissionais do Direito já usam IA no trabalho (OAB-SP, 2026), mas só cerca de 11% das bancas têm diretrizes escritas para esse uso. O uso chegou antes das regras. Este curso ajuda você a escrever as suas.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>Para onde vai o que você cola</h2>
+      <p>Abrir um contrato no editor de texto e colá-lo numa ferramenta de IA parecem a mesma coisa. Não são. No editor, o arquivo fica no seu computador. Na IA, ele viaja até os servidores de uma empresa e passa por uma cadeia que vale conhecer, elo por elo.</p>
+      <ul>
+        <li><b>O que você envia:</b> o pedido, os anexos, as imagens e os áudios, por inteiro. A ferramenta recebe o documento todo, não só o trecho que interessa.</li>
+        <li><b>O histórico:</b> a cada nova mensagem, a conversa anterior costuma ser enviada de novo. O contrato colado de manhã continua viajando até o fim do dia.</li>
+        <li><b>O uso para treinamento:</b> alguns serviços usam o que você digita para treinar versões futuras; outros não. Muitos deixam desligar. Isso muda de empresa para empresa e com o tempo.</li>
+        <li><b>A retenção:</b> mesmo sem treinar, os fornecedores costumam guardar as conversas por um período, para segurança e suporte. Não é zero.</li>
+        <li><b>Quem mais toca:</b> o fornecedor contrata outras empresas, de nuvem, moderação e suporte. São os subprocessadores, listados na documentação.</li>
+        <li><b>Onde o dado fica:</b> servidor no Brasil, nos Estados Unidos ou na Europa muda o regime jurídico. Quando há dado pessoal e o servidor está fora, a LGPD trata isso como transferência internacional (aula 6).</li>
+      </ul>
+      <p>Nada disso é escândalo: é como a tecnologia funciona, e quase tudo está escrito nos termos de uso e na política de privacidade de cada ferramenta. O problema é usar sem saber, e usar do mesmo jeito para qualquer material.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Antes de decidir qualquer coisa, abra hoje os termos e a página de privacidade da ferramenta que você usa e procure quatro respostas: usa minhas conversas para treinar? Por quanto tempo guarda? Em que país processa? Existe plano com contrato de proteção de dados? Anote as respostas com a data.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Texto colado numa IA sai do seu computador por inteiro.</li>
+          <li>Treinamento, retenção, subprocessadores e país variam por ferramenta.</li>
+          <li>As respostas estão nos termos de uso; confira e anote com data.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>A LGPD e o seu papel quando você usa IA</h2>
+      <p>Quando você atende um cliente e usa os dados dele no trabalho, a LGPD chama você de <b>controlador</b>: é a quem cabem as decisões sobre o tratamento dos dados (Lei 13.709/2018, art. 5º, VI). A ferramenta de IA que processa esses dados em seu nome atua como <b>operadora</b> (art. 5º, VII). Usar uma ferramenta não transfere a sua responsabilidade para ela.</p>
+      <p>Um detalhe importante: se os termos da ferramenta permitem que o fornecedor use o conteúdo para fins próprios, como treinar modelos, ele deixa de agir apenas em seu nome. É mais um motivo para desligar o treinamento (aula 6).</p>
+      <h3>Os conceitos que você vai usar</h3>
+      <ul>
+        <li><b>Dado pessoal:</b> informação relacionada a pessoa identificada ou identificável (art. 5º, I). Não é só o nome: CPF, telefone, endereço, número de processo e uma combinação de fatos podem identificar alguém.</li>
+        <li><b>Dado pessoal sensível:</b> origem racial ou étnica, convicção religiosa, opinião política, filiação sindical, saúde, vida sexual, dado genético ou biométrico (art. 5º, II). Tem regras mais rígidas (art. 11).</li>
+        <li><b>Dado anonimizado:</b> o que não permite identificar o titular com meios técnicos razoáveis (art. 5º, III). Esse deixa de ser dado pessoal, a menos que a anonimização possa ser revertida com esforço razoável (art. 12).</li>
+      </ul>
+      <h3>Ter base legal para atender não libera tudo</h3>
+      <p>Você normalmente tem base legal para tratar os dados do cliente: a execução do contrato (art. 7º, V), o exercício regular de direitos em processo (art. 7º, VI) e, para dados sensíveis, hipóteses como o exercício regular de direitos e a tutela da saúde (art. 11, II). Mas os princípios da lei continuam valendo para cada uso, inclusive o envio para uma ferramenta:</p>
+      <ul>
+        <li><b>Necessidade:</b> tratar só o mínimo necessário para a finalidade (art. 6º, III). Se a tarefa funciona sem o nome, o nome não vai.</li>
+        <li><b>Segurança:</b> usar medidas técnicas e administrativas para proteger os dados (art. 6º, VII, e art. 46).</li>
+        <li><b>Responsabilização e prestação de contas:</b> conseguir demonstrar que você adotou medidas eficazes (art. 6º, X). Não basta fazer; é preciso conseguir provar.</li>
+      </ul>
+      <p>E se der errado, quem causa dano por violar a legislação de proteção de dados tem de repará-lo (art. 42).</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>E a lei específica de IA?</h4>
+        <p>O projeto de marco legal da IA (PL 2338/2023) foi aprovado pelo Senado em dezembro de 2024 e seguia em tramitação na Câmara dos Deputados nas notícias mais recentes que encontramos, de meados de 2026. Enquanto ele não vira lei, quem usa IA com dados de cliente responde pela LGPD, pelo Código Penal e pelas normas do próprio conselho profissional. Antes de citar o projeto, confira a situação atual no site do Congresso.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Você é o controlador; a ferramenta não assume a sua responsabilidade.</li>
+          <li>Necessidade, segurança e prestação de contas valem para cada envio.</li>
+          <li>Dado sensível pede cuidado redobrado.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>O sigilo de cada profissão</h2>
+      <p>Além da LGPD, muitas profissões têm dever de sigilo com consequência disciplinar, e o Código Penal vale para todas. Veja onde está a regra da sua:</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Profissão</th><th>Onde está a regra</th><th>O que ela diz, em resumo</th></tr></thead>
+          <tbody>
+            <tr><td><b>Advocacia</b></td><td>Lei 8.906/1994, art. 34, VII · Código de Ética e Disciplina da OAB, arts. 35 a 38</td><td>Violar sigilo profissional sem justa causa é infração disciplinar. O advogado deve guardar sigilo dos fatos que conhece no exercício da profissão (art. 35 do Código).</td></tr>
+            <tr><td><b>Medicina</b></td><td>Código de Ética Médica, art. 73 · Resolução CFM 2.454/2026</td><td>É vedado revelar fato conhecido em virtude da profissão, salvo as exceções previstas. Desde 26 de agosto de 2026, o uso de IA na medicina tem regras próprias: a IA é apoio, e a decisão final sobre diagnóstico e tratamento é sempre do médico.</td></tr>
+            <tr><td><b>Psicologia</b></td><td>Código de Ética Profissional do Psicólogo, art. 9º · orientações do CFP sobre IA (2025)</td><td>Dever de respeitar o sigilo para proteger a intimidade das pessoas, grupos ou organizações atendidas.</td></tr>
+            <tr><td><b>Contabilidade</b></td><td>NBC PG 01, Código de Ética Profissional do Contador, item 4, alínea c</td><td>Dever de guardar sigilo sobre o que souber no exercício profissional, salvo as exceções legais.</td></tr>
+            <tr><td><b>Todas</b></td><td>Código Penal, art. 154</td><td>É crime revelar, sem justa causa, segredo conhecido em razão da profissão, quando a revelação pode causar dano a alguém.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Odontologia, engenharia, arquitetura, serviço social e outras profissões também tratam do sigilo no código de ética do seu conselho. Vale ler o capítulo correspondente: costuma ter poucas páginas.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>A OAB e o CFM já falaram de IA</h4>
+        <p>Em novembro de 2024, o Conselho Federal da OAB aprovou recomendações sobre IA generativa na prática jurídica, ligando o uso ao Estatuto, ao Código de Ética e Disciplina e à LGPD, com atenção à confidencialidade e à comunicação ao cliente. Na medicina, a Resolução CFM 2.454/2026 foi além: proíbe delegar à IA a comunicação de diagnósticos, prognósticos e decisões terapêuticas e prevê regras de auditoria e transparência para instituições.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Uma pergunta resolve a maior parte das dúvidas: <i>“Eu conseguiria explicar ao meu cliente, olhando nos olhos dele, para onde foi a informação dele e por quê?”</i> Se a resposta for não, o material não deveria ter subido daquele jeito.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Sigilo profissional tem consequência disciplinar e, em certos casos, penal.</li>
+          <li>OAB e CFM já orientam o uso de IA; a decisão continua humana.</li>
+          <li>Leia o capítulo de sigilo do código da sua profissão.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>A régua dos quatro níveis</h2>
+      <p>A pergunta útil não é “posso usar IA?”. É “este material específico pode subir, e como?”. Classifique cada material num dos quatro níveis antes de colar. Leva segundos e resolve a grande maioria dos casos.</p>
+      <div class="levels">
+        <div class="lv l1"><b>Nível 1 · Sobe como está</b><p>Conteúdo público ou seu, sem pessoa identificável nem informação de negócio de terceiros: lei, jurisprudência publicada, edital, modelo próprio, dúvida técnica formulada em abstrato.</p></div>
+        <div class="lv l2"><b>Nível 2 · Sobe descaracterizado</b><p>O caso concreto, com nomes trocados por apelidos e identificadores retirados. É onde está a maior parte do trabalho real: a petição, o parecer, o e-mail difícil, a análise do contrato. A técnica está na aula 5.</p></div>
+        <div class="lv l3"><b>Nível 3 · Só em ambiente com contrato</b><p>Dado pessoal sensível, segredo de negócio relevante ou material sob contrato de confidencialidade que proíbe repassar a terceiros. Só em plano profissional com contrato de proteção de dados e treinamento desligado, ou numa IA rodando no seu próprio computador.</p></div>
+        <div class="lv l4"><b>Nível 4 · Não sobe</b><p>O que o seu dever de sigilo não permite entregar a terceiros, como a confissão do cliente ou o laudo com o nome do paciente. Aqui a IA entra depois: você trabalha uma versão sem identificação e devolve os nomes no seu computador.</p></div>
+      </div>
+      <div class="box">
+        <p class="lbl">Exemplos por profissão</p>
+        <ul>
+          <li><b>Advocacia:</b> pesquisar a tese em abstrato é nível 1; redigir a petição com o cliente como “CLIENTE” e a empresa como “EMPRESA-A” é nível 2; analisar documentos com dados de saúde do cliente é nível 3; o relato confidencial do cliente sobre o crime é nível 4.</li>
+          <li><b>Saúde e psicologia:</b> revisar um texto de orientação geral para pacientes é nível 1; organizar a evolução de um caso sem nome, datas exatas nem detalhes raros é nível 2; prontuário identificado é nível 3, e só em sistema com contrato; o laudo com o nome do paciente é nível 4.</li>
+          <li><b>Contabilidade:</b> tirar dúvida sobre uma regra da Reforma Tributária é nível 1; analisar um balanço com o nome da empresa trocado e valores arredondados é nível 2; a folha de pagamento com dados de empregados é nível 3.</li>
+        </ul>
+      </div>
+      <p>O ganho da régua é o contrário do que parece: ela não serve para proibir, serve para liberar. Quem classifica passa a usar IA no nível 2 todos os dias, com tranquilidade, em vez de oscilar entre o medo e o descuido.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Classifique o material antes de colar: 1, 2, 3 ou 4.</li>
+          <li>Nível 2 é o dia a dia; nível 3 pede contrato; nível 4 não sobe.</li>
+          <li>A régua libera o uso seguro em vez de proibir.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Descaracterizar sem perder qualidade</h2>
+      <p>Descaracterizar não é apagar. Apagar tira o sentido e a IA devolve um trabalho ruim. Substituir mantém a estrutura, que é o que a IA precisa, e retira o que identifica. É a técnica do apelido:</p>
+      <ol>
+        <li><b>Monte uma tabela de apelidos</b> num arquivo à parte, no seu computador: de um lado o dado real, do outro o código (CLIENTE, EMPRESA-A, DATA-1, VALOR-1, AUTOS).</li>
+        <li><b>Troque no texto, não no sentido.</b> Saem nomes, CPF e CNPJ, número de processo ou prontuário, endereço, telefone, e-mail, datas e valores exatos. Fica tudo o que dá contexto: a relação entre as partes, a ordem dos fatos, o problema.</li>
+        <li><b>Confira o que você não escreveu.</b> O vazamento raramente está no corpo do texto. Está no cabeçalho, no rodapé, no nome do arquivo, na assinatura de e-mail, nos metadados do PDF e no print de tela com o nome do cliente na aba do navegador.</li>
+        <li><b>Devolva os nomes no seu computador.</b> A IA entrega o texto com os códigos; você usa localizar e substituir no seu editor. A versão com nomes nunca sai da sua máquina.</li>
+      </ol>
+      <div class="box">
+        <p class="lbl">Antes e depois</p>
+        <div class="cmp">
+          <div class="weak"><b>Antes</b>Paciente J. R. S., 47 anos, motorista em Contagem, internado no Hospital X em 03/05 com crise hipertensiva, pede relatório para o INSS.</div>
+          <div class="strong"><b>Depois</b>PACIENTE, adulto de meia-idade, motorista profissional, teve internação por crise hipertensiva em DATA-1 e pede relatório para fins previdenciários.</div>
+        </div>
+        <p style="margin-top:12px;">A IA trabalha igualmente bem com o segundo texto. Ela nunca precisou do nome, da cidade nem do hospital.</p>
+      </div>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Apelido não é anonimização</h4>
+        <p>Pela LGPD, dado anonimizado é o que não permite identificar a pessoa com meios razoáveis (art. 5º, III, e art. 12). A técnica do apelido é outra coisa: enquanto você guarda a tabela, consegue voltar ao nome. A própria lei descreve esse tipo de tratamento, em que o dado só volta a se ligar a alguém com uma informação mantida separadamente, como pseudonimização (art. 13, § 4º, ao tratar de estudos em saúde pública).</p>
+        <p>Na prática: a técnica reduz muito o risco, mas para você o material continua sendo dado pessoal. Os princípios da aula 2 seguem valendo, e a tabela de apelidos precisa ficar bem guardada.</p>
+      </div>
+      <h3>Quando a técnica falha</h3>
+      <p>Um caso famoso não se descaracteriza: a combinação de fatos identifica sozinha. O mesmo vale para doenças raras, cidades pequenas e cargos únicos. Nesses casos, suba só a questão em abstrato, sem os fatos, ou trate o material como nível 3. Reconhecer esse limite faz parte da técnica.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Substitua identificadores por códigos e mantenha o contexto.</li>
+          <li>Confira cabeçalho, rodapé, nome do arquivo, metadados e prints.</li>
+          <li>Apelido é pseudonimização: reduz o risco, mas a LGPD continua valendo.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>Configure, registre, comprove</h2>
+      <p>Três ajustes, sem trocar de ferramenta e sem instalar nada. Faça hoje, na ferramenta que você já usa:</p>
+      <ol>
+        <li><b>Treinamento:</b> procure nas configurações a opção de usar as suas conversas para melhorar o modelo e desligue. Em muitos serviços ela vem ligada na conta gratuita.</li>
+        <li><b>Histórico:</b> veja por quanto tempo as conversas ficam guardadas, reduza o prazo se der e apague a conversa quando o trabalho terminar. Apagar não elimina a cópia que o fornecedor retém, mas elimina a que fica aberta na sua tela.</li>
+        <li><b>Conta certa:</b> separe conta pessoal e conta de trabalho. Planos profissionais costumam oferecer um contrato de tratamento de dados, o documento que você mostra se um cliente perguntar.</li>
+      </ol>
+      <h3>Registre em uma linha</h3>
+      <p>No dia em que configurar, anote: ferramenta, plano, opções desligadas e data. A LGPD pede que controlador e operador mantenham registro das operações de tratamento (art. 37) e que você consiga demonstrar as medidas adotadas (art. 6º, X). Essa linha é a sua prova de diligência e vale mais do que a lembrança.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Servidor fora do país</h4>
+        <p>Se a ferramenta processa dados pessoais fora do Brasil, há transferência internacional, que só é permitida nos casos previstos na LGPD (art. 33). A ANPD regulamentou o tema na Resolução CD/ANPD 19/2024, que aprovou cláusulas-padrão contratuais para esse tipo de envio. Por isso o nível 3 exige ambiente com contrato: na conta gratuita, em geral, não existe contrato nenhum para mostrar.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Para material de nível 3 com frequência, compare duas saídas: um plano profissional com contrato de proteção de dados, treinamento desligado e retenção reduzida; ou um modelo de IA que roda no seu próprio computador, sem enviar nada para fora. A segunda dá mais trabalho técnico e entrega controle total.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Desligue o treinamento, controle o histórico e separe as contas.</li>
+          <li>Registre ferramenta, plano, configurações e data.</li>
+          <li>Servidor no exterior com dado pessoal exige base na LGPD e contrato.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-7">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 7 -->
+    <section class="lesson" id="aula-7" data-l="7">
+      <p class="num">Aula 7</p>
+      <h2>Regras da casa e o que fazer se algo vazar</h2>
+      <p>Regra que só existe na cabeça de alguém não vale para a equipe. Uma política de uso de IA de uma página, escrita e conhecida por todos, resolve três problemas de uma vez: orienta quem está começando, padroniza o cuidado e serve de prova de diligência. No fim deste curso há um modelo pronto para preencher.</p>
+      <h3>Transparência com o cliente</h3>
+      <p>As recomendações da OAB tratam da comunicação ao cliente sobre o uso de IA, e a mesma lógica vale para as outras profissões. A pergunta vai chegar: <i>“Você está colocando o meu caso no ChatGPT?”</i>. Quem improvisa a resposta perde confiança; quem tem a resposta pronta ganha um argumento. Duas regras: prometa só o que você já configurou, e leia antes a cláusula de confidencialidade do seu contrato, porque algumas exigem aviso ou autorização para usar serviços de terceiros.</p>
+      <p>O guia gratuito <a href="/sigilo/">Use IA no trabalho e mantenha o segredo do seu cliente</a> traz um parágrafo pronto para adaptar ao seu contrato ou à sua mensagem de abertura.</p>
+      <h3>Se você colou o que não devia</h3>
+      <ol>
+        <li><b>Pare e apague</b> a conversa e o arquivo enviado. Se a ferramenta permitir, peça a exclusão ao fornecedor.</li>
+        <li><b>Confira as configurações</b> daquela conta: treinamento e retenção estavam como?</li>
+        <li><b>Avalie o risco</b> para o cliente: que dado foi, de quem, com que chance de causar dano.</li>
+        <li><b>Comunique quando a lei exige:</b> se o incidente puder causar risco ou dano relevante, o controlador deve comunicar a ANPD e o titular (art. 48). A ANPD regulamentou prazo e forma; confira no site dela.</li>
+        <li><b>Registre</b> o que aconteceu, o que você fez e quando. Na advocacia e na saúde, avalie também o dever ético de informar o cliente.</li>
+      </ol>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Uma política escrita de uma página orienta, padroniza e comprova.</li>
+          <li>Tenha a resposta ao cliente pronta e verdadeira.</li>
+          <li>Em incidente: apagar, avaliar, comunicar quando exigido, registrar.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="7" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- POLÍTICA -->
+    <section class="lesson" id="politica">
+      <p class="num">Para imprimir e preencher</p>
+      <h2>Política de uso de IA</h2>
+      <p class="pol-sub">Escritório ou consultório: ______________________ · Versão de ___/___/______</p>
+      <ol class="pol">
+        <li><b>Ferramentas autorizadas.</b> Só estas, em conta de trabalho: ______________________. Treinamento desligado; histórico guardado por no máximo ____ dias.</li>
+        <li><b>O que pode subir.</b> Níveis 1 e 2 da régua. Nível 3 apenas em: ______________________ (ambiente com contrato). Nível 4 nunca.</li>
+        <li><b>Descaracterização.</b> Todo material de cliente passa pela técnica do apelido antes de subir. A tabela de apelidos fica só em: ______________________.</li>
+        <li><b>Revisão humana.</b> Nenhum resultado sai sem revisão de: ______________________. Toda citação de lei, decisão ou norma é conferida na fonte oficial.</li>
+        <li><b>Transparência.</b> Os clientes são informados sobre o uso de IA por meio de: ______________________ (contrato, mensagem de abertura).</li>
+        <li><b>Registro.</b> Ferramenta, plano e configurações anotados em: ______________________, revistos a cada ____ meses.</li>
+        <li><b>Incidentes.</b> Quem souber de um envio indevido avisa ______________________ no mesmo dia. A decisão sobre comunicar a ANPD e o cliente (LGPD, art. 48) é de: ______________________.</li>
+        <li><b>Responsável por esta política:</b> ______________________. Próxima revisão: ___/___/______.</li>
+      </ol>
+      <button class="btn no-print" type="button" id="print-pol">Imprimir a política</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas e documentos citados</h2>
+      <ul class="sources">
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener">Lei 13.709/2018 (LGPD)</a>: arts. 5º, 6º, 7º, 11, 12, 13, 33, 37, 42, 46 e 48</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8906.htm" target="_blank" rel="noopener">Lei 8.906/1994 (Estatuto da Advocacia e da OAB)</a>, art. 34, VII</li>
+        <li><a href="https://www.oab.org.br/leisnormas/legislacao/resolucoes/02-2015" target="_blank" rel="noopener">Código de Ética e Disciplina da OAB (Resolução 02/2015)</a>, arts. 35 a 38</li>
+        <li><a href="https://www.oab.org.br/noticia/62711/confira-versao-final-da-recomendacao-do-cfoab-sobre-o-uso-de-ia-na-pratica-juridica" target="_blank" rel="noopener">Recomendação do Conselho Federal da OAB sobre IA generativa (nov/2024)</a></li>
+        <li>Código de Ética Médica (Resolução CFM 2.217/2018), art. 73</li>
+        <li><a href="https://portal.cfm.org.br/noticias/cfm-normatiza-uso-da-ia-na-medicina" target="_blank" rel="noopener">Resolução CFM 2.454/2026 (IA na medicina)</a></li>
+        <li>Código de Ética Profissional do Psicólogo (Resolução CFP 010/2005), art. 9º</li>
+        <li><a href="https://site.cfp.org.br/cfp-lanca-cartilhas-destacando-a-inteligencia-artificial-na-psicologia" target="_blank" rel="noopener">CFP: cartilhas sobre IA na psicologia</a></li>
+        <li>NBC PG 01 (Código de Ética Profissional do Contador), item 4, alínea c</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm" target="_blank" rel="noopener">Decreto-Lei 2.848/1940 (Código Penal)</a>, art. 154</li>
+        <li><a href="https://www.gov.br/anpd/pt-br/assuntos/assuntos-internacionais/transferencia-internacional-de-dados/international-affairs" target="_blank" rel="noopener">ANPD: transferência internacional de dados (Resolução CD/ANPD 19/2024)</a></li>
+        <li><a href="https://www.congressonacional.leg.br/web/atividade/materias/-/materia/157233" target="_blank" rel="noopener">PL 2338/2023 (marco legal da IA), situação no Congresso</a></li>
+        <li><a href="https://www.oabsp.org.br/jornaldaadvocacia/2026/03/26/tres-em-cada-quatro-advogados-usam-inteligencia-artificial-no-trabalho" target="_blank" rel="noopener">OAB-SP (2026): três em cada quatro advogados usam IA no trabalho</a></li>
+        <li><a href="https://analise.com/noticias/enquanto-quase-80-dos-advogados-utilizam-ia-apenas-11-das-bancas-tem-diretrizes-sobre-esse-uso" target="_blank" rel="noopener">Análise: 11% das bancas têm diretrizes de uso de IA</a></li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. Normas conferidas em 27 de novembro de 2026.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui a orientação do seu conselho profissional, do encarregado de dados nem a análise do caso concreto. A HermesIA não é escritório de advocacia e não presta consultoria jurídica. ChatGPT e outras marcas citadas pertencem a seus titulares.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-sigilo-v1', TOTAL=7, done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:'sigilo-lgpd-etica',aula:+i});
+    });
+  });
+  render();
+
+  var Q=[
+    {q:'Você usa IA com dados de um cliente. Pela LGPD, quem é o controlador desses dados?',o:['A empresa dona da ferramenta de IA.','Você, que decide para que e como os dados são usados.','Ninguém, porque a ferramenta só processa texto.'],c:1,e:'O profissional decide sobre o tratamento e é o controlador; a ferramenta atua como operadora (aula 2).'},
+    {q:'Um texto com nomes trocados por códigos, enquanto você guarda a tabela de apelidos:',o:['Está anonimizado e fora da LGPD.','Ainda é dado pessoal para você; o risco cai, mas a LGPD continua valendo.','Pode ser publicado livremente.'],c:1,e:'É pseudonimização: com a tabela, dá para voltar ao nome. Anonimizado é o que não permite reidentificar (aula 5).'},
+    {q:'O laudo de um paciente, com o nome dele, deve ser tratado como:',o:['Nível 1: sobe como está.','Nível 2: basta trocar o nome do arquivo.','Nível 4: não sobe; trabalhe uma versão sem identificação e devolva os nomes no seu computador.'],c:2,e:'O que o dever de sigilo não permite entregar a terceiros fica no nível 4 (aula 4).'},
+    {q:'Você precisa de ajuda com um caso que saiu em todos os jornais. O mais seguro é:',o:['Trocar só os nomes e subir o caso inteiro.','Subir apenas a questão em abstrato, sem os fatos, ou tratar como nível 3.','Desistir de usar IA para sempre.'],c:1,e:'Em casos famosos, a combinação de fatos identifica sozinha; a técnica do apelido falha (aula 5).'},
+    {q:'Para o advogado, violar sigilo profissional sem justa causa é:',o:['Infração disciplinar prevista no Estatuto da Advocacia.','Apenas uma questão de boa educação.','Permitido quando se usa IA.'],c:0,e:'Lei 8.906/1994, art. 34, VII. E o Código Penal, art. 154, vale para todas as profissões (aula 3).'},
+    {q:'Pela Resolução CFM 2.454/2026, quando um médico usa IA, a decisão final sobre diagnóstico e tratamento:',o:['Pode ser delegada à IA se ela for confiável.','Continua sendo do médico.','Fica com o fornecedor da ferramenta.'],c:1,e:'A IA é apoio; a decisão final é sempre humana (aula 3).'},
+    {q:'Anotar ferramenta, plano, configurações e data serve principalmente para:',o:['Cumprir uma formalidade sem efeito.','Demonstrar diligência: a LGPD pede registro e prestação de contas.','Pedir desconto ao fornecedor.'],c:1,e:'Arts. 6º, X, e 37 da LGPD: não basta fazer, é preciso conseguir comprovar (aula 6).'},
+    {q:'Você percebeu que colou um documento identificado de cliente numa conta gratuita. O caminho certo é:',o:['Não fazer nada, porque ninguém vai saber.','Apagar, avaliar o risco, registrar e comunicar ANPD e titular se houver risco ou dano relevante.','Postar um aviso nas redes sociais.'],c:1,e:'LGPD, art. 48: incidente com risco ou dano relevante deve ser comunicado (aula 7).'}
+  ];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: agora preencha a política de uso de IA logo abaixo.':'Vale rever as aulas indicadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:'sigilo-lgpd-etica',acertos:right});
+  }
+
+  document.getElementById('print-pol').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Sigilo, LGPD e ética profissional com IA","description":"Curso grátis em português: como usar IA com material de cliente dentro da LGPD e do sigilo profissional, com modelo de política de uso de IA.","inLanguage":"pt-BR","isAccessibleForFree":true,"url":"https://hermesia.ia.br/academia/sigilo-lgpd-e-etica-com-ia/","provider":{"@type":"Organization","name":"HermesIA","sameAs":"https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>
