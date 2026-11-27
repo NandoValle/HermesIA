@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primeiros passos com IA — curso grátis | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro para quem está começando: a primeira conversa com uma IA, como conferir as respostas, proteger seus dados pela LGPD e evitar golpes com voz e vídeo falsos. 6 aulas, quiz e guia de bolso.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/primeiros-passos-com-ia/">
+<meta property="og:title" content="Primeiros passos com IA — curso grátis da Academia HermesIA">
+<meta property="og:description" content="6 aulas em português para quem nunca usou IA ou usou pouco: primeira conversa, conferência das respostas, privacidade e golpes com voz clonada. Com guia de bolso para imprimir.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/primeiros-passos-com-ia/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+
+  /* Tabela por profissão */
+  .tbl-wrap{overflow-x:auto;margin:8px 0 18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;line-height:1.55}
+  .tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:13px}
+  .tbl td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;color:#2a3042}
+  .tbl tr:nth-child(even) td{background:#fbf8ee}
+  /* Régua */
+  .levels{display:grid;gap:10px;margin:8px 0 20px}
+  .lv{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:#fff;border-left-width:1px}
+  .lv b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .lv p{font-size:15px!important;margin:0!important;line-height:1.65!important}
+  .lv.l1{background:#f1f8f2;border-color:#cfe3d3}
+  .lv.l2{background:#f3f6fb;border-color:#d5ddeb}
+  .lv.l3{background:#fbf6e8;border-color:#eadcb3}
+  .lv.l4{background:#fbf0ee;border-color:#efd2cb}
+  /* Política */
+  .pol-sub{font-size:15px!important;color:var(--muted)!important}
+  .pol{margin:0 0 18px 22px}
+  .pol li{font-size:15.5px;line-height:1.85;margin-bottom:10px}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#guia){display:none!important}
+    html.print-check #guia{border:0;margin:0;padding:0}
+    html.print-check #guia .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Comece aqui</p>
+    <h1>Primeiros passos com IA</h1>
+    <p class="sub">Para quem nunca usou ou usou pouco. Faça a sua primeira conversa com uma IA, aprenda a conferir o que ela responde e proteja os seus dados e a sua família dos golpes com voz e vídeo falsos.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>6 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 40 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português e adaptado às leis do Brasil. Vale para qualquer ferramenta de IA que conversa, como ChatGPT, Gemini, Claude, Copilot e Meta AI. Depois deste, faça <a href="/academia/como-pedir-bem-a-ia/" style="color:var(--gold-l)">Como pedir bem à IA</a>.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 6 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>O que é a IA que conversa</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>A sua primeira conversa</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>Para que serve no dia a dia</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>Confira antes de acreditar</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Seus dados e sua privacidade</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>Golpes com voz e vídeo falsos</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#guia"><span class="ck"><span>✎</span></span>Guia de bolso para imprimir</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para qualquer pessoa: quem nunca abriu uma ferramenta de IA, quem usou poucas vezes e quer usar melhor, e quem quer ajudar pais, avós ou filhos a começar com segurança. Não é preciso saber nada de tecnologia. Ao terminar, você terá feito a sua primeira conversa, saberá conferir as respostas e terá um guia de bolso com as regras de segurança.</p>
+      <p style="margin-top:12px;"><b>O que este curso não faz:</b> recomendar uma marca nem ensinar os botões de uma ferramenta específica. Os passos valem para todas.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>O que é a IA que conversa</h2>
+      <p>As ferramentas que conversam com você, como ChatGPT, Gemini, Claude, Copilot e Meta AI, são chamadas de IA generativa: geram textos, imagens ou áudios novos a partir do que você pede. Você escreve ou fala uma pergunta, e a resposta chega em segundos, em português.</p>
+      <h3>Como ela escreve</h3>
+      <p>Ela aprendeu com uma quantidade enorme de textos e escreve escolhendo, palavra por palavra, a continuação mais provável para o seu pedido. Por isso escreve bem e com segurança. Pelo mesmo motivo, pode afirmar uma coisa errada no mesmo tom confiante de uma certa: ela não consulta uma lista de fatos verdadeiros antes de responder.</p>
+      <h3>O que esperar dela</h3>
+      <ul>
+        <li><b>Ela é diferente de um buscador.</b> Algumas pesquisam na internet e mostram links. Outras respondem só com o que aprenderam e podem estar desatualizadas.</li>
+        <li><b>Ela é diferente de uma pessoa.</b> Não tem opinião própria e só se lembra de conversas antigas se a ferramenta tiver memória ligada.</li>
+        <li><b>Ela é diferente de um profissional habilitado.</b> Pode explicar um exame, uma conta ou um contrato, mas a decisão sobre o seu caso é com o médico, o advogado ou o contador.</li>
+      </ul>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Um em cada três usuários de internet já usa</h4>
+        <p>Na pesquisa TIC Domicílios 2025, do Cetic.br, 32% dos usuários de internet disseram ter usado IA generativa nos três meses anteriores: cerca de 50 milhões de pessoas com 10 anos ou mais. O uso é desigual: 69% na classe A e 16% nas classes D e E. Entre quem não usou, os motivos mais citados foram falta de interesse ou necessidade (76%), preocupação com segurança e privacidade (63%) e falta de habilidade (58%). Este curso cuida dos dois últimos.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Pense na IA como um assistente muito rápido, que leu muito e às vezes responde com segurança o que não sabe. Ótimo para começar um trabalho; a palavra final é sua.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A IA generativa escreve a continuação mais provável do seu pedido.</li>
+          <li>Escreve bem e pode errar com o mesmo tom de certeza.</li>
+          <li>Ajuda a começar; a decisão é sua e, quando for o caso, do profissional.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>A sua primeira conversa</h2>
+      <p>Para começar, basta uma conta gratuita numa das ferramentas, pelo site ou pelo aplicativo do celular. Algumas também funcionam dentro de aplicativos que você já usa, como o WhatsApp.</p>
+      <h3>Três coisas num bom pedido</h3>
+      <ol>
+        <li><b>A situação.</b> Quem você é e o que está acontecendo: “Vou viajar nove horas de ônibus para visitar minha filha.”</li>
+        <li><b>O pedido.</b> O que você quer: “Faça uma lista do que levar na bagagem de mão.”</li>
+        <li><b>O formato.</b> Como quer a resposta: “Em tópicos curtos, no máximo dez itens.”</li>
+      </ol>
+      <div class="cmp">
+        <div class="weak"><b>Pedido vago</b>Lista de viagem.</div>
+        <div class="strong"><b>Pedido completo</b>Vou viajar nove horas de ônibus, de Belo Horizonte a São Paulo, para visitar minha filha e levar um presente para meu neto. Faça uma lista do que levar na bagagem de mão, em tópicos curtos, no máximo dez itens.</div>
+      </div>
+      <h3>Converse e peça ajustes</h3>
+      <p>A primeira resposta é um rascunho. Peça ajustes na mesma conversa: “Mais curto”, “Explique como se eu nunca tivesse ouvido falar disso”, “Dê um exemplo”, “Agora escreva em forma de mensagem para minha filha”. A ferramenta leva em conta o que já foi dito na conversa aberta.</p>
+      <p>Você também pode falar em vez de digitar, pelo microfone do celular, e enviar a foto de um aviso ou de uma placa para pedir explicação. Antes de enviar uma foto, veja se nela aparecem documentos ou dados pessoais (aula 5).</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Faça agora o seu primeiro teste: peça à IA que explique, em linguagem simples, um assunto que você sempre quis entender. Depois peça: <i>“Faça três perguntas para ver se eu entendi.”</i> Em dez minutos você terá usado a ferramenta como professora particular.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Situação, pedido e formato.</li>
+          <li>A primeira resposta é rascunho: peça ajustes na mesma conversa.</li>
+          <li>Pode falar e mandar foto, sempre cuidando dos dados.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>Para que serve no dia a dia</h2>
+      <p>A IA ajuda mais quando o resultado é fácil de você conferir. Comece por tarefas assim.</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Tarefa</th><th>Exemplo de pedido</th><th>Cuidado</th></tr></thead>
+          <tbody>
+            <tr><td>Escrever ou revisar uma mensagem</td><td>“Revise este texto para ficar educado e claro, sem mudar o sentido.”</td><td>Leia antes de enviar.</td></tr>
+            <tr><td>Entender um texto difícil</td><td>“Explique em linguagem simples este aviso do condomínio.”</td><td>Em contrato e documento oficial, confira o original.</td></tr>
+            <tr><td>Planejar</td><td>“Monte um cardápio de uma semana para duas pessoas, com arroz, feijão e legumes.”</td><td>Ajuste ao seu orçamento e à sua saúde.</td></tr>
+            <tr><td>Aprender</td><td>“Me ensine, passo a passo, a fazer uma soma na planilha.”</td><td>Teste cada passo.</td></tr>
+            <tr><td>Traduzir</td><td>“Traduza esta mensagem para o inglês, em tom informal.”</td><td>Documento oficial pede tradutor público.</td></tr>
+            <tr><td>Resumir</td><td>“Resuma este texto em cinco tópicos.”</td><td>O resumo pode deixar de fora o que importa para você.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Saúde, dinheiro e direitos</h3>
+      <p>Esses assuntos pedem mais cuidado. A IA pode ajudar você a entender um termo, a preparar perguntas para a consulta ou a organizar documentos para levar ao advogado. A decisão sobre remédio, investimento, processo ou contrato é sua, com o profissional habilitado.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Serviço público tem fonte oficial</h4>
+        <p>Para benefício do INSS, imposto de renda, documentos e outros serviços do governo, a fonte é o portal gov.br e o aplicativo do órgão. Use a IA para entender o passo a passo e confira no site oficial antes de agir. Na TIC Domicílios 2025, 71% dos usuários de internet com 16 anos ou mais usaram serviços de governo eletrônico.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Um uso seguro e útil: <i>“Quero entender o que é colesterol LDL. Quais perguntas devo fazer ao médico na próxima consulta?”</i> A IA organiza as suas dúvidas, sem dados seus, e a resposta sobre o seu caso vem de quem pode dar.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Comece por tarefas fáceis de conferir.</li>
+          <li>Saúde, dinheiro e direitos: a IA prepara, o profissional decide.</li>
+          <li>Serviço público: confira no gov.br.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>Confira antes de acreditar</h2>
+      <p>A IA às vezes inventa datas, números, leis, endereços, telefones, nomes de livros e até decisões de tribunal. A invenção vem bem escrita e no mesmo tom de uma informação correta. Quem confere é você.</p>
+      <h3>Quatro hábitos</h3>
+      <ol>
+        <li><b>Peça a fonte e abra o link.</b> Se a ferramenta mostrar links, clique e veja se o site diz mesmo aquilo. Se não mostrar, procure você.</li>
+        <li><b>Confira número, data e nome.</b> São os pontos em que a invenção mais aparece.</li>
+        <li><b>Use a fonte oficial.</b> Lei no site do Planalto, benefício no gov.br, remédio na bula ou com o farmacêutico.</li>
+        <li><b>Desconfie do que agrada demais.</b> A IA tende a concordar com quem pergunta. Se a resposta confirma exatamente o que você queria ouvir, confira duas vezes.</li>
+      </ol>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Até profissionais já caíram</h4>
+        <p>Tribunais brasileiros, entre eles o TSE, já aplicaram multa a quem apresentou decisões judiciais inventadas por IA. E conferir ainda é hábito de poucos: na TIC Domicílios 2025, metade dos usuários de internet (50%) declarou ter verificado se uma informação encontrada na rede era verdadeira.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Peça à própria IA: <i>“Quais pontos desta resposta eu devo conferir em outra fonte?”</i> Ela costuma apontar bem os trechos frágeis. Isso ajuda a revisar, mas a conferência na fonte continua sendo sua.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A IA inventa com tom de certeza.</li>
+          <li>Número, data, nome e lei: confira.</li>
+          <li>A fonte oficial vale mais que a resposta da IA.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Seus dados e sua privacidade</h2>
+      <p>O que você escreve numa ferramenta de IA vai para os computadores da empresa que a oferece. Conforme a ferramenta e as suas configurações, a conversa pode ficar guardada, ser usada para melhorar o sistema e, em alguns casos, ser lida por pessoas da empresa para fins de segurança.</p>
+      <h3>O que nunca escrever</h3>
+      <ul>
+        <li>Senhas, códigos de verificação e PIN.</li>
+        <li>Número de cartão, dados bancários e acesso a contas.</li>
+        <li>CPF, RG e foto de documentos.</li>
+        <li>Exames, laudos e receitas com o seu nome.</li>
+        <li>Dados de outras pessoas sem autorização delas.</li>
+        <li>Segredos do seu trabalho e informações de clientes.</li>
+      </ul>
+      <h3>Ajuste as configurações</h3>
+      <p>Procure nas configurações da ferramenta as opções de histórico de conversas e de uso dos dados para treinamento. Em muitas, dá para desligar esse uso e apagar conversas antigas. Para falar de algo pessoal, troque nomes e detalhes que identificam alguém.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>A LGPD vale para as empresas de IA</h4>
+        <p>Pela Lei Geral de Proteção de Dados, você pode pedir à empresa que trata os seus dados a confirmação de que ela os trata, o acesso a eles, a correção, a eliminação dos dados tratados com o seu consentimento e a informação sobre com quem foram compartilhados (Lei 13.709/2018, art. 18). O pedido vai pelo canal de privacidade que a empresa informa. Se não for atendido, você pode reclamar à Autoridade Nacional de Proteção de Dados (art. 18, §1º).</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Regra simples: escreva na IA só o que você aceitaria ver num cartaz no elevador do prédio. Para o resto, use dados trocados: “Maria” vira “minha vizinha”, o valor exato vira “cerca de mil reais”.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A conversa sai do seu aparelho.</li>
+          <li>Senha, documento, cartão e exame com seu nome: nunca.</li>
+          <li>A LGPD garante acesso, correção e eliminação.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>Golpes com voz e vídeo falsos</h2>
+      <p>A mesma tecnologia que escreve também imita vozes e rostos. Com trechos curtos de áudio tirados de um vídeo ou de uma mensagem, golpistas criam uma voz parecida com a de um filho ou de um neto pedindo dinheiro com urgência. Também circulam vídeos falsos de pessoas famosas e de médicos vendendo produtos e promessas.</p>
+      <h3>Sinais de golpe</h3>
+      <ul>
+        <li>Urgência: “é agora”, “não conta para ninguém”.</li>
+        <li>Pedido de Pix, de código recebido por mensagem ou de senha.</li>
+        <li>Número novo: “troquei de número, salva este”.</li>
+        <li>História que muda quando você faz perguntas.</li>
+        <li>Oferta boa demais, com rosto de famoso ou de médico.</li>
+      </ul>
+      <h3>Combine uma palavra-senha</h3>
+      <p>Escolha com a família uma palavra ou uma pergunta que só vocês saibam e que nunca apareça em rede social. Diante de um pedido estranho, por voz, vídeo ou mensagem, peça a palavra. Na dúvida, desligue e ligue de volta para o número que você já tinha salvo.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Fraude eletrônica é crime grave</h4>
+        <p>O Código Penal pune com reclusão de 4 a 8 anos, além de multa, a fraude cometida com informações fornecidas pela vítima enganada por redes sociais, ligações, e-mail falso, clonagem de aparelho ou de aplicativo, ou meio parecido (art. 171, §2º-A, com a redação da Lei 15.397/2026). A pena aumenta quando a vítima é idosa ou vulnerável (art. 171, §4º). Caiu no golpe? Avise o banco na hora e peça a devolução pelo Mecanismo Especial de Devolução do Pix (MED), registre boletim de ocorrência (em muitos estados, pela delegacia online) e guarde prints, números e comprovantes.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Ensine isso hoje a quem você ama, principalmente a pais e avós. Combine a palavra-senha no próximo almoço de família e escreva no guia de bolso, logo abaixo, o telefone do banco e o endereço da delegacia online do seu estado.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Voz e vídeo podem ser falsos.</li>
+          <li>Urgência com pedido de dinheiro: pare e confira.</li>
+          <li>Palavra-senha da família e ligação de volta.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- PARA IMPRIMIR -->
+    <section class="lesson" id="guia">
+      <p class="num">Para imprimir e guardar</p>
+      <h2>Meu guia de bolso da IA</h2>
+      <p class="pol-sub">Nome: ______________________ · Ferramenta que uso: ______________________</p>
+      <ol class="pol">
+        <li><b>Para que vou usar.</b> 1) ____________________ 2) ____________________ 3) ____________________</li>
+        <li><b>Como peço.</b> A situação, o pedido e o formato. Peço ajustes na mesma conversa.</li>
+        <li><b>Onde confiro.</b> Leis: planalto.gov.br · Serviços públicos: gov.br · Saúde: ______________________ · Outros: ______________________</li>
+        <li><b>O que nunca escrevo.</b> Senha, código, cartão, dados bancários, documentos, exame com meu nome e dados de outras pessoas.</li>
+        <li><b>Contra golpes.</b> Palavra-senha combinada com: ______________________ · Telefone do banco: ______________________ · Delegacia online do meu estado: ______________________</li>
+      </ol>
+      <p class="check-h">Antes de confiar numa resposta</p>
+      <ul class="check">
+        <li>Conferi números, datas e nomes.</li>
+        <li>Abri a fonte, e ela diz o mesmo.</li>
+        <li>Escrevi só o que aceitaria ver num cartaz.</li>
+        <li>Para saúde, dinheiro e direitos, falei com um profissional.</li>
+      </ul>
+      <button class="btn no-print" type="button" id="print-btn">Imprimir o guia</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas e dados citados</h2>
+      <ul class="sources">
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm" target="_blank" rel="noopener">Lei 13.709/2018 (LGPD)</a>: art. 18</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm" target="_blank" rel="noopener">Decreto-Lei 2.848/1940 (Código Penal)</a>: art. 171, §§2º-A e 4º, com a redação das Leis 14.155/2021 e 15.397/2026</li>
+        <li><a href="https://cetic.br/pt/noticia/50-milhoes-de-brasileiros-ja-usam-ia-mas-potenciais-beneficios-continuam-limitados-as-camadas-de-maior-renda-e-escolaridade/" target="_blank" rel="noopener">Cetic.br, TIC Domicílios 2025</a> (divulgada em dezembro de 2025; coleta de março a agosto de 2025) e o <a href="https://cetic.br/media/docs/publicacoes/2/pt-br/20260511173151/tic_domicilios_2025_resumoexecutivo%20pt.pdf" target="_blank" rel="noopener">resumo executivo</a></li>
+        <li><a href="https://www.bcb.gov.br/estabilidadefinanceira/pix" target="_blank" rel="noopener">Banco Central do Brasil: Pix</a> (Mecanismo Especial de Devolução)</li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. As normas mudam: confira sempre a redação atual na fonte oficial.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui a orientação de médico, advogado, contador ou outro profissional, nem a análise do caso concreto. A HermesIA não é escritório de advocacia e não presta consultoria jurídica. Marcas citadas pertencem a seus titulares.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-primeiros-v1', TOTAL=6, CURSO='primeiros-passos', done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:CURSO,aula:+i});
+    });
+  });
+  render();
+
+  var Q=[{"q": "Por que a IA pode afirmar uma coisa errada com toda a segurança?", "o": ["Porque escreve a continuação mais provável do pedido, sem consultar uma lista de fatos verdadeiros.", "Porque foi programada para mentir.", "Porque a internet do celular estava fraca."], "c": 0, "e": "Ela escreve bem mesmo quando erra (aula 1)."}, {"q": "Qual pedido tende a trazer a resposta mais útil?", "o": ["“Lista de viagem.”", "Um pedido com a situação, o que você quer e o formato da resposta.", "Um pedido escrito todo em letras maiúsculas."], "c": 1, "e": "Situação, pedido e formato (aula 2)."}, {"q": "A primeira resposta não ficou boa. O melhor a fazer é:", "o": ["Desistir da ferramenta.", "Abrir outra conversa e repetir a mesma frase.", "Pedir ajustes na mesma conversa: mais curto, mais simples, com exemplo."], "c": 2, "e": "A primeira resposta é rascunho (aula 2)."}, {"q": "A IA explicou como pedir um benefício do INSS. Antes de agir, você deve:", "o": ["Conferir no gov.br ou no aplicativo do órgão.", "Confiar, porque a resposta veio bem escrita.", "Pedir a mesma resposta de novo."], "c": 0, "e": "Serviço público tem fonte oficial (aulas 3 e 4)."}, {"q": "Qual destas informações você pode escrever numa IA sem problema?", "o": ["O código de verificação que chegou por mensagem.", "Uma dúvida geral, sem nomes nem documentos.", "A foto do seu RG."], "c": 1, "e": "Senha, código e documento nunca entram (aula 5)."}, {"q": "Pela LGPD, você pode pedir à empresa da ferramenta de IA:", "o": ["Nada, porque a empresa é estrangeira.", "Apenas o reembolso da assinatura.", "Acesso, correção e eliminação dos seus dados, entre outros direitos."], "c": 2, "e": "Lei 13.709/2018, art. 18 (aula 5)."}, {"q": "Chega um áudio com a voz do seu filho, de um número novo, pedindo um Pix urgente. O melhor é:", "o": ["Pedir a palavra-senha da família ou desligar e ligar para o número que você já tinha.", "Fazer o Pix logo, porque a voz é igual.", "Responder com os dados do seu cartão."], "c": 0, "e": "Voz pode ser clonada; confira por outro canal (aula 6)."}, {"q": "Você caiu num golpe pelo Pix. O primeiro passo é:", "o": ["Esperar uma semana para ver se o dinheiro volta.", "Avisar o banco na hora e pedir o MED, depois registrar o boletim de ocorrência.", "Apagar as mensagens para esquecer o assunto."], "c": 1, "e": "Rapidez aumenta a chance de devolução; guarde as provas (aula 6)."}];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: agora imprima o guia de bolso logo abaixo e combine a palavra-senha com a sua família.':'Vale rever as aulas indicadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:CURSO,acertos:right});
+  }
+
+  document.getElementById('print-btn').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+    if(window.hmTrack) hmTrack('curso_documento_impresso',{curso:CURSO});
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Primeiros passos com IA", "description": "Curso grátis em português para iniciantes: como funciona a IA que conversa, como fazer o primeiro pedido, para que usar no dia a dia, como conferir as respostas, como proteger os dados pela LGPD e como evitar golpes com voz e vídeo falsos, com guia de bolso para imprimir.", "inLanguage": "pt-BR", "isAccessibleForFree": true, "url": "https://hermesia.ia.br/academia/primeiros-passos-com-ia/", "provider": {"@type": "Organization", "name": "HermesIA", "sameAs": "https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ensinar IA à sua equipe — curso grátis | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro para gestores e RH: forme a equipe em IA com tarefas reais, oficinas de 90 minutos, multiplicadores e regras claras, com a CLT e a LGPD. 6 aulas, quiz e plano de formação para imprimir.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/ensinar-ia-a-equipe/">
+<meta property="og:title" content="Ensinar IA à sua equipe — curso grátis da Academia HermesIA">
+<meta property="og:description" content="6 aulas em português: o que trava o aprendizado, oficina de 90 minutos, multiplicadores, biblioteca de pedidos, medo e regras, e como medir. Com plano de formação de quatro semanas.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/ensinar-ia-a-equipe/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+
+  /* Tabela por profissão */
+  .tbl-wrap{overflow-x:auto;margin:8px 0 18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;line-height:1.55}
+  .tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:13px}
+  .tbl td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;color:#2a3042}
+  .tbl tr:nth-child(even) td{background:#fbf8ee}
+  /* Régua */
+  .levels{display:grid;gap:10px;margin:8px 0 20px}
+  .lv{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:#fff;border-left-width:1px}
+  .lv b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .lv p{font-size:15px!important;margin:0!important;line-height:1.65!important}
+  .lv.l1{background:#f1f8f2;border-color:#cfe3d3}
+  .lv.l2{background:#f3f6fb;border-color:#d5ddeb}
+  .lv.l3{background:#fbf6e8;border-color:#eadcb3}
+  .lv.l4{background:#fbf0ee;border-color:#efd2cb}
+  /* Política */
+  .pol-sub{font-size:15px!important;color:var(--muted)!important}
+  .pol{margin:0 0 18px 22px}
+  .pol li{font-size:15.5px;line-height:1.85;margin-bottom:10px}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#plano){display:none!important}
+    html.print-check #plano{border:0;margin:0;padding:0}
+    html.print-check #plano .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Gestão de pessoas</p>
+    <h1>Ensinar IA à sua equipe</h1>
+    <p class="sub">Para gestores, responsáveis por RH e treinamento e para quem virou “a pessoa da IA” da equipe. Forme a equipe com as tarefas reais de cada um, apoiada por multiplicadores e regras claras, e meça se o uso cresceu com qualidade.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>6 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 50 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português e adaptado às leis do Brasil. Vale para qualquer ferramenta de IA. Os demais cursos da <a href="/academia/" style="color:var(--gold-l)">Academia HermesIA</a> podem ser usados como material das turmas.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 6 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>O que trava o aprendizado</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>Comece pelo trabalho de cada um</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>Uma oficina de 90 minutos</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>Multiplicadores e biblioteca de pedidos</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Medo, regras e direitos</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>Medir e manter</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#plano"><span class="ck"><span>✎</span></span>Plano de formação para imprimir</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para quem precisa fazer uma equipe usar IA bem: gestores de área, RH, treinamento e desenvolvimento, e os colegas que já usam e viraram referência. Ao terminar, você terá um plano de formação de quatro semanas preenchido, com turmas, multiplicadores, regras e medidas.</p>
+      <p style="margin-top:12px;"><b>O que este curso não faz:</b> ensinar os botões de uma ferramenta específica. Ele ensina a ensinar.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>O que trava o aprendizado</h2>
+      <p>Liberar a ferramenta e mandar o link por e-mail raramente forma alguém. Em poucas semanas, a equipe se divide: alguns usam todo dia, muitos testam uma vez e desistem, e outros nem abrem, por receio de errar ou de serem substituídos.</p>
+      <h3>As quatro travas mais comuns</h3>
+      <ul>
+        <li><b>Não saber por onde começar.</b> A tela em branco intimida. Sem exemplos do próprio trabalho, a pessoa não enxerga utilidade.</li>
+        <li><b>Uma má primeira experiência.</b> Um pedido vago gera uma resposta ruim, e a conclusão vira “isso não serve para mim”.</li>
+        <li><b>Medo.</b> De errar, de vazar dado, de ser cobrado por usar ou por não usar, de perder o emprego.</li>
+        <li><b>Falta de tempo.</b> Aprender exige horas que ninguém reservou na agenda.</li>
+      </ul>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Falta de habilidade afasta mais da metade de quem não usa</h4>
+        <p>Na pesquisa TIC Domicílios 2025, do Cetic.br, a falta de habilidade foi citada por 58% dos usuários de internet que não usaram IA generativa, e a preocupação com segurança e privacidade, por 63%. A escolaridade pesa: usaram IA 59% dos usuários com ensino superior e 17% dos que têm ensino fundamental. Numa equipe, isso significa formar primeiro quem tem menos familiaridade, e não só os entusiastas.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Antes de planejar, faça três perguntas à equipe, num formulário anônimo: <i>“Você já usou IA no trabalho? Para quê? O que impede você de usar mais?”</i> As respostas mostram por onde começar.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Liberar o acesso é diferente de formar.</li>
+          <li>Travas: o começo, a primeira experiência, o medo e o tempo.</li>
+          <li>Comece por quem tem menos familiaridade.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>Comece pelo trabalho de cada um</h2>
+      <p>Ninguém aprende IA em abstrato. A pessoa aprende quando vê a própria tarefa sair mais rápida ou melhor. Por isso a formação começa por um levantamento simples: quais tarefas de cada função se repetem, tomam tempo e têm resultado fácil de conferir.</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Função</th><th>Tarefa para a primeira oficina</th><th>Por que é boa para começar</th></tr></thead>
+          <tbody>
+            <tr><td>Atendimento</td><td>Rascunho de resposta a uma reclamação comum</td><td>Frequente, com política escrita para conferir</td></tr>
+            <tr><td>Financeiro</td><td>Explicar a variação de uma conta na planilha do mês</td><td>Resultado conferível nos números</td></tr>
+            <tr><td>Comercial</td><td>Preparar perguntas para a reunião com um cliente</td><td>Risco baixo, ganho imediato</td></tr>
+            <tr><td>RH</td><td>Primeira versão da descrição de uma vaga</td><td>Uso frequente, revisão simples</td></tr>
+            <tr><td>Jurídico</td><td>Resumo de contrato recebido, com marcação do que conferir</td><td>Ganho grande, conferência obrigatória</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Uma tarefa por pessoa</h3>
+      <p>Na primeira oficina, cada pessoa sai com uma única tarefa que passou a fazer com IA. Uma tarefa usada toda semana vale mais que dez truques vistos uma vez.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Peça a cada participante que traga para a oficina um material verdadeiro do próprio trabalho, já sem dados pessoais de clientes: um e-mail, uma planilha, um texto que precisa revisar. Exercício com material inventado ensina menos.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A formação começa pelas tarefas de cada função.</li>
+          <li>Frequente, demorada e fácil de conferir.</li>
+          <li>Uma tarefa usada toda semana por pessoa.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>Uma oficina de 90 minutos</h2>
+      <p>A oficina é o formato que mais funciona: pouca teoria, muita prática com o material de cada um, em turmas de até 15 pessoas.</p>
+      <div class="levels">
+        <div class="lv l1"><b>0 a 15 min · O motivo e as regras</b><p>O que a organização espera, a ferramenta aprovada e as regras de dados (aula 5). Mostre um exemplo real da própria equipe.</p></div>
+        <div class="lv l2"><b>15 a 35 min · Demonstração ao vivo</b><p>Faça um pedido vago e mostre a resposta fraca. Refaça com situação, tarefa e formato. Mostre como pedir ajuste e como conferir.</p></div>
+        <div class="lv l3"><b>35 a 75 min · Mão na massa</b><p>Cada pessoa trabalha a própria tarefa. Quem conduz circula e ajuda. Quem termina antes tenta uma segunda tarefa.</p></div>
+        <div class="lv l4"><b>75 a 90 min · Mostrar e combinar</b><p>Duas ou três pessoas mostram o que conseguiram. Os bons pedidos vão para a biblioteca da equipe (aula 4). Cada um diz qual tarefa fará com IA na semana.</p></div>
+      </div>
+      <h3>Erros comuns de quem ensina</h3>
+      <ul>
+        <li>Gastar a oficina em teoria sobre como a IA funciona. Dez minutos bastam; o curso <a href="/academia/capacidades-e-limites-da-ia/">Capacidades e limites da IA</a> aprofunda depois.</li>
+        <li>Mostrar só o resultado perfeito. Mostre também o erro e a correção: é o que a pessoa vai encontrar sozinha.</li>
+        <li>Turma grande demais para dar atenção a cada um.</li>
+        <li>Encerrar sem combinar a tarefa da semana.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Entre uma oficina e outra, indique os cursos gratuitos da Academia: <a href="/academia/primeiros-passos-com-ia/">Primeiros passos com IA</a> para quem nunca usou, <a href="/academia/como-pedir-bem-a-ia/">Como pedir bem à IA</a> para quem já usa e <a href="/academia/sigilo-lgpd-e-etica-com-ia/">Sigilo, LGPD e ética</a> para quem lida com dados de clientes.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Turmas de até 15 pessoas, 90 minutos, material real.</li>
+          <li>Mostre o pedido fraco e o bom, o erro e a correção.</li>
+          <li>Cada um sai com a tarefa da semana combinada.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>Multiplicadores e biblioteca de pedidos</h2>
+      <p>Uma pessoa sozinha raramente forma uma organização inteira. Escolha multiplicadores: uma pessoa por área que use IA com segurança, goste de ajudar e conheça bem o trabalho da área. Ela dispensa ser a mais técnica.</p>
+      <h3>O que o multiplicador faz</h3>
+      <ul>
+        <li>Tira dúvidas dos colegas no dia a dia.</li>
+        <li>Recolhe os pedidos que funcionaram e os erros que apareceram.</li>
+        <li>Conduz uma conversa rápida da área a cada quinze dias.</li>
+        <li>Leva à coordenação os pedidos de novas ferramentas e os riscos que perceber.</li>
+      </ul>
+      <p>Reconheça o tempo do multiplicador, com horas reservadas na agenda e menção na avaliação de desempenho. Trabalho feito “nas horas vagas” costuma acabar em poucas semanas.</p>
+      <h3>A biblioteca de pedidos</h3>
+      <p>É um documento compartilhado com os pedidos que funcionaram, organizados por tarefa. Cada entrada traz a tarefa, o pedido completo, um exemplo de resultado, o que conferir e quem contribuiu. Com o tempo, ela vira o principal material de formação da equipe.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>O encarregado de dados entra na formação</h4>
+        <p>Pela LGPD, uma das atividades do encarregado pelo tratamento de dados pessoais é orientar os funcionários e os contratados sobre as práticas de proteção de dados (Lei 13.709/2018, art. 41, §2º, III). Convide o encarregado para a parte de regras da oficina e para revisar a biblioteca de pedidos antes de divulgá-la.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Exemplo de entrada na biblioteca. <i>Tarefa:</i> resposta a cliente sobre atraso de entrega. <i>Pedido:</i> “Você é atendente da nossa loja. Com base na política de entrega abaixo, escreva uma resposta curta e cordial ao cliente que reclama do atraso. Use só os prazos e compensações que estão na política.” <i>Conferir:</i> o prazo citado e o tom.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Um multiplicador por área, com tempo reconhecido.</li>
+          <li>Biblioteca de pedidos, cada um com o que conferir.</li>
+          <li>O encarregado de dados participa.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Medo, regras e direitos</h2>
+      <p>Equipe com medo aprende pouco. O receio de perder o emprego, de ser punido por erro ou de vazar um dado leva a pessoa a evitar a ferramenta ou a usá-la escondida. A formação precisa tratar disso de frente.</p>
+      <h3>O que dizer, com clareza</h3>
+      <ul>
+        <li><b>Para que a IA será usada.</b> Se houver mudança de funções, diga com antecedência e com honestidade. Promessa vaga alimenta boato.</li>
+        <li><b>Que errar ao aprender é esperado.</b> Erro relatado vira lição; erro escondido vira risco.</li>
+        <li><b>As regras de dados, em uma página.</b> A ferramenta aprovada, o que nunca entra nela e quem procurar em caso de dúvida.</li>
+        <li><b>Onde pedir ajuda.</b> O multiplicador da área e um canal para relatar erros sem punição.</li>
+      </ul>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Formação exigida é tempo de trabalho</h4>
+        <p>Pela CLT, considera-se de serviço efetivo o período em que o empregado está à disposição do empregador, aguardando ou executando ordens (art. 4º). Em regra, a formação exigida pela empresa acontece dentro da jornada ou é paga como hora extra. Já o tempo que o empregado, por escolha própria, passa na empresa estudando não é computado como hora extra (art. 4º, §2º, IV).</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Abra a primeira oficina com uma frase e cumpra o que ela diz: <i>“Aqui, erro cometido aprendendo é tratado como lição. O que nos preocupa é erro escondido.”</i></p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Trate o medo de frente, com informação honesta.</li>
+          <li>Regras de dados em uma página e canal de erros sem punição.</li>
+          <li>Formação exigida acontece na jornada.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>Medir e manter</h2>
+      <p>Formação sem medida vira evento. Escolha poucos números e acompanhe por três meses.</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>O que medir</th><th>Como</th><th>Sinal de alerta</th></tr></thead>
+          <tbody>
+            <tr><td>Uso</td><td>Pessoas que usaram a ferramenta aprovada na semana; o painel do administrador costuma mostrar</td><td>Uso concentrado em poucas pessoas</td></tr>
+            <tr><td>Tarefas</td><td>Tarefas da biblioteca em uso, por área</td><td>Biblioteca parada há um mês</td></tr>
+            <tr><td>Qualidade</td><td>Amostra de resultados revisada pelo gestor ou pelo multiplicador</td><td>O mesmo erro se repete</td></tr>
+            <tr><td>Segurança</td><td>Erros e incidentes relatados no canal</td><td>Nenhum relato em meses: pode ser medo</td></tr>
+            <tr><td>Percepção</td><td>Uma pergunta por mês: “A IA economizou seu tempo nesta semana?”</td><td>Resposta piora depois do entusiasmo inicial</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Manter vivo</h3>
+      <ul>
+        <li>Uma oficina de atualização por trimestre, com as novidades da ferramenta e os melhores pedidos da biblioteca.</li>
+        <li>Formação de entrada para quem chega: a primeira oficina passa a fazer parte do acolhimento.</li>
+        <li>Revisão da política de uma página a cada seis meses ou quando a ferramenta mudar.</li>
+      </ul>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Capacitação contínua já é princípio no Judiciário</h4>
+        <p>A Resolução CNJ 615/2025 inclui, entre os princípios do uso de IA pelos tribunais, a oferta de capacitação contínua para magistrados e servidores sobre riscos da automação, vieses algorítmicos e análise crítica dos resultados gerados por IA (art. 3º, VIII). É um bom modelo para qualquer organização: formação que se repete, em vez de um evento único.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Depois de três meses, compare dois números: quantas pessoas usavam IA antes da formação e quantas usam agora a ferramenta aprovada. Se o segundo cresceu e os erros relatados caíram, a formação funcionou.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Uso, tarefas, qualidade, segurança e percepção.</li>
+          <li>Silêncio no canal de erros merece atenção.</li>
+          <li>Oficina por trimestre e formação de quem chega.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- PARA IMPRIMIR -->
+    <section class="lesson" id="plano">
+      <p class="num">Para imprimir e preencher</p>
+      <h2>Plano de formação da equipe</h2>
+      <p class="pol-sub">Organização ou área: ______________________ · Início em ___/___/______</p>
+      <ol class="pol">
+        <li><b>Diagnóstico.</b> Formulário anônimo enviado em ___/___ · Já usam IA: ____% · Principais travas: ______________________</li>
+        <li><b>Tarefas por função.</b> ____________: ____________ · ____________: ____________ · ____________: ____________</li>
+        <li><b>Turmas e oficinas.</b> Número de turmas: ____ · Até 15 pessoas cada · Datas: ______________ · Dentro da jornada ( )</li>
+        <li><b>Multiplicadores.</b> ______________ (área: __________) · ______________ (área: __________) · Horas reservadas por semana: ____</li>
+        <li><b>Regras e apoio.</b> Política de uma página aprovada ( ) · Encarregado de dados: ______________ · Canal de erros, sem punição: ______________ · Biblioteca de pedidos em: ______________</li>
+        <li><b>Medidas aos 90 dias.</b> Pessoas usando por semana: ____ · Tarefas em uso: ____ · Erros relatados: ____ · Percepção: ______________</li>
+      </ol>
+      <p class="check-h">Roteiro das quatro primeiras semanas</p>
+      <ul class="check">
+        <li>Semana 1: diagnóstico, escolha dos multiplicadores e política de uma página.</li>
+        <li>Semana 2: oficinas das primeiras turmas.</li>
+        <li>Semana 3: conversa de quinze minutos por área e primeira versão da biblioteca.</li>
+        <li>Semana 4: oficinas das demais turmas e primeira leitura das medidas.</li>
+        <li>Próxima oficina de atualização: ___/___/______</li>
+      </ul>
+      <button class="btn no-print" type="button" id="print-btn">Imprimir o plano</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas e dados citados</h2>
+      <ul class="sources">
+        <li><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm" target="_blank" rel="noopener">Decreto-Lei 5.452/1943 (CLT)</a>: art. 4º, caput e §2º, IV</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm" target="_blank" rel="noopener">Lei 13.709/2018 (LGPD)</a>: art. 41, §2º, III</li>
+        <li><a href="https://atos.cnj.jus.br/atos/detalhar/6001" target="_blank" rel="noopener">Resolução CNJ 615/2025</a> (uso de IA no Poder Judiciário): art. 3º, VIII</li>
+        <li><a href="https://cetic.br/pt/noticia/50-milhoes-de-brasileiros-ja-usam-ia-mas-potenciais-beneficios-continuam-limitados-as-camadas-de-maior-renda-e-escolaridade/" target="_blank" rel="noopener">Cetic.br, TIC Domicílios 2025</a> (divulgada em dezembro de 2025) e o <a href="https://cetic.br/media/docs/publicacoes/2/pt-br/20260511173151/tic_domicilios_2025_resumoexecutivo%20pt.pdf" target="_blank" rel="noopener">resumo executivo</a></li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. As normas mudam: confira sempre a redação atual na fonte oficial.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui a orientação do jurídico, do RH, do encarregado de dados ou de um advogado, nem a análise do caso concreto. A HermesIA não é escritório de advocacia e não presta consultoria jurídica. Marcas citadas pertencem a seus titulares.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-equipe-v1', TOTAL=6, CURSO='ensinar-equipe', done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:CURSO,aula:+i});
+    });
+  });
+  render();
+
+  var Q=[{"q": "A empresa liberou a ferramenta e mandou o link por e-mail. O resultado mais provável é:", "o": ["Toda a equipe passa a usar bem em poucas semanas.", "Uso desigual: poucos usam muito, muitos desistem e alguns nem tentam.", "A equipe dispensa formação."], "c": 1, "e": "Liberar o acesso é diferente de formar (aula 1)."}, {"q": "Qual é o melhor material para a primeira oficina?", "o": ["Tarefas reais do trabalho de cada pessoa, sem dados pessoais de clientes.", "Exemplos genéricos tirados da internet.", "Uma aula teórica sobre redes neurais."], "c": 0, "e": "Uma tarefa real por pessoa (aula 2)."}, {"q": "Na demonstração ao vivo, quem conduz a oficina deve mostrar:", "o": ["Só respostas perfeitas, para animar a turma.", "O pedido fraco, o pedido bom, o erro e a correção.", "Apenas slides com conceitos."], "c": 1, "e": "Mostre o que a pessoa vai encontrar sozinha (aula 3)."}, {"q": "Quem deve ser escolhido como multiplicador da área?", "o": ["A pessoa mais técnica da empresa, ainda que de outra área.", "O estagiário mais novo.", "Alguém da área que usa IA com segurança, gosta de ajudar e conhece o trabalho."], "c": 2, "e": "Conhecer o trabalho importa mais que a técnica (aula 4)."}, {"q": "Pela LGPD, entre as atividades do encarregado de dados está:", "o": ["Orientar funcionários e contratados sobre as práticas de proteção de dados.", "Escolher a marca da ferramenta de IA.", "Aplicar punições a quem erra."], "c": 0, "e": "Lei 13.709/2018, art. 41, §2º, III (aula 4)."}, {"q": "A empresa exige que a equipe faça a formação em IA. Em regra, pela CLT, esse tempo:", "o": ["Fica fora da jornada e sem pagamento.", "Conta como tempo à disposição do empregador: dentro da jornada ou pago como hora extra.", "Deve ser compensado com férias."], "c": 1, "e": "CLT, art. 4º (aula 5)."}, {"q": "Por que o canal de erros deve funcionar sem punição?", "o": ["Porque erro escondido vira risco e erro relatado vira lição.", "Porque erros com IA nunca têm consequência.", "Porque a lei proíbe qualquer advertência ao empregado."], "c": 0, "e": "Equipe com medo esconde o uso e os erros (aula 5)."}, {"q": "Depois de três meses, o canal de erros não recebeu nenhum relato. Isso pode indicar:", "o": ["Que a equipe é perfeita.", "Que a ferramenta nunca erra.", "Medo de relatar, o que vale investigar."], "c": 2, "e": "Silêncio no canal merece atenção (aula 6)."}];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: agora preencha o plano de formação logo abaixo e marque a data da primeira oficina.':'Vale rever as aulas indicadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:CURSO,acertos:right});
+  }
+
+  document.getElementById('print-btn').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+    if(window.hmTrack) hmTrack('curso_documento_impresso',{curso:CURSO});
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Ensinar IA à sua equipe", "description": "Curso grátis em português para gestores, RH e multiplicadores: como formar uma equipe no uso de IA a partir das tarefas reais, com oficinas, multiplicadores, biblioteca de pedidos, regras de dados e medidas de resultado, com a CLT, a LGPD e a Resolução CNJ 615/2025, e um plano de formação para imprimir.", "inLanguage": "pt-BR", "isAccessibleForFree": true, "url": "https://hermesia.ia.br/academia/ensinar-ia-a-equipe/", "provider": {"@type": "Organization", "name": "HermesIA", "sameAs": "https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>
