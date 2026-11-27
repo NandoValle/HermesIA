@@ -95,7 +95,7 @@
     "url": "https://hermesia.ia.br/",
     "name": "HermesIA — A IA que faz o trabalho pronto pra você",
     "inLanguage": "pt-BR",
-    "dateModified": "2026-10-14",
+    "dateModified": "2026-11-27",
     "author": { "@type": "Person", "name": "Fernando Antônio Vale Rodrigues" },
     "publisher": { "@type": "Organization", "name": "HermesIA", "url": "https://hermesia.ia.br/" }
   }
@@ -184,6 +184,7 @@
     .hm-hero-academia { display: flex; align-items: center; gap: 0.6rem; width: fit-content; max-width: 100%; margin: 1.8rem auto 0; padding: 0.45rem 1.1rem 0.45rem 0.45rem; border: 1px solid rgba(201,168,76,0.45); background: rgba(201,168,76,0.08); border-radius: 999px; color: #eadfbf; font-size: 0.84rem; line-height: 1.4; text-align: left; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
     .hm-hero-academia:hover { background: rgba(201,168,76,0.16); border-color: var(--gold); }
     .hm-hero-academia:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .hm-hero-academia.hm-hero-status { margin-top: 0.7rem; }
     .hm-hero-academia-tag { flex-shrink: 0; background: var(--gold); color: var(--navy); font-size: 0.62rem; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
     .hm-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
     .hm-cta { background: var(--gold); color: var(--navy); padding: 1.1rem 2.8rem; border-radius: 4px; font-size: 0.95rem; font-weight: 500; border: none; cursor: pointer; letter-spacing: 1.5px; text-transform: uppercase; transition: background 0.2s; }
@@ -332,6 +333,7 @@
     </div>
     <p class="hm-hero-micro" data-h>O áudio é apagado depois de transcrever, sem expor o sigilo do cliente.</p>
     <a class="hm-hero-academia" href="/academia/" data-h onclick="window.hmTrack&&hmTrack('academia_click',{placement:'hero'});"><span class="hm-hero-academia-tag">Novo</span><span>Academia HermesIA: guia em português de 435 cursos de IA</span><span aria-hidden="true">→</span></a>
+    <a class="hm-hero-academia hm-hero-status" href="#em-que-pe" data-h onclick="window.hmTrack&&hmTrack('status_click',{placement:'hero'});"><span class="hm-hero-academia-tag">Startup</span><span>Aceita no programa para startups da Anthropic · veja em que pé estamos</span><span aria-hidden="true">→</span></a>
   </section>
 
   <!-- VÍDEO -->
@@ -646,22 +648,71 @@
     <p class="hm-ods-note">Os ODS fazem parte da Agenda 2030 das Nações Unidas. São objetivos, não resultados já alcançados: a HermesIA ainda não está aberta ao público.</p>
   </section>
 
-  <!-- STATUS: HOJE vs EM BREVE -->
-  <section class="hm-section-alt">
+  <!-- STATUS + DIFERENCIAIS (texto-base da candidatura ao Inova, 27/11/2026).
+       REGRA: nada nesta pagina pode contradizer este texto. Audio = em preparacao para o lancamento;
+       plataforma de documentos = em fase final; lista de espera = aberta; sem clientes pagantes (tudo gratuito ate aqui). -->
+  <section class="hm-section-alt" id="em-que-pe">
+    <style>
+      .hm-ep-lead { max-width: 680px; margin: 0 auto 1.6rem; text-align: center; font-size: 1rem; color: var(--navy); line-height: 1.8; }
+      .hm-ep-seal { display: flex; align-items: center; gap: 0.7rem; width: fit-content; max-width: 100%; margin: 0 auto 0.5rem; padding: 0.6rem 1.2rem; background: var(--navy); border: 1px solid rgba(201,168,76,0.55); border-radius: 999px; color: #fff; font-size: 0.88rem; font-weight: 500; line-height: 1.4; }
+      .hm-ep-seal i { color: var(--gold-l); font-size: 1.25rem; flex-shrink: 0; }
+      .hm-ep-seal-note { max-width: 520px; margin: 0 auto 2.2rem; text-align: center; font-size: 0.74rem; color: #556; line-height: 1.6; }
+      .hm-ep-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto; }
+      .hm-ep-card { background: #fff; border: 0.5px solid #ddd6c4; border-left: 2px solid var(--gold); border-radius: 8px; padding: 1.3rem; }
+      .hm-ep-card.is-aberta { border-left-color: #2e7d32; }
+      .hm-ep-flag { font-size: 0.68rem; letter-spacing: 1.5px; color: var(--gold-d); font-weight: 600; margin-bottom: 0.6rem; }
+      .hm-ep-card.is-aberta .hm-ep-flag { color: #2e7d32; }
+      .hm-ep-name { font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+      .hm-ep-text { font-size: 0.85rem; color: #556; line-height: 1.6; }
+      .hm-ep-text a { color: var(--gold-d); font-weight: 500; }
+      .hm-ep-h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--navy); text-align: center; margin: 3rem 0 1.4rem; }
+      .hm-ep-difs { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; max-width: 980px; margin: 0 auto; }
+      .hm-ep-dif { flex: 1 1 240px; max-width: 310px; background: #fff; border: 0.5px solid #ddd6c4; border-radius: 8px; padding: 1.2rem 1.2rem 1.3rem; }
+      @media (max-width: 560px) { .hm-ep-dif { max-width: none; } }
+      .hm-ep-num { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--gold-d); line-height: 1; margin-bottom: 0.5rem; }
+      .hm-ep-dif-title { font-weight: 600; color: var(--navy); font-size: 0.95rem; line-height: 1.35; margin: 0 0 0.35rem; }
+      .hm-ep-dif-text { font-size: 0.85rem; color: #556; line-height: 1.6; margin: 0; }
+      .hm-ep-busca { max-width: 760px; margin: 2.4rem auto 0; padding: 1.6rem 1.8rem; background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); border: 1px solid rgba(201,168,76,0.35); border-radius: 12px; text-align: center; }
+      .hm-ep-busca-label { font-size: 0.66rem; letter-spacing: 1.8px; color: var(--gold-l); font-weight: 600; text-transform: uppercase; margin: 0 0 0.7rem; }
+      .hm-ep-busca-text { font-size: 0.95rem; color: #e3e9f3; line-height: 1.8; font-weight: 300; margin: 0; }
+      @media (max-width: 500px) { .hm-ep-seal { border-radius: 14px; } .hm-ep-busca { padding: 1.4rem 1.2rem; } }
+    </style>
     <h2 class="hm-section-title">Em que pé está a HermesIA</h2>
     <div class="hm-divider"></div>
     <p class="hm-section-sub">Transparência total: em que pé está cada parte, sem promessa de data.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;max-width:760px;margin:0 auto;">
-      <div style="background:#fff;border:0.5px solid #ddd6c4;border-left:2px solid var(--gold);border-radius:8px;padding:1.3rem;">
-        <div style="font-size:0.68rem;letter-spacing:1.5px;color:var(--gold-d);font-weight:600;margin-bottom:0.6rem;">⏳ EM PREPARAÇÃO</div>
-        <div style="font-weight:600;color:var(--navy);margin-bottom:0.4rem;">HermesIA Áudio (no WhatsApp)</div>
-        <div style="font-size:0.85rem;color:#556;line-height:1.6;">Você encaminha um áudio e recebe transcrição + resumo + pontos de ação. Serão 10 por dia, grátis, sem cadastro e sem app novo.</div>
+    <p class="hm-ep-lead">A HermesIA ainda não tem clientes pagantes porque todo o serviço oferecido até aqui é gratuito: o HermesIA Áudio está em preparação para o lançamento, a plataforma de documentos está em fase final e a lista de espera já está aberta.</p>
+    <div class="hm-ep-seal"><i class="ti ti-certificate" aria-hidden="true"></i><span>A startup foi aceita no programa para startups da Anthropic</span></div>
+    <p class="hm-ep-seal-note">Participar do programa não torna a HermesIA afiliada à Anthropic nem significa endosso aos nossos produtos.</p>
+    <div class="hm-ep-cards">
+      <div class="hm-ep-card">
+        <div class="hm-ep-flag">⏳ EM PREPARAÇÃO PARA O LANÇAMENTO</div>
+        <div class="hm-ep-name">HermesIA Áudio (no WhatsApp)</div>
+        <div class="hm-ep-text">Você encaminha um áudio e recebe transcrição + resumo + pontos de ação. Serão 10 por dia, grátis, sem cadastro e sem app novo.</div>
       </div>
-      <div style="background:#fff;border:0.5px solid #ddd6c4;border-left:2px solid var(--gold);border-radius:8px;padding:1.3rem;">
-        <div style="font-size:0.68rem;letter-spacing:1.5px;color:var(--gold-d);font-weight:600;margin-bottom:0.6rem;">⏳ EM FASE FINAL</div>
-        <div style="font-weight:600;color:var(--navy);margin-bottom:0.4rem;">A plataforma completa de documentos</div>
-        <div style="font-size:0.85rem;color:#556;line-height:1.6;">Você descreve e recebe petição, recurso, laudo, relatório prontos pra revisar. Entre na lista e avisamos por ordem de entrada. <a href="#wl" style="color:var(--gold-d);font-weight:500;">Entrar na lista →</a></div>
+      <div class="hm-ep-card">
+        <div class="hm-ep-flag">⏳ EM FASE FINAL</div>
+        <div class="hm-ep-name">A plataforma de documentos</div>
+        <div class="hm-ep-text">Você descreve e recebe petição, recurso, laudo, relatório prontos pra revisar.</div>
       </div>
+      <div class="hm-ep-card is-aberta">
+        <div class="hm-ep-flag">✓ JÁ ABERTA</div>
+        <div class="hm-ep-name">A lista de espera</div>
+        <div class="hm-ep-text">Deixe seu contato e avisamos por ordem de entrada. <a href="#wl" onclick="window.hmTrack&&hmTrack('cta_to_waitlist',{funnel:'home',placement:'status'});">Entrar na lista →</a></div>
+      </div>
+    </div>
+
+    <h3 class="hm-ep-h3">O que diferencia o projeto</h3>
+    <ol class="hm-ep-difs">
+      <li class="hm-ep-dif"><div class="hm-ep-num">1</div><p class="hm-ep-dif-title">Fundador que une domínio do problema e capacidade técnica</p><p class="hm-ep-dif-text">Advogado desde 2003 e programador desde 1984, com tecnologia desenvolvida internamente.</p></li>
+      <li class="hm-ep-dif"><div class="hm-ep-num">2</div><p class="hm-ep-dif-title">Distribuição pelo WhatsApp</p><p class="hm-ep-dif-text">Sem app novo nem cadastro.</p></li>
+      <li class="hm-ep-dif"><div class="hm-ep-num">3</div><p class="hm-ep-dif-title">Privacidade desde a concepção</p><p class="hm-ep-dif-text">Alinhada à LGPD, decisiva para profissões com dever de sigilo.</p></li>
+      <li class="hm-ep-dif"><div class="hm-ep-num">4</div><p class="hm-ep-dif-title">Mercado amplo</p><p class="hm-ep-dif-text">Profissionais liberais e autônomos, atendidos por um mesmo núcleo de tecnologia.</p></li>
+      <li class="hm-ep-dif"><div class="hm-ep-num">5</div><p class="hm-ep-dif-title">Modelo freemium</p><p class="hm-ep-dif-text">O HermesIA Áudio gratuito é a porta de entrada para a plataforma de documentos.</p></li>
+    </ol>
+
+    <div class="hm-ep-busca">
+      <p class="hm-ep-busca-label">O que buscamos</p>
+      <p class="hm-ep-busca-text">Buscamos no Inova investimento e mentoria para lançar os dois produtos, validar a conversão do gratuito para o pago e estruturar a aquisição de usuários.</p>
     </div>
   </section>
 
@@ -791,11 +842,15 @@
       plataforma_de_documentos:'em fase final: descrever o que precisa e receber petição, recurso, laudo ou relatório prontos para revisar',
       unica_acao_disponivel:'entrar na lista de espera em https://hermesia.ia.br/#wl; o aviso sai por ordem de entrada',
       responsabilidade:'a revisão, a autoria e a responsabilidade pelo documento são sempre de quem assina',
-      atualizado_em:'2026-10-14'
+      clientes_pagantes:'nenhum ainda: todo o serviço oferecido até aqui é gratuito',
+      programa_de_startups:'aceita no programa para startups da Anthropic (participar do programa não é afiliação nem endosso)',
+      diferenciais:['fundador que une domínio do problema e capacidade técnica: advogado desde 2003 e programador desde 1984, com tecnologia desenvolvida internamente','distribuição pelo WhatsApp, sem app novo nem cadastro','privacidade desde a concepção, alinhada à LGPD, decisiva para profissões com dever de sigilo','mercado amplo de profissionais liberais e autônomos, atendido por um mesmo núcleo de tecnologia','modelo freemium: o HermesIA Áudio gratuito é a porta de entrada para a plataforma de documentos'],
+      o_que_buscamos:'investimento e mentoria no Inova para lançar os dois produtos, validar a conversão do gratuito para o pago e estruturar a aquisição de usuários',
+      atualizado_em:'2026-11-27'
     };
     mc.registerTool({
       name:'consultar_situacao_hermesia',
-      description:'Devolve a situação publicada da HermesIA: se já está aberta ao público, o estado do HermesIA Áudio e da plataforma completa de documentos, e a única ação disponível hoje. Efeito: apenas leitura do que já está publicado nesta página; não altera estado, não envia dados e não faz requisição a servidor nenhum. Limite: não informa data de lançamento nem preço, porque nenhum dos dois foi publicado. Resultado: um objeto JSON em texto.',
+      description:'Devolve a situação publicada da HermesIA: se já está aberta ao público, o estado do HermesIA Áudio e da plataforma completa de documentos, a única ação disponível hoje, o programa de startups, os diferenciais e o que a startup busca. Efeito: apenas leitura do que já está publicado nesta página; não altera estado, não envia dados e não faz requisição a servidor nenhum. Limite: não informa data de lançamento nem preço, porque nenhum dos dois foi publicado. Resultado: um objeto JSON em texto.',
       annotations:{readOnlyHint:true},
       inputSchema:{type:'object',properties:{},required:[],additionalProperties:false},
       execute:async function(params,ctx){
