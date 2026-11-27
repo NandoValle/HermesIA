@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA para professores e estudantes — curso grátis | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro: como usar IA para ensinar e estudar sem terceirizar o aprendizado, com integridade acadêmica, avaliação e proteção de dados de alunos. 6 aulas, quiz e combinado da turma.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/ia-para-professores-e-estudantes/">
+<meta property="og:title" content="IA para professores e estudantes — curso grátis da Academia HermesIA">
+<meta property="og:description" content="6 aulas em português: IA no planejamento de aulas e nos estudos, integridade acadêmica, avaliação e dados de alunos, com a BNCC, a LGPD e o ECA. Com combinado da turma para imprimir.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/ia-para-professores-e-estudantes/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+
+  /* Tabela por profissão */
+  .tbl-wrap{overflow-x:auto;margin:8px 0 18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;line-height:1.55}
+  .tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:13px}
+  .tbl td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;color:#2a3042}
+  .tbl tr:nth-child(even) td{background:#fbf8ee}
+  /* Régua */
+  .levels{display:grid;gap:10px;margin:8px 0 20px}
+  .lv{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:#fff;border-left-width:1px}
+  .lv b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .lv p{font-size:15px!important;margin:0!important;line-height:1.65!important}
+  .lv.l1{background:#f1f8f2;border-color:#cfe3d3}
+  .lv.l2{background:#f3f6fb;border-color:#d5ddeb}
+  .lv.l3{background:#fbf6e8;border-color:#eadcb3}
+  .lv.l4{background:#fbf0ee;border-color:#efd2cb}
+  /* Política */
+  .pol-sub{font-size:15px!important;color:var(--muted)!important}
+  .pol{margin:0 0 18px 22px}
+  .pol li{font-size:15.5px;line-height:1.85;margin-bottom:10px}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#combinado){display:none!important}
+    html.print-check #combinado{border:0;margin:0;padding:0}
+    html.print-check #combinado .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Educação</p>
+    <h1>IA para professores e estudantes</h1>
+    <p class="sub">A IA já está na mochila e na sala dos professores. Veja como usar para planejar aulas e estudar melhor sem terceirizar o aprendizado, como tratar a integridade acadêmica e o que a lei brasileira pede quando há dados de alunos.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>6 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 50 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português e adaptado às leis do Brasil. Vale para qualquer ferramenta. Se você ainda não fez, comece pelo curso <a href="/academia/capacidades-e-limites-da-ia/" style="color:var(--gold-l)">Capacidades e limites da IA</a>.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 6 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>O que muda na sala de aula</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>Para quem ensina</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>Para quem estuda</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>Integridade acadêmica</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Avaliar na era da IA</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>Dados de alunos e idade</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#combinado"><span class="ck"><span>✎</span></span>Combinado da turma para imprimir</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para professores da educação básica e do ensino superior, coordenadores, tutores, estudantes a partir do ensino médio e famílias que acompanham os estudos. As aulas 2 e 5 falam mais com quem ensina, a aula 3 com quem estuda, e as demais com todos. Ao terminar, você terá usos práticos para amanhã e um combinado de turma pronto para discutir.</p>
+      <p style="margin-top:12px;"><b>A ideia central do curso:</b> a IA pode fazer a tarefa, mas não pode aprender por ninguém. Todo uso bom em educação mantém o esforço de pensar com quem está aprendendo.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>O que muda, e o que não muda, na sala de aula</h2>
+      <p>Um estudante com celular consegue hoje, em um minuto, uma redação, a resolução de uma lista de exercícios ou o resumo de um livro que não leu. Fingir que isso não existe não funciona, e proibir tudo também não, porque a proibição não chega à casa do aluno.</p>
+      <p>O que ajuda é separar duas coisas que a escola sempre misturou: o <b>produto</b> e o <b>processo</b>. A redação entregue é o produto. Organizar as ideias, escolher os argumentos, errar e reescrever é o processo, e é nele que se aprende. A IA entrega o produto sem que ninguém passe pelo processo.</p>
+      <h3>Atalho ou apoio?</h3>
+      <div class="box">
+        <p class="lbl">Antes e depois</p>
+        <div class="cmp">
+          <div class="weak"><b>Atalho</b>“Escreva uma redação de 30 linhas sobre desigualdade social.” O aluno entrega um texto e não aprendeu nada.</div>
+          <div class="strong"><b>Apoio</b>“Escrevi esta redação. Não reescreva. Aponte os dois argumentos mais fracos e me faça perguntas que me ajudem a melhorá-los.” O aluno pensa mais, não menos.</div>
+        </div>
+      </div>
+      <p>A pergunta que separa os dois usos é simples: <i>depois de usar a IA, eu sei fazer isso sozinho melhor do que antes?</i> Se a resposta for sim, foi apoio. Se for não, foi atalho.</p>
+      <h3>O que não muda</h3>
+      <ul>
+        <li><b>Aprender exige esforço.</b> Explicar com as próprias palavras, tentar antes de ver a resposta e errar fazem parte. Nenhuma ferramenta dispensa isso.</li>
+        <li><b>A IA erra.</b> Ela inventa datas, citações, autores e fórmulas com o mesmo tom seguro de quando acerta. Quem não domina o assunto não percebe.</li>
+        <li><b>O professor continua no centro.</b> É quem conhece a turma, percebe quem ficou para trás e decide o que vale a pena ensinar.</li>
+      </ul>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Cultura digital já é parte do currículo</h4>
+        <p>A Base Nacional Comum Curricular inclui, entre as competências gerais, compreender, usar e criar tecnologias digitais de forma crítica, significativa, reflexiva e ética (competência 5). O complemento de Computação à BNCC (Resolução CNE/CEB 1/2022) e a Política Nacional de Educação Digital (Lei 14.533/2023) vão na mesma direção. Ensinar a usar IA com senso crítico não é fugir do currículo. É cumpri-lo.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Aprende-se no processo, não no produto entregue.</li>
+          <li>Bom uso: depois dele, você sabe mais sozinho.</li>
+          <li>Uso crítico de tecnologia é competência da BNCC.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>Para quem ensina: planejar e preparar</h2>
+      <p>Preparar aula, adaptar material e corrigir tomam boa parte do tempo de um professor, quase sempre fora do horário pago. É aí que a IA mais ajuda quem ensina: como assistente de preparação, com o professor decidindo o que entra.</p>
+      <h3>Usos que valem a pena</h3>
+      <ul>
+        <li><b>Rascunho de plano de aula.</b> Informe ano, componente, habilidade que quer trabalhar, tempo disponível e recursos da escola. Peça duas opções de sequência e escolha.</li>
+        <li><b>Atividades em níveis.</b> “Com base neste texto, crie três versões da mesma atividade: uma de apoio, uma regular e uma de aprofundamento.”</li>
+        <li><b>Exemplos e analogias.</b> “Dê cinco exemplos do cotidiano de um adolescente de cidade pequena para explicar proporção.”</li>
+        <li><b>Rubricas.</b> “Monte uma rubrica com quatro critérios e quatro níveis para avaliar um seminário do 9º ano.” Ajuste a linguagem e mostre aos alunos antes da atividade.</li>
+        <li><b>Questões.</b> Peça questões a partir do material que você colou, com gabarito comentado. Resolva cada uma antes de aplicar.</li>
+        <li><b>Comunicados.</b> Bilhetes para famílias, avisos e relatórios em linguagem clara, sem dados que identifiquem alunos.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <h4>Um pedido completo</h4>
+        <p>“Sou professora de Ciências do 7º ano de uma escola pública, com turmas de 35 alunos e sem laboratório. Quero trabalhar cadeia alimentar em duas aulas de 50 minutos. Proponha uma sequência com uma atividade prática que use só papel e material reciclável, e três perguntas para verificar o que aprenderam. Não invente dados nem referências.”</p>
+      </div>
+      <h3>O que conferir sempre</h3>
+      <ol>
+        <li><b>O conteúdo.</b> A IA erra fatos, datas, contas e gabaritos. Material com erro, distribuído para 35 alunos, vira 35 erros.</li>
+        <li><b>O código da habilidade.</b> Se pedir alinhamento à BNCC, confira o código e a redação da habilidade no documento oficial. Códigos inventados são comuns.</li>
+        <li><b>A adequação à turma.</b> Só você sabe o que os seus alunos já viram, o que os interessa e o que a escola tem.</li>
+        <li><b>As referências.</b> Livro, autor e artigo citados pela IA precisam existir. Procure antes de indicar.</li>
+      </ol>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Texto e imagem de terceiros</h4>
+        <p>Ao montar material com a ajuda da IA, valem as regras de sempre da Lei de Direitos Autorais (Lei 9.610/1998). A citação de trechos para fins de estudo, crítica ou polêmica é permitida, com o nome do autor e a origem da obra (art. 46, III). Reproduzir um capítulo inteiro ou distribuir material pago sem autorização não é. E, se a IA trouxe um trecho “de um livro”, confira se o trecho existe mesmo.</p>
+      </div>
+      <p>Correção de trabalhos pede mais cuidado: a IA pode ajudar a organizar comentários a partir da sua rubrica, mas a nota é sua, e o texto do aluno é dado pessoal dele. Volte a isso na aula 6.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Use a IA como assistente de preparação; você decide.</li>
+          <li>Confira conteúdo, gabarito, códigos da BNCC e referências.</li>
+          <li>A nota é do professor; o texto do aluno é dado dele.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>Para quem estuda: aprender com a IA, não por ela</h2>
+      <p>Usada como professor particular paciente, a IA é uma das melhores ferramentas de estudo que já existiram. Usada como máquina de fazer tarefa, ela tira de você justamente a parte que faz aprender. A diferença está no pedido.</p>
+      <h3>Seis pedidos de quem estuda de verdade</h3>
+      <ol>
+        <li><b>Explique de outro jeito.</b> “Não entendi a explicação do livro sobre mitose. Explique de forma mais simples, com uma comparação do dia a dia, e depois me pergunte algo para ver se entendi.”</li>
+        <li><b>Me teste.</b> “Faça dez perguntas sobre este capítulo, uma por vez. Espere a minha resposta e só então diga se acertei e por quê.”</li>
+        <li><b>Não me dê a resposta.</b> “Estou travado neste exercício. Não resolva. Dê só uma dica sobre o primeiro passo.”</li>
+        <li><b>Critique o meu texto.</b> “Aqui está a minha redação. Não reescreva. Aponte os problemas de argumentação e de coesão, do mais grave ao menos grave.”</li>
+        <li><b>Deixe eu explicar.</b> “Vou explicar a Revolução Industrial com as minhas palavras. Diga o que ficou errado ou faltando.” Ensinar é o melhor jeito de descobrir o que você não sabe.</li>
+        <li><b>Monte um plano.</b> “Tenho prova de três matérias em duas semanas e estudo duas horas por dia. Monte um cronograma com revisões.”</li>
+      </ol>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Regra de ouro: <b>tente primeiro, pergunte depois.</b> Faça o exercício, escreva o parágrafo, monte o resumo. Só então leve à IA para conferir e melhorar. Quem pergunta antes de tentar pula a etapa que fixa o conteúdo.</p>
+      </div>
+      <h3>Três cuidados</h3>
+      <ul>
+        <li><b>Ela erra, e você ainda não sabe o suficiente para perceber.</b> Confira o que é importante no livro, no material do professor ou em uma fonte confiável. Em Matemática e Física, refaça a conta.</li>
+        <li><b>Referência inventada reprova trabalho.</b> Nunca coloque na bibliografia um livro ou artigo que você não abriu. A IA cria autores e títulos que não existem.</li>
+        <li><b>Resumo não substitui leitura.</b> O resumo serve para revisar o que você leu. Quem só lê o resumo chega à prova conhecendo o resumo.</li>
+      </ul>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Vestibular e Enem não aceitam IA</h4>
+        <p>Nas provas que decidem a sua vaga, você estará sozinho com papel e caneta. A redação é escrita à mão, sem consulta. Quem usou a IA para treinar, recebendo crítica e reescrevendo, chega preparado. Quem usou para entregar pronto descobre na hora da prova o que deixou de aprender.</p>
+      </div>
+      <p>Se o seu professor combinou regras de uso de IA, siga as regras dele. Se não combinou, pergunte antes de usar em um trabalho que vale nota. A próxima aula explica por quê.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Peça explicação, teste, dica e crítica, não a resposta pronta.</li>
+          <li>Tente primeiro, pergunte depois.</li>
+          <li>Confira o que importa e nunca cite o que não abriu.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>Integridade acadêmica: o que é seu, o que não é</h2>
+      <p>Entregar como seu um texto que outra pessoa escreveu sempre foi desonestidade acadêmica. Com a IA, a dúvida é onde fica a linha: usar para corrigir a gramática pode? Para sugerir a estrutura? Para escrever um parágrafo?</p>
+      <p>Não existe uma resposta única, e por isso a primeira regra é: <b>vale o que a instituição e o professor definiram para aquela atividade.</b> Na falta de regra, três princípios resolvem quase todos os casos.</p>
+      <ol>
+        <li><b>Autoria.</b> As ideias, os argumentos e a redação final são seus? Se você não consegue explicar e defender o texto de pé, sem consulta, ele não é seu.</li>
+        <li><b>Transparência.</b> Você diria ao professor, sem constrangimento, como usou a IA? Se precisa esconder, provavelmente passou da linha.</li>
+        <li><b>Objetivo da atividade.</b> Se a tarefa existe para treinar escrita, pedir à IA que escreva anula a tarefa. Se existe para analisar dados, usar a IA para revisar o português não anula nada.</li>
+      </ol>
+      <h3>Declare o uso</h3>
+      <p>Em trabalhos escolares e acadêmicos, vale a boa prática de informar como a IA foi usada: qual ferramenta, para quê e em que parte. Uma nota curta basta: “Usei a ferramenta X para revisar a ortografia e sugerir a ordem dos tópicos. A pesquisa, os argumentos e a redação são meus.” Muitas instituições e revistas científicas já exigem essa declaração. Para o formato de citações e referências, siga as normas da ABNT adotadas pela sua instituição e a orientação específica dela sobre IA.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Plágio continua sendo plágio</h4>
+        <p>A Lei de Direitos Autorais protege as obras intelectuais e trata como autor a pessoa física que cria a obra (Lei 9.610/1998, arts. 7º e 11). Copiar texto alheio sem citar viola direito do autor, e o Código Penal prevê o crime de violação de direito autoral (art. 184). A IA pode devolver trechos muito próximos de textos existentes, sem avisar. Se você entrega, a responsabilidade é sua. Além da lei, escolas e universidades têm regimentos próprios, com sanções que vão da nota zero ao desligamento.</p>
+      </div>
+      <h3>Detectores de IA não são prova</h3>
+      <p>Existem programas que prometem dizer se um texto foi escrito por IA. Eles erram nos dois sentidos: deixam passar texto gerado e acusam texto escrito por gente, com mais frequência quando o autor escreve de forma simples ou em um idioma que não é o seu. A própria OpenAI tirou do ar o seu detector em 2023, por baixa precisão.</p>
+      <p>Para o professor, a consequência é direta: o resultado de um detector serve, no máximo, como motivo para conversar. Não serve como prova para punir. Um aluno acusado tem direito de ser ouvido e de se defender, como prevê o regimento de qualquer instituição séria.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Na dúvida sobre a autoria de um trabalho, converse. Peça ao aluno que explique o argumento central, conte como chegou a ele e mostre os rascunhos. Cinco minutos de conversa dizem mais do que qualquer programa, e tratam o aluno com respeito.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Vale a regra da instituição; sem regra, autoria e transparência.</li>
+          <li>Declare como usou a IA no trabalho.</li>
+          <li>Detector não é prova; conversa e rascunhos dizem mais.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Avaliar quando a IA faz a tarefa</h2>
+      <p>Se uma atividade pode ser feita inteira pela IA, sem que o aluno aprenda nada, o problema não se resolve só com vigilância. Vale repensar a atividade. A boa notícia é que as mudanças que dificultam o atalho são as mesmas que a pedagogia recomenda há muito tempo.</p>
+      <h3>Sete ajustes que funcionam</h3>
+      <ol>
+        <li><b>Avalie o processo.</b> Peça o roteiro, o rascunho, a versão revista e uma nota sobre o que mudou entre elas. O caminho passa a valer nota.</li>
+        <li><b>Traga parte do trabalho para a sala.</b> Escrita, resolução e discussão em aula, com o professor por perto. O trabalho de casa prepara, a aula produz.</li>
+        <li><b>Use a fala.</b> Apresentação, defesa oral, debate, explicação para um colega. Quem não entendeu não sustenta cinco minutos de perguntas.</li>
+        <li><b>Ancore no local e no pessoal.</b> “Entreviste um morador antigo do bairro” ou “compare o texto com a discussão que fizemos na aula de terça” são tarefas em que a IA tem pouco a oferecer.</li>
+        <li><b>Peça a crítica da IA.</b> “Peça à IA uma resposta para esta pergunta e depois aponte três erros ou lacunas nela.” O aluno aprende o conteúdo e aprende a desconfiar.</li>
+        <li><b>Mostre os critérios antes.</b> Com a rubrica na mão, o aluno sabe que raciocínio e autoria contam mais do que texto bonito.</li>
+        <li><b>Diga, em cada atividade, o que pode.</b> Uma linha no enunciado evita a maior parte dos conflitos.</li>
+      </ol>
+      <h3>Um semáforo para o enunciado</h3>
+      <div class="levels">
+        <div class="lv l4"><b>Vermelho · Sem IA</b><p>A atividade treina uma habilidade que você precisa ter sozinho: redação em sala, cálculo, leitura. Qualquer uso descaracteriza o trabalho.</p></div>
+        <div class="lv l3"><b>Amarelo · IA como apoio, com declaração</b><p>Pode usar para tirar dúvidas, pedir crítica do seu texto e revisar a escrita. Não pode usar para redigir. Informe no fim como usou.</p></div>
+        <div class="lv l1"><b>Verde · IA liberada, com análise</b><p>O uso faz parte da atividade. Entregue junto os pedidos que você fez e a sua avaliação crítica das respostas.</p></div>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Comece por uma atividade. Escolha a que mais sofre com respostas prontas, aplique dois dos sete ajustes e marque a cor do semáforo no enunciado. No bimestre seguinte, faça o mesmo com outra.</p>
+      </div>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Celular na escola tem lei</h4>
+        <p>A Lei 15.100/2025 restringiu o uso de aparelhos eletrônicos portáteis pessoais pelos estudantes da educação básica durante as aulas, o recreio e os intervalos, e manteve a possibilidade de uso para fins pedagógicos, sob orientação do professor, além de situações de acessibilidade e de saúde. Atividades com IA em sala, portanto, cabem quando planejadas e conduzidas pelo professor. Confira a regulamentação da sua rede e o regimento da escola.</p>
+      </div>
+      <p>Um cuidado de equidade: nem todo aluno tem celular bom, internet em casa ou ferramenta paga. Atividade que depende de IA precisa poder ser feita com o que a escola oferece, ou em grupo, para não transformar diferença de renda em diferença de nota.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Avalie o processo, a fala e o que é local e pessoal.</li>
+          <li>Diga em cada enunciado o que pode: vermelho, amarelo ou verde.</li>
+          <li>Não deixe a atividade depender do que só alguns alunos têm.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>Dados de alunos, idade mínima e o combinado da turma</h2>
+      <p>Redações, notas, relatórios de comportamento e laudos são dados pessoais de crianças e adolescentes. Quando um professor cola esse material numa ferramenta de IA, ele sai da escola e vai para os servidores de uma empresa, muitas vezes fora do país.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>A lei protege mais quem tem menos de 18</h4>
+        <p>A LGPD determina que o tratamento de dados de crianças e de adolescentes seja feito no melhor interesse deles, e exige cuidado especial com o consentimento dos pais ou responsáveis no caso de crianças (Lei 13.709/2018, art. 14). Dados de saúde, como laudos e relatórios de atendimento especializado, são dados sensíveis (art. 5º, II). O Estatuto da Criança e do Adolescente garante o direito ao respeito, que abrange a preservação da imagem, da identidade e da autonomia (Lei 8.069/1990, art. 17), e o Estatuto Digital da Criança e do Adolescente (Lei 15.211/2025) criou deveres para produtos e serviços digitais usados por esse público.</p>
+      </div>
+      <h3>O que o professor não deve subir</h3>
+      <ul>
+        <li>Lista de chamada, boletim ou planilha de notas com nomes.</li>
+        <li>Texto de aluno com nome, turma e escola.</li>
+        <li>Laudo, relatório de inclusão ou registro de ocorrência.</li>
+        <li>Foto ou vídeo de alunos.</li>
+      </ul>
+      <p>O que pode: o texto do aluno sem identificação nenhuma, para você organizar comentários com base na sua rubrica; uma descrição geral da dificuldade (“aluno do 5º ano que troca letras na escrita”) para pedir ideias de atividade. E a escola deve definir quais ferramentas são autorizadas, de preferência com contrato que trate de proteção de dados.</p>
+      <h3>Idade mínima das ferramentas</h3>
+      <p>Cada ferramenta define nos termos de uso a idade mínima. Várias exigem 13 anos e autorização dos responsáveis até os 18, e algumas só aceitam maiores de 18. Antes de pedir que a turma crie conta em qualquer serviço, leia os termos, fale com a coordenação e informe as famílias. Com crianças menores, o caminho seguro é o professor operar a ferramenta e projetar para a turma.</p>
+      <h3>O combinado da turma</h3>
+      <p>Regras que a turma ajudou a escrever são mais respeitadas do que regras impostas. Reserve uma aula para montar o combinado: o que é apoio, o que é atalho, como declarar o uso, o que acontece quando alguém passa da linha. O modelo no fim deste curso é um ponto de partida para adaptar à idade dos alunos e ao regimento da escola.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <h4>Para as famílias</h4>
+        <p>Três perguntas ajudam mais do que proibir: “O que você pediu para a IA?”, “O que ela respondeu que estava errado?” e “Você consegue me explicar isso sem olhar?”. Elas mostram interesse, ensinam a desconfiar e revelam se houve aprendizado.</p>
+      </div>
+      <p>Para aprofundar a proteção de dados, veja o curso <a href="/academia/sigilo-lgpd-e-etica-com-ia/">Sigilo, LGPD e ética profissional com IA</a>. Para escrever pedidos melhores, <a href="/academia/como-pedir-bem-a-ia/">Como pedir bem à IA</a>.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Dados de alunos pedem proteção reforçada: não suba nada identificado.</li>
+          <li>Confira a idade mínima nos termos e avise as famílias.</li>
+          <li>Escreva o combinado junto com a turma.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- PARA IMPRIMIR -->
+    <section class="lesson" id="combinado">
+      <p class="num">Para imprimir e preencher</p>
+      <h2>Combinado de uso de IA da turma</h2>
+      <p class="pol-sub">Escola: ______________________ · Turma: __________ · Professor(a): ______________________ · Data: ___/___/______</p>
+      <ol class="pol">
+        <li><b>Para que usamos IA.</b> Para aprender melhor: tirar dúvidas, pedir explicações, testar o que sabemos e receber crítica do que nós mesmos fizemos.</li>
+        <li><b>O que não fazemos.</b> Não entregamos como nosso um trabalho feito pela IA. Não colocamos na bibliografia o que não abrimos e lemos.</li>
+        <li><b>Tente primeiro.</b> Antes de perguntar à IA, cada um tenta fazer sozinho.</li>
+        <li><b>O semáforo.</b> Cada atividade diz o que pode: vermelho (sem IA), amarelo (apoio, com declaração) ou verde (liberada, com análise).</li>
+        <li><b>Declaramos o uso.</b> No fim do trabalho, escrevemos qual ferramenta usamos e para quê.</li>
+        <li><b>Conferimos.</b> A IA erra. O que é importante, conferimos no livro, no material da aula ou em fonte confiável.</li>
+        <li><b>Protegemos os dados.</b> Não colocamos na IA nome completo, endereço, foto, documento ou informação pessoal, nossa ou de colegas.</li>
+        <li><b>Ferramentas combinadas.</b> Usamos nas atividades da escola: ______________________, com autorização das famílias quando necessário.</li>
+        <li><b>Se alguém passar da linha.</b> Primeiro conversamos. O que acontece depois segue o regimento da escola: ______________________</li>
+        <li><b>Revisão.</b> Voltamos a este combinado em ___/___/______ para ver o que mudou.</li>
+      </ol>
+      <p class="pol-sub">Assinaturas da turma e do(a) professor(a): ______________________________________________</p>
+      <button class="btn no-print" type="button" id="print-btn">Imprimir o combinado</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas e documentos citados</h2>
+      <ul class="sources">
+        <li>Base Nacional Comum Curricular (BNCC), competência geral 5, no site do MEC</li>
+        <li>Resolução CNE/CEB 1/2022 (Computação na Educação Básica, complemento à BNCC)</li>
+        <li>Lei 14.533/2023 (Política Nacional de Educação Digital)</li>
+        <li>Lei 15.100/2025 (uso de aparelhos eletrônicos portáteis nas escolas de educação básica)</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener">Lei 13.709/2018 (LGPD)</a>: arts. 5º, II, e 14</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank" rel="noopener">Lei 8.069/1990 (Estatuto da Criança e do Adolescente)</a>, art. 17</li>
+        <li>Lei 15.211/2025 (Estatuto Digital da Criança e do Adolescente)</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l9610.htm" target="_blank" rel="noopener">Lei 9.610/1998 (Lei de Direitos Autorais)</a>: arts. 7º, 11 e 46, III</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm" target="_blank" rel="noopener">Decreto-Lei 2.848/1940 (Código Penal)</a>, art. 184</li>
+        <li>UNESCO, Guia para a IA generativa na educação e na pesquisa (2023)</li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. As normas mudam: confira sempre a redação atual na fonte oficial.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui o regimento da sua instituição, a orientação da rede de ensino nem a análise do caso concreto. A HermesIA não é escritório de advocacia e não presta consultoria jurídica. Enem, OpenAI e outras marcas citadas pertencem a seus titulares.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-educacao-v1', TOTAL=6, done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:'ia-professores-estudantes',aula:+i});
+    });
+  });
+  render();
+
+  var Q=[
+    {"q": "O que diferencia o uso da IA como apoio do uso como atalho?", "o": ["O apoio usa ferramentas pagas.", "O atalho é sempre mais demorado.", "Depois do apoio, o estudante sabe fazer sozinho melhor do que antes."], "c": 2, "e": "Aprende-se no processo; o bom uso mantém o esforço com quem estuda (aula 1)."},
+    {"q": "A IA sugeriu um plano de aula “alinhado à habilidade EF07CI07 da BNCC”. O professor deve:", "o": ["Confiar, porque o código tem o formato certo.", "Conferir o código e a redação da habilidade no documento oficial.", "Trocar o código por outro parecido."], "c": 1, "e": "Códigos e referências inventados são comuns; confira na fonte (aula 2)."},
+    {"q": "Qual pedido ajuda mais um estudante a aprender?", "o": ["“Resolva esta lista de exercícios.”", "“Escreva o resumo do capítulo para eu entregar.”", "“Estou travado. Não resolva: dê só uma dica sobre o primeiro passo.”"], "c": 2, "e": "Dica, teste e crítica mantêm o raciocínio com o estudante (aula 3)."},
+    {"q": "Um estudante vai incluir na bibliografia um artigo sugerido pela IA. Antes, ele precisa:", "o": ["Verificar se o artigo existe e abrir o texto.", "Formatar a referência em itálico.", "Perguntar à IA se o artigo é bom."], "c": 0, "e": "A IA inventa autores e títulos; nunca cite o que não abriu (aula 3)."},
+    {"q": "Não há regra escrita sobre IA para um trabalho. Qual é o melhor guia?", "o": ["Usar à vontade, porque não é proibido.", "Nunca usar nenhuma tecnologia.", "Autoria, transparência e o objetivo da atividade; na dúvida, perguntar ao professor."], "c": 2, "e": "Se você precisa esconder o uso, provavelmente passou da linha (aula 4)."},
+    {"q": "Um detector apontou “90% de chance de IA” na redação de um aluno. O professor deve:", "o": ["Dar zero imediatamente.", "Tratar como motivo para conversar e ouvir o aluno, não como prova.", "Publicar o resultado para a turma."], "c": 1, "e": "Detectores erram nos dois sentidos; o aluno tem direito de ser ouvido (aula 4)."},
+    {"q": "Qual ajuste torna uma atividade menos vulnerável ao atalho?", "o": ["Avaliar também o processo: roteiro, rascunho, revisão e defesa oral.", "Aumentar o número de páginas exigido.", "Proibir o uso de computador em casa."], "c": 0, "e": "Processo, fala e tarefas locais e pessoais valem mais do que vigilância (aula 5)."},
+    {"q": "Um professor quer ajuda da IA para comentar redações. O jeito adequado é:", "o": ["Colar as redações com nome, turma e escola.", "Enviar a foto do boletim da turma.", "Colar o texto sem nenhuma identificação e usar a própria rubrica; a nota continua sendo dele."], "c": 2, "e": "Dados de crianças e adolescentes têm proteção reforçada na LGPD (aula 6)."}
+  ];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: agora use o modelo logo abaixo para escrever o combinado com a sua turma.':'Vale rever as aulas indicadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:'ia-professores-estudantes',acertos:right});
+  }
+
+  document.getElementById('print-btn').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"IA para professores e estudantes","description":"Curso grátis em português para professores e estudantes: uso de IA para planejar aulas e estudar, integridade acadêmica, avaliação e proteção de dados de crianças e adolescentes, com combinado da turma para imprimir.","inLanguage":"pt-BR","isAccessibleForFree":true,"url":"https://hermesia.ia.br/academia/ia-para-professores-e-estudantes/","provider":{"@type":"Organization","name":"HermesIA","sameAs":"https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>

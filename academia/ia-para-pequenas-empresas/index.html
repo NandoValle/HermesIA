@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA para pequenas empresas — curso grátis | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro para MEI, autônomos e pequenos negócios: IA no atendimento, na divulgação e na organização, dentro do CDC e da LGPD. 6 aulas, quiz e plano de 30 dias.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/ia-para-pequenas-empresas/">
+<meta property="og:title" content="IA para pequenas empresas — curso grátis da Academia HermesIA">
+<meta property="og:description" content="6 aulas em português: onde a IA ajuda um negócio pequeno, atendimento, divulgação, finanças e dados de clientes, com o CDC e a LGPD. Com plano de 30 dias.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/ia-para-pequenas-empresas/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+
+  /* Tabela por profissão */
+  .tbl-wrap{overflow-x:auto;margin:8px 0 18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;line-height:1.55}
+  .tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:13px}
+  .tbl td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;color:#2a3042}
+  .tbl tr:nth-child(even) td{background:#fbf8ee}
+  /* Régua */
+  .levels{display:grid;gap:10px;margin:8px 0 20px}
+  .lv{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:#fff;border-left-width:1px}
+  .lv b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .lv p{font-size:15px!important;margin:0!important;line-height:1.65!important}
+  .lv.l1{background:#f1f8f2;border-color:#cfe3d3}
+  .lv.l2{background:#f3f6fb;border-color:#d5ddeb}
+  .lv.l3{background:#fbf6e8;border-color:#eadcb3}
+  .lv.l4{background:#fbf0ee;border-color:#efd2cb}
+  /* Política */
+  .pol-sub{font-size:15px!important;color:var(--muted)!important}
+  .pol{margin:0 0 18px 22px}
+  .pol li{font-size:15.5px;line-height:1.85;margin-bottom:10px}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#plano){display:none!important}
+    html.print-check #plano{border:0;margin:0;padding:0}
+    html.print-check #plano .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Negócios</p>
+    <h1>IA para pequenas empresas</h1>
+    <p class="sub">Para quem toca um negócio pequeno e faz de tudo um pouco. Veja onde a IA economiza horas de verdade, no atendimento, na divulgação e na organização, e o que o Código de Defesa do Consumidor e a LGPD pedem de você.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>6 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 50 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português e adaptado às leis do Brasil. Vale para qualquer ferramenta. Se você ainda não fez, comece pelo curso <a href="/academia/capacidades-e-limites-da-ia/" style="color:var(--gold-l)">Capacidades e limites da IA</a>.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 6 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>Onde a IA ajuda</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>Atendimento e vendas</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>Divulgação sem enganar</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>Organização e finanças</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Dados de clientes e equipe</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>Comece em 30 dias</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#plano"><span class="ck"><span>✎</span></span>Plano de 30 dias para imprimir</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para MEI, autônomos, donos e funcionários de pequenas empresas: loja, salão, oficina, restaurante, consultório, prestador de serviço. Não exige conhecimento técnico nem ferramenta paga. Ao terminar, você terá escolhido uma tarefa para começar, saberá o que conferir antes de publicar ou enviar e terá uma regra simples para a equipe.</p>
+      <p style="margin-top:12px;"><b>O que este curso não promete:</b> que a IA vai tocar o negócio sozinha. Ela escreve, organiza e sugere. Quem conhece o cliente, decide o preço e responde pelo que foi prometido continua sendo você.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>Onde a IA ajuda um negócio pequeno</h2>
+      <p>Num negócio pequeno, o dono é o vendedor, o financeiro, o marketing e o atendimento. O dia acaba e as tarefas de escrever ficam para a noite: responder mensagens, fazer orçamento, escrever post, cobrar quem atrasou. É exatamente nessas tarefas de texto que a IA mais ajuda.</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Onde ajuda muito</th><th>Onde ajuda com conferência</th><th>Onde a decisão é sua</th></tr></thead>
+          <tbody>
+            <tr><td>Responder mensagens e e-mails</td><td>Contas, preços e planilhas</td><td>Dar desconto ou crédito</td></tr>
+            <tr><td>Escrever posts, anúncios e descrições de produto</td><td>Resumo de contrato ou de regra</td><td>Contratar e demitir</td></tr>
+            <tr><td>Montar orçamento e proposta a partir das suas anotações</td><td>Dúvida sobre imposto ou obrigação</td><td>Assumir prazo e garantia</td></tr>
+            <tr><td>Organizar ideias, listas e passo a passo</td><td>Tradução para outro idioma</td><td>Responder a uma reclamação grave</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Como escolher por onde começar</h3>
+      <p>Não tente usar IA em tudo de uma vez. Faça uma lista das tarefas de escrever e organizar que você repete toda semana e dê duas notas a cada uma: quanto tempo ela toma e qual o estrago se sair errado. Comece pela que toma muito tempo e tem risco baixo. Responder dúvidas frequentes e escrever posts costumam ganhar. Calcular imposto e redigir contrato ficam para depois, e com um profissional conferindo.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Uma confeiteira gastava quase uma hora por dia respondendo às mesmas cinco perguntas no WhatsApp: preço, sabores, prazo, entrega e forma de pagamento. Ela escreveu as respostas uma vez, pediu à IA que deixasse o texto claro e simpático, e salvou como respostas rápidas no aplicativo. A IA não atende ninguém. Só ajudou a escrever bem o que ela repetia.</p>
+      </div>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>A responsabilidade não muda de dono</h4>
+        <p>Para o Código de Defesa do Consumidor, quem responde ao cliente é o fornecedor, ou seja, o seu negócio. Não importa se o texto do anúncio, a resposta no WhatsApp ou o orçamento foi escrito por você, por um funcionário ou por uma ferramenta. Por isso, tudo o que sai para o cliente passa pelos seus olhos antes.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A IA rende mais nas tarefas de escrever e organizar.</li>
+          <li>Comece pelo que toma tempo e tem risco baixo.</li>
+          <li>Quem responde ao cliente é o negócio, não a ferramenta.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>Atendimento e vendas</h2>
+      <p>Atender bem é responder rápido, com clareza e no tom certo. A IA ajuda nas três coisas, desde que as informações venham de você.</p>
+      <h3>Usos que funcionam</h3>
+      <ul>
+        <li><b>Respostas prontas para dúvidas frequentes.</b> Entregue os dados reais (preços, prazos, formas de pagamento, área de entrega) e peça respostas curtas e cordiais para cada pergunta.</li>
+        <li><b>Mensagens difíceis.</b> Cobrança, pedido de desculpas, recusa de um pedido, resposta a uma avaliação negativa. Conte a situação e peça um texto firme e respeitoso.</li>
+        <li><b>Orçamentos e propostas.</b> Dite ou cole as suas anotações e peça a proposta organizada: o que está incluído, o que não está, prazo, valor e validade.</li>
+        <li><b>Roteiro de venda.</b> Peça as perguntas que você deve fazer ao cliente para entender a necessidade antes de oferecer.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Antes e depois</p>
+        <div class="cmp">
+          <div class="weak"><b>Pedido vago</b>Responda a esse cliente que reclamou.</div>
+          <div class="strong"><b>Pedido completo</b>Tenho uma loja de móveis. Um cliente avaliou com uma estrela porque a entrega atrasou cinco dias. O atraso foi nosso. Já entregamos e demos frete grátis na próxima compra. Escreva uma resposta pública curta, que assuma o erro, diga o que fizemos e convide a falar conosco. Sem desculpas genéricas e sem discutir.</div>
+        </div>
+      </div>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>O que você escreve vira compromisso</h4>
+        <p>Pelo Código de Defesa do Consumidor, a informação ou a publicidade suficientemente precisa obriga o fornecedor e passa a fazer parte do contrato (art. 30). Se a mensagem disse “entrega em 24 horas” ou “garantia de um ano”, o cliente pode exigir (art. 35). A oferta também precisa ser correta, clara e em português, com preço, características, prazos e riscos (art. 31).</p>
+        <p>Quem vende pela internet, pelo telefone ou pelo WhatsApp, fora da loja, ainda deve respeitar o direito de arrependimento em sete dias (art. 49).</p>
+      </div>
+      <h3>Atendimento automático: três regras</h3>
+      <ol>
+        <li><b>Diga que é automático.</b> O consumidor tem direito a informação clara (art. 6º, III). Uma linha resolve: “Esta é uma resposta automática. Para falar com uma pessoa, digite 1.”</li>
+        <li><b>Dê saída para um humano.</b> Robô que prende o cliente num labirinto gera reclamação e perde venda. Para lojas virtuais, o Decreto 7.962/2013 exige atendimento eletrônico adequado e eficaz.</li>
+        <li><b>Limite o que o robô pode prometer.</b> Preço, prazo, desconto e garantia só saem de uma tabela que você escreveu. A IA não deve improvisar condição comercial.</li>
+      </ol>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Entregue os dados reais; a IA cuida da forma.</li>
+          <li>O que foi prometido por escrito obriga o negócio.</li>
+          <li>Robô se identifica, dá saída para humano e não improvisa preço.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>Divulgação: posts, anúncios e imagens</h2>
+      <p>Escrever para divulgar é onde a maioria dos pequenos negócios começa a usar IA. Ela resolve a folha em branco: dá ideias de post, escreve a descrição do produto, adapta o mesmo texto para o Instagram, para o WhatsApp e para o cartaz da loja.</p>
+      <h3>Para o texto sair com a cara do seu negócio</h3>
+      <ul>
+        <li><b>Conte quem compra de você.</b> “Mães do bairro, que pedem pelo WhatsApp” gera um texto diferente de “empresas que encomendam para eventos”.</li>
+        <li><b>Mostre exemplos seus.</b> Cole dois posts antigos que deram certo e peça o mesmo estilo.</li>
+        <li><b>Peça um calendário.</b> “Sugira 12 ideias de post para dezembro para uma pet shop de bairro, uma por linha, variando entre dica, bastidor e oferta.” Depois, escreva um por vez.</li>
+        <li><b>Corte os exageros.</b> A IA adora “o melhor”, “incrível”, “revolucionário”. Peça: “sem superlativos e sem promessas”.</li>
+      </ul>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Publicidade enganosa não tem desculpa técnica</h4>
+        <p>O Código de Defesa do Consumidor proíbe a publicidade enganosa, aquela que induz o consumidor a erro sobre o produto, o preço, a qualidade ou qualquer outro dado, inclusive por omissão (art. 37). A publicidade também precisa ser reconhecida como publicidade (art. 36). Se a IA escreveu que o seu suplemento “cura” ou que o seu curso “garante emprego”, a responsabilidade pelo anúncio é sua.</p>
+      </div>
+      <h3>Três coisas que a IA faz e você não deve publicar</h3>
+      <ol>
+        <li><b>Depoimento inventado.</b> Pedir à IA “cinco avaliações de clientes satisfeitos” e publicar como se fossem reais é publicidade enganosa. Use só depoimentos verdadeiros, com autorização de quem escreveu.</li>
+        <li><b>Imagem de pessoa real sem autorização.</b> O Código Civil protege a imagem da pessoa contra o uso comercial não autorizado (art. 20). Isso vale para foto de cliente, para rosto de famoso e para imagem gerada que imita alguém conhecido.</li>
+        <li><b>Foto que não corresponde ao produto.</b> Uma imagem gerada do prato, do quarto da pousada ou do resultado do tratamento, apresentada como se fosse a real, engana. Se usar imagem ilustrativa, avise que é ilustrativa.</li>
+      </ol>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Antes de publicar qualquer texto de divulgação, leia com uma pergunta na cabeça: <i>“Se um cliente me cobrar exatamente o que está escrito aqui, eu consigo cumprir?”</i> Se não, o texto muda antes de ir ao ar.</p>
+      </div>
+      <p>Um cuidado final com marcas e textos alheios: não peça à IA para copiar o anúncio do concorrente nem para usar o nome ou o personagem de uma marca que não é sua. Marca e obra têm dono.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Dê público, exemplos e limites; corte os exageros.</li>
+          <li>Promessa falsa em anúncio é publicidade enganosa.</li>
+          <li>Nada de depoimento inventado nem imagem de pessoa sem autorização.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>Organização, preços e finanças</h2>
+      <p>Fora do atendimento, a IA é uma boa ajudante de escritório: transforma anotações soltas em lista, monta um passo a passo para o funcionário novo, explica uma fórmula de planilha, resume um contrato de aluguel em linguagem simples.</p>
+      <h3>Usos que valem a pena</h3>
+      <ul>
+        <li><b>Procedimentos.</b> Descreva como você abre a loja, fecha o caixa ou embala um pedido, e peça um passo a passo numerado para treinar alguém.</li>
+        <li><b>Planilhas.</b> Explique o que você quer controlar (entradas, saídas, estoque) e peça a estrutura da planilha e as fórmulas. Ela explica cada fórmula, e você monta.</li>
+        <li><b>Preço.</b> Peça a lista de custos que costumam ser esquecidos no seu tipo de negócio: embalagem, taxa do cartão, frete, perda, o seu próprio tempo. A lista ajuda; o número final é seu.</li>
+        <li><b>Documentos longos.</b> Cole o contrato do fornecedor ou as regras da maquininha e peça: “Resuma em tópicos, com o número da cláusula de cada ponto, e liste o que pode me custar dinheiro.”</li>
+      </ul>
+      <h3>O ponto fraco: conta</h3>
+      <p>A IA escreve bem e calcula mal. Em contas longas, com percentuais, parcelas e juros, ela pode errar e explicar o erro com toda a segurança. A regra é simples: a IA monta a fórmula, a planilha faz a conta, e você confere o resultado com um caso que já conhece.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Imposto, MEI e Simples: pergunte, mas confirme</h4>
+        <p>Regras tributárias mudam com frequência, e a IA pode responder com a regra antiga. A Reforma Tributária (Emenda Constitucional 132/2023 e Lei Complementar 214/2025) está em implantação por etapas, e limites e obrigações do MEI e do Simples Nacional são atualizados por lei e por resolução.</p>
+        <p>Use a IA para entender o assunto e preparar as perguntas. A resposta que vale vem do Portal do Empreendedor, do site da Receita Federal ou do seu contador. Decisão sobre imposto não se toma com base em resposta de IA.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Um bom pedido para a conversa com o contador: “Sou MEI, vendo roupas e comecei a vender também pela internet para outros estados. Liste as perguntas que devo fazer ao meu contador sobre nota fiscal, imposto e limite de faturamento.” Você chega à reunião sabendo o que perguntar.</p>
+      </div>
+      <p>O mesmo vale para contratos e questões trabalhistas: a IA ajuda a entender e a organizar as dúvidas, mas contrato importante e decisão sobre empregado pedem um profissional.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Use a IA para procedimentos, planilhas e resumos.</li>
+          <li>Ela monta a fórmula; a planilha faz a conta.</li>
+          <li>Imposto e contrato: entenda com a IA, confirme com o contador.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Dados de clientes e regras para a equipe</h2>
+      <p>Todo negócio guarda dados de pessoas: nome, telefone, endereço de entrega, CPF na nota, histórico de compras. Quando você cola a sua lista de clientes numa ferramenta de IA, esses dados saem do seu computador e vão para os servidores de outra empresa.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>A LGPD vale para o pequeno, com regras mais leves</h4>
+        <p>A Lei Geral de Proteção de Dados (Lei 13.709/2018) se aplica a qualquer negócio que trate dados pessoais, inclusive MEI e microempresa. A ANPD criou um regime simplificado para agentes de tratamento de pequeno porte (Resolução CD/ANPD 2/2022), com obrigações mais flexíveis, como a dispensa de nomear encarregado, desde que haja um canal de contato com o titular. Mas os princípios continuam valendo: usar só o necessário (art. 6º, III), proteger os dados (art. 46) e respeitar os direitos do titular (art. 18).</p>
+      </div>
+      <h3>O que pode e o que não deve subir</h3>
+      <ul>
+        <li><b>Pode:</b> pedir um texto de promoção, uma resposta padrão, a estrutura de uma planilha, uma análise de vendas por produto, sem nome de ninguém.</li>
+        <li><b>Com cuidado:</b> um caso concreto de cliente, com o nome trocado por “Cliente A” e sem CPF, telefone ou endereço.</li>
+        <li><b>Não deve:</b> a lista de clientes com nome e telefone, a folha de pagamento, dados de saúde de clientes (comum em salão, academia, clínica e farmácia), fotos de documentos.</li>
+      </ul>
+      <p>A técnica completa, com a régua dos quatro níveis, está no curso <a href="/academia/sigilo-lgpd-e-etica-com-ia/">Sigilo, LGPD e ética profissional com IA</a>.</p>
+      <h3>Mensagens em massa</h3>
+      <p>A IA facilita escrever cem mensagens personalizadas. Isso não autoriza enviar para quem não pediu. Mande ofertas para quem é seu cliente ou autorizou o contato, diga quem você é e ofereça um jeito simples de parar de receber. Lista de contatos comprada é problema certo.</p>
+      <h3>Decisão automática sobre pessoas</h3>
+      <p>Se você usar uma ferramenta para decidir sozinha quem recebe crédito, desconto ou é chamado para uma vaga, a pessoa afetada tem direito de pedir a revisão dessa decisão (LGPD, art. 20). Em negócio pequeno, o caminho seguro é a IA organizar as informações e uma pessoa decidir.</p>
+      <h3>Regra da casa para a equipe</h3>
+      <p>Se você tem funcionários, eles já usam IA no celular. Combine por escrito, em meia página:</p>
+      <ol>
+        <li>Quais ferramentas podem ser usadas para o trabalho, e em qual conta.</li>
+        <li>O que nunca sobe: dados de clientes, senhas, valores de contratos.</li>
+        <li>Nada vai para o cliente sem alguém ler antes.</li>
+        <li>Preço, prazo e garantia só os que estão na tabela da empresa.</li>
+      </ol>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>A LGPD vale para o pequeno; use só o dado necessário.</li>
+          <li>Lista de clientes e folha de pagamento não sobem.</li>
+          <li>Combine com a equipe uma regra da casa por escrito.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>Comece em 30 dias</h2>
+      <p>Quem tenta mudar tudo de uma vez desiste na segunda semana. O plano a seguir cabe na rotina de quem trabalha o dia inteiro: uma tarefa, um mês, um resultado medido.</p>
+      <div class="levels">
+        <div class="lv l1"><b>Semana 1 · Escolha e meça</b><p>Escolha uma tarefa que você repete e que tem risco baixo. Anote quanto tempo ela toma hoje. Configure a ferramenta: conta de trabalho e, se houver a opção, uso das conversas para treinamento desligado.</p></div>
+        <div class="lv l2"><b>Semana 2 · Escreva os pedidos</b><p>Monte dois ou três pedidos para essa tarefa, com contexto, material e formato. Teste, ajuste e guarde os que funcionaram. O curso <a href="/academia/como-pedir-bem-a-ia/">Como pedir bem à IA</a> ensina o método.</p></div>
+        <div class="lv l3"><b>Semana 3 · Use de verdade</b><p>Use os pedidos todos os dias. Leia tudo antes de enviar. Anote o que precisou corrigir: é isso que vai melhorar o pedido.</p></div>
+        <div class="lv l4"><b>Semana 4 · Avalie e decida</b><p>Meça de novo o tempo. Valeu? Mantenha e escolha a segunda tarefa. Não valeu? Troque de tarefa, não desista da ferramenta. Escreva a regra da casa para a equipe.</p></div>
+      </div>
+      <h3>Ferramenta gratuita ou paga?</h3>
+      <p>Para começar, a versão gratuita de qualquer ferramenta conhecida resolve. Pague quando houver um motivo claro: limite de uso que atrapalha, necessidade de trabalhar com arquivos grandes ou, principalmente, quando você precisar de um plano com contrato de proteção de dados para tratar informações de clientes. Antes de assinar, leia o que o plano diz sobre uso das suas conversas para treinamento e sobre onde os dados ficam.</p>
+      <h3>Sinais de que está funcionando</h3>
+      <ul>
+        <li>Você responde mais rápido sem cair a qualidade.</li>
+        <li>Os textos têm a sua cara, e os clientes não notam diferença para pior.</li>
+        <li>Você revisa tudo, mas corrige cada vez menos.</li>
+      </ul>
+      <h3>Sinais de alerta</h3>
+      <ul>
+        <li>Mensagens saindo sem ninguém ler.</li>
+        <li>Cliente cobrando uma promessa que você não lembra de ter feito.</li>
+        <li>Funcionário colando planilha de clientes numa conta pessoal.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>O objetivo não é usar IA. É sobrar tempo para o que só você faz: atender bem, cuidar do produto, pensar no negócio. Se depois de um mês você ganhou uma hora por dia numa tarefa, o plano funcionou.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Uma tarefa, um mês, tempo medido antes e depois.</li>
+          <li>Comece no gratuito; pague quando houver motivo claro.</li>
+          <li>Tudo o que sai para o cliente continua passando por você.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- PARA IMPRIMIR -->
+    <section class="lesson" id="plano">
+      <p class="num">Para imprimir e preencher</p>
+      <h2>Plano de 30 dias e regra da casa</h2>
+      <p class="pol-sub">Negócio: ______________________ · Início em ___/___/______</p>
+      <ol class="pol">
+        <li><b>A tarefa escolhida.</b> ______________________________________________ · Tempo que toma hoje: ______ por semana.</li>
+        <li><b>Ferramenta e conta.</b> ______________________ · Conta de trabalho: ( ) sim · Treinamento desligado: ( ) sim ( ) não há opção.</li>
+        <li><b>Meus pedidos guardados.</b> 1) ____________________ 2) ____________________ 3) ____________________</li>
+        <li><b>O que precisei corrigir na semana 3.</b> ______________________________________________</li>
+        <li><b>Resultado na semana 4.</b> Tempo agora: ______ por semana · ( ) mantenho ( ) troco de tarefa · Próxima tarefa: ______________________</li>
+      </ol>
+      <p class="check-h">Regra da casa</p>
+      <ul class="check">
+        <li>Ferramentas autorizadas para o trabalho: ______________________</li>
+        <li>Nunca sobem: lista de clientes, CPF, telefone, endereço, folha de pagamento, senhas, dados de saúde.</li>
+        <li>Nada vai para o cliente sem alguém ler antes.</li>
+        <li>Preço, prazo, desconto e garantia: só os da tabela da empresa.</li>
+        <li>Atendimento automático avisa que é automático e oferece falar com uma pessoa.</li>
+        <li>Sem depoimento inventado e sem imagem de pessoa sem autorização.</li>
+        <li>Dúvida sobre imposto, contrato ou empregado: confirmar com o contador ou o advogado.</li>
+      </ul>
+      <button class="btn no-print" type="button" id="print-btn">Imprimir o plano</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas citadas</h2>
+      <ul class="sources">
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener">Lei 8.078/1990 (Código de Defesa do Consumidor)</a>: arts. 6º, III, 30, 31, 35, 36, 37 e 49</li>
+        <li>Decreto 7.962/2013 (contratação no comércio eletrônico)</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm" target="_blank" rel="noopener">Lei 10.406/2002 (Código Civil)</a>, art. 20</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener">Lei 13.709/2018 (LGPD)</a>: arts. 6º, 18, 20 e 46</li>
+        <li><a href="https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-2-de-27-de-janeiro-de-2022" target="_blank" rel="noopener">Resolução CD/ANPD 2/2022 (agentes de tratamento de pequeno porte)</a>, alterada pela Resolução CD/ANPD 15/2024: art. 11</li>
+        <li>Emenda Constitucional 132/2023 e Lei Complementar 214/2025 (Reforma Tributária)</li>
+        <li>Portal do Empreendedor (gov.br/mei) e site da Receita Federal, para regras atuais do MEI e do Simples Nacional</li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. As normas mudam: confira sempre a redação atual na fonte oficial.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui a orientação de contador, advogado ou do órgão competente, nem a análise do caso concreto. A HermesIA não é escritório de advocacia nem de contabilidade e não presta consultoria jurídica ou contábil. WhatsApp, Instagram e outras marcas citadas pertencem a seus titulares.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-empresas-v1', TOTAL=6, done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:'ia-pequenas-empresas',aula:+i});
+    });
+  });
+  render();
+
+  var Q=[
+    {"q": "Qual é o melhor critério para escolher a primeira tarefa em que usar IA no negócio?", "o": ["Uma que toma muito tempo e tem risco baixo se sair errada.", "A mais difícil e arriscada, para testar a ferramenta.", "O cálculo dos impostos do mês."], "c": 0, "e": "Comece pelo que se repete, toma tempo e tem risco baixo (aula 1)."},
+    {"q": "Uma resposta automática no WhatsApp prometeu “entrega em 24 horas”. Pelo CDC:", "o": ["Não vale, porque foi um robô que escreveu.", "Só vale se o cliente tiver pago adiantado.", "A oferta precisa obriga o fornecedor, e o cliente pode exigir."], "c": 2, "e": "CDC, arts. 30 e 35: a informação suficientemente precisa integra o contrato (aula 2)."},
+    {"q": "Num atendimento automático, o que NÃO pode faltar?", "o": ["Emojis em todas as mensagens.", "Aviso de que é automático e um caminho para falar com uma pessoa.", "Respostas longas e detalhadas."], "c": 1, "e": "Informação clara (CDC, art. 6º, III) e saída para atendimento humano (aula 2)."},
+    {"q": "Você pediu à IA cinco depoimentos de clientes satisfeitos para publicar no site. Isso é:", "o": ["Publicidade enganosa, se forem apresentados como reais.", "Uma boa prática de marketing.", "Permitido, desde que os nomes sejam inventados."], "c": 0, "e": "CDC, art. 37: depoimento inventado induz o consumidor a erro (aula 3)."},
+    {"q": "A IA calculou as parcelas de um financiamento e explicou o resultado com segurança. Você deve:", "o": ["Confiar, porque a explicação está clara.", "Pedir que ela repita a resposta.", "Refazer a conta numa planilha e conferir com um caso conhecido."], "c": 2, "e": "A IA monta a fórmula; a planilha faz a conta (aula 4)."},
+    {"q": "Uma dúvida sobre o limite de faturamento do MEI deve ser confirmada:", "o": ["Só com a resposta da IA.", "No Portal do Empreendedor, na Receita Federal ou com o contador.", "Num grupo de mensagens."], "c": 1, "e": "Regras tributárias mudam; a IA pode responder com a regra antiga (aula 4)."},
+    {"q": "A LGPD se aplica a um MEI que guarda nome e telefone de clientes?", "o": ["Sim, com um regime simplificado para agentes de pequeno porte.", "Não, só a grandes empresas.", "Só se ele vender pela internet."], "c": 0, "e": "A lei vale para todos; a Resolução CD/ANPD 2/2022 flexibiliza obrigações do pequeno (aula 5)."},
+    {"q": "No plano de 30 dias, o que você faz na semana 4?", "o": ["Assina o plano mais caro da ferramenta.", "Passa a usar IA em todas as tarefas de uma vez.", "Mede o tempo de novo e decide se mantém a tarefa ou troca."], "c": 2, "e": "Medir antes e depois é o que mostra se valeu (aula 6)."}
+  ];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: agora preencha o plano de 30 dias logo abaixo e escolha a sua primeira tarefa.':'Vale rever as aulas indicadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:'ia-pequenas-empresas',acertos:right});
+  }
+
+  document.getElementById('print-btn').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"IA para pequenas empresas","description":"Curso grátis em português para MEI e pequenas empresas: uso de IA no atendimento, na divulgação e na organização do negócio, com o Código de Defesa do Consumidor e a LGPD, e plano de 30 dias para imprimir.","inLanguage":"pt-BR","isAccessibleForFree":true,"url":"https://hermesia.ia.br/academia/ia-para-pequenas-empresas/","provider":{"@type":"Organization","name":"HermesIA","sameAs":"https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>

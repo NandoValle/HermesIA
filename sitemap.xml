@@ -114,4 +114,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://hermesia.ia.br/academia/como-pedir-bem-a-ia/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hermesia.ia.br/academia/ia-para-pequenas-empresas/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hermesia.ia.br/academia/ia-para-professores-e-estudantes/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
