@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA para quem programa — curso grátis | Academia HermesIA</title>
+<meta name="description" content="Curso grátis e sem cadastro para desenvolvedores: contexto, revisão, testes, segurança e direitos sobre o código feito com IA, com a Lei do Software e a LGPD. 6 aulas, quiz e lista de revisão para imprimir.">
+<link rel="canonical" href="https://hermesia.ia.br/academia/ia-para-quem-programa/">
+<meta property="og:title" content="IA para quem programa — curso grátis da Academia HermesIA">
+<meta property="og:description" content="6 aulas em português: erros típicos do código gerado, contexto, revisão linha a linha, testes primeiro, segredos e segurança, e direitos e licenças. Com lista de revisão.">
+<meta property="og:url" content="https://hermesia.ia.br/academia/ia-para-quem-programa/">
+<meta property="og:image" content="https://hermesia.ia.br/og-grifo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/emblema.png">
+<link rel="apple-touch-icon" href="/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens.css">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{--navy:#0d1b3e;--navy-2:#16264a;--navy-deep:#0a1428;--navy-foot:#060d1a;--gold:#c9a84c;--gold-l:#e5c06a;--gold-d:#8a6b1f;--ink:#1f2433;--muted:#5a6073;--paper:#fbfaf6;--line:#e3dac2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-d)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* TOPO */
+  .top{background:var(--navy-deep);border-bottom:1px solid var(--navy-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+  .top .brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none}
+  .top .brand span{color:#fff}
+  .top .back{font-size:13.5px;color:#c9c4b4;text-decoration:none;padding:10px 0}
+  .top .back:hover{color:var(--gold-l)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#e8e4d8;padding:56px 0 48px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;color:#f5f2ea;max-width:20ch}
+  .hero .sub{margin-top:16px;max-width:62ch;color:#c9c4b4;font-size:17px}
+  .meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta li{font-size:13px;color:#d0daea;border:1px solid #22386b;border-radius:999px;padding:6px 14px}
+  .btn{display:inline-block;margin-top:26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;padding:13px 26px;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold-l)}
+  .hero .origin{margin-top:18px;font-size:12.5px;color:#8ea3c0;max-width:70ch}
+
+  /* LAYOUT */
+  .course{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;padding-top:48px;padding-bottom:24px}
+  .toc{position:sticky;top:20px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .toc h2{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .bar{height:6px;background:#efe9d8;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+  .prog{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .toc ol{list-style:none}
+  .toc li a{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px;font-size:14px;line-height:1.4;color:var(--ink);text-decoration:none}
+  .toc li a:hover{background:#f6f1e3}
+  .toc .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid #cdbf98;font-size:11px;font-weight:600;color:var(--gold-d);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .toc li.done .ck{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .toc li.done .ck span{display:none}
+  .toc li.done .ck::after{content:"✓"}
+
+  main{max-width:720px}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-bottom:48px}
+  .intro h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+  .intro p{color:#3a4256;font-size:15.5px}
+
+  .lesson{padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+  .lesson .num{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .lesson h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(25px,3.4vw,31px);line-height:1.25;color:var(--navy);margin-bottom:18px}
+  .lesson h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+  .lesson p{font-size:17px;line-height:1.8;color:#2a3042;margin-bottom:16px}
+  .lesson ul,.lesson ol{margin:0 0 16px 22px}
+  .lesson li{font-size:16.5px;line-height:1.75;color:#2a3042;margin-bottom:8px}
+  .lesson li b,.lesson p b{color:var(--ink)}
+
+  .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:24px 0}
+  .box .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
+  .box h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+  .box p,.box li{font-size:15.5px;line-height:1.7}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box.br{background:#f3f6fb;border-color:#d5ddeb}
+  .box.br .lbl{color:#1d4f91}
+  .cmp{display:grid;gap:12px;margin:8px 0 4px}
+  .cmp div{border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.65}
+  .cmp .weak{background:#fbf1ef;border:1px solid #efd2cb}
+  .cmp .strong{background:#f1f8f2;border:1px solid #cfe3d3}
+  .cmp b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .cmp .weak b{color:#a3412e}
+  .cmp .strong b{color:#2e7d32}
+
+  .sum{background:var(--navy);color:#d0daea;border-radius:10px;padding:20px 22px;margin-top:28px}
+  .sum .lbl{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+  .sum ul{list-style:none;margin:0}
+  .sum li{color:#e3e8f1;font-size:15.5px;padding-left:24px;position:relative;margin-bottom:6px}
+  .sum li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+
+  .done-btn{margin-top:22px;font:inherit;font-size:14.5px;font-weight:500;color:var(--gold-d);background:transparent;border:1px solid var(--gold-d);border-radius:4px;padding:11px 20px;cursor:pointer}
+  .done-btn:hover{background:#f6f1e3}
+  .done-btn[aria-pressed="true"]{background:#2e7d32;border-color:#2e7d32;color:#fff}
+  .next{display:inline-block;margin:22px 0 0 14px;font-size:14.5px;font-weight:500;text-decoration:none}
+
+  /* QUIZ */
+  .quiz fieldset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px 14px;margin-bottom:16px}
+  .quiz legend{font-weight:600;color:var(--navy);font-size:16px;line-height:1.5;padding:0 4px}
+  .quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.5;color:#2a3042}
+  .quiz label:hover{background:#f8f5ea}
+  .quiz input{margin-top:4px;accent-color:var(--gold-d)}
+  .quiz label.ok{background:#eaf5ec}
+  .quiz label.no{background:#fbecea}
+  .fb{font-size:14.5px;line-height:1.6;margin:8px 4px 4px;min-height:1px}
+  .fb.ok{color:#22652a}
+  .fb.no{color:#9b3a28}
+  .score{background:var(--navy);color:#fff;border-radius:10px;padding:20px 22px;font-size:16px;margin-top:8px}
+  .score b{color:var(--gold-l)}
+
+  /* CHECKLIST */
+  .check{list-style:none;margin:0}
+  .check li{padding-left:30px;position:relative;margin-bottom:10px;font-size:16px}
+  .check li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:1.5px solid var(--gold-d);border-radius:3px}
+  .check-h{font-weight:600;color:var(--navy);margin:16px 0 8px}
+
+  .sources li{font-size:14.5px;margin-bottom:6px}
+  .author{font-size:15px;color:var(--muted);margin-top:8px}
+
+  footer{background:var(--navy-foot);padding:36px 0 44px;margin-top:40px}
+  footer .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);text-decoration:none}
+  footer p{font-size:12.5px;color:#8f9bb0;line-height:1.75;margin-top:12px;max-width:90ch}
+  footer a{color:#aebdd4}
+
+  a:focus-visible,.btn:focus-visible,.done-btn:focus-visible,.quiz input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  @media (max-width:900px){
+    .course{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:28px}
+    .toc{position:static}
+    .hero{padding:40px 0 36px}
+    .lesson p{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+
+  /* Tabela por profissão */
+  .tbl-wrap{overflow-x:auto;margin:8px 0 18px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;line-height:1.55}
+  .tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:13px}
+  .tbl td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;color:#2a3042}
+  .tbl tr:nth-child(even) td{background:#fbf8ee}
+  /* Régua */
+  .levels{display:grid;gap:10px;margin:8px 0 20px}
+  .lv{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:#fff;border-left-width:1px}
+  .lv b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .lv p{font-size:15px!important;margin:0!important;line-height:1.65!important}
+  .lv.l1{background:#f1f8f2;border-color:#cfe3d3}
+  .lv.l2{background:#f3f6fb;border-color:#d5ddeb}
+  .lv.l3{background:#fbf6e8;border-color:#eadcb3}
+  .lv.l4{background:#fbf0ee;border-color:#efd2cb}
+  /* Política */
+  .pol-sub{font-size:15px!important;color:var(--muted)!important}
+  .pol{margin:0 0 18px 22px}
+  .pol li{font-size:15.5px;line-height:1.85;margin-bottom:10px}
+
+  /* Impressão: só o checklist */
+  @media print{
+    html.print-check body > *:not(.course){display:none!important}
+    html.print-check .course{display:block;padding:0}
+    html.print-check .toc,html.print-check main > *:not(#revisao){display:none!important}
+    html.print-check #revisao{border:0;margin:0;padding:0}
+    html.print-check #revisao .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span>Hermes</span>IA</a>
+    <a class="back" href="/academia/">← Academia HermesIA</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Academia HermesIA · Tecnologia</p>
+    <h1>IA para quem programa</h1>
+    <p class="sub">Para desenvolvedores, estudantes de programação e equipes de tecnologia que usam assistentes de código. Ganhe velocidade e mantenha o controle: contexto, revisão, testes, segurança e direitos sobre o código, com as leis do Brasil.</p>
+    <ul class="meta" aria-label="Sobre o curso">
+      <li>6 aulas</li>
+      <li>Quiz no final</li>
+      <li>Cerca de 50 minutos</li>
+      <li>Grátis, sem cadastro</li>
+    </ul>
+    <a class="btn" href="#aula-1">Começar a aula 1 →</a>
+    <p class="origin">Curso escrito pela HermesIA, em português e adaptado às leis do Brasil. Vale para qualquer assistente de código: no editor, no terminal ou no navegador. Os demais cursos da <a href="/academia/" style="color:var(--gold-l)">Academia HermesIA</a> complementam este.</p>
+  </div>
+</header>
+
+<div class="wrap course">
+  <nav class="toc" aria-label="Aulas do curso">
+    <h2>Aulas</h2>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <p class="prog" id="prog" aria-live="polite">0 de 6 aulas concluídas</p>
+    <ol>
+      <li data-l="1"><a href="#aula-1"><span class="ck"><span>1</span></span>O que muda quando a IA escreve código</a></li>
+      <li data-l="2"><a href="#aula-2"><span class="ck"><span>2</span></span>Dê contexto como a um colega novo</a></li>
+      <li data-l="3"><a href="#aula-3"><span class="ck"><span>3</span></span>Leia cada linha antes de aceitar</a></li>
+      <li data-l="4"><a href="#aula-4"><span class="ck"><span>4</span></span>Testes primeiro, depois o código</a></li>
+      <li data-l="5"><a href="#aula-5"><span class="ck"><span>5</span></span>Segredos, dados e segurança</a></li>
+      <li data-l="6"><a href="#aula-6"><span class="ck"><span>6</span></span>Direitos e licenças do código</a></li>
+      <li><a href="#quiz"><span class="ck"><span>?</span></span>Quiz final</a></li>
+      <li><a href="#revisao"><span class="ck"><span>✎</span></span>Lista de revisão para imprimir</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro">
+      <h2>Para quem é este curso</h2>
+      <p>Para quem escreve código no trabalho ou nos estudos e para quem lidera uma equipe de tecnologia. Ao terminar, você terá uma lista de revisão para aplicar a todo código feito com IA antes de ele entrar no projeto.</p>
+      <p style="margin-top:12px;"><b>O que este curso não faz:</b> ensinar uma linguagem ou os botões de uma ferramenta. Ele ensina a trabalhar com qualquer assistente sem perder a responsabilidade pelo resultado.</p>
+    </div>
+
+    <!-- AULA 1 -->
+    <section class="lesson" id="aula-1" data-l="1">
+      <p class="num">Aula 1</p>
+      <h2>O que muda quando a IA escreve código</h2>
+      <p>Assistentes de código escrevem funções inteiras, explicam erros e propõem correções em segundos. A responsabilidade continua com quem aceita o código. A IA produz texto plausível, e código plausível pode estar errado.</p>
+      <h3>Os erros típicos do código gerado</h3>
+      <ul>
+        <li><b>Funções que não existem.</b> Métodos e parâmetros que nunca existiram, ou que existem em outra versão da biblioteca.</li>
+        <li><b>Pacotes inventados.</b> Nomes parecidos com o de um pacote real, ou de pacotes que ninguém publicou.</li>
+        <li><b>Casos de borda esquecidos.</b> O código funciona no exemplo e quebra com lista vazia, data no fim do mês, acento, fuso horário ou valor negativo.</li>
+        <li><b>Falhas de segurança que funcionam.</b> Consulta ao banco montada com texto do usuário, senha escrita no código, checagem de permissão esquecida.</li>
+        <li><b>Mudanças além do pedido.</b> O assistente “aproveita” e altera arquivos que você não mencionou.</li>
+      </ul>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Mais empresas desenvolvem IA dentro de casa</h4>
+        <p>Na pesquisa TIC Empresas 2025, do Cetic.br, a adoção de IA pelas empresas brasileiras passou de 13% para 17% entre 2024 e 2025. Entre as grandes empresas, o desenvolvimento interno de IA subiu de 24% para 37%, e 60% das empresas que usam IA contrataram fornecedores externos para desenvolver ou adaptar soluções. Há mais código com IA sendo escrito no país, e alguém responde por cada linha dele.</p>
+      </div>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Trate o assistente como um colega rápido e recém-chegado: ótimo para rascunhar, explicar e sugerir. Tudo o que ele entrega passa pela mesma revisão que você faria no código de outra pessoa.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Quem aceita o código responde por ele.</li>
+          <li>Erros típicos: função inexistente, pacote inventado, caso de borda, falha de segurança.</li>
+          <li>Revise como revisaria o código de um colega.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="1" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-2">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 2 -->
+    <section class="lesson" id="aula-2" data-l="2">
+      <p class="num">Aula 2</p>
+      <h2>Dê contexto como a um colega novo</h2>
+      <p>O assistente só sabe o que você mostra ou o que ele consegue ler no projeto. Sem contexto, ele adivinha a linguagem, a versão, o estilo e as regras da equipe, e costuma adivinhar mal.</p>
+      <h3>O que informar</h3>
+      <ul>
+        <li><b>Linguagem, versões e bibliotecas.</b> Por exemplo: “Python 3.12, Django 5, PostgreSQL 16”.</li>
+        <li><b>Onde o código vai morar.</b> O arquivo, as funções vizinhas e o padrão que o projeto já usa.</li>
+        <li><b>Objetivo e restrições.</b> Desempenho, compatibilidade, o que deve ficar como está.</li>
+        <li><b>O erro inteiro.</b> Em caso de defeito, a mensagem completa e os passos para reproduzir.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p><i>Pedido fraco:</i> “Faz uma função de validar CPF.”</p>
+        <p style="margin-top:8px;"><i>Pedido bom:</i> “Em TypeScript 5, no arquivo src/validacao.ts, crie a função validarCpf(texto: string): boolean, seguindo o padrão das funções vizinhas. Aceite CPF com ou sem pontuação, rejeite sequências repetidas como 111.111.111-11 e use só a biblioteca padrão. Antes do código, liste os casos de teste que você vai cobrir.”</p>
+      </div>
+      <h3>Peça o plano antes do código</h3>
+      <p>Em tarefas maiores, peça primeiro um plano curto: quais arquivos mudam e por quê. Corrija o plano e só então peça o código. Divida o trabalho em etapas pequenas, que você consiga revisar de uma vez.</p>
+      <h3>O arquivo de instruções do projeto</h3>
+      <p>Muitos assistentes leem um arquivo de instruções guardado no próprio projeto, com nome e formato definidos por cada ferramenta. Escreva nele, em poucas linhas, como rodar os testes, as convenções de nome, as pastas que o assistente deve deixar intactas e as regras de segurança da equipe. Revise esse arquivo como revisa o código: ele orienta tudo o que o assistente faz.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Diga linguagem, versões, lugar do código e restrições.</li>
+          <li>Plano primeiro, código depois, em etapas pequenas.</li>
+          <li>Mantenha um arquivo de instruções do projeto.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="2" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-3">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 3 -->
+    <section class="lesson" id="aula-3" data-l="3">
+      <p class="num">Aula 3</p>
+      <h2>Leia cada linha antes de aceitar</h2>
+      <p>A IA escreve mais rápido do que qualquer pessoa consegue ler. O risco é aceitar blocos inteiros sem entender. Uma regra simples ajuda: se você não sabe explicar uma linha a um colega, ela ainda não está pronta para entrar.</p>
+      <h3>A revisão em cinco perguntas</h3>
+      <ul>
+        <li><b>Faz o que foi pedido, e só isso?</b> Leia a lista de alterações inteira, inclusive em arquivos que você não esperava.</li>
+        <li><b>Funções e bibliotecas existem na versão do projeto?</b> Na dúvida, abra a documentação oficial.</li>
+        <li><b>E os casos difíceis?</b> Entrada vazia, muito grande, com acento ou mal formatada.</li>
+        <li><b>Há dado do usuário chegando ao banco, ao sistema ou à tela sem tratamento?</b></li>
+        <li><b>Entrou dependência nova?</b> Ela existe, é mantida, tem licença compatível e é mesmo necessária?</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Atenção</p>
+        <h4>Confira o nome antes de instalar</h4>
+        <p>Assistentes às vezes recomendam pacotes que não existem. Há quem registre esses nomes em repositórios públicos com código malicioso, à espera de quem instale sem conferir. Antes de instalar, confirme no repositório oficial o nome exato, os mantenedores, a data de publicação e o volume de uso.</p>
+      </div>
+      <h3>Tamanho da mudança</h3>
+      <p>Mudança grande demais para ler é mudança grande demais para aceitar. Peça ao assistente que divida o trabalho, ou desfaça e recomece com um pedido menor. Em mudança grande ou sensível, peça também a revisão de outra pessoa da equipe.</p>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Linha que você não sabe explicar fica fora.</li>
+          <li>Escopo, existência, casos difíceis, entrada do usuário e dependências.</li>
+          <li>Confira o pacote no repositório oficial antes de instalar.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="3" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-4">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 4 -->
+    <section class="lesson" id="aula-4" data-l="4">
+      <p class="num">Aula 4</p>
+      <h2>Testes primeiro, depois o código</h2>
+      <p>Testes são a forma mais barata de conferir o que a IA escreveu. Funciona bem nesta ordem: você descreve o comportamento esperado, pede os testes, revisa os testes e só então pede o código que os faça passar.</p>
+      <div class="levels">
+        <div class="lv l1"><b>1 · Descreva o comportamento</b><p>Em linguagem simples, com exemplos de entrada e saída, inclusive os casos difíceis.</p></div>
+        <div class="lv l2"><b>2 · Peça e revise os testes</b><p>Confira se cobrem os casos que importam. Teste que só verifica o óbvio dá falsa segurança.</p></div>
+        <div class="lv l3"><b>3 · Peça o código e rode os testes</b><p>Se algo falhar, mostre ao assistente a saída completa, e não um resumo.</p></div>
+        <div class="lv l4"><b>4 · Revise e simplifique</b><p>Com os testes passando, peça uma versão mais simples e revise de novo.</p></div>
+      </div>
+      <h3>Sinais de alerta</h3>
+      <ul>
+        <li>O assistente altera ou apaga um teste para que ele passe.</li>
+        <li>A correção trata só o exemplo que você mostrou, com uma condição feita para aquele valor.</li>
+        <li>Erros são silenciados com blocos que capturam qualquer exceção e seguem em frente.</li>
+      </ul>
+      <h3>Para achar defeitos</h3>
+      <p>Descreva o sintoma, o que você esperava e o que aconteceu. Peça hipóteses ordenadas da mais provável para a menos provável e um jeito de testar cada uma. Confirmar a causa antes de corrigir evita trocar um defeito por outro.</p>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p><i>“Para a função validarCpf, escreva testes para: CPF válido com e sem pontuação, dígito verificador errado, sequência repetida, texto vazio e texto com letras. Escreva só os testes, ainda sem a função.”</i></p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Comportamento, testes, código, revisão: nessa ordem.</li>
+          <li>Teste alterado para passar é sinal de alerta.</li>
+          <li>Confirme a causa do defeito antes de corrigir.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="4" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-5">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 5 -->
+    <section class="lesson" id="aula-5" data-l="5">
+      <p class="num">Aula 5</p>
+      <h2>Segredos, dados e segurança</h2>
+      <p>O que você envia ao assistente sai do seu computador e vai para o fornecedor da ferramenta, salvo quando ela roda no seu próprio ambiente. Use a ferramenta aprovada pela organização e conheça o contrato: por quanto tempo os dados ficam guardados, se servem para treinar modelos e onde são processados.</p>
+      <h3>O que fica fora do pedido</h3>
+      <ul>
+        <li><b>Senhas, chaves de API, tokens e certificados.</b> Se um segredo vazar, revogue-o e troque-o na hora.</li>
+        <li><b>Dados pessoais reais de produção.</b> Use dados fictícios ou mascarados.</li>
+        <li><b>Código de cliente</b>, quando o contrato proíbe compartilhá-lo com terceiros.</li>
+      </ul>
+      <h3>Quando o assistente executa comandos</h3>
+      <p>Assistentes que rodam comandos no terminal ou editam arquivos sozinhos pedem cuidado extra. Leia cada comando antes de autorizar, trabalhe numa cópia separada do projeto, sem acesso à produção, e prefira autorizar caso a caso a liberar tudo de uma vez.</p>
+      <h3>Quando o seu sistema usa IA</h3>
+      <p>Se você constrói um sistema que envia texto de usuários ou de documentos a um modelo de linguagem, conte com textos escritos para desviar o sistema. A lista OWASP Top 10 para aplicações com modelos de linguagem (2025) põe a injeção de instruções em primeiro lugar e alerta para a “agência excessiva”: dar ao sistema mais permissões do que a tarefa exige. Trate a resposta do modelo como entrada não confiável, sujeita às mesmas validações de qualquer dado externo.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>Segurança desde a concepção</h4>
+        <p>A LGPD exige medidas de segurança, técnicas e administrativas, para proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas (Lei 13.709/2018, art. 46). Essas medidas devem ser observadas desde a fase de concepção do produto ou do serviço até a sua execução (art. 46, §2º). Se houver incidente que possa causar risco ou dano relevante aos titulares, o controlador deve comunicá-lo à ANPD e aos titulares (art. 48). Uma chave exposta num repositório público pode ser o começo de um incidente assim.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Segredos e dados reais ficam fora do pedido.</li>
+          <li>Comando do assistente: leia antes, rode numa cópia separada.</li>
+          <li>Segurança desde a concepção, como pede a LGPD.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="5" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#aula-6">Próxima aula →</a>
+    </section>
+
+    <!-- AULA 6 -->
+    <section class="lesson" id="aula-6" data-l="6">
+      <p class="num">Aula 6</p>
+      <h2>Direitos e licenças do código</h2>
+      <p>Código é obra protegida. Saber de quem é o que você escreve com IA, e o que pode usar de terceiros, evita conflitos com empregador, cliente e comunidade.</p>
+      <div class="box br">
+        <p class="lbl">No Brasil</p>
+        <h4>O que diz a Lei do Software</h4>
+        <p>O programa de computador recebe a proteção que a lei de direitos autorais dá às obras literárias, e essa proteção independe de registro (Lei 9.609/1998, art. 2º, caput e §3º). Salvo contrato em contrário, pertencem ao empregador ou ao contratante os direitos sobre o programa desenvolvido durante o contrato, quando programar é a atividade prevista ou decorre da natureza do vínculo (art. 4º). E o uso de programa de computador no país é objeto de contrato de licença (art. 9º).</p>
+      </div>
+      <h3>E o código gerado pela IA?</h3>
+      <p>A Lei de Direitos Autorais define autor como a pessoa física criadora da obra (Lei 9.610/1998, art. 11). Por isso, a proteção de um trecho produzido só pela máquina, sem contribuição humana relevante, é incerta no direito brasileiro, e o tema ainda está em aberto. Documente a sua contribuição: o desenho da solução, as escolhas, a revisão e as alterações.</p>
+      <h3>Licenças de código aberto</h3>
+      <ul>
+        <li>Toda dependência tem licença. Algumas, conhecidas como <i>copyleft</i>, exigem que o código derivado seja distribuído sob a mesma licença.</li>
+        <li>Se o assistente reproduzir um trecho longo e reconhecível de um projeto público, trate-o como código de terceiro: descubra a origem e respeite a licença. Algumas ferramentas têm filtros para isso.</li>
+        <li>Mantenha a lista das dependências do projeto com as respectivas licenças.</li>
+      </ul>
+      <div class="box">
+        <p class="lbl">Na prática</p>
+        <p>Antes de usar IA no código de um cliente, leia o contrato. Cláusulas de confidencialidade e de titularidade podem limitar a ferramenta, o envio do código e a quem pertence o resultado. Na dúvida, pergunte ao cliente por escrito.</p>
+      </div>
+      <div class="sum">
+        <p class="lbl">Resumo da aula</p>
+        <ul>
+          <li>Programa é protegido sem registro; o do empregado contratado para programar é do empregador.</li>
+          <li>Autoria de código feito só pela IA é incerta: documente a sua parte.</li>
+          <li>Respeite as licenças e o contrato do cliente.</li>
+        </ul>
+      </div>
+      <button class="done-btn" type="button" data-done="6" aria-pressed="false">Marcar aula como concluída</button><a class="next" href="#quiz">Ir para o quiz →</a>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson quiz" id="quiz">
+      <p class="num">Quiz final</p>
+      <h2>Teste o que você aprendeu</h2>
+      <p>Oito perguntas. A resposta aparece assim que você escolhe uma opção.</p>
+      <form id="quiz-form" novalidate></form>
+      <div class="score" id="score" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- PARA IMPRIMIR -->
+    <section class="lesson" id="revisao">
+      <p class="num">Para imprimir e preencher</p>
+      <h2>Lista de revisão do código feito com IA</h2>
+      <p class="pol-sub">Projeto: ______________________ · Revisado por: ______________________ · ___/___/______</p>
+      <ol class="pol">
+        <li><b>Pedido.</b> Tarefa em uma frase: ______________________ · Plano conferido antes do código ( )</li>
+        <li><b>Escopo.</b> Só os arquivos esperados mudaram ( ) · Sei explicar cada linha ( )</li>
+        <li><b>Existência.</b> Funções e bibliotecas conferidas na documentação da versão em uso ( )</li>
+        <li><b>Testes.</b> Casos difíceis cobertos ( ) · Nenhum teste alterado só para passar ( ) · Todos passando ( )</li>
+        <li><b>Segurança.</b> Sem segredos no código nem no pedido ( ) · Entrada do usuário tratada ( ) · Sem dados pessoais reais ( )</li>
+        <li><b>Dependências e licenças.</b> Nova dependência: ______________ · Existe e é mantida ( ) · Licença: ______________</li>
+      </ol>
+      <p class="check-h">Antes de aceitar</p>
+      <ul class="check">
+        <li>Rodei o código e os testes no meu ambiente.</li>
+        <li>Pedi revisão de outra pessoa em mudança grande ou sensível.</li>
+        <li>Registrei o uso de IA na descrição da mudança, se a equipe pede.</li>
+        <li>Usei a ferramenta aprovada e respeitei o contrato do cliente.</li>
+      </ul>
+      <button class="btn no-print" type="button" id="print-btn">Imprimir a lista</button>
+    </section>
+
+    <!-- FONTES -->
+    <section class="lesson" id="fontes" style="border-bottom:0;">
+      <p class="num">Fontes</p>
+      <h2>Normas e dados citados</h2>
+      <ul class="sources">
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l9609.htm" target="_blank" rel="noopener">Lei 9.609/1998 (Lei do Software)</a>: arts. 2º, caput e §3º, 4º e 9º</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l9610.htm" target="_blank" rel="noopener">Lei 9.610/1998 (Lei de Direitos Autorais)</a>: art. 11</li>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm" target="_blank" rel="noopener">Lei 13.709/2018 (LGPD)</a>: arts. 46, caput e §2º, e 48</li>
+        <li><a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">OWASP Top 10 for LLM Applications 2025</a>: injeção de instruções (LLM01) e agência excessiva (LLM06)</li>
+        <li><a href="https://cetic.br/pt/noticia/uso-de-inteligencia-artificial-por-empresas-brasileiras-avanca-e-atinge-17-aponta-pesquisa-do-cetic-br/" target="_blank" rel="noopener">Cetic.br, TIC Empresas 2025</a> (divulgada em junho de 2026) e a <a href="https://cetic.br/media/analises/TIC-Empresas-2025-lancamento.pdf" target="_blank" rel="noopener">apresentação dos resultados</a></li>
+      </ul>
+      <p class="author">Quem escreve: a HermesIA é construída por um advogado sênior que programa desde 1984. As normas mudam: confira sempre a redação atual na fonte oficial.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/">HermesIA</a> · <a href="/academia/">Academia HermesIA</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a>
+    <p>Curso original da HermesIA, de caráter informativo e geral. Não substitui a orientação do jurídico, da equipe de segurança da informação, do encarregado de dados ou de um advogado, nem a análise do caso concreto. A HermesIA não é escritório de advocacia e não presta consultoria jurídica. Marcas citadas pertencem a seus titulares.</p>
+    <p>© 2026 HermesIA · CNPJ 35.878.957/0001-10 · Belo Horizonte, MG</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='hm-acad-programa-v1', TOTAL=6, CURSO='programar', done={};
+  try{ done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+  function render(){
+    var n=0;
+    for(var i=1;i<=TOTAL;i++){
+      var on=!!done[i]; if(on) n++;
+      var li=document.querySelector('.toc li[data-l="'+i+'"]'); if(li) li.classList.toggle('done',on);
+      var b=document.querySelector('[data-done="'+i+'"]');
+      if(b){ b.setAttribute('aria-pressed',on?'true':'false'); b.textContent=on?'✓ Aula concluída':'Marcar aula como concluída'; }
+    }
+    document.getElementById('bar').style.width=(n/TOTAL*100)+'%';
+    document.getElementById('prog').textContent=n+' de '+TOTAL+' aulas concluídas';
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-done'); done[i]=!done[i]; save(); render();
+      if(done[i] && window.hmTrack) hmTrack('curso_aula_concluida',{curso:CURSO,aula:+i});
+    });
+  });
+  render();
+
+  var Q=[{"q": "O assistente entregou um código que roda. Quem responde pelo código que entra no projeto?", "o": ["O fornecedor da ferramenta de IA.", "Quem aceitou e integrou o código.", "Ninguém, porque foi a máquina que escreveu."], "c": 1, "e": "Quem aceita o código responde por ele (aula 1)."}, {"q": "Qual pedido tende a gerar um código melhor?", "o": ["“Faz uma função de validar CPF.”", "“Valide CPF do jeito que achar melhor.”", "Um pedido com linguagem, versão, arquivo, padrão do projeto, restrições e casos de teste."], "c": 2, "e": "O assistente só sabe o que você mostra (aula 2)."}, {"q": "O assistente sugeriu instalar um pacote que você não conhece. O que fazer primeiro?", "o": ["Confirmar no repositório oficial o nome exato, os mantenedores, a data de publicação e o uso.", "Instalar logo, porque a sugestão veio da IA.", "Copiar o nome do pacote para outra IA confirmar."], "c": 0, "e": "Pacotes inventados podem ser registrados por golpistas (aula 3)."}, {"q": "Para fazer um teste passar, o assistente alterou o próprio teste. Isso é:", "o": ["A solução mais rápida, que pode ser aceita.", "Um sinal de alerta: confira se o teste estava errado ou se o código está.", "Uma prática recomendada em qualquer caso."], "c": 1, "e": "Teste alterado para passar é sinal de alerta (aula 4)."}, {"q": "Você percebeu que uma chave de API foi enviada a um repositório público. O que fazer primeiro?", "o": ["Apagar o arquivo e seguir em frente.", "Esperar para ver se alguém usa a chave.", "Revogar e trocar a chave imediatamente, e depois limpar o histórico."], "c": 2, "e": "Segredo vazado se troca na hora (aula 5)."}, {"q": "Pela LGPD, as medidas de segurança para proteger dados pessoais devem ser observadas:", "o": ["Desde a concepção do produto ou do serviço até a sua execução.", "Só depois do primeiro incidente.", "Apenas em sistemas de bancos."], "c": 0, "e": "Lei 13.709/2018, art. 46, §2º (aula 5)."}, {"q": "Salvo contrato em contrário, o programa feito por um empregado contratado para programar pertence:", "o": ["Ao empregado, sempre.", "Ao empregador.", "A quem registrar primeiro."], "c": 1, "e": "Lei 9.609/1998, art. 4º (aula 6)."}, {"q": "Pela Lei do Software, a proteção do programa de computador:", "o": ["Depende de registro no INPI.", "Só vale para programas vendidos.", "Independe de registro."], "c": 2, "e": "Lei 9.609/1998, art. 2º, §3º (aula 6)."}];
+  var form=document.getElementById('quiz-form'), answered=0, right=0;
+  Q.forEach(function(item,qi){
+    var fs=document.createElement('fieldset');
+    var lg=document.createElement('legend'); lg.textContent=(qi+1)+'. '+item.q; fs.appendChild(lg);
+    item.o.forEach(function(op,oi){
+      var lb=document.createElement('label'); var r=document.createElement('input');
+      r.type='radio'; r.name='q'+qi; r.value=oi; lb.appendChild(r); lb.appendChild(document.createTextNode(op)); fs.appendChild(lb);
+      r.addEventListener('change',function(){
+        if(fs.dataset.done) return; fs.dataset.done='1'; answered++;
+        var ok=(oi===item.c); if(ok) right++;
+        fs.querySelectorAll('label')[item.c].classList.add('ok'); if(!ok) lb.classList.add('no');
+        fs.querySelectorAll('input').forEach(function(x){ x.disabled=true; });
+        var fb=fs.querySelector('.fb'); fb.className='fb '+(ok?'ok':'no'); fb.textContent=(ok?'Certo. ':'Não é essa. ')+item.e;
+        if(answered===Q.length) finish();
+      });
+    });
+    var fb=document.createElement('p'); fb.className='fb'; fb.setAttribute('aria-live','polite'); fs.appendChild(fb);
+    form.appendChild(fs);
+  });
+  function finish(){
+    var s=document.getElementById('score'); s.hidden=false;
+    s.innerHTML='Você acertou <b>'+right+' de '+Q.length+'</b>. '+(right>=6?'Muito bem: agora imprima a lista de revisão logo abaixo e use-a no próximo código feito com IA.':'Vale rever as aulas indicadas nas respostas e tentar de novo depois.');
+    if(window.hmTrack) hmTrack('curso_quiz_finalizado',{curso:CURSO,acertos:right});
+  }
+
+  document.getElementById('print-btn').addEventListener('click',function(){
+    document.documentElement.classList.add('print-check');
+    window.print();
+    setTimeout(function(){ document.documentElement.classList.remove('print-check'); },500);
+    if(window.hmTrack) hmTrack('curso_documento_impresso',{curso:CURSO});
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "IA para quem programa", "description": "Curso grátis em português para desenvolvedores, estudantes e equipes de tecnologia: como usar assistentes de código com contexto, revisão, testes e segurança, com a Lei do Software (Lei 9.609/1998), a Lei de Direitos Autorais, a LGPD e a lista OWASP para aplicações com modelos de linguagem, e uma lista de revisão para imprimir.", "inLanguage": "pt-BR", "isAccessibleForFree": true, "url": "https://hermesia.ia.br/academia/ia-para-quem-programa/", "provider": {"@type": "Organization", "name": "HermesIA", "sameAs": "https://hermesia.ia.br/"}}</script>
+<script src="/assets/whatsapp-fab.js" defer></script>
+</body>
+</html>
